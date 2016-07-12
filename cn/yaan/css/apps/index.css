@@ -261,7 +261,6 @@ a {
 }
 
 .zy_featured .zy_featured_articles .abstract {
-    display: inline-block;
     margin: 0 1%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
