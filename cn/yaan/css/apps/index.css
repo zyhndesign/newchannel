@@ -63,12 +63,11 @@ a {
     left:50%;
     bottom:50px;
     margin-left: -34px;
-    -webkit-transition:all .5 ease-in;
-    -moz-transition:all .5 ease-in;
-    transition:all .5 ease-in;
+    transition:all .3s ease-out;
+    opacity: .7
 }
 .zy_dropdown:hover{
-    height: 30px;
+    opacity: 1;
     cursor: pointer;
 }
 
@@ -283,7 +282,7 @@ a {
     font-size: 22px;
     overflow: hidden;
     font-weight: bold;
-    color: #fb3541;
+    color: #00cc99;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -292,16 +291,17 @@ a {
 
 .zy_featured .zy_featured_articles li .excerpt {
     text-align: left;
-    color: #888;
-    height: 78px;
+    color: #999;
+    height: 7.5em;
     overflow: hidden;
-    font-size: 11px;
+    font-size: 14px;
+    line-height: 1.5em;
 }
 .zy_featured .zy_featured_articles li .date {
-    color: #bbb;
+    color: #999;
     font-size: 12px;
     text-align: center;
-    border-bottom: 2px solid #bbb;
+    border-bottom: 1px solid #999;
     padding-bottom: 10px;
 }
 
@@ -409,7 +409,7 @@ a {
     margin: auto;
     height: 100%;
     overflow: hidden;
-    border-top: #ccc 1px solid;
+/*    border-top: #ccc 1px solid;*/
     /*border-bottom: #ccc 1px solid;*/
 }
 
@@ -513,7 +513,7 @@ a {
     bottom: 0px;
     left: 0px;
     font-size: 18px;
-    color: #fff;
+    color: #0c9;
     margin: 0px;
     height: 50px;
     width: 100%;
@@ -522,7 +522,7 @@ a {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    background: url(../../images/apps/article_title_bg.png) no-repeat;
+    background: rgba(0,0,0,.7);
 }
 
 .zy_article_one .zy_article_info:nth-child(2n) {
@@ -564,7 +564,7 @@ a {
     width: 240px;
     height: 450px;
     white-space: normal;
-    border-right: #0d0f01 1px solid;
+    border-right: #333 1px dashed;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -598,26 +598,35 @@ a {
 
 .zy_article_two .zy_article_abstract h2 {
     font-size: 24px;
-    color: #fb3541;
+    color: #fff;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin: 0;
+    padding:10px;
+    background: #0c9;
+    font-weight: lighter;
 }
 
 .zy_article_two .zy_article_abstract p {
     font-size: 16px;
     line-height: 2em;
     margin: 5px 0;
-    color: #9aa9ef;
+    color: #333;
 }
 
 .zy_article_two .zy_article_abstract .zy_article_date {
     font-size: 14px;
-    border-top: #0d0f01 1px solid;
     padding-top: 8px;
-    color: #9aa9ef;
+    color: #333;
 }
-
+.zy_article_two .zy_article_abstract .zy_article_excerpt{
+    font-size: 14px;
+    line-height: 2em;
+    height: 10em;
+    overflow: hidden;
+    text-align: justify;
+}
 .zy_article_two:nth-child(2n)>.zy_article_thumb {
     bottom: 0;
     top: auto;
@@ -683,7 +692,6 @@ a {
 
 .zy_article_three>.zy_article_info img {
     width: 100%;
-    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
@@ -692,14 +700,14 @@ a {
     bottom: 0px;
     left: 0px;
     font-size: 18px;
-    color: #fff;
+    color: #0c9;
     margin: 0px;
     height: 50px;
     width: 100%;
     line-height: 50px;
     text-indent: 15px;
     overflow: hidden;
-    background: url(../../images/apps/article_title_bg.png) no-repeat;
+    background: rgba(0,0,0,.7);
 }
 
 .zy_article_three>.zy_article_info:nth-child(2n) {
@@ -849,7 +857,7 @@ a {
 }
 
 .zy_copyright {
-    background: #333;
+    background: #111;
     padding: 50px 0;
     text-align: center;
     color: #ccc;
@@ -1027,10 +1035,12 @@ a {
     height: 50px;
     display: block;
     background: url(../../images/apps/btn_back_normal.png) no-repeat;
+    background-size: cover;
 }
 
 .zy_article_container .zy_article_container_close:hover {
     background: url(../../images/apps/btn_back_pressed.png);
+    background-size: cover;
 }
 .zy_article_content {
     background: #fff;
@@ -1058,7 +1068,7 @@ a {
 
 /* 滚动条滑块 */
 .zy_article_content::-webkit-scrollbar-thumb {
-    background: #ca2e3a;
+    background: #0c9;
 }
 /*
 *图文混排展示模版
@@ -1086,8 +1096,8 @@ a {
     box-sizing: border-box;
     padding: 20px;
     background: #fff;
-    height: 150px;
-    min-width: 50%;
+    width: 300px;
+    text-align: justify;
 }
 
 
@@ -1228,7 +1238,7 @@ a {
 .article-main-slide .article-abstract-slide::first-letter {
     display: inline-block;
     font-size: 32px;
-    color: #ca2e3a;
+    color: #0c9;
 }
 
 .allslides-slide {
@@ -1329,7 +1339,7 @@ a {
     height: 10px;
     position: absolute;
     left: 50%;
-    background: #E83A00;
+    background: #0c9;
 }
 .zy_loading_spinner .zy_loading_top {
     margin-left: -5px;

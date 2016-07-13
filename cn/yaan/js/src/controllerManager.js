@@ -19,11 +19,11 @@ ZY.controllerManager=(function(){
     var menu=$("#zy_nav");
 
     //进入页面时nav为非fixed状态，滚动到下面后变成fiexd，不占高度，所以要减去
-    var sectionOneY=$("#zy_section_one").offset().top-80;
-    var sectionTwoY=$("#zy_section_two").offset().top-80;
-    var sectionThreeY=$("#zy_section_three").offset().top-80;
-    var sectionFourY=$("#zy_section_four").offset().top-80;
-    var footerY=$(".zy_footer").offset().top-80;
+    var sectionOneY=$("#zy_section_one").offset().top;
+    var sectionTwoY=$("#zy_section_two").offset().top;
+    var sectionThreeY=$("#zy_section_three").offset().top;
+    var sectionFourY=$("#zy_section_four").offset().top;
+    var footerY=$(".zy_footer").offset().top;
 
     /**
      * 设置页面的最大个数
@@ -527,7 +527,7 @@ ZY.controllerManager=(function(){
              *注意：背景图的高度是根据宽度变化的，可能会大于720，最大为一屏幕高，
              *720-（sy-sectionOney)+100 可能大于一屏幕高，并不影响显示，因为当clip的显示高度大于实际高度时，只会显示成实际高度
              */
-            if(sy>sectionOneY-winH && sy<=sectionOneY+720){
+            if(sy>sectionOneY-winH && sy<=sectionOneY+800){
                 if(!ZY.config.deviceCode.iOS){
                     sectionOneBG.addClass("zy_bg_fixed");
 
@@ -558,7 +558,7 @@ ZY.controllerManager=(function(){
                 }
             }
 
-            if(sy>sectionTwoY-winH && sy<=sectionTwoY+720){
+            if(sy>sectionTwoY-winH && sy<=sectionTwoY+800){
                 if(!ZY.config.deviceCode.iOS){
                     sectionTwoBG.addClass("zy_bg_fixed");
 
@@ -586,7 +586,7 @@ ZY.controllerManager=(function(){
                 }
             }
 
-            if(sy>sectionThreeY-winH && sy<=sectionThreeY+720){
+            if(sy>sectionThreeY-winH && sy<=sectionThreeY+840){
                 if(!ZY.config.deviceCode.iOS){
                     sectionThreeBG.addClass("zy_bg_fixed");
 
@@ -615,7 +615,7 @@ ZY.controllerManager=(function(){
                 }
 
             }
-            if(sy>sectionFourY-winH && sy<=sectionFourY+720){
+            if(sy>sectionFourY-winH && sy<=sectionFourY+840){
                  if(!ZY.config.deviceCode.iOS){
                      sectionFourBG.addClass("zy_bg_fixed");
 

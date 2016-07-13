@@ -9,14 +9,18 @@ body{
 .zy_hidden,.zy_disable{
     display: none;
 }
+.hasVideo{
+    position: relative;
+}
 .hasVideo:before{
     content:"";
     background: url(../../images/xinjiang/hasvideo.png) no-repeat;
     width: 80px;
     height: 80px;
     position: absolute;
-    left: 0px;
-    top:0px;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
 }
 /*固定背景样式*/
 .zy_bg_fixed{
@@ -351,7 +355,7 @@ a.zy_music_play:hover{
     font-weight: bold;
 	position:absolute;
 	top:100px;
-	left:40px;
+	left:20px;
 	z-index:99;
 	-webkit-transition:top 0.7s ease-out;
 	-moz-transition:top 0.7s ease-out;
@@ -493,30 +497,32 @@ a.zy_music_play:hover{
 	text-indent:-9999px;
 }
 .zy_featured_articles{
-	margin:70px 0;
+	margin:70px auto;
 	padding:10px 0;
 	text-align:center;
-	width:100%;	
+	width:70%;	
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-ms-box-sizing:border-box;
 	box-sizing:border-box;
 	overflow:hidden;
+    font-size: 0;
 }
 .zy_featured_articles li{
-	display:inline;
+	display:inline-block;
 	list-style:none;
+    width:31.3%;
+    margin:0 1%;
 	}
 .zy_featured_articles .abstract{	
 	display:inline-block;
-	margin:0 1%;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-ms-box-sizing:border-box;
 	box-sizing:border-box;
-	padding:1%;
-	width:20%;
-	height:460px;
+	padding:10px;
+	width:100%;
+	min-height:350px;
 	background:#fff;
 	box-shadow:0 0 6px rgba(0,0,0,0.5);
 	cursor:pointer;
@@ -530,8 +536,8 @@ a.zy_music_play:hover{
 .zy_featured_articles li .title{
 	width:100%;
 	text-align:center;
-	font-size:1.6em;
-	line-height:1.4em;
+	font-size:16px;
+	line-height:1.5em;
 	overflow:hidden;
 	color:#666;
 }
@@ -634,6 +640,9 @@ a.zy_music_play:hover{
 	}
 .zy_landscape_article>.zy_article_abstract h2{
 	font-size:24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	}
 .zy_landscape_article>.zy_article_abstract p{
 	font-size:16px;
@@ -644,6 +653,10 @@ a.zy_music_play:hover{
 	font-size:12px;
 	border-top:#ccc 1px solid;
 	padding-top:8px;
+	}
+.zy_landscape_article>.zy_article_abstract p.zy_article_excerpt{
+    height:18em;
+    overflow: hidden;
 	}
 .zy_landscape_article:first-child{
     display: inline-block;
@@ -659,7 +672,7 @@ a.zy_music_play:hover{
 	}
 .zy_landscape_article:nth-child(2n)>.zy_article_abstract{
 	top:0;
-	height:180px;
+/*	height:180px;*/
 	}
 .zy_landscape_article:first-child>.zy_article_thumb{
 	width:400px;
@@ -760,6 +773,7 @@ a.zy_music_play:hover{
 .zy_people_article>.zy_article_abstract h2{
 	font-size:20px;
 	width:120px;
+    line-height: 1.5em;
 	}
 .zy_people_article>.zy_article_abstract p{
 	font-size:16px;
@@ -859,7 +873,7 @@ a.zy_music_play:hover{
 	-moz-box-sizing:border-box;
 	-ms-box-sizing:border-box;
 	box-sizing:border-box;
-	padding:20px 20px 30px 20px;
+	padding:20px;
 	background:#E83A00;
 	position:absolute;
 	top:380px;
@@ -876,6 +890,9 @@ a.zy_music_play:hover{
 	font-size:32px;
 	text-align:center;
 	color:#fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	}
 .zy_artifact_article>.zy_article_abstract p{	
 	font-size:16px;
@@ -895,6 +912,10 @@ a.zy_music_play:hover{
 	display:block;
 	color:#fff;
 	}
+.zy_artifact_article>.zy_article_abstract p.zy_article_excerpt{
+    height:14em;
+    overflow: hidden;
+}
 /*------------------------------------社区部分--------------------------*/
 .zy_community{
 	position:relative;
@@ -978,6 +999,7 @@ a.zy_music_play:hover{
 .zy_community_article>.zy_article_abstract h2{
 	font-size:20px;
 	width:120px;
+    line-height: 1.5em;
 	}
 .zy_community_article>.zy_article_abstract p{
 	font-size:16px;
@@ -1346,8 +1368,7 @@ a.zy_music_play:hover{
     box-sizing:border-box;
     padding:20px;
     background:#fff;
-    height:150px;
-    min-width:50%;
+    width:300px;
 }
 .article-head-post h1{
     padding:0;
@@ -1403,13 +1424,13 @@ a.zy_music_play:hover{
     bottom:150px;
     padding:0 0 20px 40px;
     -webkit-column-gap:40px;
-    -webkit-column-width:260px;
+    -webkit-column-width:320px;
     -moz-column-gap:40px;
-    -moz-column-width:260px;
+    -moz-column-width:320px;
     column-gap:40px;
-    column-width:260px;
+    column-width:320px;
     line-height:2em;
-    letter-spacing:2px;
+    letter-spacing:0.1em;
     z-index:10;
 }
 .article-content-post::first-letter{

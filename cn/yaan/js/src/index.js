@@ -185,7 +185,7 @@ $(document).ready(function(){
     $(window).trigger("scroll");
 
     //window  scroll speed
-    ZY.controllerManager.setWheelScrollSpeed();
+    //ZY.controllerManager.setWheelScrollSpeed();
 
     /*=====iOS触屏滚动支持=================*/
     if(ZY.config.deviceCode.iOS){

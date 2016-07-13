@@ -354,14 +354,17 @@ a.zy_music_next{
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin: 0;
+    padding:20px;
+    box-sizing: border-box;
 }
 .zy_featured_articles li .excerpt{
     text-align: left;
     color:#666;
-    height: 63px;
+    height: 6em;
     overflow: hidden;
-    font-size: 12px;
-    line-height: 21px;
+    font-size: 16px;
+    line-height: 1.5em;
     margin: 10px 20px;
     padding-top: 20px;
     border-top:1px solid #ccc;
@@ -561,12 +564,12 @@ a.zy_music_next{
     font-weight: bold;
 }
 .zy_landscape_article>.zy_article_abstract p,.zy_artifact_article>.zy_article_abstract p{
-    font-size:12px;
+    font-size:14px;
     line-height:2em;
     margin:auto;
     color:#333;
     width:260px;
-    height: 72px;
+    height: 10em;
     overflow: hidden;
 }
 .zy_landscape_article>.zy_article_abstract p.zy_article_date,.zy_artifact_article>.zy_article_abstract p.zy_article_date{
@@ -1187,8 +1190,7 @@ a.zy_music_next{
     box-sizing:border-box;
     padding:20px;
     background:#fff;
-    height:150px;
-    min-width:50%;
+    width:300px;
 }
 .article-head-post h1{
     padding:0;
