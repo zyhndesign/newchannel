@@ -1187,8 +1187,7 @@ a.zy_music_next{
     box-sizing:border-box;
     padding:20px;
     background:#fff;
-    height:150px;
-    min-width:50%;
+    width:300px;
 }
 .article-head-post h1{
     padding:0;
