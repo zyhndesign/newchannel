@@ -44,28 +44,95 @@ a{
 	height:100%;
     background:no-repeat right;
     background-size: cover;
+    position: relative;
 	}
-.contents>ul>li>a>img{
-	height:100%;
-	}
+.contents>ul>li>a::before{
+    content: "";
+    width:600px;
+    height: 300px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 9;
+}
+.contents>ul>li>a::after{
+    content: "";
+    width:600px;
+    height: 300px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 8;
+}
+.contents>ul>li>a .info{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    margin: 0;
+    line-height: 1.5em;
+    font-size: 18px;
+    color: #fff;
+    z-index: 10;
+}
+.contents>ul>li>a .date, .contents>ul>li>a .title{
+    display: block;
+}
+
 /*.contents>ul>li>a.expolink{
     background:url(images/bg_expo.jpg) no-repeat right;
 }
 .contents>ul>li>a.milanlink{
     background:url(images/bg_milano.jpg) no-repeat right;
 }*/
-.contents>ul>li>a.yaanlink{
+.contents>ul>li>a.yaan{
     background-image:url(images/bg_yaan.jpg);
 }
-.contents>ul>li>a.tongdaolink{
+.contents>ul>li>a.yaan::before{
+    background-image:url(images/logo_yaan.png);
+    
+}
+.contents>ul>li>a.yaan::after{
+    background: linear-gradient(to right, rgba(4,58,52,1) 0%,rgba(4,58,52,1) 50%,rgba(4,58,52,0) 100%);
+}
+
+.contents>ul>li>a.tongdao{
 	background-image:url(images/bg_tongdao.jpg);
 	}
-.contents>ul>li>a.xinjianglink{
+.contents>ul>li>a.tongdao::before{
+	background-image:url(images/logo_tongdao.png);
+	}
+.contents>ul>li>a.tongdao::after{
+	background: linear-gradient(to right, rgba(203,47,59,1) 0%,rgba(203,47,59,1) 50%,rgba(203,47,59,0) 100%);
+	}
+
+.contents>ul>li>a.xinjiang{
 	background-image:url(images/bg_xinjiang.jpg);
 	}
-.contents>ul>li>a.youyanglink{
+.contents>ul>li>a.xinjiang::before{
+	background-image:url(images/logo_xinjiang.png);
+	}
+.contents>ul>li>a.xinjiang::after{
+	background: linear-gradient(to right, rgba(168,42,0,1) 0%,rgba(168,42,0,1) 50%,rgba(168,42,0,0) 100%); 
+	}
+
+.contents>ul>li>a.youyang{
 	background-image:url(images/bg_youyang.jpg);
 	}
-.contents>ul>li>a.sanjiangyuanlink{
-    background-image:url(images/bg_youyang.jpg);
+.contents>ul>li>a.youyang::before{
+	background-image:url(images/logo_youyang.png);
+	}
+.contents>ul>li>a.youyang::after{
+	background: linear-gradient(to right, rgba(32,66,141,1) 0%,rgba(32,66,141,1) 50%,rgba(32,66,141,0) 100%);
+	}
+
+.contents>ul>li>a.huayao{
+    background-image:url(images/bg_huayao.jpg);
 }
+.contents>ul>li>a.huayao::before{
+	background-image:url(images/logo_huayao.png);
+	}
+.contents>ul>li>a.huayao::after{
+	background: linear-gradient(to right, rgba(229,10,69,1) 0%,rgba(229,10,69,1) 50%,rgba(229,10,69,0) 100%);
+	}

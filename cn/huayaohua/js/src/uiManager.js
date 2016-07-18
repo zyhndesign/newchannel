@@ -13,18 +13,16 @@ ZY.uiManager=(function(){
          * 显示音乐播放器
          */
         showMusicPlayer:function(){
-            $("#zy_music_section").animate({
-                width:"100%"
-            },100,function(){
-                $("#zy_music_player").removeClass("zy_hidden");
-            });
+            $("#zy_music_section").addClass("fullwidth");
+            $("#zy_music_player").removeClass("zy_hidden");
+            
         },
 
         /**
          * 隐藏音乐播放器
          */
         hideMusicPlayer:function(){
-            $("#zy_music_section").stop(true,true).width(60);
+            $("#zy_music_section").removeClass("fullwidth");
             $("#zy_music_player").addClass("zy_hidden");
         },
 

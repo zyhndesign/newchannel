@@ -17,13 +17,14 @@ ZY.controllerManager=(function(){
 
 
     var menu=$("#zy_nav");
+    var topPost=$("#zy_top_post")
 
     //进入页面时nav为非fixed状态，滚动到下面后变成fiexd，不占高度，所以要减去
-    var landScapeY=$("#zy_landscape").offset().top-80;
-    var peopleY=$("#zy_people").offset().top-80;
-    var artifactY=$("#zy_artifact").offset().top-80;
-    var communityY=$("#zy_community").offset().top-80;
-    var footerY=$(".zy_footer").offset().top-80;
+    var landScapeY=$("#zy_landscape").offset().top;
+    var peopleY=$("#zy_people").offset().top;
+    var artifactY=$("#zy_artifact").offset().top+30;
+    var communityY=$("#zy_community").offset().top;
+    var footerY=$(".zy_footer").offset().top;
 
     /**
      * 设置页面的最大个数
@@ -501,10 +502,12 @@ ZY.controllerManager=(function(){
             if(sy>=topH){
                 if(!menu.hasClass("zy_nav_active")){
                     menu.addClass("zy_nav_active");
+                    topPost.addClass("zy_nav_active")
                 }
             }else{
                 if(menu.hasClass("zy_nav_active")){
                     menu.removeClass("zy_nav_active");
+                    topPost.removeClass("zy_nav_active")
                 }
             }
 

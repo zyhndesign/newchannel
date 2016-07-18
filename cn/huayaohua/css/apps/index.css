@@ -10,14 +10,19 @@ body{
 .zy_hidden,.zy_disable{
     display: none;
 }
+.hasVideo{
+    position: relative;
+}
 .hasVideo:before{
     content:"";
     background: url(../../images/apps/hasvideo.png) no-repeat;
-    width: 80px;
-    height: 80px;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
     position: absolute;
-    right: 0px;
-    top:0px;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
 }
 .zy_touch_hscroll{
     overflow:auto !important;
@@ -39,11 +44,16 @@ a{
 /*--音乐播放器,z-index：100--*/
 .zy_music_section{
     position:fixed;
-    top:0px;
-    right: 0px;
+    top:15px;
+    right: 15px;
     height: 50px;
     width: 50px;/*初始值为右边显示按钮的宽度*/
     z-index: 100;
+    overflow: hidden;
+}
+.zy_music_section.fullwidth{
+    width: auto;
+    left: 15px;
 }
 .zy_player{
     margin-right: 50px;
@@ -159,6 +169,9 @@ a{
     overflow:hidden;
     z-index: 5;
 }
+.zy_top_post.zy_nav_active{
+    margin-bottom: 80px;
+}
 .zy_top_post_poster{
     width: 100%;
     font-size:0;
@@ -179,24 +192,47 @@ a{
 .zy_top_post_title{
     color:#fff;
     font-size:3em;
-    overflow:hidden;
     cursor:pointer;
     height: 135px;
     line-height: 135px;
     max-width: 70%;
     margin:auto;
-    background: url(../../images/apps/water_graphics.png)  no-repeat center center;
+    padding-top: 100px;
+    position: relative;
+    
+}
+.zy_top_post_title::before{
+    content: "";
+    background: url(../../images/apps/fengmiangushi.png)  no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top:0;
+    left: 50%;
+    transform: translateX(-70px);
 }
 .zy_top_post_date{
     color:#fff;
     font-size:1.5em;
     margin-top: 10px;
 }
+.zy_btn_down{
+    background: url(../../images/apps/down.png) no-repeat;
+    background-size: contain;
+    width:30px;
+    height: 80px;
+    margin: auto;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /*--菜单栏--*/
 .zy_nav{
     width: 100%;
-    background: url(../../images/apps/nav_bg.png) repeat-x;
+    background: #000;
     height: 80px;
     position: relative;
     z-index: 5;
@@ -240,38 +276,18 @@ a{
     vertical-align: top;
 }
 .zy_logo{
-    position: absolute;
-    bottom: 40px;
     width: 100%;
     left:0px;
     margin: 0px;
     z-index: 8;
 }
-.zy_logo:before,.zy_logo:after{
-    content: "";
-    background: #fff;
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    bottom: 39px;
-}
-/*由于logo的a是剧中的220px，那么补线的话可以设置width为100%，
-多余的隐藏，位置定于中间，并且向左margin出logo的a的一半宽度
-那么补的线就不会和a重合了*/
-.zy_logo:before{
-    left:50%;
-    margin-left: 110px;
-}
-.zy_logo:after{
-    right:50%;
-    margin-right: 110px;
-}
 .zy_logo a{
     display: block;
-    height: 254px;
-    background: url(../../images/apps/logo.png) no-repeat center center;
+    height: 80px;
+    background: url(../../images/apps/huayaohua.png) no-repeat center center;
+    background-size: contain;
     font-size:0px;
-    width: 220px;
+    width: 128px;
     margin: auto;
 }
 /*--活动菜单,z-index:99--*/
@@ -284,10 +300,11 @@ a{
     position: static;
 }
 .zy_nav.zy_nav_active .zy_logo a{
-    background: url(../../images/apps/logo_active.png) no-repeat center center;
+    background: url(../../images/apps/huayaohua.png) no-repeat center center;
     height: 80px;
     width: 128px;
     margin: auto;
+    background-size: contain;
 }
 .zy_nav.zy_nav_active .zy_logo:before,.zy_nav.zy_nav_active .zy_logo:after{
     content:"";
@@ -299,7 +316,7 @@ a{
 .zy_featured{
     width: 100%;
     height: 680px;
-    background: #e0dbb3;
+    background: #9fafa5;
     padding-top: 30px;
     position:relative;
     -webkit-box-sizing:border-box;
@@ -308,19 +325,11 @@ a{
     box-sizing:border-box;
     z-index:5;
 }
-.zy_featured:before{
-    content:"";
-    position: absolute;
-    left:0px;
-    top:0px;
-    width:275px;
-    height:210px;
-    background: url(../../images/apps/mask_features_top.png) no-repeat;
-}
 
 .zy_featured_heading{
     width: 205px;
-    background:url(../../images/apps/sprite.png) no-repeat -1604px -917px;
+    background:url(../../images/apps/sec_featured.png) no-repeat;
+    background-size: contain;
     height:68px;
     margin: 0 auto;
     color: #ff3300;
@@ -391,6 +400,8 @@ a{
     color:#fff;
     line-height: 1.3em;
     letter-spacing: .1em;
+    box-sizing: border-box;
+    padding-top:4px;
 }
 .zy_featured_articles li .year{
    display:block;
@@ -398,18 +409,18 @@ a{
 
 /*-----------------------------------------------------印象、物语、小结统一的副标题z-index:12--*/
 .zy_subheading{
-    font-size:1.5em;
+    font-size:0;
     color:#fff;
     text-align:center;
     font-weight:bold;
     position: absolute;
     z-index: 12;
     height: 68px;
-    width: 395px;
+    width: 300px;
     left:50%;
-    margin:0px 0px 0px -197.5px;
+    transform: translateX(-50%);
     line-height: 68px;
-    background: url(../../images/apps/sprite.png) no-repeat -1286px -679px;
+    
 }
 /*主题背景*/
 
@@ -482,7 +493,7 @@ a{
     z-index:4;
 }
 .zy_landscape_top_bg{
-    background: #e0dbb3;
+    background: #9fafa5;
     height: 80px;
     right: 175px;
     position: absolute;
@@ -492,7 +503,8 @@ a{
 /*--z-index:11--*/
 .zy_landscape_top_bg:after{
     content: "";
-    background: url(../../images/apps/mask_landscape_top.png) no-repeat;
+    background: url(../../images/apps/background_pattern1grey.png) no-repeat;
+    background-size: contain;
     width:175px;
     height: 211px;
     position: absolute;
@@ -504,7 +516,8 @@ a{
 /*--z-index:1--*/
 .zy_landscape_heading{
     font-size:0;
-    background:url(../../images/apps/sprite.png) no-repeat -1286px -341px;
+    background:url(../../images/apps/sec_landscapes.png) no-repeat;
+    background-size: contain;
     width:426px;
     height:336px;
     position:absolute;
@@ -514,24 +527,27 @@ a{
     z-index:1;
 }
 .zy_landscape>.zy_subheading{
-    top:685px;
+    top:740px;
+    background:url(../../images/apps/wenzi_1.png) no-repeat;
+    background-size: contain;
 }
 /*--z-index:11--*/
 .zy_landscape_bottom_bg:before{
     content:"";
-    background: url(../../images/apps/sprite.png) no-repeat -1245px -760px;
-    width:150px;
-    height: 215px;
+    background: url(../../images/apps/background_pattern2white.png) no-repeat;
+    background-size: contain;
+    width:100px;
+    height: 100px;
     position: absolute;
     bottom:0px;
-    left:-150px;
+    left:-80px;
     z-index: 11;
 }
 .zy_landscape_bottom_bg{
-    background: #191919;
+    background: #fff;
     height: 80px;
     top: 720px;
-    left:150px ;
+    left:100px ;
     position: absolute;
     width: 100%;
 	z-index:8;
@@ -543,7 +559,7 @@ a{
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     box-sizing:border-box;
-    background: #191919;
+    background: #fff;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
@@ -615,16 +631,17 @@ a{
 }
 .zy_people_top_bg:before{
     content: "";
-    background: url(../../images/apps/sprite.png) no-repeat -1891px -474px;
+    background: url(../../images/apps/background_pattern1white.png) no-repeat;
+    background-size: contain;
     width:124px;
     height: 205px;
     position: absolute;
-    top:0px;
+    top:-1px;
     right:-124px;
     z-index: 11;
 }
 .zy_people_top_bg{
-    background: #191919;
+    background: #fff;
     height: 5px;
     position: absolute;
     right: 124px;
@@ -635,7 +652,8 @@ a{
 .zy_people_heading{
     font-size:0;
     text-indent:-9999px;
-    background:url(../../images/apps/sprite.png) no-repeat -858px -422px;
+    background:url(../../images/apps/sec_humanity.png) no-repeat;
+    background-size: contain;
     width:426px;
     height:336px;
     position:absolute;
@@ -645,17 +663,20 @@ a{
     z-index:1;
 }
 .zy_people>.zy_subheading{
-    top:640px;
+    top:740px;
+    background:url(../../images/apps/wenzi_2.png) no-repeat;
+    background-size: contain;
 }
 /*--z-index:11--*/
 .zy_people_bottom_bg:after{
     content: "";
-    background: url(../../images/apps/mask_humanity_bottom.png) no-repeat;
-    width:200px;
-    height:226px;
+    background: url(../../images/apps/background_pattern2white.png) no-repeat;
+    background-size: contain;
+    width:80px;
+    height:100px;
     position: absolute;
     bottom:0px;
-    left:-200px;
+    left:-80px;
     z-index: 11;
 }
 .zy_people_bottom_bg{
@@ -663,7 +684,7 @@ a{
     height: 120px;
     position: absolute;
     top:680px;
-    left: 200px;
+    left: 80px;
     width: 100%;
 	z-index:8;
 }
@@ -771,16 +792,17 @@ a{
 }
 .zy_artifact_top_bg:before{
     content:"";
-    background: url(../../images/apps/sprite.png) no-repeat -304px -761px;
+    background: url(../../images/apps/background_pattern1white.png) no-repeat;
+    background-size: contain;
     width:131px;
     height: 235px;
     position: absolute;
-    top:0px;
+    top:-1px;
     right:-131px;
     z-index: 11;
 }
 .zy_artifact_top_bg{
-    background: #fff;
+    
     height: 104px;
     position: absolute;
     right: 131px;
@@ -791,7 +813,8 @@ a{
 .zy_artifact_heading{
     font-size:0;
     text-indent:-9999px;
-    background:url(../../images/apps/sprite.png) no-repeat -2px -422px;
+    background:url(../../images/apps/sec_artifacts.png) no-repeat;
+    background-size:contain;
     width:426px;
     height:336px;
     position:absolute;
@@ -801,24 +824,27 @@ a{
     z-index:1;
 }
 .zy_artifact>.zy_subheading{
-    top:700px;
+    top:800px;
+    background:url(../../images/apps/wenzi_3.png) no-repeat;
+    background-size: contain;
 }
 /*--z-index:11--*/
 .zy_artifact_bottom_bg:after{
     content:"";
-    background: url(../../images/apps/mask_artifacts_bottom.png) no-repeat;
-    width:175px;
-    height:234px;
+    background: url(../../images/apps/background_pattern2black.png) no-repeat;
+    background-size: contain;
+    width:80px;
+    height:100px;
     position: absolute;
-    bottom:0px;
-    left:-175px;
+    bottom:-1px;
+    left:-77px;
     z-index: 11;
 }
 .zy_artifact_bottom_bg{
-    background: #fff;
+    background: #000;
     height: 100px;
     position: absolute;
-    left: 175px;
+    left: 80px;
     top:740px;
     width: 100%;
 	z-index:8;
@@ -831,7 +857,7 @@ a{
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     box-sizing:border-box;
-    background: #fff;
+    background: #000;
     /* margin-top: 360px;*/
     white-space: nowrap;
     overflow: hidden;
@@ -953,16 +979,16 @@ a{
 }
 .zy_community_top_bg:before{
     content:"";
-    background: url(../../images/apps/mask_community_top.png) no-repeat;
+    background: url(../../images/apps/background_pattern1black.png) no-repeat;
+    background-size: contain;
     width:175px;
     height: 306px;
     position: absolute;
-    top:0px;
+    top:-1px;
     right:-175px;
     z-index: 11;
 }
 .zy_community_top_bg{
-    background: #fff;
     height: 100px;
     position: absolute;
     right: 175px;
@@ -973,7 +999,8 @@ a{
 .zy_community_heading{
     font-size:0;
     text-indent:-9999px;
-    background:url(../../images/apps/sprite.png) no-repeat -430px -422px;
+    background:url(../../images/apps/sec_community.png) no-repeat;
+    background-size: contain;
     width:426px;
     height:336px;
     position:absolute;
@@ -983,17 +1010,20 @@ a{
     z-index:1;
 }
 .zy_community>.zy_subheading{
-    top:686px;
+    top:780px;
+    background:url(../../images/apps/wenzi_4.png) no-repeat;
+    background-size: contain;
 }
 /*--z-index:11--*/
 .zy_community_bottom_bg:after{
     content: "";
-    background: url(../../images/apps/mask_community_bottom.png) no-repeat;
-    width:175px;
-    height:200px;
+    background: url(../../images/apps/background_pattern2white.png) no-repeat;
+    background-size: contain;
+    width:80px;
+    height:100px;
     position: absolute;
     bottom:0px;
-    left:-175px;
+    left:-80px;
     z-index: 11;
 }
 .zy_community_bottom_bg{
@@ -1001,7 +1031,7 @@ a{
     height: 120px;
     position: absolute;
     top:720px;
-    left: 175px;
+    left: 80px;
     width: 100%;
 	z-index:8;
 }
@@ -1009,7 +1039,8 @@ a{
 /*------------------------------------footer部分--------------------------*/
 .zy_footer{
     width: 100%;
-    background-color: #fff;
+    background: #212121 url(../../images/apps/xiangmubeijing_pic.png) no-repeat center;
+    background-size: contain;
     position: relative;
 	padding:80px 0 0 0;
     -webkit-box-sizing:border-box;
@@ -1019,34 +1050,14 @@ a{
 }
 .zy_project_top_bg{
     height:111px;
-    margin-right: 182px;
-    background: #212121;
     position: relative;
 }
-.zy_project_top_bg:before{
-    content: "";
-    width: 998px;
-    height: 80px;
-    background: url(../../images/apps/sprite.png) no-repeat -2px -340px;
-    position: absolute;
-    bottom:111px;
-}
-.zy_project_top_bg:after{
-    content: "";
-    width: 182px;
-    height: 166px;
-    background: url(../../images/apps/sprite.png) no-repeat -1574px -749px;
-    position: absolute;
-    right:-182px;
-    bottom:0px;
-}
 .zy_project{
-    background: #212121;
 }
 .zy_project_info{
 	width:40%;
 	position:relative;
-    top:-70px;
+    top:0;
 	padding:0px;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -1060,7 +1071,8 @@ a{
     width: 205px;
 	font-size:0;
 	text-indent:-9999px;
-	background:url(../../images/apps/sprite.png) no-repeat -1002px -340px;
+	background:url(../../images/apps/project_bg.png) no-repeat;
+    background-size: contain;
 	margin:auto;
 }
 .zy_project_info p{
@@ -1069,12 +1081,12 @@ a{
     line-height: 2em;
 }
 .zy_project_sponsors{
-	margin:0px 5% 0px 0px;
+	margin:80px 5% 0px 0px;
 	padding-left:10%;
     width: 35%;
     display: inline-block;
     position: relative;
-    top:-70px;
+    top:0px;
 }
 .zy_bottom_logo{
     width: 285px;
@@ -1082,8 +1094,9 @@ a{
 }
 .zy_bottom_logo a{
     width:285px;
-    height: 268px;
-    background: url(../../images/apps/sprite.png) no-repeat -1723px -204px;
+    height: 150px;
+    background: url(../../images/apps/huayaohua@2x.png) no-repeat center;
+    background-size: contain;
     display: block;
     margin:auto;
     font-size: 0px;
@@ -1092,18 +1105,13 @@ a{
     margin: auto;
     text-align: center;
     border-top: 1px solid #444;
-    padding: 10px 0px 10px 0px;
+    padding: 30px 0px;
     font-size: 0px;
 }
 .zy_project_sponsors ul li{
     display: inline-block;
-    width: 190px;
-}
-.zy_project_sponsors ul li:first-child{
-    border-right:2px solid #444;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    width: 46%;
+    margin: 0 2%;
 }
 .zy_project_sponsors .zy_logo_mkmj,.zy_project_sponsors .zy_logo_hnusd{
 	width:180px;
@@ -1112,12 +1120,15 @@ a{
 	text-indent:-9999px;
 	margin:auto;
 	display:block;
+    
 }
 .zy_project_sponsors .zy_logo_mkmj{
     background:url(../../images/apps/meikemeijie_logo.png) no-repeat;
+    background-size: contain;
 }
 .zy_project_sponsors .zy_logo_hnusd{
 	background:url(../../images/apps/HNU_logo.png) no-repeat;
+    background-size: contain;
 }
 .zy_copyright{
 	background:#333;
@@ -1702,9 +1713,7 @@ a{
     .zy_nav ul{
         width:100%;
     }
-    .zy_featured_articles li .excerpt{
-        height: 118px;
-    }
+    
 }
 
 @media screen and (min-width: 1900px) {
