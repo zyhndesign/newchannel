@@ -87,6 +87,16 @@ a{
 .contents>ul>li>a.milanlink{
     background:url(images/bg_milano.jpg) no-repeat right;
 }*/
+.contents>ul>li>a.sanjiangyuan{
+    background-image:url(images/bg_sanjiangyuan.jpg);
+}
+.contents>ul>li>a.sanjiangyuan::before{
+    background-image:url(images/logo_sanjiangyuan.png);
+    
+}
+.contents>ul>li>a.sanjiangyuan::after{
+    background: linear-gradient(to right, rgba(227,130,48,1) 0%,rgba(227,130,48,1) 50%,rgba(227,130,48,0) 100%);
+}
 .contents>ul>li>a.yaan{
     background-image:url(images/bg_yaan.jpg);
 }

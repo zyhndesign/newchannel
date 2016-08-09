@@ -183,14 +183,15 @@ a.zy_music_next{
     overflow: hidden;
 }
 .zy_logo{
-    width: 405px;
-    height: 275px;
-    background: url(../../images/apps/sprite.png) no-repeat -596px -349px;
+    width: 400px;
+    height: 200px;
+    background: url(../../images/apps/logo.png) no-repeat;
+    background-size: contain;
     font-size: 0px;
     position: absolute;
-    top:50%;
+    top:70%;
     left: 50%;
-    margin: -137.5px 0px 0px -202.5px;
+    transform: translate(-50%,-50%);
 }
 .zy_dropdown{
     position: absolute;
@@ -270,8 +271,7 @@ a.zy_music_next{
 .zy_featured{
     width: 100%;
     height: 800px;
-    background: url(../../images/default_bg/bg_featured.jpg) no-repeat;
-    background-size: 100% 100%;
+    background:#112433;
     padding-top: 30px;
     position:relative;
     -webkit-box-sizing:border-box;
@@ -279,20 +279,12 @@ a.zy_music_next{
     -ms-box-sizing:border-box;
     box-sizing:border-box;
     z-index:5;
-    overflow: hidden;
-}
-.zy_featured_left{
-    width: 330px;
-    height: 650px;
-    background: url(../../images/apps/sprite.png) no-repeat -264px -2px;
-    position: absolute;
-    left: -120px;
-    bottom:-100px;
 }
 .zy_featured_heading{
-    width: 370px;
-    background:url(../../images/apps/sprite.png) no-repeat -1008px -321px;
-    height:150px;
+    background:url(../../images/apps/title_featured.png) no-repeat;
+    background-size:contain;
+    width: 300px;
+    height: 200px;
     margin: 0 auto;
     color: #ff3300;
     font-size: 0;
@@ -300,13 +292,36 @@ a.zy_music_next{
     position: relative;
     top:30px;
 }
-.zy_featured_right{
-    width: 385px;
-    height: 700px;
-    background: url(../../images/apps/sprite.png) no-repeat -2px -1284px;
+
+.zy_featured_left{
+    width: 700px;
+    height: 200px;
+    background: url(../../images/apps/featured_calligraphy.svg) no-repeat;
+    background-size: contain;
     position: absolute;
-    right:-190px;
+    left: -350px;
+    top:200px;
+    opacity: .2;
+}
+.zy_featured_right{
+    width: 700px;
+    height: 200px;
+    background: url(../../images/apps/featured_calligraphy.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -350px;
+    top:500px;
+    opacity: .2;
+}
+.zy_featured::after{
+    content: "";
+    width:100%;
+    height:100px;
+    position: absolute;
     bottom: -100px;
+    left: 0;
+    background: url(../../images/apps/featured_bottom.png) no-repeat center;
+    background-size: cover;
 }
 .zy_featured_articles{
     margin:50px 0;
@@ -320,53 +335,79 @@ a.zy_music_next{
     overflow:hidden;
 }
 .zy_featured_articles li{
-    display:inline;
     list-style:none;
-}
-.zy_featured_articles .abstract{
+    font-size: 0;
     display:inline-block;
     margin:0 1%;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
     box-sizing:border-box;
     width:20%;
-    height:460px;
+    height:400px;
     background:#fff;
     cursor:pointer;
     position:relative;
     vertical-align: top;
-    box-shadow: 0px 0px 5px #444;
-    -webkit-box-shadow: 0px 0px 5px #444;
-    -moz-box-shadow: 0px 0px 5px #444;
-    -ms-box-shadow: 0px 0px 5px #444;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.zy_featured_articles li .thumb{
+    perspective: 1000px;
+    overflow: hidden;
 }
 .zy_featured_articles li .thumb img{
     width:100%;
+    transition: all 0.3s ease-out;
+    transform: translateZ(100px);
+}
+.zy_featured_articles li:hover .thumb img{
+    transform: translateZ(0);
+}
+.zy_featured_articles li .info{
+    padding: 20px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: #fff;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+.zy_featured_articles li:hover .info{
+    background: #e38230;
+    height:60%;
 }
 .zy_featured_articles li .title{
     font-family: "Microsoft YaHei";
     width:100%;
-    font-size:24px;
+    font-size:20px;
     overflow:hidden;
     font-weight: bold;
     color:#333;
+    box-sizing: border-box;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.zy_featured_articles li:hover .title{
+    color: #fff;
+}
 .zy_featured_articles li .excerpt{
     text-align: left;
     color:#666;
-    height: 63px;
+    height: 4.5em;
     overflow: hidden;
-    font-size: 12px;
-    line-height: 21px;
-    margin: 10px 20px;
-    padding-top: 20px;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin: 0;
+    padding-top: 10px;
     border-top:1px solid #ccc;
+    text-align: center;
 }
-
+.zy_featured_articles li:hover .excerpt{
+    color:#fff;
+    border-top:1px solid #fff;
+}
 /*-----------------------------------------------------印象、物语、小结统一的副标题z-index:12--*/
 /*主题背景*/
 .zy_section_bg{
@@ -397,16 +438,16 @@ a.zy_music_next{
     width: 50px;
     height: 50px;
     top:50%;
-    margin-top:50px;
+    transform: translateY(-50%);
     z-index: 1;
     font-size:0;
     text-indent:-9999px;
     cursor:pointer;
     opacity: 0;
-    -webkit-transition:opacity 0.4s ease-out;
-    -moz-transition:opacity 0.4s ease-out;
-    -ms-transition:opacity 0.4s ease-out;
     transition:opacity 0.4s ease-out;
+}
+.zy_contain_prev.active,.zy_contain_next.active{
+    opacity: 1;
 }
 .zy_contain_prev{
     background: url(../../images/apps/sprite.png) no-repeat -1094px -839px;
@@ -426,7 +467,7 @@ a.zy_music_next{
 .zy_list_container{
     position: relative;
     margin: auto;
-    height: 500px;
+    height: 100%;
     overflow: hidden;
     /*border-top: #ccc 1px solid;
     border-bottom: #ccc 1px solid;*/
@@ -440,45 +481,40 @@ a.zy_music_next{
 /*--z-index:1--*/
 .zy_landscape_heading{
     font-size:0;
-    background:url(../../images/apps/sprite.png) no-repeat -1270px -783px;
-    width:730px;
-    height:175px;
+    background: url(../../images/apps/title_landscape.png) no-repeat;
+    background-size:contain;
+    width: 400px;
+    height: 200px;
     position:absolute;
-    top:270px;
+    top:200px;
     left:50%;
-    margin-left:-365px;
+    transform: translateX(-50%);
     z-index:1;
 }
 .zy_landscape_left{
-    width: 620px;
-    height: 470px;
-    background: url(../../images/apps/sprite.png) no-repeat -264px -654px;
+    width: 200%;
+    height: 200px;
+    background: url(../../images/apps/landscape_right.png) repeat-x;
     position: absolute;
     left:0px;
-    bottom: -200px;
+    top: 50px;
+    transform: translateX(-25%);
 }
 .zy_landscape_right{
-    min-width: 1280px;
-    width: 100%;
-    height: 595px;
-    background: url(../../images/apps/landscape_right.png) no-repeat center right;
+    width: 200%;
+    height: 200px;
+    background: url(../../images/apps/landscape_right.png) repeat-x;
     position: absolute;
-    left:0px;
-    bottom: -200px;
+    right:0px;
+    bottom: 50px;
+    transform: translateX(25%);
 }
 .zy_landscape .zy_subheading{
-    background: url(../../images/apps/sprite.png) no-repeat -264px -1126px;
-    width: 385px;
-    height: 155px;
-    font-size: 0px;
-    margin: 30px auto;
+    font-size: 0;
 }
 .zy_landscape_contain{
     width: 100%;
     height:800px;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
     box-sizing:border-box;
     background-image: url(../../images/default_bg/bg_artifact.jpg);
     background-size: 100% 100%;
@@ -487,33 +523,29 @@ a.zy_music_next{
     position: relative;
 	z-index:8;
 }
-.zy_landscape_contain .zy_contain_prev,.zy_landscape_contain .zy_contain_next{
-    margin-top: -50px;
-}
 .zy_landscape_contain>.zy_list_container{
-    height: 600px;
+    height: 800px;
 }
 
 .zy_landscape_list,.zy_people_list,.zy_artifact_list,.zy_community_list{
     margin:0;
+    padding: 0;
     height:100%;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
     box-sizing:border-box;
     font-size:0;
     position: absolute;
     left: 0;
-    padding:20px 0px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.zy_landscape_list{
+    height: 300px;
 }
 .zy_landscape_article,.zy_artifact_article{
     display: inline-block;
     width: 300px;
     height: 300px;
     white-space: normal;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
     box-sizing:border-box;
     margin:0 10px;
     position:relative;
@@ -535,19 +567,13 @@ a.zy_music_next{
     width:100%;
     height:300px;
     overflow:hidden;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
     box-sizing:border-box;
     padding:20px 20px 30px 20px;
-    background:#fff;
+    background:#e38230;
     opacity: .95;
     position:absolute;
     top:300px;
     left:0;
-    -webkit-transition:all 0.4s ease-out;
-    -moz-transition:all 0.4s ease-out;
-    -ms-transition:all 0.4s ease-out;
     transition:all 0.4s ease-out;
 }
 .zy_landscape_article:hover>.zy_article_abstract,.zy_artifact_article:hover>.zy_article_abstract{
@@ -557,28 +583,26 @@ a.zy_music_next{
     font-family: "Microsoft YaHei";
     font-size:24px;
     text-align:center;
-    color:#333;
+    color:#fff;
     font-weight: bold;
 }
 .zy_landscape_article>.zy_article_abstract p,.zy_artifact_article>.zy_article_abstract p{
-    font-size:12px;
+    font-size:14px;
     line-height:2em;
     margin:auto;
-    color:#333;
-    width:260px;
-    height: 72px;
+    color:#fff;
+    height: 8em;
     overflow: hidden;
 }
 .zy_landscape_article>.zy_article_abstract p.zy_article_date,.zy_artifact_article>.zy_article_abstract p.zy_article_date{
     font-size:12px;
-    border-top:#333 1px solid;
+    border-top:#fff 1px solid;
     padding-top:8px;
     position:static;
     text-align:center;
-    width:260px;
     margin:auto;
     display:block;
-    color:#000;
+    color:#fff;
     height: auto;
 }
 
@@ -587,16 +611,20 @@ a.zy_music_next{
 .zy_people{
     position:relative;
     z-index:3;
+    font-size: 0;
 
 }
-.zy_people_left{
-    width: 260px;
-    height: 1280px;
-    background: url(../../images/apps/sprite.png) no-repeat -2px -2px;
+.zy_people::after{
+    content: "";
+    width: 100%;
+    height: 100px;
     position: absolute;
-    left:0px;
-    bottom: -600px;
+    bottom: -100px;
+    left: 0;
+    background: url(../../images/apps/humanity_bottom.png) no-repeat center;
+    background-size: cover;
 }
+/*
 .zy_people_top{
     min-width:1280px;
     width:100%;
@@ -606,37 +634,46 @@ a.zy_music_next{
     top: -180px;
     left:0px;
 }
-.zy_people_right{
-    min-width: 1280px;
-    width: 100%;
-    height: 420px;
-    background: url(../../images/apps/humanity_right.png) no-repeat center right;
+*/
+.zy_people_left{
+    width: 200%;
+    height: 200px;
+    background: url(../../images/apps/humanity_left.png) repeat-x;
     position: absolute;
     left:0px;
-    bottom: -380px;
+    top: 60px;
+    transform: translateX(-25%);
+    opacity: .3;
+}
+.zy_people_right{
+    width: 200%;
+    height: 200px;
+    background: url(../../images/apps/humanity_left.png) repeat-x;
+    position: absolute;
+    right:0px;
+    bottom: 60px;
+    transform: translateX(25%);
+    opacity: .3;
 }
 /*--z-index:1--*/
 .zy_people_heading{
     font-size:0;
-    text-indent:-9999px;
-    background:url(../../images/apps/sprite.png) no-repeat -965px -204px;
-    width:555px;
-    height:115px;
+    background: url(../../images/apps/title_humanity.png) no-repeat;
+    background-size:contain;
+    width: 400px;
+    height: 200px;
     position:absolute;
-    top:300px;
+    top:200px;
     left:50%;
-    margin-left:-277.5px;
+    transform: translateX(-50%);
     z-index:1;
 }
 .zy_people .zy_subheading{
-    background: url(../../images/apps/sprite.png) no-repeat -968px -635px;
-    width: 300px;
-    height: 150px;
-    font-size: 0px;
-    margin: 30px auto;
-    position: relative;
+    font-size: 0;
 }
-
+.zy_people_list{
+    height: 450px;
+}
 
 /*---------人文和社区共用部分--------*/
 .zy_people_contain,.zy_community_contain{
@@ -646,14 +683,12 @@ a.zy_music_next{
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     box-sizing:border-box;
-    background: url(../../images/default_bg/bg_humanity.jpg) no-repeat;
-    background-size: 100% 100%;
+    background: #112433;
     /* margin-top: 360px;*/
     white-space: nowrap;
     overflow: hidden;
     position: relative;
 	z-index:8;
-    padding: 5px 5px 10px 5px;
 }
 .zy_people_article,.zy_community_article{
     display: inline-block;
@@ -691,7 +726,7 @@ a.zy_music_next{
 .zy_people_article>.zy_article_abstract h2,.zy_community_article>.zy_article_abstract h2{
     font-family: "Microsoft YaHei";
     font-size:24px;
-    color:#b4a797;
+    color:#e38230;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -700,7 +735,7 @@ a.zy_music_next{
     font-size:12px;
     line-height:2em;
     margin:5px 0;
-    color:#b4a797;
+    color:#e38230;
     height: 96px;
     overflow: hidden;
 }
@@ -727,50 +762,45 @@ a.zy_music_next{
 /*--z-index:1--*/
 .zy_artifact_heading{
     font-size:0;
-    text-indent:-9999px;
-    background:url(../../images/apps/sprite.png) no-repeat -1355px -568px;
-    width:685px;
-    height:180px;
+    background: url(../../images/apps/title_artifact.png) no-repeat;
+    background-size:contain;
+    width: 400px;
+    height: 200px;
     position:absolute;
-    top:260px;
+    top:200px;
     left:50%;
-    margin-left:-342.5px;
+    transform: translateX(-50%);
     z-index:1;
 }
 .zy_artifact_left{
-    width: 125px;
-    height: 345px;
-    background: url(../../images/apps/sprite.png) no-repeat -596px -2px;
-    position: absolute;
-    left:100px;
-    top: 150px;
-}
-.zy_artifact_bottom{
-    width: 505px;
-    height: 190px;
-    background: url(../../images/apps/sprite.png) no-repeat -1522px -204px;
+    width: 300px;
+    height: 300px;
+    background: url(../../images/apps/artifact_top.svg) no-repeat;
+    background-size: contain;
     position: absolute;
     left:50%;
-    margin-left: -252.5px;
-    bottom: -60px;
+    margin-left:-150px;
+    top: 50px;
+    opacity: .2;
+    animation: spin 60s infinite linear reverse;
+}
+.zy_artifact_bottom{
+    width: 1200px;
+    height: 300px;
+    background: url(../../images/apps/artifact_bottom.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: -100px;
+    opacity: .2;
 }
 .zy_artifact .zy_subheading{
-    background: url(../../images/apps/sprite.png) no-repeat -1707px -2px;
-    width: 320px;
-    height: 160px;
-    font-size: 0px;
-    margin: 30px auto;
-}
-.zy_artifact_contain>.zy_list_container{
-    height: 440px;
+    font-size: 0;
 }
 .zy_artifact_contain{
     width: 100%;
     height: 800px;
-    padding:20px ;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
     box-sizing:border-box;
     background: url(../../images/default_bg/bg_artifact.jpg) no-repeat;
     background-size: 100% 100%;
@@ -784,53 +814,59 @@ a.zy_music_next{
     margin-top: -10px;
 }
 
-
+.zy_artifact_list{
+    height: 300px;
+}
 
 /*-----------------------------------------------------------------------------社区z-index:1--*/
 .zy_community{
     position:relative;
     z-index:1;
+    margin-bottom: 290px;
+}
+.zy_community::after{
+    content: "";
+    width:100%;
+    height: 290px;
+    background: url(../../images/apps/community_bottom.jpg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: -290px;
+    left: 0;
 }
 .zy_community_contain{
-    height: 1100px;
     background: url(../../images/default_bg/bg_community.jpg) no-repeat;
     background-size: 100% 100%;
 }
 /*--z-index:1--*/
 .zy_community_heading{
     font-size:0;
-    text-indent:-9999px;
-    background:url(../../images/apps/sprite.png) no-repeat -1380px -396px;
-    width:635px;
-    height:170px;
+    background: url(../../images/apps/title_community.png) no-repeat;
+    background-size:contain;
+    width: 400px;
+    height: 200px;
     position:absolute;
-    top:275px;
+    top:200px;
     left:50%;
-    margin-left:-317.5px;
+    transform: translateX(-50%);
     z-index:1;
 }
 .zy_community_bottom{
-    min-width: 1280px;
     width:100%;
-    height: 685px;
-    background: url(../../images/apps/community_bottom.png) no-repeat;
-    background-size: 100% 100%;
+    height: 400px;
+    background: url(../../images/apps/community_bottom_flag.png) no-repeat;
+    background-size: contain;
     position: absolute;
     left:0px;
     bottom: -200px;
 }
 .zy_community .zy_subheading{
-    background: url(../../images/apps/sprite.png) no-repeat -1008px -473px;
-    width: 345px;
-    height: 160px;
-    font-size: 0px;
-    margin: 30px auto;
-}
-.zy_community_contain .zy_contain_next,.zy_community_contain .zy_contain_prev{
-    top:35%;
+    font-size: 0;
 }
 
-
+.zy_community_list{
+    height:450px;
+}
 /*------------------------------------footer部分--------------------------*/
 .zy_footer{
     width: 100%;
@@ -845,7 +881,7 @@ a.zy_music_next{
 .zy_project{
     height: auto;
     padding:100px 0px 50px 0px;
-    background: url(../../images/default_bg/bg_backgroud.jpg) no-repeat;
+    background: #112433;
     background-size: 100% 100%;
 }
 .zy_project_info{
@@ -860,33 +896,38 @@ a.zy_music_next{
     vertical-align: top;
 }
 .zy_project_title{
-	height:40px;
-    width: 140px;
 	font-size:0;
 	text-indent:-9999px;
-	background:url(../../images/apps/sprite.png) no-repeat -1380px -321px;
+	background:url(../../images/apps/title_background.png) no-repeat;
+    background-size:contain;
+    width: 300px;
+    height: 200px;
 	margin:auto;
+    display: none;
 }
 .zy_project_info p{
     color: #e6e6e6;
     font-size: 14px;
     line-height: 2em;
+    opacity: .7;
 }
 .zy_project_sponsors{
-	margin:0px 5% 0px 0px;
+	margin:0 5% 0px 0px;
 	padding-left:10%;
     width: 35%;
     display: inline-block;
     position: relative;
+    opacity: .7;
 }
 .zy_bottom_logo{
     width: 100%;
     margin: 10px auto 10px auto;
 }
 .zy_bottom_logo a{
-    width:340px;
-    height: 200px;
-    background: url(../../images/apps/sprite.png) no-repeat -1365px -2px;
+    width:100%;
+    height: 150px;
+    background: url(../../images/apps/logo.png) no-repeat center;
+    background-size: contain;
     display: block;
     margin:auto;
     font-size: 0px;
@@ -894,12 +935,17 @@ a.zy_music_next{
 .zy_project_sponsors ul{
     margin: auto;
     text-align: center;
-    padding: 5px 0px 5px 0px;
+    padding: 5px 0px;
     font-size: 0px;
+    width: 100%;
+    white-space: nowrap;
+}
+.zy_project_sponsors li{
+    padding:0 10px;
 }
 .zy_project_sponsors ul li{
     display: inline-block;
-	padding:0 20px;
+    box-sizing: border-box;
 }
 .zy_project_sponsors ul li:first-child{
     border-right:1px solid #fff;
@@ -907,27 +953,36 @@ a.zy_music_next{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-.zy_project_sponsors .zy_logo_mkmj,.zy_project_sponsors .zy_logo_hnusd{
-	width:150px;
-	height:53px;
+.zy_project_sponsors ul li a{
+	width:100%;
+	height:50px;
 	font-size:0;
 	text-indent:-9999px;
 	margin:auto;
 	display:block;
 }
 .zy_project_sponsors .zy_logo_mkmj{
-    background:url(../../images/apps/sprite.png) no-repeat -2px -1986px;
+    width:50%;
+}
+.zy_project_sponsors .zy_logo_mkmj a{
+    background:url(../../images/apps/meikemeijie_logo.png) no-repeat center;
+    background-size: contain;
 }
 .zy_project_sponsors .zy_logo_hnusd{
-	background:url(../../images/apps/sprite.png) no-repeat -154px -1986px;
+    width:50%;
+}
+.zy_project_sponsors .zy_logo_hnusd a{
+	background:url(../../images/apps/HNU_logo.png) no-repeat center;
+    background-size: contain;
 }
 .zy_copyright{
-    background: url(../../images/default_bg/bg_backgroud.jpg) no-repeat;
+    background: #000;
     background-size: 100% auto;
 	padding:50px 0;
 	text-align:center;
 	color:#666;
 	font-size:0.7em;
+    margin-top:-1px;
 	}
 .zy_app_download{
 	background:#333;
@@ -1050,7 +1105,7 @@ a.zy_music_next{
 	bottom:30px;
 	left:50%;	
 	margin-left:-60px;
-	color:#ca2e3a;
+	color:#e38230;
 	font-weight:bold;
 	cursor:pointer;
 	}
@@ -1093,7 +1148,7 @@ a.zy_music_next{
 .zy_loading_spinner_layer{
     width: 50px;
     height: 50px;
-    background: url(../../images/apps/sprite.png) no-repeat -1042px -839px;
+    background: url(../../images/apps/loading.png) no-repeat;
     -webkit-animation: spin 4s infinite linear reverse;
     -moz-animation: spin 4s infinite linear reverse;
     animation: spin 4s infinite linear reverse;
@@ -1126,7 +1181,7 @@ a.zy_music_next{
 }
 /* 滚动条滑块 */
 .zy_article_content::-webkit-scrollbar-thumb {
-    background: #ca2e3a;
+    background: #e38230;
 }
 .zy_article_content_close{
 	cursor:pointer;
@@ -1156,7 +1211,7 @@ a.zy_music_next{
 }
 /* 滚动条滑块 */
 .zy_show_load_container::-webkit-scrollbar-thumb {
-    background: #ca2e3a;
+    background: #e38230;
 }
 .zy_show_load_container img{
 	margin:auto;
@@ -1257,7 +1312,7 @@ a.zy_music_next{
 .article-content-post::first-letter{
     display:inline-block;
     font-size:32px;
-    color:#ca2e3a;
+    color:#e38230;
 }
 .article-content-post img{
     width:100%;
@@ -1266,7 +1321,7 @@ a.zy_music_next{
 	margin:0 10px;
 	}
 .article-content-post figcaption{
-	color:#ca2e3a;
+	color:#e38230;
 	font-size:12px;
 	font-style:italic;
 	line-height:1.4em;
@@ -1334,7 +1389,7 @@ a.zy_music_next{
 .article-abstract-slide::first-letter{
     display:inline-block;
     font-size:32px;
-    color:#ca2e3a;
+    color:#e38230;
 }
 .allslides-slide{
     display:block;
@@ -1380,24 +1435,9 @@ a.zy_music_next{
 }
 
 /*-------------------响应式-------------------------*/
-@media screen and (max-width: 1100px) {
-    .zy_project_sponsors li{
-        padding:5px 0px 5px 0px;
-    }
-    .zy_project_sponsors ul li:first-child{
-        border-bottom:1px solid #444;
-        border-right: none;
-    }
-    .zy_bottom_logo a{
-        width:240px;
-        height: 140px;
-        background: url(../../images/apps/sprite.png) no-repeat -723px -204px;
-    }
-    .zy_nav ul{
-        width:100%;
-    }
-    .zy_featured_articles li .excerpt{
-        height: 126px;
+@media screen and (min-width: 2150px) {
+    .zy_featured_articles li .title{
+        display: none;
     }
 }
 @media screen and (min-width: 1900px) {
@@ -1405,9 +1445,17 @@ a.zy_music_next{
         display: none;
     }   
 }
-
-@media screen and (min-width: 2150px) {
-    .zy_featured_articles li .title{
-        display: none;
+@media screen and (max-width: 1024px) {
+    .zy_contain_prev,.zy_contain_next{
+        opacity: 1;
+    }
+    .zy_project_sponsors li{
+    }
+    .zy_nav ul{
+        width:100%;
+    }
+    .zy_featured_articles li .excerpt{
+        
     }
 }
+

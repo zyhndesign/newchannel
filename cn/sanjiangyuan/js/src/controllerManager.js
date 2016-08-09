@@ -10,13 +10,11 @@ ZY.controllerManager=(function(){
 
     var rect="";//clip的rect值
     var oldScrollTop=0;
-    var featuredBottom=-100;
-    var landscapeBottom=-200;
-    var peopleTop=-180;
-    var peopleLeftBottom=-600;
-    var peopleRightBottom=-380;
-    var artifactLeftTop=150;
-    var artifactBottomBottom=-60;
+    var featuredMovement=-350;
+    var landscapeMovement=0;
+    /*var peopleTop=-180;*/
+    var peopleMovement=0;
+    var artifactMovement=0;
     var communityBottomBottom=-200;
     var landScapeBG=$("#zy_landscape_bg .zy_theme_bg_content");
     var peopleBG=$("#zy_people_bg .zy_theme_bg_content");
@@ -290,11 +288,11 @@ ZY.controllerManager=(function(){
             var prevBtn=targetContain.find(".zy_contain_prev");
 
             targetContain.hover(function(){
-                prevBtn.css("opacity",1);
-                nextBtn.css("opacity",1);
+                prevBtn.addClass("active")
+                nextBtn.addClass("active")
             },function(){
-                prevBtn.css("opacity",0);
-                nextBtn.css("opacity",0);
+                prevBtn.removeClass("active")
+                nextBtn.removeClass("active")
             });
         },
 
@@ -614,134 +612,72 @@ ZY.controllerManager=(function(){
                 if(sy>oldScrollTop){
 
                     //向下滚动推荐层的人物变动
-                    if(sy>=featuredY-300){
-                        if(featuredBottom+9<=0){
-                            featuredLeftEl.css("bottom",featuredBottom+9);
-                            featuredRightEl.css("bottom",featuredBottom+9);
-                            featuredBottom+=9;
+                    if(sy>360){
+                            featuredLeftEl.css("left","+=2");
+                            featuredRightEl.css("right","+=2");
+                            featuredMovement+=2;
                         }
-                    }
 
-                    //向下滚动社区动画
-                    if(sy>landScapeY+500){
-                        if(landscapeBottom+18<=0){
-                            landscapeLeftEl.css("bottom",landscapeBottom+18);
-                            landscapeRightEl.css("bottom",landscapeBottom+18);
-                            landscapeBottom+=18;
-                        }
+                    //向下滚动风景动画
+                    if(sy>landScapeY+360){
+                        landscapeLeftEl.css("left","+=2");
+                        landscapeRightEl.css("right","+=2");
                     }
 
                     //向下滚动人文动画
                     if(sy>peopleY){
-                        if(peopleTop-10>=-280){
+                        /*if(peopleTop-10>=-280){
                             peopleTopEl.css("top",peopleTop-10);
                             peopleTop-=10;
-                        }
+                        }*/
 
-                        if(peopleLeftBottom+15<=-400){
-                            peopleLeftEl.css("bottom",peopleLeftBottom+15);
-                            peopleLeftBottom+=15;
-                        }
-
-                        if(sy>peopleY+800){
-                            if(peopleRightBottom+15<=-280){
-                                peopleRightEl.css("bottom",peopleRightBottom+15);
-                                peopleRightBottom+=15;
-                            }
-                        }
+                        peopleLeftEl.css("left","+=2");
+                        peopleRightEl.css("right","+=2");
 
                     }
 
                     //向下滚动物语变化
-                    if(sy>artifactY+300){
-
-                        if(artifactLeftTop-10>=50){
-                            artifactLeftEl.css("top",artifactLeftTop-10);
-                            artifactLeftTop-=10;
-                        }
-
-                        if(sy>artifactY+800){
-                            if(artifactBottomBottom+10<=40){
-                                artifactBottomEl.css("bottom",artifactBottomBottom+10);
-                                artifactBottomBottom+=10;
-                            }
-                        }
+                    if(sy>artifactY+400){
+                        /*artifactLeftEl.css("left","+=2");*/
+                        artifactBottomEl.css("bottom","+=1");
                     }
 
                     //向下滚动社区动画
                     if(sy>communityY+800){
-                        if(communityBottomBottom+15<=0){
-                            communityBottomEl.css("bottom",communityBottomBottom+15);
-                            communityBottomBottom+=15;
-                        }
+                        communityBottomEl.css("bottom","+=2");
                     }
                 }else{
 
-                    //向上滚动推荐层的人物变动
-                    if(sy<landScapeY){
-
-                        if(featuredBottom-9>=-100){
-                            featuredLeftEl.css("bottom",featuredBottom-9);
-                            featuredRightEl.css("bottom",featuredBottom-9);
-                            featuredBottom-=9;
-                        }
+                    //向上滚动推荐层的视差滚动
+                    if(sy>=featuredY-360){
+                        featuredLeftEl.css("left","-=2");
+                        featuredRightEl.css("right","-=2");
                     }
 
                     //向上滚动风景动画
                     if(sy<peopleY){
-                        if(landscapeBottom-18>=-200){
-                            landscapeLeftEl.css("bottom",landscapeBottom-18);
-                            landscapeRightEl.css("bottom",landscapeBottom-18);
-                            landscapeBottom-=18;
-                        }
+                        landscapeLeftEl.css("left","-=2");
+                        landscapeRightEl.css("right","-=2");
                     }
 
                     //向上人文动画
-                    if(sy<peopleY+1600){
-                        if(sy<peopleY+1200){
-                            if(peopleTop+10<=-180){
-                                peopleTopEl.css("top",peopleTop+10);
-                                peopleTop+=10;
-                            }
-                        }
-
-                        if(sy<peopleY+1800){
-                            if(peopleLeftBottom-15>=-600){
-                                peopleLeftEl.css("bottom",peopleLeftBottom-15);
-                                peopleLeftBottom-=15;
-                            }
-
-                            if(peopleRightBottom-15>=-380){
-                                peopleRightEl.css("bottom",peopleRightBottom-15);
-                                peopleRightBottom-=15;
-                            }
-                        }
+                    if(sy<peopleY+1520){
+                        peopleLeftEl.css("left","-=2");
+                        peopleRightEl.css("right","-=2");
 
 
                     }
 
                     //向上物语动画
                     if(sy<artifactY+1600){
-                        if(sy<artifactY+1400){
-                            if(artifactLeftTop+10<=150){
-                                artifactLeftEl.css("top",artifactLeftTop+10);
-                                artifactLeftTop+=10;
-                            }
-                        }
-
-                        if(artifactBottomBottom-10>=-60){
-                            artifactBottomEl.css("bottom",artifactBottomBottom-10);
-                            artifactBottomBottom-=10;
-                        }
+                        /*artifactLeftEl.css("left","-=2");*/
+                        artifactBottomEl.css("bottom","-=1");
 
                     }
 
                     //向上滚动社区动画
                     if(sy<footerY){
-                        if(communityBottomBottom-15>=-200){
-                            communityBottomEl.css("bottom",communityBottomBottom-15);
-                            communityBottomBottom-=15;
-                        }
+                        communityBottomEl.css("bottom","-=2");
                     }
                 }
             }

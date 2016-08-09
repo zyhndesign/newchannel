@@ -3,10 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="fragment" content="!">
-    <meta name="description" content="以酉阳的国家级非物质文化遗产摆手舞、阳戏及原生态民歌为研究对象，通过数字化的影像记录与网络平台构建、可视化与交互设计、互动参与式的社区活动等方法，
-                探索基于网络的、可持续、开放的文化生态保护与发展模式，为地域传统文化的传播、创新及产业化提供设计支持" />
-    <meta name="keywords" content="社会创新, 新通道, 文化产品创新, 文化产品设计，酉阳，酉歌行" />
-    <title>酉歌行</title>
+    <meta name="description" content="“三江源”设计与社会创新工作营是在美克美家的支持下，由湖南大学、青海省三江源生态环境保护协会、英国皇家艺术学院、米兰理工大学联合开展的跨学科联合设计与社会创新活动。在社区研究的方法上了解当地的宗教、文化、物产以及人文资源，针对灾后的社区结构及社会资本变化，选择文化与设计创新可以介入的社会需求。对囊谦黑陶、安冲藏刀等非物质文化遗产进行主题影像记录与创作，对当地水源头的水质情况进行监测并初步建立了水质监测系统，探访了沿途代表宗教建筑并对藏族民居和聚落进行研究。传播和保护了当地的非物质文化遗产，探索了基于可持续和开放的文创公益及社会创新网络。" />
+    <meta name="keywords" content="社会创新, 新通道, 文化产品创新, 文化产品设计，三江源" />
+    <title>三江源</title>
     <!--<link rel="stylesheet" type="text/css" href="css/apps/index.min.css"/>-->
     <link rel="stylesheet" type="text/css" href="css/apps/index.css"/>
 
@@ -15,7 +14,7 @@
 <body>
 
 <!--播放器-->
-<section class="zy_music_section" id="zy_music_section">
+<section class="zy_music_section zy_hidden" id="zy_music_section">
     <div id="zy_music_player" class="zy_player zy_hidden">
         <p id="zy_music_title" class="zy_music_title">特色音乐</p>
         <span class="zy_separate_left">分割线</span>
@@ -62,7 +61,8 @@
     <div id="zy_top_post_poster" class="zy_top_post_poster">
     	<img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg"/>
     </div>
-
+    
+    
     <h2 class="zy_logo">logo</h2>
     <span class="zy_dropdown" data-target="#zy_featured">向下</span>
 </section>
@@ -77,22 +77,23 @@
         {@each top_posts as post,index}
             {@if index<3}
                 <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
-                    <div class="abstract">
+                    
                         {@if post.hasVideo}
                             <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
                         {@else}
                             <div class="thumb"><img src="${post.thumb}" /></div>
                         {@/if}
-                        <h3 class="title">${post.post_title}</h3>
-                        <p class="excerpt">${post.post_excerpt}</p>
-                    </div>
+                        <div class="info">
+                            <h3 class="title">${post.post_title}</h3>
+                            <p class="excerpt">${post.post_excerpt}</p>
+                        </div>
                 </li>
             {@/if}
         {@/each}
 
     </script>
 	<ul id="zy_featured_articles" class="zy_featured_articles">
-
+    
     </ul>
 
 </section>
@@ -280,31 +281,19 @@
         <div class="zy_project_sponsors">
             <h1 class="zy_bottom_logo"><a>新通道</a></h1>
             <ul>
-                <li><a class="zy_logo_mkmj" href="http://www.markorhome.com/" target="_blank">美克美家</a></li>
-                <li><a class="zy_logo_hnusd" href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
+                <li class="zy_logo_mkmj"><a href="http://www.markorhome.com/" target="_blank">美克美家</a></li>
+                <li class="zy_logo_hnusd"><a href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
             </ul>
         </div>
         <div class="zy_project_info">
             <h2 class="zy_project_title">项目背景</h2>
             <p>
-                “酉歌行”设计与社会创新夏令营是在酉阳县委领导的支持下，由湖南大学、四川美术学院、米兰理工大学、
-                美克美家等单位联合开展的跨学科联合设计与社会创新活动。活动以酉阳的国家级非物质文化遗产摆手舞、
-                阳戏及原生态民歌为研究对象，通过数字化的影像记录与网络平台构建、可视化与交互设计、互动参与式的社区活动等方法，
-                探索基于网络的、可持续、开放的文化生态保护与发展模式，为地域传统文化的传播、创新及产业化提供设计支持。
-                活动保护和传播了酉阳非物质文化遗产，丰富了当地村民的文化生活，增进他们对本土文化的自豪感。
+                “三江源”设计与社会创新工作营是在美克美家的支持下，由湖南大学、青海省三江源生态环境保护协会、英国皇家艺术学院、米兰理工大学联合开展的跨学科联合设计与社会创新活动。在社区研究的方法上了解当地的宗教、文化、物产以及人文资源，针对灾后的社区结构及社会资本变化，选择文化与设计创新可以介入的社会需求。对囊谦黑陶、安冲藏刀等非物质文化遗产进行主题影像记录与创作，对当地水源头的水质情况进行监测并初步建立了水质监测系统，探访了沿途代表宗教建筑并对藏族民居和聚落进行研究。传播和保护了当地的非物质文化遗产，探索了基于可持续和开放的文创公益及社会创新网络。
 
             </p>
         </div>
     </div>
 
-    <div class="zy_app_download zy_hidden">
-        <h2>酉歌行</h2>
-        <h3>APP下载</h3>
-        <ul class="zy_app_download_list">
-            <li><a href="#" title="适合安卓手机的APP" class="zy_android_phone_app">适合安卓手机的APP</a></li>
-            <li><a href="#" title="适合安卓平板的APP" class="zy_android_pad_app">适合安卓平板的APP</a></li>
-        </ul>
-    </div>
     <div class="zy_copyright">
         <p>© 湖南省工业设计协会 版权所有</p>
         <p>中意工业设计（湖南）有限公司 设计开发</p>
