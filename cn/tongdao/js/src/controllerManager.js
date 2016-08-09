@@ -15,7 +15,7 @@ ZY.controllerManager=(function(){
     var artifactBG=$("#zy_artifact_bg .zy_theme_bg_content");
     var communityBG=$("#zy_community_bg .zy_theme_bg_content");
 
-
+    var topPost=$("#zy_top_post");
     var menu=$("#zy_nav");
 
     //进入页面时nav为非fixed状态，滚动到下面后变成fiexd，不占高度，所以要减去
@@ -501,10 +501,12 @@ ZY.controllerManager=(function(){
             if(sy>=topH){
                 if(!menu.hasClass("zy_nav_active")){
                     menu.addClass("zy_nav_active");
+                    topPost.addClass("active_nav")
                 }
             }else{
                 if(menu.hasClass("zy_nav_active")){
                     menu.removeClass("zy_nav_active");
+                    topPost.removeClass("active_nav")
                 }
             }
 
@@ -535,7 +537,7 @@ ZY.controllerManager=(function(){
              *注意：背景图的高度是根据宽度变化的，可能会大于720，最大为一屏幕高，
              *720-（sy-landScapey)+100 可能大于一屏幕高，并不影响显示，因为当clip的显示高度大于实际高度时，只会显示成实际高度
              */
-            if(sy>landScapeY-winH && sy<=landScapeY+720){
+            if(sy>landScapeY-winH && sy<=landScapeY+800){
                 if(!ZY.config.deviceCode.iOS){
                     landScapeBG.addClass("zy_bg_fixed");
 
@@ -566,7 +568,7 @@ ZY.controllerManager=(function(){
                 }
             }
 
-            if(sy>peopleY-winH && sy<=peopleY+720){
+            if(sy>peopleY-winH && sy<=peopleY+800){
                 if(!ZY.config.deviceCode.iOS){
                     peopleBG.addClass("zy_bg_fixed");
 
@@ -594,7 +596,7 @@ ZY.controllerManager=(function(){
                 }
             }
 
-            if(sy>artifactY-winH && sy<=artifactY+720){
+            if(sy>artifactY-winH && sy<=artifactY+800){
                 if(!ZY.config.deviceCode.iOS){
                     artifactBG.addClass("zy_bg_fixed");
 
@@ -623,7 +625,7 @@ ZY.controllerManager=(function(){
                 }
 
             }
-            if(sy>communityY-winH && sy<=communityY+720){
+            if(sy>communityY-winH && sy<=communityY+800){
                 if(!ZY.config.deviceCode.iOS){
                     communityBG.addClass("zy_bg_fixed");
 
