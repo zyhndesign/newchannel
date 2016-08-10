@@ -557,6 +557,7 @@ a{
     overflow: hidden;
     position: relative;
 	z-index:8;
+    margin-top:-1px;
 }
 .zy_landscape_contain>.zy_list_container{
     border:none;
@@ -621,6 +622,7 @@ a{
 .zy_people{
     position:relative;
     z-index:3;
+    margin-top: -1px;
 }
 .zy_people_top_bg:before{
     content: "";
@@ -660,7 +662,8 @@ a{
 .zy_people_bottom_bg:after{
     content: "";
     background: url(../../images/apps/mask_humanity_bottom.png) no-repeat;
-    width:200px;
+    background-size: cover;
+    width:201px;
     height:226px;
     position: absolute;
     bottom:0px;
@@ -816,7 +819,8 @@ a{
 .zy_artifact_bottom_bg:after{
     content:"";
     background: url(../../images/apps/mask_artifacts_bottom.png) no-repeat;
-    width:175px;
+    background-size: cover;
+    width:176px;
     height:234px;
     position: absolute;
     bottom:0px;
@@ -963,7 +967,8 @@ a{
 .zy_community_top_bg:before{
     content:"";
     background: url(../../images/apps/mask_community_top.png) no-repeat;
-    width:175px;
+    background-size: cover;
+    width:176px;
     height: 306px;
     position: absolute;
     top:0px;
@@ -998,7 +1003,8 @@ a{
 .zy_community_bottom_bg:after{
     content: "";
     background: url(../../images/apps/mask_community_bottom.png) no-repeat;
-    width:175px;
+    background-size: cover;
+    width:176px;
     height:200px;
     position: absolute;
     bottom:0px;
@@ -1038,19 +1044,21 @@ a{
     height: 80px;
     background: url(../../images/apps/sprite.png) no-repeat -2px -340px;
     position: absolute;
-    bottom:111px;
+    bottom:110px;
 }
 .zy_project_top_bg:after{
     content: "";
-    width: 182px;
+    width: 183px;
     height: 166px;
-    background: url(../../images/apps/sprite.png) no-repeat -1574px -749px;
+    background: url(../../images/apps/project_bg_right.png) no-repeat;
+    background-size: cover;
     position: absolute;
     right:-182px;
     bottom:0px;
 }
 .zy_project{
     background: #212121;
+    margin-top:-1px;
 }
 .zy_project_info{
 	width:40%;
