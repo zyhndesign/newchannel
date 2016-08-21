@@ -294,7 +294,7 @@ a{
 }
 .zy_landscape .zy_subheading{
     background-image: -webkit-image-set(url(../../images/apps/title_landscape.png) 1x,
-    url(../../images/apps/title_landscape@2x.png) 2x);
+        url(../../images/apps/title_landscape@2x.png) 2x);
     width: 558px;
     height: 198px;
     font-size: 0px;
