@@ -347,8 +347,8 @@ a{
 .zy_featured_articles li{
     display:inline-block;
     list-style:none;
-    margin:0 1%;
-    width:31.3%;
+    margin:0 2%;
+    width:27%;
 }
 .zy_featured_articles .abstract{
     display:inline-block;
@@ -1708,6 +1708,10 @@ a{
     }
     .zy_featured_articles .abstract{
         padding:10px;
+    }
+    .zy_featured_articles li{
+        margin:0 1%;
+        width:31.3%;
     }
     .zy_featured_articles li .date{
         top:10px
