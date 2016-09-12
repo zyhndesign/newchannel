@@ -162,6 +162,7 @@ ZY.uiManager=(function(){
             var tpl= $("#zy_landscape_articles_tpl").html();
             var html = juicer(tpl,{posts:posts});
             $("#zy_landscape_list").append($(html));
+            swiper1.update();
         },
 
         /**
@@ -172,6 +173,7 @@ ZY.uiManager=(function(){
             var tpl= $("#zy_people_articles_tpl").html();
             var html = juicer(tpl,{posts:posts});
             $("#zy_people_list").append($(html));
+            swiper2.update();
         },
 
         /**
@@ -182,6 +184,7 @@ ZY.uiManager=(function(){
             var tpl= $("#zy_community_articles_tpl").html();
             var html = juicer(tpl,{posts:posts});
             $("#zy_community_list").append($(html));
+            swiper4.update();
         },
 
         /**
@@ -193,6 +196,7 @@ ZY.uiManager=(function(){
             var tpl= $("#zy_artifact_articles_tpl").html();
             var html = juicer(tpl,{posts:posts,isFirst:isFirst});
             $("#zy_artifact_list").append($(html));
+            swiper3.update();
         },
 
         /**
@@ -256,7 +260,6 @@ ZY.uiManager=(function(){
             var html=juicer(tpl,data);
             var article_content=$("#zy_article_content");
             article_content.append(html);
-
             ZY.uiManager.hideLoadingSpinner(article_content);
         },
 

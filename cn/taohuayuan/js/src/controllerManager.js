@@ -126,7 +126,7 @@ ZY.controllerManager=(function(){
             limit=setMaxLimit(args.categoryId,limit);
 
             //每次请求，都需要设置外围的宽度
-            args.targetContain.find(".zy_list_container").width(limit*args.width);
+            //args.targetContain.find(".zy_list_container").width(limit*args.width);
 
             //首先隐藏下一页按钮，获取到数据后再显示
             args.targetContain.find(".zy_contain_next").addClass("zy_disable");
@@ -499,8 +499,8 @@ ZY.controllerManager=(function(){
                     landScapeBG.addClass("zy_bg_fixed");
 
                     //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-landScapeY)+100)+"px 0px)";
-                    landScapeBG.css("clip",rect);
+                    /*rect="rect(0px "+winW+"px "+(720-(sy-landScapeY)+100)+"px 0px)";
+                    landScapeBG.css("clip",rect);*/
                 }
 
                 if(!ZY.dataManager.landscapeLoaded){
@@ -528,8 +528,8 @@ ZY.controllerManager=(function(){
                     peopleBG.addClass("zy_bg_fixed");
 
                     //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-peopleY)+100)+"px 0px)";
-                    peopleBG.css("clip",rect);
+                    /*rect="rect(0px "+winW+"px "+(720-(sy-peopleY)+100)+"px 0px)";
+                    peopleBG.css("clip",rect);*/
                 }
 
                 if(!ZY.dataManager.peopleLoaded){
@@ -556,8 +556,8 @@ ZY.controllerManager=(function(){
                     artifactBG.addClass("zy_bg_fixed");
 
                     //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-artifactY)+100)+"px 0px)";
-                    artifactBG.css("clip",rect);
+                    /*rect="rect(0px "+winW+"px "+(720-(sy-artifactY)+100)+"px 0px)";
+                    artifactBG.css("clip",rect);*/
                 }
 
                 if(!ZY.dataManager.artifactLoaded){
@@ -585,8 +585,8 @@ ZY.controllerManager=(function(){
                     communityBG.addClass("zy_bg_fixed");
 
                     //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-communityY)+100)+"px 0px)";
-                    communityBG.css("clip",rect);
+                    /*rect="rect(0px "+winW+"px "+(720-(sy-communityY)+100)+"px 0px)";
+                    communityBG.css("clip",rect);*/
                 }
 
                 if(!ZY.dataManager.communityLoaded){
@@ -793,7 +793,7 @@ ZY.controllerManager=(function(){
                 clearTimeout(ZY.dataManager.resizeTimer);
             }
 
-            ZY.dataManager.resizeTimer=setTimeout(function(){
+            /*ZY.dataManager.resizeTimer=setTimeout(function(){
                 me.doResizeOfCategory($("#zy_people_contain"),ZY.config.categoryIds.peopleId,
                     ZY.config.articleWidths.peopleWidth,ZY.dataManager.peopleLoaded);
                 me.doResizeOfCategory($("#zy_landscape_contain"),ZY.config.categoryIds.landscapeId,
@@ -802,7 +802,7 @@ ZY.controllerManager=(function(){
                     ZY.config.articleWidths.communityWidth,ZY.dataManager.communityLoaded);
                 me.doResizeOfCategory($("#zy_artifact_contain"),ZY.config.categoryIds.artifactId,
                     ZY.config.articleWidths.artifactWidth,ZY.dataManager.artifactLoaded);
-            },200);
+            },200);*/
         }
     }
 })();

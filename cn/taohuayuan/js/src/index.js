@@ -5,10 +5,14 @@
  * Time: 下午4:21
  * To change this template use File | Settings | File Templates.
  */
+var swiper1,swiper2,swiper3,swiper4,swiperCnt;
+
 $(document).ready(function(){
 
     //菜单点击事件
     $("#zy_menu a").click(function(){
+        $("#zy_menu a").removeClass("active");
+        $(this).addClass("active");
         var target=$(this).attr("href");
         ZY.uiManager.scrollToTarget($(target));
         return false;
@@ -16,74 +20,76 @@ $(document).ready(function(){
 
     //获取封面故事和推荐文章
     ZY.dataManager.getTopPosts();
-
-    //风景显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_landscape_contain"));
-
-    //人文部分显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_people_contain"));
-
-    //物语部分显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_artifact_contain"));
-
-
-    //社区部分显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_community_contain"));
-
-    //风景向右点击
-    $("#zy_landscape_next").click(function(){
-        ZY.controllerManager.nextPage($("#zy_landscape_contain"),ZY.config.articleWidths.landscapeWidth,
-            ZY.config.categoryIds.landscapeId,ZY.dataManager.lastLandscapeDate);
-
+    
+    //list模块初始化
+    
+    swiper1 = new Swiper('.swiper1', {
+        pagination: '.swiper-pagination1',
+        paginationClickable: true,
+        /*nextButton: '.swiper-button-next1',
+        prevButton: '.swiper-button-prev1',*/
+        simulateTouch:true,
+        direction: 'horizontal',
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+            960: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            }
+        }
     });
-
-    //风景向左点击
-    $("#zy_landscape_prev").click(function(){
-        ZY.controllerManager.prevPage($("#zy_landscape_contain"),
-            ZY.config.articleWidths.landscapeWidth,ZY.config.categoryIds.landscapeId);
-
+    swiper2 = new Swiper('.swiper2', {
+        pagination: '.swiper-pagination2',
+        paginationClickable: true,
+        /*nextButton: '.swiper-button-next2',
+        prevButton: '.swiper-button-prev2',*/
+        simulateTouch:true,
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 20,
+        breakpoints: {
+            960: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            }
+        }
     });
-
-    //人文向右点击
-    $("#zy_people_next").click(function(){
-        ZY.controllerManager.nextPage($("#zy_people_contain"),ZY.config.articleWidths.peopleWidth,
-            ZY.config.categoryIds.peopleId,ZY.dataManager.lastPeopleDate);
-
+    
+    swiper3 = new Swiper('.swiper3', {
+        pagination: '.swiper-pagination3',
+        paginationClickable: true,
+        /*nextButton: '.swiper-button-next3',
+        prevButton: '.swiper-button-prev3',*/
+        simulateTouch:true,
+        direction: 'horizontal',
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+            960: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            }
+        }
     });
-
-    //人文向左点击
-    $("#zy_people_prev").click(function(){
-        ZY.controllerManager.prevPage($("#zy_people_contain"),
-            ZY.config.articleWidths.peopleWidth,ZY.config.categoryIds.peopleId);
-
+    swiper4 = new Swiper('.swiper4', {
+        pagination: '.swiper-pagination4',
+        /*nextButton: '.swiper-button-next4',
+        prevButton: '.swiper-button-prev4',*/
+        paginationClickable: true,
+        simulateTouch:true,
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 20,
+        breakpoints: {
+            960: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            }
+        }
     });
-
-    //物语向右点击
-    $("#zy_artifact_next").click(function(){
-        ZY.controllerManager.nextPage($("#zy_artifact_contain"),ZY.config.articleWidths.artifactWidth,
-            ZY.config.categoryIds.artifactId,ZY.dataManager.lastArtifactDate);
-
-    });
-
-    //物语向左点击
-    $("#zy_artifact_prev").click(function(){
-        ZY.controllerManager.prevPage($("#zy_artifact_contain"),
-            ZY.config.articleWidths.artifactWidth,ZY.config.categoryIds.artifactId);
-
-    });
-
-    //社区向右点击
-    $("#zy_community_next").click(function(){
-        ZY.controllerManager.nextPage($("#zy_community_contain"),ZY.config.articleWidths.communityWidth,
-            ZY.config.categoryIds.communityId,ZY.dataManager.lastCommunityDate);
-
-    });
-
-    //社区向左点击
-    $("#zy_community_prev").click(function(){
-        ZY.controllerManager.prevPage($("#zy_community_contain"),
-            ZY.config.articleWidths.communityWidth,ZY.config.categoryIds.communityId);
-    });
+    
+    
 
     //显示单篇文章
     $(document).on("click","li[data-zy-post-type^=zy],div[data-zy-post-type^=zy],h2[data-zy-post-type^=zy]",function(){
@@ -146,7 +152,7 @@ $(document).ready(function(){
 	/*=====iOS触屏滚动支持=================*/
 	if(ZY.config.deviceCode.iOS){
 		$(".zy_article_content").addClass("zy_touch_hscroll");
-		$("#zy_landscape_list_container").addClass("zy_touch_hscroll");
+		//$("#zy_landscape_list_container").addClass("zy_touch_hscroll");
 		$("#zy_people_list_container").addClass("zy_touch_hscroll");
 		$("#zy_artifact_list_container").addClass("zy_touch_hscroll");
 		$("#zy_community_list_container").addClass("zy_touch_hscroll");		

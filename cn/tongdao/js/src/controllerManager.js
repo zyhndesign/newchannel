@@ -537,13 +537,14 @@ ZY.controllerManager=(function(){
              *注意：背景图的高度是根据宽度变化的，可能会大于720，最大为一屏幕高，
              *720-（sy-landScapey)+100 可能大于一屏幕高，并不影响显示，因为当clip的显示高度大于实际高度时，只会显示成实际高度
              */
+            
             if(sy>landScapeY-winH && sy<=landScapeY+800){
                 if(!ZY.config.deviceCode.iOS){
                     landScapeBG.addClass("zy_bg_fixed");
 
                     //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(800-(sy-landScapeY)+100)+"px 0px)";
-                    landScapeBG.css("clip",rect);
+                    /*rect="rect(0px "+winW+"px "+(800-(sy-landScapeY)+100)+"px 0px)";
+                    landScapeBG.css("clip",rect);*/
                 }
 
                 if(!ZY.dataManager.landscapeLoaded){
@@ -573,8 +574,8 @@ ZY.controllerManager=(function(){
                     peopleBG.addClass("zy_bg_fixed");
 
                     //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(800-(sy-peopleY)+100)+"px 0px)";
-                    peopleBG.css("clip",rect);
+                    /*rect="rect(0px "+winW+"px "+(800-(sy-peopleY)+100)+"px 0px)";
+                    peopleBG.css("clip",rect);*/
                 }
 
                 if(!ZY.dataManager.peopleLoaded){
@@ -601,8 +602,8 @@ ZY.controllerManager=(function(){
                     artifactBG.addClass("zy_bg_fixed");
 
                     //向下滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(840-(sy-artifactY)+100)+"px 0px)";
-                    artifactBG.css("clip",rect);
+                   /* rect="rect(0px "+winW+"px "+(840-(sy-artifactY)+100)+"px 0px)";
+                    artifactBG.css("clip",rect);*/
                 }
                 if(!ZY.dataManager.artifactLoaded){
 
@@ -630,8 +631,8 @@ ZY.controllerManager=(function(){
                     communityBG.addClass("zy_bg_fixed");
 
                     //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(840-(sy-communityY)+100)+"px 0px)";
-                    communityBG.css("clip",rect);
+                    /*rect="rect(0px "+winW+"px "+(840-(sy-communityY)+100)+"px 0px)";
+                    communityBG.css("clip",rect);*/
                 }
 
                 if(!ZY.dataManager.communityLoaded){
