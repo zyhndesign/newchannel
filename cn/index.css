@@ -81,12 +81,16 @@ a{
     display: block;
 }
 
-/*.contents>ul>li>a.expolink{
-    background:url(images/bg_expo.jpg) no-repeat right;
+.contents>ul>li>a.taohuayuan{
+    background-image:url(images/bg_taohuayuan.jpg);
 }
-.contents>ul>li>a.milanlink{
-    background:url(images/bg_milano.jpg) no-repeat right;
-}*/
+.contents>ul>li>a.taohuayuan::before{
+    background-image:url(images/logo_taohuayuan.png);
+    
+}
+.contents>ul>li>a.taohuayuan::after{
+    background: linear-gradient(to right, rgba(231,70,90,1) 0%,rgba(231,70,90,1) 50%,rgba(231,70,90,0) 100%);
+}
 .contents>ul>li>a.sanjiangyuan{
     background-image:url(images/bg_sanjiangyuan.jpg);
 }
