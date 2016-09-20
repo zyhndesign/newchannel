@@ -10,39 +10,6 @@ ZY.uiManager=(function(){
     return {
 
         /**
-         * 显示音乐播放器
-         */
-        showMusicPlayer:function(){
-            $("#zy_music_section").animate({
-                width:"500px"
-            },100,function(){
-                $("#zy_music_player").removeClass("zy_hidden");
-            });
-        },
-
-        /**
-         * 隐藏音乐播放器
-         */
-        hideMusicPlayer:function(){
-            $("#zy_music_section").stop(true,true).width(50);
-            $("#zy_music_player").addClass("zy_hidden");
-        },
-
-        showMenu:function(){
-            $("#zy_nav").animate({
-                width:"450px"
-            },100,function(){
-                $("#zy_menu").removeClass("zy_hidden");
-                $("#zy_show_menu").addClass("zy_show_menu_active");
-            });
-        },
-        hideMenu:function(){
-            $("#zy_nav").stop(true,true).width(50);
-            $("#zy_menu").addClass("zy_hidden");
-            $("#zy_show_menu").removeClass("zy_show_menu_active");
-        },
-
-        /**
          * 滚动动画，主要用于菜单点击
          * @param {Object} target 需要滚动到的元素jquery对象
          */
@@ -57,37 +24,6 @@ ZY.uiManager=(function(){
 
             }
 
-        },
-
-        /**
-         * click dropdown btn
-         * @param {Object} target 需要滚动到的元素jquery对象
-         */
-        dropDown:function(target){
-            var top=target.offset().top;
-
-            if(top!= undefined){
-                TweenLite.killTweensOf(window);
-
-                //加1是为了让滚动的事件设置菜单为active状态,如果不加1会显示成上一个菜单active
-                if(target.is("#zy_featured")){
-                    TweenLite.to(window, 1, {scrollTo:{y:top, x:0}});
-                }else{
-                    TweenLite.to(window, 1, {scrollTo:{y:top+720, x:0}});
-                }
-
-            }
-        },
-
-        /**
-         * 显示顶部4篇文章，使用juicer
-         * @param {Array} posts 文章数组
-         */
-        showTopPost:function(posts){
-            var tpl_top = $("#zy_top_post_tpl").html();
-            var html_top = juicer(tpl_top,{top_posts:posts});
-            $("#zy_top_post_heading").html(html_top);
-            this.updateSectionBg(posts[0],$("#zy_top_post_poster"));
         },
 
         /**
@@ -152,51 +88,6 @@ ZY.uiManager=(function(){
          */
         hideLoadingSpinner:function(target){
             target.find(".zy_loading_spinner").remove();
-        },
-
-        /**
-         * 显示风景分类文章,使用juicer
-         * @param {Array} posts 文章数组
-         */
-        showLandscapePosts:function(posts){
-            var tpl= $("#zy_landscape_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_landscape_list").append($(html));
-            swiper1.update();
-        },
-
-        /**
-         * 显示人文分类文章
-         * @param {Array} posts 文章数组
-         */
-        showPeoplePosts:function(posts){
-            var tpl= $("#zy_people_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_people_list").append($(html));
-            swiper2.update();
-        },
-
-        /**
-         * 显示社区分类文章
-         * @param {Array} posts 文章数组
-         */
-        showCommunityPosts:function(posts){
-            var tpl= $("#zy_community_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_community_list").append($(html));
-            swiper4.update();
-        },
-
-        /**
-         * 显示物语分类文章,第一个是单独的大图
-         * @param {Array} posts 文章数组
-         * @param {Boolean} isFirst 是否是第一次加载
-         */
-        showArtifactPosts:function(posts,isFirst){
-            var tpl= $("#zy_artifact_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts,isFirst:isFirst});
-            $("#zy_artifact_list").append($(html));
-            swiper3.update();
         },
 
         /**
