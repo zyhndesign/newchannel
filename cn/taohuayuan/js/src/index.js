@@ -70,7 +70,7 @@ $(document).ready(function(){
     //有可能刷新就已经滚动到了一定位置，需要触发一下，加载相应的数据
     $(window).trigger("scroll");
 
-    //window 设置滚动速度
-    ZY.controllerManager.setWheelScrollSpeed();
+    //window 设置滚动速度，启动此项后Mac触板滚动会出现严重闪烁现象。
+    //ZY.controllerManager.setWheelScrollSpeed();
 
 });
