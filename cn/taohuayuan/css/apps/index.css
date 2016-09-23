@@ -4,7 +4,6 @@ body{
     font-family: "宋体","Microsoft YaHei","Heiti SC";
     margin: 0;
     min-width: 730px;
-    padding-top: 60px;
    /* overflow-x:hidden;*/
 }
 ul{
@@ -106,16 +105,60 @@ a{
     left: 0;
     transform: translateY(-50%);
 }
+.zy_title_logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 0;
+    width:400px;
+    height: 250px;
+}
+.zy_title_logo::before{
+    content: "";
+    width:100%;
+    height: 80%;
+    background: url(../../images/apps/logo_poster.svg) no-repeat;
+    background-size:contain;
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+}
 /**
 * 菜单栏
 */
 .zy_nav{
-   float: right;
-    height: 100%;
-    margin-right: 5%;
-    
-    width:360px;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top:20px;
+    left: 20px;
+    z-index: 100;
+    background:#e7465a;
+    transition: all 0.3s ease-out;
 }
+.zy_show_menu{
+    color: white;
+    display: inline-block;
+    font-size: 0px;
+    background: url(../../images/apps/sprite.png) no-repeat -886px -859px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0px;
+    cursor: pointer;
+}
+
+.zy_nav.active{
+    width:350px;
+    padding: 0 10px 0 60px;
+}
+.zy_nav.active .zy_show_menu{
+    background: url(../../images/apps/logo_mini.svg) no-repeat #fff center;
+    background-size: 80%;
+}
+
 .zy_nav ul{
     text-align: center;
     height: 100%;

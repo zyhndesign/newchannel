@@ -7,7 +7,11 @@
  */
 
 $(document).ready(function(){
-
+    //显示菜单
+    $("#zy_show_menu").click(function(){
+        $("#zy_nav").toggleClass("active");
+    });
+    
     //菜单点击事件
     $("#zy_menu a").click(function(){
         $("#zy_menu a").removeClass("active");

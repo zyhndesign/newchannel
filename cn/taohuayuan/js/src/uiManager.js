@@ -8,7 +8,6 @@
 var ZY=ZY||{};
 ZY.uiManager=(function(){
     return {
-
         /**
          * 滚动动画，主要用于菜单点击
          * @param {Object} target 需要滚动到的元素jquery对象
