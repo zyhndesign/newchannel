@@ -137,6 +137,8 @@ a{
     z-index: 100;
     background:#e7465a;
     transition: all 0.3s ease-out;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 .zy_show_menu{
     color: white;
@@ -147,7 +149,6 @@ a{
     height: 50px;
     position: absolute;
     left: 0px;
-    cursor: pointer;
 }
 
 .zy_nav.active{
