@@ -80,7 +80,16 @@ a{
 .contents>ul>li>a .date, .contents>ul>li>a .title{
     display: block;
 }
-
+.contents>ul>li>a.hulunbeier{
+    background-image:url(images/bg_hulunbeier.jpg);
+}
+.contents>ul>li>a.hulunbeier::before{
+    background-image:url(images/logo_hulunbeier.png);
+    
+}
+.contents>ul>li>a.hulunbeier::after{
+    background: linear-gradient(to right, rgba(37,191,154,1) 0%,rgba(37,191,154,1) 50%,rgba(37,191,154,0) 100%);
+}
 .contents>ul>li>a.taohuayuan{
     background-image:url(images/bg_taohuayuan.jpg);
 }
