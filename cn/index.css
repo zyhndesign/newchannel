@@ -160,3 +160,25 @@ a{
 .contents>ul>li>a.huayao::after{
 	background: linear-gradient(to right, rgba(229,10,69,1) 0%,rgba(229,10,69,1) 50%,rgba(229,10,69,0) 100%);
 	}
+/*responsive to wechat*/
+@media screen and (max-width: 640px){
+    body{
+        padding: 0;
+    }
+    .main-head{
+        display: none;
+    }
+    .sub-head{
+        display: none;
+    }
+    .contents>ul>li>a .info{
+        font-size: 24px;
+    }
+    .contents>ul>li>a::before{
+        width:100%;
+    }
+    .contents>ul>li>a::after{
+        width:100%;
+        opacity: .9;
+    }
+}
