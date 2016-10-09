@@ -335,7 +335,7 @@ a{
     bottom: 0;
     width:100%;
     background:rgba(255,255,255,0.9);
-    padding:30px;
+    padding:40px 30px;
     box-sizing: border-box;
     overflow:hidden;
     transition: all 0.3s ease-out;
@@ -347,15 +347,18 @@ a{
     font-weight: bold;
     color:#333;
     text-align: center;
-/*
     white-space: nowrap;
     text-overflow: ellipsis;
-*/
     margin: 0;
+    width: 100%;
+    overflow: hidden;
+    
+/*
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+*/
 }
 .zy_featured_articles li .excerpt{
     text-align: left;
@@ -364,10 +367,9 @@ a{
     overflow: hidden;
     font-size: 16px;
     line-height: 1.5em;
-    margin: 10px 20px;
+    margin: 20px 0;
     padding-top: 20px;
     border-top:1px solid #ccc;
-    display: none;
 }
 .zy_featured_articles li:hover .thumb img{
     transform: translateZ(100px);
@@ -566,7 +568,7 @@ a{
     margin:auto;
     color:#333;
     width:260px;
-    height: 10em;
+    height: 6em;
     overflow: hidden;
 }
 .zy_landscape_article>.zy_article_abstract p.zy_article_date,.zy_artifact_article>.zy_article_abstract p.zy_article_date{
