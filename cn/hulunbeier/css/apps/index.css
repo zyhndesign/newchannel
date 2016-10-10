@@ -1579,6 +1579,9 @@ a{
     .article-title-slide{
         width: auto;
     }
+    .article-author-slide, .article-category-slide{
+        width:auto;
+    }
     .article-main-slide p{
         font-size: 18px;
     }
