@@ -95,8 +95,10 @@ ZY.uiManager=(function(){
          */
         showArticle:function(post_id){
             var me=this;
-
-            //首先要清除原有的内容
+            //冻结主页滚动
+            $("body").addClass("zy_noscroll");
+            
+            //清除原有的内容
             $("#zy_article_content").find("article").remove();
             me.showBlackout(ZY.config.defaultWrapZindex);
             $("#zy_article_container").animate({left:"0%"},300,function(){
@@ -116,6 +118,9 @@ ZY.uiManager=(function(){
             $("#zy_article_container").animate({left:"100%"},300,function(){
                 me.hideBlackout();
             });
+            
+            //解冻主页滚动
+            $("body").removeClass("zy_noscroll");
         },
 
         /**

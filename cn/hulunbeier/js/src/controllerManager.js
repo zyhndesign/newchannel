@@ -182,6 +182,10 @@ ZY.controllerManager=(function(){
                             960: {
                                 slidesPerView: 3,
                                 spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
                             }
                         },
                         onReachEnd:function(swiper){

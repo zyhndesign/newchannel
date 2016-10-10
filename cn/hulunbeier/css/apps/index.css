@@ -3,7 +3,6 @@
 body{
     font-family: "宋体","Microsoft YaHei","Heiti SC";
     margin: 0;
-    min-width: 730px;
    /* overflow-x:hidden;*/
 }
 ul{
@@ -36,6 +35,9 @@ a{
     overflow-x:scroll !important;
     overflow-y:hidden !important;
     -webkit-overflow-scrolling: touch;
+}
+.zy_noscroll{
+    overflow:hidden !important;
 }
 /*覆盖swiper样式*/
 .swiper-pagination-bullet-active{
@@ -503,9 +505,6 @@ a{
     position: absolute;
     top:-70px;
 }
-.zy_landscape_contain>.zy_list_container{
-    height: 300px;
-}
 .zy_landscape_list,.zy_people_list,.zy_artifact_list,.zy_community_list{
     margin:0;
     height:100%;
@@ -513,71 +512,72 @@ a{
     box-sizing:border-box;
     font-size:0;
 }
-.zy_landscape_article,.zy_artifact_article{
-   /* display: inline-block;*/
+.zy_landscape_article{
+    
     width: 100%;
-    height: 300px;
     white-space: normal;
     box-sizing:border-box;
     position:relative;
     overflow:hidden;
     cursor:pointer;
 }
-.zy_landscape_article>.zy_article_thumb,.zy_artifact_article>.zy_article_thumb{
+.zy_landscape_article::before{
+    content:"";
+    display: inline-block;
     width:100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+.zy_landscape_article>.zy_article_thumb{
+    width:100%;
+    height: 100%;
     overflow:hidden;
     position:absolute;
     top:0;
     left:0;
 }
-.zy_landscape_article>.zy_article_thumb img,.zy_artifact_article>.zy_article_thumb img{
+.zy_landscape_article>.zy_article_thumb img{
     width:100%;
 }
-.zy_landscape_article>.zy_article_abstract,.zy_artifact_article>.zy_article_abstract{
+.zy_landscape_article>.zy_article_abstract{
     width:100%;
-    height:300px;
+    height:100%;
     overflow:hidden;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -ms-box-sizing:border-box;
     box-sizing:border-box;
     padding:20px 20px 30px 20px;
     background:#fff;
     opacity: .95;
     position:absolute;
-    top:300px;
+    top:100%;
     left:0;
-    -webkit-transition:all 0.4s ease-out;
-    -moz-transition:all 0.4s ease-out;
-    -ms-transition:all 0.4s ease-out;
     transition:all 0.4s ease-out;
 }
-.zy_landscape_article:hover>.zy_article_abstract,.zy_artifact_article:hover>.zy_article_abstract{
+.zy_landscape_article:hover>.zy_article_abstract{
     top:0;
 }
-.zy_landscape_article>.zy_article_abstract h2,.zy_artifact_article>.zy_article_abstract h2{
+.zy_landscape_article>.zy_article_abstract h2{
     font-family: "Microsoft YaHei";
     font-size:24px;
     text-align:center;
     color:#333;
     font-weight: bold;
 }
-.zy_landscape_article>.zy_article_abstract p,.zy_artifact_article>.zy_article_abstract p{
+.zy_landscape_article>.zy_article_abstract p{
     font-size:14px;
     line-height:2em;
     margin:auto;
     color:#333;
-    width:260px;
+    width:auto;
     height: 6em;
     overflow: hidden;
 }
-.zy_landscape_article>.zy_article_abstract p.zy_article_date,.zy_artifact_article>.zy_article_abstract p.zy_article_date{
+.zy_landscape_article>.zy_article_abstract p.zy_article_date{
     font-size:12px;
     border-top:#333 1px solid;
     padding-top:8px;
     position:static;
     text-align:center;
-    width:260px;
+    width:auto;
     margin:auto;
     display:block;
     color:#000;
@@ -757,9 +757,6 @@ a{
     font-size: 0px;
     margin: 40px auto 60px;
 }
-.zy_artifact_contain>.zy_list_container{
-    height: 300px;
-}
 .zy_artifact_contain{
     width: 100%;
     height: 720px;
@@ -786,7 +783,77 @@ a{
     margin-top: -10px;
 }
 
-
+.zy_artifact_article{
+    
+    width: 100%;
+    white-space: normal;
+    box-sizing:border-box;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+}
+.zy_artifact_article::before{
+    content:"";
+    display: inline-block;
+    width:100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+.zy_artifact_article>.zy_article_thumb{
+    width:100%;
+    height: 100%;
+    overflow:hidden;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.zy_artifact_article>.zy_article_thumb img{
+    width:100%;
+}
+.zy_artifact_article>.zy_article_abstract{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    box-sizing:border-box;
+    padding:20px 20px 30px 20px;
+    background:#fff;
+    opacity: .95;
+    position:absolute;
+    top:100%;
+    left:0;
+    transition:all 0.4s ease-out;
+}
+.zy_artifact_article:hover>.zy_article_abstract{
+    top:0;
+}
+.zy_artifact_article>.zy_article_abstract h2{
+    font-family: "Microsoft YaHei";
+    font-size:24px;
+    text-align:center;
+    color:#333;
+    font-weight: bold;
+}
+.zy_artifact_article>.zy_article_abstract p{
+    font-size:14px;
+    line-height:2em;
+    margin:auto;
+    color:#333;
+    width:auto;
+    height: 6em;
+    overflow: hidden;
+}
+.zy_artifact_article>.zy_article_abstract p.zy_article_date{
+    font-size:12px;
+    border-top:#333 1px solid;
+    padding-top:8px;
+    position:static;
+    text-align:center;
+    width:auto;
+    margin:auto;
+    display:block;
+    color:#000;
+    height: auto;
+}
 
 /*-----------------------------------------------------------------------------社区z-index:1--*/
 .zy_community{
@@ -1151,15 +1218,15 @@ a{
 }
 /* 设置滚动条的样式 */
 .zy_article_content::-webkit-scrollbar {
-    height: 8px;
+/*    height: 4px;*/
 }
 /* 滚动槽 */
 .zy_article_content::-webkit-scrollbar-track {
-    background:#1a1a1a;
+/*    background:#1a1a1a;*/
 }
 /* 滚动条滑块 */
 .zy_article_content::-webkit-scrollbar-thumb {
-    background: #25bf9a;
+/*    background: #25bf9a;*/
 }
 .zy_article_content_close{
 	cursor:pointer;
@@ -1276,10 +1343,6 @@ a{
     bottom:150px;
     height: 100%;
     padding:0 0 20px 40px;
-    -webkit-column-gap:40px;
-    -webkit-column-width:260px;
-    -moz-column-gap:40px;
-    -moz-column-width:260px;
     column-gap:40px;
     column-width:260px;
     line-height:2em;
@@ -1330,12 +1393,12 @@ a{
 /*幻灯片模版展示*/
 .article-main-slide{
     background:#fff;
-    height:540px;
+    height:100%;
     position:relative;
 }
 .article-main-slide p{
-    font-size:14px;
-
+    font-size:18px;
+    line-height: 2em;
 }
 .article-title-slide{
     color:#666;
@@ -1374,7 +1437,7 @@ a{
     position:absolute;
     left:360px;
     top:0;
-    height:540px;
+    height:100%;
     width:auto;
     white-space: nowrap;
 }
@@ -1447,6 +1510,102 @@ a{
 @media screen and (max-width: 970px){
     .zy_list_container{
         width:80%
+    }
+}
+/*wechat*/
+@media screen and (max-width: 640px){
+    .zy_featured_articles{
+        width:90%;
+    }
+    
+    .zy_featured_articles li .excerpt{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .zy_list_container{
+        width: 90%;
+    }
+    
+    
+    
+    .zy_article_content{
+        overflow-x: hidden;
+        overflow-y: auto;
+        width:100%;
+        padding:30px 20px;
+    }
+    .zy_landscape_heading,.zy_people_heading,.zy_artifact_heading,.zy_community_heading{
+        width:320px;
+    }
+    .zy_landscape_article>.zy_article_abstract{
+        padding: 10px;
+    }
+    .zy_artifact_article>.zy_article_abstract{
+        padding: 10px;
+    }
+    .zy_landscape_article .zy_article_excerpt{
+        display: none;
+    }
+    .zy_artifact_article .zy_article_excerpt{
+        display: none;
+    }
+    .zy_project_info{
+        width:90%;
+    }
+    .zy_project_sponsors{
+        width:90%;
+    }
+/*    幻灯片模式*/
+    .article-main-slide{
+        height: auto;
+    }
+    .article-title-slide{
+        width: auto;
+    }
+    .article-main-slide p{
+        font-size: 18px;
+    }
+    .article-abstract-slide{
+        width: auto;
+    }
+    .allslides-slide{
+        position:static;
+        width: auto;
+        white-space: normal;
+    }
+    .slide-slide{
+        width:100%;
+        font-size: 0;
+        margin-bottom: 20px;
+    }
+    .slide-slide a{
+        width: 100%;
+    }
+    .slide-slide img{
+        width: 100%;
+    }
+    .imgcaption-slide{
+        position: static;
+    }
+    
+/*    图文模式*/
+    .article-main-post{
+        position: static;
+    }
+    .article-poster-post{
+        display: none;
+    }
+    .article-head-post{
+        position: static;
+    }
+    .article-content-post{
+        position: static;
+        column-gap:normal;
+        column-width:auto;
+        padding: 30px 0;
+    }
+    .article-content-post p span{
+        font-size: 18px !important;
     }
 }
 

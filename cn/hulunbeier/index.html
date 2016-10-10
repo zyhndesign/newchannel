@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html class="no-js">
 <head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE-Edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="fragment" content="!">
     <meta name="description" content="" />
@@ -14,20 +16,7 @@
 </head>
 <body>
 
-<!--<header class="zy_header">
-    <h1 class="zy_logo">
-        <a href="#">桃花源</a>
-    </h1>
-    
-    <nav class="zy_nav" id="zy_nav">
-        <ul id="zy_menu">
-            <li><a href="#zy_landscape" class="top_menu_landscape">风景</a></li>
-            <li><a href="#zy_people" class="top_menu_humanity">人文</a></li>
-            <li><a href="#zy_artifact" class="top_menu_artifact">物语</a></li>
-            <li><a href="#zy_community" class="top_menu_community">社区</a></li>
-        </ul>
-    </nav>
-</header>-->
+
 
 <!--菜单栏-->
 <nav id="zy_nav" class="zy_nav">
@@ -107,7 +96,7 @@
                 <div class="zy_article_abstract">
                     <h2>${post.post_title}</h2>
                     <p class="zy_article_date">${post.post_date}</p>
-                    <p>
+                    <p class="zy_article_excerpt">
                         ${post.post_excerpt}
                     </p>
                 </div>
@@ -153,7 +142,7 @@
                         <div class="zy_article_abstract">
                             <h2>${post.post_title}</h2>
                             <p class="zy_article_date">${post.post_date}</p>
-                            <p>${post.post_excerpt}</p>
+                            <p class="zy_article_excerpt">${post.post_excerpt}</p>
                         </div>
                     </li>
                 {@/each}
@@ -342,6 +331,8 @@
                     <div class="allslides-slide">
                         {@each post_slides as slide}
                             <div class="slide-slide">
+                                $${slide.content}
+                                
                                 {@if slide.title}
 
                                     {@if slide.memo}
@@ -354,7 +345,7 @@
                                     <div class="imgcaption-slide">${slide.memo}</div>
                                 {@/if}
 
-                                $${slide.content}
+                                
                             </div>
                         {@/each}
 
