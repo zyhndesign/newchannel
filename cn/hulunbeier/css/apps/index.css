@@ -1542,29 +1542,11 @@ a{
     }
     
     .zy_landscape_article>.zy_article_abstract{
-        padding: 10px;
-    }
-    .zy_landscape_article>.zy_article_abstract h2{
-        font-size: 16px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        padding: 20px;
     }
     
     .zy_artifact_article>.zy_article_abstract{
-        padding: 10px;
-    }
-    .zy_artifact_article>.zy_article_abstract h2{
-        font-size: 16px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-    .zy_landscape_article .zy_article_excerpt{
-        display: none;
-    }
-    .zy_artifact_article .zy_article_excerpt{
-        display: none;
+        padding: 20px;
     }
     .zy_project_info{
         width:90%;
