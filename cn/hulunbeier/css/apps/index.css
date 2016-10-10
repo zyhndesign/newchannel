@@ -1614,6 +1614,8 @@ a{
     }
     .article-head-post{
         position: static;
+        padding:0;
+        width: auto;
     }
     .article-content-post{
         position: static;
