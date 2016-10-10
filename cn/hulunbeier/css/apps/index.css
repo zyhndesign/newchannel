@@ -1514,6 +1514,9 @@ a{
 }
 /*wechat*/
 @media screen and (max-width: 640px){
+    .zy_nav.active{
+        width: 320px;
+    }
     .zy_featured_articles{
         width:90%;
     }
