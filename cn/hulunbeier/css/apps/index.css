@@ -315,10 +315,7 @@ a{
     background:#fff;
     cursor:pointer;
     vertical-align: top;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    position: relative;
     
 }
 .zy_featured_articles li .thumb{
@@ -1502,9 +1499,6 @@ a{
     .zy_nav ul{
         width:100%;
     }
-    .zy_featured_articles li .excerpt{
-        height: 126px;
-    }
 }
 
 @media screen and (max-width: 970px){
@@ -1518,12 +1512,26 @@ a{
         width: 320px;
     }
     .zy_featured_articles{
-        width:90%;
+        width:70%;
+        display: block;
     }
-    
+    .zy_featured_articles li{
+        width: 45%;
+        margin: 10% 5% 0 0;
+    }
+    .zy_featured_articles li:last-child{
+        margin: 10% 0 0 5%;
+    }
+    .zy_featured_articles li:first-child{
+        width: 100%;
+    }
     .zy_featured_articles li .excerpt{
         white-space: nowrap;
         text-overflow: ellipsis;
+    }
+    .zy_featured_articles li:first-child .excerpt{
+        white-space: normal;
+        text-overflow:inherit;
     }
     .zy_list_container{
         width: 90%;
