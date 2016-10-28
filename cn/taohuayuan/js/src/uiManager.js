@@ -8,6 +8,7 @@
 var ZY=ZY||{};
 ZY.uiManager=(function(){
     return {
+
         /**
          * 滚动动画，主要用于菜单点击
          * @param {Object} target 需要滚动到的元素jquery对象
@@ -99,6 +100,7 @@ ZY.uiManager=(function(){
             //首先要清除原有的内容
             $("#zy_article_content").find("article").remove();
             me.showBlackout(ZY.config.defaultWrapZindex);
+            $("body").addClass("zy_noscroll");
             $("#zy_article_container").animate({left:"0%"},300,function(){
                 me.showLoadingSpinner($("#zy_article_content"));
                 ZY.dataManager.getPostDetail(post_id);
@@ -113,6 +115,7 @@ ZY.uiManager=(function(){
             //此处调用是因为可能数据还没加载完就被收回
             var me=this;
             me.hideLoadingSpinner($("#zy_article_content"));
+            $("body").removeClass("zy_noscroll");
             $("#zy_article_container").animate({left:"100%"},300,function(){
                 me.hideBlackout();
             });
@@ -160,7 +163,6 @@ ZY.uiManager=(function(){
          */
         showVideoDetail:function(url){
             var me=this,loadContainer=$("#zy_show_load_container");
-            $("#zy_music_audio")[0].pause(); //暂停音乐
             loadContainer.html("");
             me.showBlackout(9998);
             $("#zy_show_section").removeClass("zy_hidden");
@@ -187,15 +189,10 @@ ZY.uiManager=(function(){
          * 隐藏显示的视频或者大图
          */
         hideDetail:function(){
-            var audio=$("#zy_music_audio")[0];
             this.showBlackout(ZY.config.defaultWrapZindex);
             $("#zy_show_section").addClass("zy_hidden");
             $("#zy_show_load_container").html("");
 
-            //恢复音乐
-            if(ZY.music.musicPlaying){
-                audio.play();
-            }
         },
 
         /**

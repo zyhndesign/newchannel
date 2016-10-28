@@ -1,0 +1,38 @@
+<section id="zy_artifact" class="zy_section_type3">
+
+    <div id="zy_artifact_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg3.png"
+             srcset="images/default_bg/bg3@2x.png 2x" />
+    </div>
+    <h2 class="zy_heading">物语</h2>
+
+    <section id="zy_artifact_contain" class="zy_contain">
+        <h3 class="zy_subheading">从传统工艺到现代设计</h3>
+        <div id="zy_artifact_list_container" class="zy_list_container swiper3 swiper-container">
+            <script id="zy_artifact_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_item swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p>
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_artifact_list" class="zy_list_type1 swiper-wrapper">
+
+            </ul>
+            <div class="swiper-pagination swiper-pagination3"></div>
+        </div>
+    </section>
+</section>
