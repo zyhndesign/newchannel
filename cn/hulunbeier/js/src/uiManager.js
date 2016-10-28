@@ -165,7 +165,11 @@ ZY.uiManager=(function(){
          */
         showVideoDetail:function(url){
             var me=this,loadContainer=$("#zy_show_load_container");
-            $("#zy_music_audio")[0].pause(); //暂停音乐
+            var audio = $("#zy_music_audio")[0]
+            if(audio.duration > 0){
+                audio.pause(); //暂停音乐
+            }
+            
             loadContainer.html("");
             me.showBlackout(9998);
             $("#zy_show_section").removeClass("zy_hidden");
