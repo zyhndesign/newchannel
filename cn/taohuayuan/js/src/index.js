@@ -7,11 +7,7 @@
  */
 
 $(document).ready(function(){
-    //显示菜单
-    $("#zy_show_menu").click(function(){
-        $("#zy_nav").toggleClass("active");
-    });
-    
+
     //菜单点击事件
     $("#zy_menu a").click(function(){
         $("#zy_menu a").removeClass("active");
@@ -32,7 +28,7 @@ $(document).ready(function(){
     });
 
     //显示单篇文章时的横向滚动
-    ZY.controllerManager.bindHScroll($("#zy_article_content")[0]);
+    //ZY.controllerManager.bindHScroll($("#zy_article_content")[0]);
 
     //收回单篇文章展示
     $("#zy_article_content_close").click(function(){
@@ -74,7 +70,7 @@ $(document).ready(function(){
     //有可能刷新就已经滚动到了一定位置，需要触发一下，加载相应的数据
     $(window).trigger("scroll");
 
-    //window 设置滚动速度，启动此项后Mac触板滚动会出现严重闪烁现象。
+    //window 设置滚动速度
     //ZY.controllerManager.setWheelScrollSpeed();
 
 });
