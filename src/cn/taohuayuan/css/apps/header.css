@@ -1,0 +1,108 @@
+.zy_header{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    z-index: 100;
+    background: #e7465a;
+}
+/**
+* logo
+*/
+.zy_logo{
+    float: left;
+    height: 100%;
+    margin:0 0 0 5%;
+}
+.zy_logo a{
+    font-size: 0px;
+    width: 150px;
+    height: 100%;
+    display: block;
+    position: relative;
+
+}
+.zy_logo a::before{
+    content: "";
+    width:100%;
+    height: 80%;
+    background: url(../../images/apps/logo.svg) no-repeat;
+    background-size:contain;
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+/**
+* 菜单栏
+*/
+.zy_nav{
+    float: right;
+    height: 100%;
+    margin-right: 5%;
+
+    width:360px;
+}
+.zy_nav ul{
+    text-align: center;
+    height: 100%;
+    font-size: 0px;
+    display: flex;
+    width: 100%;
+}
+.zy_nav ul li{
+    flex: 1;
+    padding:0px;
+    height: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.zy_nav ul li a{
+    font-family: "黑体";
+    display: block;
+    height: 100%;
+    font-size: 0;
+    line-height: 60px;
+    color:#fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:80%;
+}
+.zy_nav ul li a:hover{
+    opacity: .8;
+}
+.zy_nav ul li a.top_menu_landscape{
+    background-image: url(../../images/apps/top_menu_landscape_white.svg);
+}
+.zy_nav ul li a.top_menu_community{
+    background-image: url(../../images/apps/top_menu_community_white.svg);
+}
+.zy_nav ul li a.top_menu_artifact{
+    background-image: url(../../images/apps/top_menu_artifact_white.svg);
+}
+.zy_nav ul li a.top_menu_humanity{
+    background-image: url(../../images/apps/top_menu_humanity_white.svg);
+}
+.zy_nav ul li a:hover,.zy_nav ul li a.active{
+    color:#000;
+}
+.zy_nav ul li a.top_menu_landscape.active{
+    background-image: url(../../images/apps/top_menu_landscape_gray.svg);
+    background-color: #fff;
+}
+.zy_nav ul li a.top_menu_community.active{
+    background-image: url(../../images/apps/top_menu_community_gray.svg);
+    background-color: #fff;
+}
+.zy_nav ul li a.top_menu_artifact.active{
+    background-image: url(../../images/apps/top_menu_artifact_gray.svg);
+    background-color: #fff;
+}
+.zy_nav ul li a.top_menu_humanity.active{
+    background-image: url(../../images/apps/top_menu_humanity_gray.svg);
+    background-color: #fff;
+}
+.zy_nav ul li a:hover,.zy_nav ul li a.active{
+    color:#000;
+}

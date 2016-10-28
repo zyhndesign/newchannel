@@ -1,0 +1,1580 @@
+@charset "utf-8";
+img{border:none;}
+body{
+    font-family: "Microsoft YaHei" ;
+    margin: 0;
+    min-width: 720px;
+}
+/*所有开始不显示的类*/
+.zy_hidden,.zy_disable{
+    display: none;
+}
+.hasVideo:before{
+    content:"";
+    background: url(../../images/xinjiang/hasvideo.png) no-repeat;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+}
+/*固定背景样式*/
+.zy_bg_fixed{
+	position:fixed !important;
+	top:90px;
+	left:0;
+	}
+.zy_touch_hscroll{
+	overflow:auto !important;
+	overflow-x:scroll !important;
+	overflow-y:hidden !important;
+	-webkit-overflow-scrolling: touch;
+	}
+
+/*--印象、物语、小结统一的标题、背景、底纹样式--*/
+.zy_subheading{
+	padding:1.4em 0 0 0;
+	margin:0;
+	font-size:2em;
+	color:#999;
+	text-align:center;
+	font-weight:normal;
+	font-style:italic;
+	background:#fff;
+	position:relative;
+	z-index:8;
+	}
+.zy_section_bg{
+	height:720px;	
+	overflow:hidden;
+	font-size:0;
+	width:100%;	
+	position:relative;
+	font-size:0;
+	}
+
+.zy_article_hasvideo .zy_article_thumb:before
+{
+	content:"";
+	background:url(../../images/xinjiang/video_play.png) no-repeat;
+	width:60px;
+	height:60px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-30px 0 0 -30px;
+}
+.zy_dmxj{
+    background:url(../../images/xinjiang/dmxj_bg.png);
+    width: 100%;
+    height: 340px;
+    text-align: center;
+	position:relative;
+	font-size:0;
+	text-indent:-9999px;
+	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	-ms-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	z-index:9;
+}
+.zy_dmxj:before{
+	content:"";
+	width:388px;
+	height:305px;
+	background:url(../../images/xinjiang/dmxj.png) no-repeat;
+	position:absolute;
+	top:30px;
+	left:50%;
+	margin-left:-185px;
+}
+.zy_cameral{
+	background:url(../../images/xinjiang/green_roof.png) center 0 no-repeat #fff;
+	height:380px;
+	font-size:0;
+	position:relative;
+	z-index:9;
+}
+.zy_cameral:before{
+	content:"";
+	height:201px;
+	width:100%;
+	background:url(../../images/xinjiang/seal_gray.png) center top no-repeat #B79850;
+	position:absolute;
+	bottom:0;
+	-webkit-box-shadow:0 0 4px rgba(0,0,0,0.4);
+	-moz-box-shadow:0 0 4px rgba(0,0,0,0.4);
+	-ms-box-shadow:0 0 4px rgba(0,0,0,0.4);
+	box-shadow:0 0 4px rgba(0,0,0,0.4);
+	}
+.zy_cameral:after{
+	content:"";
+	width:120px;
+	height:149px;
+	background:url(../../images/xinjiang/cameral.png) no-repeat;
+	position:absolute;
+	top:70px;
+	left:50%;
+	margin-left:-60px;	
+}
+.zy_exhibition{
+	height:400px;
+	background:url(../../images/xinjiang/visiting_info_text.png) no-repeat center #ccc;
+	font-size:0;
+	text-indent:-9999px;
+	position:relative;
+	border-bottom:#ccc 1px solid;
+	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	-ms-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	z-index:9;
+	}
+.zy_temple{
+	height:260px;
+	background:url(../../images/xinjiang/temple_roof.png) no-repeat right bottom #fff;
+	font-size:0;
+	text-indent:-9999px;
+	position:relative;
+	z-index:9;
+}
+/*向前向后两个按钮*/
+.zy_contain_prev,.zy_contain_next{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:50%;
+	margin-top:-25px;
+    z-index: 1;
+	font-size:0;
+	text-indent:-9999px;
+	cursor:pointer;
+	opacity:0;
+	-webkit-transition:opacity 0.4s ease-out;
+	-moz-transition:opacity 0.4s ease-out;
+	-ms-transition:opacity 0.4s ease-out;
+	transition:opacity 0.4s ease-out;
+}
+.zy_contain_prev{
+    background: url(../../images/xinjiang/btn_go_pre_normal.png) no-repeat;
+    left:0;
+}
+.zy_contain_next{
+    background: url(../../images/xinjiang/btn_go_next_normal.png) no-repeat;
+    right: 0;
+}
+.zy_contain_prev:hover{
+    background: url(../../images/xinjiang/btn_go_pre_pressed.png) no-repeat;
+}
+.zy_contain_next:hover{
+    background: url(../../images/xinjiang/btn_go_next_pressed.png) no-repeat;
+}
+.zy_record_prev,.zy_record_next{
+    margin-top: 200px;
+}
+.zy_landscape_prev,.zy_landscape_next{
+    margin-top: 225px;
+}
+/*水平滑动窗口布局容器*/
+.zy_list_container{
+    position: relative;
+    margin: auto;
+    height: 100%;
+    overflow: hidden;		
+	border-top:#999 1px solid;
+	border-bottom:#999 1px solid;	
+}
+/*---------------------header部分---------------------------*/
+.zy_top_nav{
+	position:absolute;
+    font-size: 20px;
+    font-weight: bold;
+    left: 350px;	
+	width:30%;
+}
+.zy_top_nav ul{
+    margin:0;
+	padding:0;
+	width:100%;	
+	font-size:0;
+	white-space:nowrap;
+}
+.zy_top_nav ul li{
+    list-style:none;
+	display:inline-block;
+	width:25%;
+}
+.zy_top_nav ul li a{
+	display:inline-block;
+	width:100%;
+	height:90px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding-top:40px;
+	text-decoration:none;
+	color:#b3b3b3;
+	text-align:center;
+	font-size:14px;
+	}
+.zy_top_nav ul li a:hover{
+	color:#E83A00;
+	}
+.zy_top_nav ul li a.active{
+	background:#E83A00;
+	color:#ffffff;
+	}
+/*fixed给予最大 z-index: 100;*/
+.zy_header{
+	position: fixed;
+	top:0;
+	left:0;
+    z-index: 100;
+	height:90px;
+	width:100%;
+    background-color: #1a1a1a;
+
+}
+.zy_header>.zy_logo{
+	position:absolute;
+    top:0;
+    left:1%;
+	display:inline-block;
+	font-size:0;
+}
+.zy_header>.zy_logo>a{
+	width:312px;
+	height:90px;
+	display:inline-block;
+	font-size:0;
+	text-indent:-9999px;	
+	background:url(../../images/xinjiang/logo.png) no-repeat;
+}
+/*------------------------Music Player Widget------------------------*/
+.zy_music_play{
+	position:absolute;
+    top:20px;
+    right: 1%;
+	width:30%;
+}
+.zy_player{
+    display: inline-block;  
+    width: 100%;
+    height: 60px;
+    font-family: "Georgia";
+	font-size:0;
+	position:relative;
+	top:0;
+	left:0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding-top:8px;
+}
+.zy_music_process{
+    width: 50%;
+    background:#666;
+    height:4px;
+    margin: 4px auto;
+}
+.zy_music_process_value{
+    background: #E83A00;
+    width: 0%;
+    height: 4px;
+}
+
+.zy_music_title{
+    text-align:center;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px auto;
+	color:#E83A00;
+	width: 220px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.zy_music_author{
+    color: #b3b3b3;
+    margin: 2px 0;
+    font-size: 12px;
+   	text-align:center;
+    display: block;
+	text-transform: uppercase;
+}
+.zy_player_btn{
+	display: inline-block;
+	width: 60px;
+    height: 60px;
+	cursor: pointer;
+}
+a.zy_music_pause{    
+    background: url(../../images/xinjiang/music_btn_pause_normal.png) no-repeat;
+    position:absolute;
+	top:0;
+	left:0;
+	border-right:#999 1px solid;  
+}
+a.zy_music_play{
+    background: url(../../images/xinjiang/music_btn_play_normal.png) no-repeat;
+    position:absolute;
+	top:0;
+	left:0;
+	border-right:#999 1px solid;
+}
+.zy_music_next{
+    background: url(../../images/xinjiang/music_btn_next_normal.png) no-repeat;
+	position:absolute;
+	top:0;
+	right:0;
+	border-left:#999 1px solid;
+}
+a.zy_music_pause:hover{
+	background: url(../../images/xinjiang/music_btn_pause_pressed.png) no-repeat;
+	}
+a.zy_music_play:hover{
+	background: url(../../images/xinjiang/music_btn_play_pressed.png) no-repeat;
+	}
+.zy_music_next:hover{
+	 background: url(../../images/xinjiang/music_btn_next_pressed.png) no-repeat;
+}
+/*------------------------Floating Nav Widget------------------------*/
+.zy_nav{
+    background: url(../../images/xinjiang/nav_bg.png) no-repeat;
+    display: inline-block;
+    width:166px;
+	height:294px;
+    color: #fff ;
+    font-size: 14px;
+    font-weight: bold;
+	position:absolute;
+	top:100px;
+	left:40px;
+	z-index:99;
+	-webkit-transition:top 0.7s ease-out;
+	-moz-transition:top 0.7s ease-out;
+	-ms-transition:top 0.7s ease-out;
+	transition:top 0.7s ease-out;
+}
+.zy_nav ul{
+    margin:0;
+	padding:78px 0 0 0;
+}
+.zy_nav ul li{
+	list-style:none;	
+}
+.zy_nav ul li a{
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+	background:url(../../images/xinjiang/nav_btn_normal.png)no-repeat;
+}
+.zy_nav ul a:hover{
+    background:url(../../images/xinjiang/nav_btn_pressed.png) no-repeat;
+}
+/*---------------------------filter effect--------------------------*/
+.zy_blur{
+	-webkit-filter: blur(10px);
+	
+	}
+/*---------------------------main wrapper---------------------------*/
+.zy_main_wrapper{
+	
+	}
+/*------------------------------主题背景------------------------------*/
+.zy_theme_background{
+
+	}
+.zy_theme_bg{
+	height: 640px;
+	width:100%;
+	position:relative;
+	z-index:1;
+	overflow:hidden;
+	}
+.zy_theme_bg_content{
+	position:absolute;
+	top:0;
+	min-width: 100%;
+	min-height: 720px;
+	opacity:0;
+	-webkit-transition:opacity 1s;
+	-moz-transition:opacity 1s;
+	-ms-transition:opacity 1s;
+	transition:opacity 1s;
+	}
+.zy_theme_bg_default{
+	opacity:1;
+	}
+/*------------------------------封面故事------------------------------*/
+.zy_top_post{
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	z-index:5;
+}
+.zy_top_post_poster{
+    width: 100%;
+	font-size:0;
+	height:720px;
+	position:relative;
+	background:#ccc;
+}
+.zy_top_post_heading{
+	z-index: 2;
+	height:330px;
+	background:url(../../images/xinjiang/cover_image_shadow.png) repeat-x;
+	position:absolute;
+	width:100%;
+	bottom:0;
+	text-align:center;
+}
+.zy_top_post_title{	
+	color:#fff;
+	font-size:3em;	
+	margin:100px auto 10px auto;
+	max-height:130px;
+	overflow:hidden;
+	cursor:pointer;
+	width:600px;
+	}
+.zy_top_post_title:before{	
+	content:"";
+	background:url(../../images/xinjiang/title_text_cover_story.png) no-repeat;
+	height:57px;
+	width:264px;
+	margin-left:-132px;
+	position:absolute;
+	top:20px;
+	left:50%;
+	}
+.zy_top_post_date{
+	color:#fff;
+	font-size:1.5em;
+	}
+/*------------------------------推荐阅读------------------------------*/
+.zy_featured{
+    width: 100%;
+    height: 760px;
+    background: url(../../images/xinjiang/headline_lv2_bg.png) repeat-x #8FBA98 center;
+    padding-top: 30px;
+	position:relative;	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	-ms-box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+	z-index:5;
+}
+.zy_featured:before{
+	content:"";
+	width:194px;
+	height:123px;
+	background:url(../../images/xinjiang/green_roof_lite.png) no-repeat;
+	position:absolute;
+	top:-123px;
+	left:20px;
+	z-index:2;
+}
+.zy_featured_heading{
+    width: 264px;
+    background:url(../../images/xinjiang/title_text_featured_article.png) no-repeat;
+	height:58px;
+    margin: 0 auto;
+    color: #ff3300;
+    font-size: 0;
+	text-indent:-9999px;
+}
+.zy_featured_articles{
+	margin:70px 0;
+	padding:10px 0;
+	text-align:center;
+	width:100%;	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+.zy_featured_articles li{
+	display:inline;
+	list-style:none;
+	}
+.zy_featured_articles .abstract{	
+	display:inline-block;
+	margin:0 1%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:1%;
+	width:20%;
+	height:460px;
+	background:#fff;
+	box-shadow:0 0 6px rgba(0,0,0,0.5);
+	cursor:pointer;
+	position:relative;
+	overflow:hidden;
+	vertical-align: top;
+}
+.zy_featured_articles li .thumb img{
+	width:100%;
+}
+.zy_featured_articles li .title{
+	width:100%;
+	text-align:center;
+	font-size:1.4em;
+	line-height:1.4em;
+	overflow:hidden;
+	color:#666;
+}
+.zy_featured_articles li .date{
+	border-top:#ccc solid 1px;
+	padding:6px 0;
+	color:#999;
+	font-size:12px;
+	width:80%;
+	position:absolute;
+	bottom:0;
+	left:10%;
+}
+.zy_scrolling_down_btn{
+	font-size:0;
+	text-indent:-9999px;
+	background:url(../../images/xinjiang/arrow_down.png) no-repeat;
+	width:48px;
+	height:64px;
+	position:absolute;
+	bottom:50px;
+	left:50%;
+	margin-left:-24px;
+}
+/*---------------------------------风景部分-------------------------*/
+.zy_landscape{
+	position:relative;
+	}
+.zy_landscape_heading{
+	font-size:0;
+	text-indent:-9999px;
+	background:url(../../images/xinjiang/section_title_fengjing.png) no-repeat;
+	width:290px;
+	height:230px;
+	position:absolute;
+	top:430px;
+	left:50%;
+	margin-left:-145px;
+	z-index:9;
+	}
+.zy_landscape_contain{
+    width: 100%;
+    height: 480px;
+	padding:20px 0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+    background: #fff;
+    /* margin-top: 360px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+	z-index:8;
+}
+.zy_landscape_list{    
+	margin:0;
+	padding:20px 0;
+	height:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	font-size:0;
+	position: absolute;
+    left: 0;
+}
+.zy_landscape_article{
+    display: inline-block;
+    width: 240px;
+    height: 100%;
+    white-space: normal;
+	border-right:#999 1px solid;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:0 20px;
+	position:relative;
+	cursor:pointer;
+}
+.zy_landscape_article>.zy_article_thumb{
+	width:200px;
+	height:200px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	}
+.zy_landscape_article>.zy_article_thumb img{
+	width:100%;
+	}
+.zy_landscape_article>.zy_article_abstract{
+	width:200px;
+	height:200px;
+	text-align:center;
+	position:absolute;
+	bottom:0;
+	overflow:hidden;
+	color:#666;
+	}
+.zy_landscape_article>.zy_article_abstract h2{
+	font-size:18px;
+	}
+.zy_landscape_article>.zy_article_abstract p{
+	font-size:16px;
+	line-height:2em;
+	margin:5px 0;
+	}
+.zy_landscape_article>.zy_article_abstract p.zy_article_date{
+	font-size:12px;
+	border-top:#ccc 1px solid;
+	padding-top:8px;
+	}
+.zy_landscape_article:first-child{
+    display: inline-block;
+    width: 720px;
+    height: 400px;
+	padding-left:0;
+    white-space: normal;
+	border-right:#999 1px solid;
+}
+.zy_landscape_article:nth-child(2n)>.zy_article_thumb{
+	bottom:0;
+	top:auto;
+	}
+.zy_landscape_article:nth-child(2n)>.zy_article_abstract{
+	top:0;
+	height:180px;
+	}
+.zy_landscape_article:first-child>.zy_article_thumb{
+	width:400px;
+	height:400px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	}
+.zy_landscape_article:first-child>.zy_article_abstract{
+	width:280px;
+	height:400px;
+	text-align:center;
+	top:0;
+	right:20px;
+	}
+/*------------------------------------人物部分--------------------------*/
+.zy_people{
+	position:relative;
+	}
+.zy_people_bg{
+	height:640px;
+	width:100%;
+	overflow:hidden;
+	}
+.zy_people_heading{
+	font-size:0;
+	text-indent:-9999px;
+	background:url(../../images/xinjiang/section_title_renwen.png) no-repeat;
+	width:290px;
+	height:230px;
+	position:absolute;
+	top:430px;
+	left:50%;
+	margin-left:-145px;
+	z-index:9;
+	}
+.zy_people_contain{
+    width: 100%;
+    height: 430px;
+	padding:20px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+    background: #fff;
+    /* margin-top: 360px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+	z-index:8;
+}
+.zy_people_list{
+    padding: 0;
+	margin:0;
+	height:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:20px 0;
+	font-size:0;
+	vertical-align:top;
+	position: absolute;
+    left: 0px;
+}
+.zy_people_article{
+    display: inline-block;
+    width: 340px;
+    height: 100%;
+    white-space: normal;
+	border-right:#999 1px solid;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:0 20px;
+	position:relative;
+	overflow:hidden;
+	cursor:pointer;
+}
+.zy_people_article>.zy_article_thumb{
+	width:120px;
+	height:120px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:20px;
+	}
+.zy_people_article>.zy_article_thumb img{
+	width:100%;
+	}
+.zy_people_article>.zy_article_abstract{
+	width:120px;
+	position:absolute;
+	top:120px;
+	left:20px;
+	}
+.zy_people_article>.zy_article_abstract h2{
+	font-size:17px;
+	width:120px;
+	}
+.zy_people_article>.zy_article_abstract p{
+	font-size:16px;
+	line-height:2em;
+	margin:0;
+	position:absolute;
+	left:140px;
+	top:-120px;
+	width:160px;
+	}
+.zy_people_article>.zy_article_abstract p.zy_article_date{
+	font-size:12px;
+	border-top:#ccc 1px solid;
+	padding-top:8px;
+	position:static;	
+	width:120px;
+	text-align:center;
+	}
+/*------------------------------------物语部分--------------------------*/
+.zy_artifact{
+	position:relative;
+	}
+.zy_artifact_bg{
+	height:640px;
+	width:100%;
+	overflow:hidden;
+	}
+.zy_artifact_heading{
+	font-size:0;
+	text-indent:-9999px;
+	background:url(../../images/xinjiang/section_title_wuyu.png) no-repeat;
+	width:290px;
+	height:230px;
+	position:absolute;
+	top:430px;
+	left:50%;
+	margin-left:-145px;
+	z-index:9;
+	}
+.zy_artifact_contain{
+    width: 100%;
+    height: 480px;
+	padding:20px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+    background: #fff;
+    /* margin-top: 360px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+	z-index:8;
+}
+.zy_artifact_list{
+	margin:0;
+	height:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:20px 0;	
+	font-size:0;
+	position: absolute;
+    left: 0;
+}
+.zy_artifact_article{
+    display: inline-block;
+    width: 380px;
+    height: 380px;
+    white-space: normal;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	margin:0 10px;
+	position:relative;
+	overflow:hidden;
+	cursor:pointer;
+}
+.zy_artifact_article>.zy_article_thumb{
+	width:380px;
+	height:380px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+	}
+.zy_artifact_article>.zy_article_thumb img{
+	width:100%;
+	}
+.zy_artifact_article>.zy_article_abstract{
+	width:100%;
+	height:380px;
+	overflow:hidden;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:20px 20px 30px 20px;
+	background:#E83A00;
+	position:absolute;
+	top:380px;
+	left:0;
+	-webkit-transition:all 0.4s ease-out;
+	-moz-transition:all 0.4s ease-out;
+	-ms-transition:all 0.4s ease-out;
+	transition:all 0.4s ease-out;
+	}
+.zy_artifact_article:hover>.zy_article_abstract{
+	top:0;
+}
+.zy_artifact_article>.zy_article_abstract h2{
+	font-size:22px;
+	text-align:center;
+	color:#fff;
+	}
+.zy_artifact_article>.zy_article_abstract p{	
+	font-size:16px;
+	line-height:2em;
+	margin:auto;
+	color:#fff;
+	width:300px;
+	}
+.zy_artifact_article>.zy_article_abstract p.zy_article_date{
+	font-size:12px;
+	border-top:#ccc 1px solid;
+	padding-top:8px;
+	position:static;	
+	text-align:center;
+	width:300px;
+	margin:auto;
+	display:block;
+	color:#fff;
+	}
+/*------------------------------------社区部分--------------------------*/
+.zy_community{
+	position:relative;
+	}
+.zy_community_bg{
+	height:640px;
+	width:100%;
+	overflow:hidden;
+	}
+.zy_community_heading{
+	font-size:0;
+	text-indent:-9999px;
+	background:url(../../images/xinjiang/section_title_shequ.png) no-repeat;
+	width:290px;
+	height:230px;
+	position:absolute;
+	top:430px;
+	left:50%;
+	margin-left:-145px;
+	z-index:9;
+	}
+.zy_community_contain{
+    width: 100%;
+    height: 430px;
+	padding:20px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+    background: #fff;
+    /* margin-top: 360px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+	z-index:8;
+}
+.zy_community_list{
+	margin:0;
+	height:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:20px 0;
+	font-size:0;
+	position: absolute;
+    left: 0;
+}
+.zy_community_article{
+    display: inline-block;
+    width: 340px;
+    height: 100%;
+    white-space: normal;
+	border-right:#999 1px solid;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:0 20px;
+	position:relative;
+	overflow:hidden;
+	cursor:pointer;
+}
+.zy_community_article>.zy_article_thumb{
+	width:120px;
+	height:120px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:20px;
+	}
+.zy_community_article>.zy_article_thumb img{
+	width:100%;
+	}
+.zy_community_article>.zy_article_abstract{
+	width:120px;
+	position:absolute;
+	top:120px;
+	left:20px;
+	}
+.zy_community_article>.zy_article_abstract h2{
+	font-size:17px;
+	width:120px;
+	}
+.zy_community_article>.zy_article_abstract p{
+	font-size:16px;
+	line-height:2em;
+	margin:0;
+	position:absolute;
+	left:140px;
+	top:-120px;
+	width:160px;
+	font-weight:normal;
+	}
+.zy_community_article>.zy_article_abstract p.zy_article_date{
+	font-size:12px;
+	border-top:#ccc 1px solid;
+	padding-top:8px;
+	position:static;	
+	width:120px;
+	}
+/*------------------------------------footer部分--------------------------*/
+.zy_footer{
+    width: 100%;
+    background-color: #1a1a1a;
+    position: relative;
+	padding:60px 0 0 0;
+		-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.zy_project_info{
+	width:60%;
+	margin-left:40%;
+	position:relative;
+	padding:40px 40px 40px 0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	}
+.zy_project_title{
+	width:336px;
+	height:58px;
+	font-size:0;
+	text-indent:-9999px;
+	background:url(../../images/xinjiang/title_text_project_background.png) no-repeat;
+	margin:auto;
+}
+.zy_project_info p{
+    color: #e6e6e6;
+    font-size: 14px;
+    line-height: 2em;
+}
+.zy_project_sponsors{
+	margin:0;
+	padding:0;
+	position:absolute;
+	top:120px;
+	left:-300px;
+}
+.zy_project_sponsors> li{
+	list-style:none;
+	}
+.zy_project_sponsors .zy_logo_mkmj{
+	width:150px;
+	height:150px;
+	background:url(../../images/xinjiang/markor.png) no-repeat;
+	font-size:0;
+	text-indent:-9999px;
+	margin:auto;
+	display:block;
+}
+.zy_project_sponsors .zy_logo_hnusd{
+	width:230px;
+	height:70px;
+	background:url(../../images/xinjiang/hnu.png) no-repeat;
+	font-size:0;
+	text-indent:-9999px;
+	margin-top:20px;
+	display:block;
+}
+
+.zy_copyright{
+	background:#333;
+	padding:50px 0;
+	text-align:center;
+	color:#ccc;
+	font-size:0.7em;
+	}
+.zy_app_download{
+	background:#333;
+	text-align:center;
+	padding:150px 0 50px 0;
+	}
+.zy_app_download>h2{
+	font-size:2em;
+	font-weight:bold;
+	position:relative;
+	margin:0;
+	color:#b3b3b3;
+	font-weight:normal;	
+	}
+.zy_app_download>h2:before{
+	content:"";
+	width:66px;
+	height:66px;
+	background:url(../../images/xinjiang/sprite.png) no-repeat -936px -254px;
+	position:absolute;
+	left:50%;
+	margin-left:-33px;
+	top:-70px;
+	}
+.zy_app_download>h3{
+	font-size:3em;
+	font-weight:bold;
+	margin:0 auto;
+	padding-bottom:20px;
+	color:#b3b3b3;
+	border-bottom:#b3b3b3 1px solid;
+	width:600px;
+	}
+.zy_app_download_list{
+	margin:0;
+	padding:0;
+	}
+.zy_app_download_list li{
+	list-style:none;
+	display:inline-block;
+	}
+.zy_app_download_list li a{
+	font-size:0;
+	width:72px;
+	height:72px;
+	display:inline-block;
+	text-indent:-9999px;
+	}
+.zy_app_download_list li a:hover{
+	opacity:0.5;
+	}
+.zy_app_download_list .zy_android_phone_app{
+	background:url(../../images/xinjiang/logo_android_phone.png) no-repeat;
+	}
+.zy_app_download_list .zy_android_pad_app{
+	background:url(../../images/xinjiang/logo_android_pad.png) no-repeat;
+	}
+/*---------显示视频----------*/
+.zy_wrap{
+    position:fixed;
+    top:0;
+    left: 0;
+	width:100%;
+	height:100%;
+    background: #000;
+    opacity: .7;
+    z-index: 9996;
+}
+.zy_show_section{	
+	z-index: 9999;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing: border-box;
+}
+.zy_show_close{
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: auto;
+	cursor:pointer;
+    background: url(../../images/xinjiang/btn_close_normal.png) no-repeat;
+}
+.zy_show_close:hover{
+    background: url(../../images/xinjiang/btn_close_pressed.png) no-repeat;
+}
+/*--------------显示文章--------------*/
+.zy_article_container{
+	position: fixed;
+    left:100%;
+	top:0;
+    z-index: 9997;
+    width: 100%;
+    height:100%;
+    margin: auto;
+}
+/*popout_win*/
+.zy_popout_win{
+	width:640px;
+	height:200px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	background:url(../../images/xinjiang/popout_bg.png) no-repeat;
+	padding:20px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-100px 0 0 -320px;
+	z-index:10001;
+	text-align:center;	
+	overflow:hidden;
+	}
+.zy_popout_win>.zy_popout_title{
+	color:#fff;
+	}
+.zy_popout_win>.zy_popout_btn{
+	background:#fff;
+	padding:8px;
+	width:120px;
+	display:block;
+	position:absolute;
+	bottom:30px;
+	left:50%;	
+	margin-left:-60px;
+	color:#E83A00;
+	font-weight:bold;
+	cursor:pointer;
+	}
+.zy_popout_win>.zy_popout_btn:hover{
+	background:#1a1a1a;
+	}
+/*loadingSpinner*/
+.zy_loading_spinner{
+	position:absolute;
+	top:50%;
+	left:50%;
+	}
+.zy_loading_spinner_layer1{
+	width:36px;
+	height:36px;
+	background:url(../../images/xinjiang/loading_spinner_bg.png) no-repeat;
+	-webkit-animation: spin 4s infinite linear reverse;
+	-moz-animation: spin 4s infinite linear reverse;
+	animation: spin 4s infinite linear reverse;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-18px 0 0 -18px;
+	}
+.zy_loading_spinner_layer2{
+	width:36px;
+	height:36px;
+	background:url(../../images/xinjiang/loading_spinner_outline.png) no-repeat;
+	-webkit-animation: spin 2s infinite ease-in-out;
+	-moz-animation: spin 2s infinite ease-in-out;
+	animation: spin 2s infinite ease-in-out;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-18px 0 0 -18px;;
+	}
+
+.zy_article_content{
+    background: #fff;
+    width: 100%;
+    position:absolute;
+	top:50px;
+	bottom:0;
+    overflow-x: auto;
+	overflow-y:hidden;
+	padding:30px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+/* 设置滚动条的样式 */
+.zy_article_content::-webkit-scrollbar {
+    height: 8px;
+}
+/* 滚动槽 */
+.zy_article_content::-webkit-scrollbar-track {
+    background:#1a1a1a;
+}
+/* 滚动条滑块 */
+.zy_article_content::-webkit-scrollbar-thumb {
+    background: #E83A00;
+}
+.zy_article_content_close{
+	cursor:pointer;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background: url(../../images/xinjiang/btn_back_normal.png) no-repeat;
+}
+.zy_article_content_close:hover{
+    background: url(../../images/xinjiang/btn_back_pressed.png) no-repeat;
+}
+.zy_show_load_container{
+	width:100%;
+	text-align:center;
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+	overflow-y: auto;
+	}
+/* 设置滚动条的样式 */
+.zy_show_load_container::-webkit-scrollbar {
+    width: 8px;
+}
+/* 滚动槽 */
+.zy_show_load_container::-webkit-scrollbar-track {
+    background:#1a1a1a;
+}
+/* 滚动条滑块 */
+.zy_show_load_container::-webkit-scrollbar-thumb {
+    background: #E83A00;
+}
+.zy_show_load_container img{
+	margin:auto;
+	max-width:100%;
+	}
+.zy_show_load_container video{max-width:100%;margin:auto;}
+
+/*动画定义*/
+@-webkit-keyframes spin{
+     0%{
+          -webkit-transform:rotate(0deg);
+     }
+     100%{
+          -webkit-transform:rotate(360deg);
+     }
+}
+@-moz-keyframes spin{
+     0%{
+          -moz-transform:rotate(0deg);
+     }
+     100%{
+          -moz-transform:rotate(360deg);
+     }
+}
+@keyframes spin{
+     0%{
+          transform:rotate(0deg);
+     }
+     100%{
+          transform:rotate(360deg);
+     }
+}
+
+
+
+/*图文混排展示模版*/
+.article-main-post {
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.article-main-post .article-head-post {
+    position: absolute;
+    bottom: 0;
+    left: 250px;
+    z-index: 3;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #fff;
+    height: 150px;
+    min-width: 50%;
+}
+
+
+.article-main-post .article-title-post {
+    padding: 0;
+    margin: 0;
+    font-size: 36px;
+    color: #666;
+    width: auto;
+}
+
+.article-main-post .article-item-post {
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+    display: inline-block;
+}
+.article-main-post .article-title-slide {
+    color: #666;
+    width: 300px;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.article-main-post .article-abstract-slide {
+    margin-top: 2em;
+    font-size: 18px;
+    color: #666;
+    width: 300px;
+    line-height: 1.5em;
+}
+
+.article-main-post .article-abstract-slide::first-letter {
+    display: inline-block;
+    font-size: 32px;
+    color: #ca2e3a;
+}
+
+.article-main-post .article-author-post {
+    padding-right: 10px;
+}
+
+.article-main-post .article-category-post {
+    padding: 0 10px;
+    border-left: #666 1px solid;
+}
+
+.article-main-post .article-time-post {
+    padding: 0 10px;
+    border-left: #666 1px solid;
+}
+
+.article-main-post .article-poster-post {
+    /*position:absolute;
+     left:0;
+     top:0;
+     bottom:0;*/
+    height: 100%;
+    font-size: 0;
+}
+
+.article-main-post .article-poster-post img {
+    height: 100%;
+}
+
+.article-main-post .article-content-post {
+    background: #fff;
+    color: #666666;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 320px;
+    right:0px;
+    bottom: 10px;
+    width:100%;
+    height:100%;
+    padding: 0 0 20px 40px;
+    -webkit-column-gap: 40px;
+    -webkit-column-width: 260px;
+    -moz-column-gap: 40px;
+    -moz-column-width: 260px;
+    column-gap: 40px;
+    column-width: 260px;
+    line-height: 2em;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.article-main-post .article-content-post::first-letter {
+    display: inline-block;
+    font-size: 32px;
+    color: #ca2e3a;
+}
+
+.article-main-post .article-content-post img {
+    width: 100%;
+}
+
+.article-main-post .article-content-post p {
+    margin: 0 10px;
+}
+
+.article-main-post .article-content-post figcaption {
+    color: #ca2e3a;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.4em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+.videoslide{
+    text-indent:0;
+    display:inline-block;
+    position:relative;
+	max-width:100%;
+}
+.videoslide:before
+{
+    content:"";
+    background:url(../../images/xinjiang/hasvideo.png) no-repeat;
+    width:80px;
+    height:80px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-40px 0 0 -40px;
+}
+
+/*幻灯片模版展示*/
+.article-main-slide{
+    background:#fff;
+    height:540px;
+    position:relative;
+}
+.article-main-slide p{
+    font-size:14px;
+
+}
+.article-title-slide{
+    color:#666;
+    width:300px;
+    font-size:36px;
+    margin-top:0;
+}
+
+.article-author-slide, .article-category-slide{
+    color:#666;
+    width:300px;
+    line-height:10px;
+    font-size:16px;
+    font-weight:normal;
+}
+.article-author-slide{
+    border-bottom:#666 1px solid;
+    padding-bottom:10px;
+    margin-bottom:10px;
+}
+.article-abstract-slide{
+    margin-top:2em;
+    font-size:18px;
+    color:#666;
+    width:300px;
+    line-height:1.5em;
+}
+.article-abstract-slide::first-letter{
+    display:inline-block;
+    font-size:32px;
+    color:#E83A00;
+}
+.allslides-slide{
+    display:block;
+    position:absolute;
+    left:360px;
+    top:0;
+    height:540px;
+    width:auto;
+    white-space: nowrap;
+}
+.slide-slide{
+    display: inline-block;
+    height:100%;
+    position:relative;
+}
+.slide-slide img{
+    height:100%;
+    width:auto;
+}
+.slide-slide a{
+    display:inline-block;
+    height:100%;
+}
+.imgcaption-slide{
+    background-color:#000;
+    width:100%;
+    opacity: 0.7;
+    position:absolute;
+    bottom:0;
+    left:0;
+    color:#fff;
+    font-size:16px;
+    line-height: 24px;
+    padding:10px;
+	white-space: normal;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;	
+	box-sizing: border-box;
+}
+.imgcaption-slide  span{
+    font-size: 21px;
+}
+
+@media screen and (min-width: 1900px) {
+    .zy_featured_articles li .date{
+        display: none;
+    }
+    .zy_featured_articles li .title{
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 2150px) {
+    .zy_featured_articles li .title{
+        display: none;
+    }
+}

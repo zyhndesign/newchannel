@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="fragment" content="!">
+    <meta name="description" content="雅安独特的自然生态环境与丰富的非物质文化遗产展示平台" />
+    <meta name="keywords" content="社会创新, 新通道, 文化产品创新, 文化产品设计，雅安，侗锦" />
+    <title>雅安</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/apps/index.min.css"/>-->
+
+    <link rel="stylesheet" type="text/css" href="css/apps/index.css" />
+</head>
+<body>
+
+<!--播放器-->
+<section class="zy_music_section" id="zy_music_section">
+    <div id="zy_music_player" class="zy_player zy_hidden">
+        <p id="zy_music_title" class="zy_music_title">新通道特色音乐</p>
+        <div class="zy_music_controller">
+            <a id="zy_music_prev"  class="zy_music_prev">上一首</a>
+            <a id="zy_music_control" class="zy_music_play">播放、暂停</a>
+            <a id="zy_music_next" class="zy_music_next">下一首</a>
+        </div>
+        <span class="zy_separate">分割线</span>
+        <div id="zy_music_timeline" class="zy_music_timeline">时间线</div>
+    </div>
+
+    <div id="zy_music_show" class="EDGE-4537676 zy_music_show"></div>
+
+    <!--播放器-->
+    <audio class="zy_hidden" id="zy_music_audio" src=""></audio>
+    <!--播放列表-->
+    <ul id="zy_music_list" style="display:none">
+        <script id="zy_music_tpl" type="text/template">
+            {@each musics as music,index}
+                {@if index==0}
+                    <li class="active_music" data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+                {@else}
+                    <li data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+                {@/if}
+            {@/each}
+        </script>
+    </ul>
+</section>
+
+
+<div id="zy_main_wrapper" class="zy_main_wrapper">
+
+<!--置顶文章部分-->
+<section id="zy_top_post" class="zy_top_post">
+    <div id="zy_top_post_poster" class="zy_top_post_poster">
+    	<img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/fengmian_bg.jpg"/>
+    </div>
+
+    <div id="Stage" class="EDGE-500 zy_logo"></div>
+    <span class="zy_dropdown" data-target="#zy_featured">向下</span>
+</section>
+
+<!--菜单栏-->
+<div id="menuStage" class="EDGE-9700269 zy_nav"></div>
+
+<!--------------------------------------推荐------------------------------------------>
+<section class="zy_featured" id="zy_featured">
+    <header class="zy_featured_heading">推荐</header>
+    <script id="zy_featured_articles_tpl" type="text/template">
+
+        {@each top_posts as post,index}
+        {@if index<3}
+        <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+            <div class="abstract">
+                {@if post.hasVideo}
+                    <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
+                {@else}
+                    <div class="thumb"><img src="${post.thumb}" /></div>
+                {@/if}
+                <h3 class="title">${post.post_title}</h3>
+                <div class="date">${post.post_date}</div>
+                <p class="excerpt">${post.post_excerpt}</p>
+            </div>
+        </li>
+        {@/if}
+        {@/each}
+
+    </script>
+	<ul id="zy_featured_articles" class="zy_featured_articles">
+
+    </ul>
+    <span class="zy_dropdown" data-target="#zy_section_one">向下</span>
+</section>
+<!--------------------------------------风景------------------------------------------>
+<section id="zy_section_one" class="zy_section_one zy_section">
+    <div id="zy_section_one_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg">
+    </div>
+    <h2 class="zy_section_heading">风景</h2>
+    <section id="zy_section_one_contain" class="zy_section_contain">
+        <a id="zy_section_one_prev" class="zy_page_prev zy_page_item zy_disable"></a>
+        <div id="zy_section_one_list_container" class="zy_post_list_container">
+            <script id="zy_section_one_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li  class="zy_article_one">
+                    {@if post.top.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@/if}
+
+                    {@if post.bottom}
+
+                    {@if post.bottom.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2 class="title">${post.bottom.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2>${post.bottom.post_title}</h2>
+                    </div>
+                    {@/if}
+
+                    {@/if}
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_section_one_list" class="zy_post_list">
+
+            </ul>
+
+            <span class="zy_dropdown" data-target="#zy_section_two">向下</span>
+
+
+        </div>
+
+        <div class="zy_section_one_bottom_bg_left">左下背景图</div>
+        <div class="zy_section_one_bottom_bg_right">右下背景图</div>
+
+        <a id="zy_section_one_next" class="zy_page_next zy_page_item"></a>
+
+    </section>
+</section>
+
+<!--------------------------------------人文------------------------------------------>
+<section id="zy_section_two" class="zy_section_two zy_section">
+    <div id="zy_section_two_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg2.jpg">
+    </div>
+    <h2 class="zy_section_heading">人文</h2>
+    <section id="zy_section_two_contain" class="zy_section_contain">
+
+        <a id="zy_section_two_prev" class="zy_page_prev zy_page_item zy_disable">上一页</a>
+        <div id="zy_section_two_list_container" class="zy_post_list_container">
+            <script id="zy_section_two_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_article_two">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p class="zy_article_excerpt">
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_section_two_list" class="zy_post_list">
+
+            </ul>
+
+            <span class="zy_dropdown" data-target="#zy_section_three">向下</span>
+        </div>
+        <a id="zy_section_two_next" class="zy_page_next zy_page_item">下一页</a>
+    </section>
+</section>
+<!--------------------------------------物语------------------------------------------>
+<section id="zy_section_three" class="zy_section_three zy_section">
+    <div id="zy_section_three_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg3.jpg">
+    </div>
+    <h2 class="zy_section_heading">物语</h2>
+    <section id="zy_section_three_contain" class="zy_section_contain">
+        <a id="zy_section_three_prev" class="zy_page_prev zy_page_item zy_disable">上一页</a>
+        <div id="zy_section_three_list_container" class="zy_post_list_container">
+            <script id="zy_section_three_articles_tpl" type="text/template">
+
+
+                {@each posts as post}
+                <li  class="zy_article_three">
+                    {@if post.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+                        <img src="${post.thumb}"/>
+                        <h2>${post.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+                        <img src="${post.thumb}"/>
+                        <h2>${post.post_title}</h2>
+                    </div>
+                    {@/if}
+                </li>
+                {@/each}
+
+
+            </script>
+            <ul id="zy_section_three_list" class="zy_post_list">
+
+            </ul>
+
+            <span class="zy_dropdown" data-target="#zy_section_four">向下</span>
+        </div>
+        <a id="zy_section_three_next" class="zy_page_next zy_page_item">下一页</a>
+    </section>
+</section>
+<!--------------------------------------社区------------------------------------------>
+<section id="zy_section_four" class="zy_section_four zy_section">
+    <div id="zy_section_four_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg4.jpg">
+    </div>
+    <h2 class="zy_section_heading">社区</h2>
+    <section id="zy_section_four_contain" class="zy_section_contain">
+
+        <a id="zy_section_four_prev" class="zy_page_prev zy_page_item zy_disable">上一页</a>
+        <div id="zy_section_four_list_container" class="zy_post_list_container">
+            <script id="zy_section_four_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_article_two">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p class="zy_article_excerpt">
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_section_four_list" class="zy_post_list">
+
+            </ul>
+
+        </div>
+        <a id="zy_section_four_next" class="zy_page_next zy_page_item">下一页</a>
+
+    </section>
+</section>
+<!--底部-->
+<footer class="zy_footer">
+    <div class="zy_project">
+        <div class="zy_project_sponsors">
+            <h1 class="zy_bottom_logo"><a href="#"><img src="images/apps/logo.png"></a></h1>
+        </div>
+        <div class="zy_project_info">
+            <h2 class="zy_project_title">项目背景</h2>
+            <p>
+                2013年4月20日，四川雅安发生7.0级强烈地震，灾区人民群众生命财产遭受严重损失，
+                那里的人们在一年后的今天仍然可以感受到灾后的创伤。2014年6月，由湖南大学，清华大学，
+                四川美院三所院校联合组成的一支调研小组，前往四川雅安，进行了为期一周的田野调研。
+                团队成员15人，6个不同的专业小组，途径荥经县，芦山县，天全县，汉源县，宝兴县，
+                对当地的公共服务的产品，独特的地域文化资源，手工艺、自然和历史文化遗产和独特生活文化等进行了初步调研与考察。
+            </p>
+            <ul class="zy_other_logos">
+                <li><a class="zy_logo_1" href="http://www.vfund.org/html/index.html" target="_blank">芒果V基金</a></li>
+                <li><a class="zy_logo_2" href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="zy_copyright">
+        <p>© 湖南省工业设计协会 版权所有</p>
+        <p>中意工业设计（湖南）有限公司 设计开发</p>
+    </div>   
+</footer>
+</div>
+
+<!--弹出层-->
+<section id="zy_wrap" class="zy_wrap zy_hidden"></section>
+<section id="zy_show_section" class="zy_show_section zy_hidden">
+    <span id="zy_show_close" class="zy_show_close"></span>
+    <!--load加载的媒体播放页面放置处-->
+    <div id="zy_show_load_container" class="zy_show_load_container">
+
+    </div>
+
+</section>
+<!--弹出窗口-->
+<section id="zy_popout_win" class="zy_popout_win zy_hidden">
+<h3 class="zy_popout_title"></h3>
+<span id="zy_popout_close" class="zy_popout_btn">好</span>
+</section>
+<!--单片文章展示模版，采用load加载页面-->
+<article id="zy_article_container" class="zy_article_container">
+    <span id="zy_article_container_close" class="zy_article_container_close"></span>
+    <section id="zy_article_content" class="zy_article_content">
+        <script id="zy_show_detail_tpl" type="text/template">
+            {@if post_type=="zypost"}
+            <article class="article-main-post">
+                <div class="article-head-post">
+                    <h1 class="article-title-post">${post_title}</h1>
+                    <h2 class="article-author-post article-item-post">${post_author} </h2>
+                    <h2 class="article-category-post article-item-post">${post_category}</h2>
+                    <h2 class="article-time-post article-item-post">${post_date}</h2>
+                </div>
+                <div class="article-poster-post"><img src="${post_thumb}" ></div>
+
+
+
+                <div class="article-content-post">
+                    <p>$${post_content}</p>
+                </div>
+            </article>
+            {@else}
+                <article class="article-main-slide">
+                    <h1 class="article-title-slide">${post_title}</h1>
+                    <h2 class="article-author-slide">${post_author}</h2>
+                    <h2 class="article-category-slide">${post_category} | ${post_date}</h2>
+
+
+
+                    <div class="article-abstract-slide">
+                        <p>${post_excerpt}</p>
+                    </div>
+
+
+
+                    <div class="allslides-slide">
+                        {@each post_slides as slide}
+                            <div class="slide-slide">
+                                {@if slide.title}
+
+                                    {@if slide.memo}
+                                        <div class="imgcaption-slide"><span>${slide.title}</span>：${slide.memo}</div>
+                                    {@else}
+                                        <div class="imgcaption-slide">${slide.title}</div>
+                                    {@/if}
+
+                                {@else if slide.memo}
+                                    <div class="imgcaption-slide">${slide.memo}</div>
+                                {@/if}
+
+                                $${slide.content}
+                            </div>
+                        {@/each}
+
+                    </div>
+                </article>
+            {@/if}
+
+        </script>
+    </section>
+</article>
+
+<!--数据加载时的等待动画-->
+<script type="text/template" id="zy_spinner_tpl">
+    <div class="zy_loading_spinner">
+        <div class="zy_loading_top zy_loading_item"></div>
+        <div class="zy_loading_center_left zy_loading_item"></div>
+        <div class="zy_loading_center_right zy_loading_item"></div>
+        <div class="zy_loading_bottom_left zy_loading_item"></div>
+        <div class="zy_loading_bottom_right zy_loading_item"></div>
+    </div>
+</script>
+
+<!--下载音乐的target-->
+<iframe name="zy_download_music" style="display: none"></iframe>
+
+<script src="../../pkg/cn/yaan/index.html_aio.js"></script>
+<script type="text/javascript">
+    //加载资源
+    Modernizr.load([
+        {
+            test:Modernizr.rgba &&
+                    Modernizr.borderradius &&
+                    Modernizr.boxshadow &&
+                    Modernizr.textshadow &&
+                    Modernizr.opacity &&
+                    Modernizr.cssanimations &&
+                    Modernizr.csscolumns &&
+                    Modernizr.csstransitions &&
+                    Modernizr.generatedcontent &&
+                    Modernizr.video &&
+                    Modernizr.audio,
+            nope:["js/libs/jquery-1.10.2.min.js","js/src/uiManager.js"],
+            yep:[
+                "js/libs/jquery-1.10.2.min.js",
+                "js/libs/juicer-min.js",
+                "js/libs/greensock/TweenMax.min.js",
+                "js/libs/greensock/ScrollToPlugin.min.js",
+                "js/src/config.js",
+                "js/src/controllerManager.js",
+                "js/src/dataManager.js",
+                "js/src/uiManager.js",
+                "js/src/music.js",
+                "js/src/index.js"
+            ],
+            callback:function(key,testResult){
+                if(testResult!==true&&key=="js/src/uiManager.js"){
+                    ZY.uiManager.showPopOut("很抱歉，本站使用的一些HTML5特性，您的浏览器可能不支持，为了获得最佳浏览体验，"+
+                            "建议您将浏览器升级到最新版本，或选用其他兼容HTML5的浏览器，我们推荐Chrome浏览器和火狐浏览器。",true);
+                }
+            }
+        }
+    ]);
+</script>
+</body>
+</html>
