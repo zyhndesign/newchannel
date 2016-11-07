@@ -1,0 +1,37 @@
+/*-------------------响应式-------------------------*/
+@media screen and (max-width: 1100px) {
+    .zy_project_sponsors li {
+        padding: 5px 0px 5px 0px;
+    }
+
+    .zy_project_sponsors ul li:first-child {
+        border-bottom: 1px solid #444;
+        border-right: none;
+    }
+
+    .zy_bottom_logo a {
+        width: 240px;
+        height: 140px;
+        background: url(../../images/apps/sprite.png) no-repeat -723px -204px;
+    }
+
+    .zy_nav ul {
+        width: 100%;
+    }
+
+    .zy_featured_articles li .excerpt {
+        height: 126px;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .zy_featured_articles li .excerpt {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 2150px) {
+    .zy_featured_articles li .title {
+        display: none;
+    }
+}

@@ -8,7 +8,6 @@
 var ZY=ZY||{};
 ZY.controllerManager=(function(){
 
-    var rect="";//clip的rect值
     var oldScrollTop=0;
     var featuredBottom=-100;
     var landscapeBottom=-200;

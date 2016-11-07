@@ -1,0 +1,103 @@
+/*--推荐文章z-index:5--*/
+.zy_featured{
+    width: 100%;
+    height: 800px;
+    background: url(../../images/default_bg/bg_featured.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding-top: 30px;
+    position:relative;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    z-index:5;
+    overflow: hidden;
+}
+.zy_featured_left{
+    width: 330px;
+    height: 650px;
+    background: url(../../images/apps/sprite.png) no-repeat -264px -2px;
+    position: absolute;
+    left: -120px;
+    bottom:-100px;
+}
+.zy_featured_heading{
+    width: 370px;
+    background:url(../../images/apps/sprite.png) no-repeat -1008px -321px;
+    height:150px;
+    margin: 0 auto;
+    color: #ff3300;
+    font-size: 0;
+    text-indent:-9999px;
+    position: relative;
+    top:30px;
+}
+.zy_featured_right{
+    width: 385px;
+    height: 700px;
+    background: url(../../images/apps/sprite.png) no-repeat -2px -1284px;
+    position: absolute;
+    right:-190px;
+    bottom: -100px;
+}
+.zy_featured_articles{
+    margin:50px 0;
+    padding:10px 0;
+    text-align:center;
+    width:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+.zy_featured_articles li{
+    display:inline;
+    list-style:none;
+}
+.zy_featured_articles .abstract{
+    display:inline-block;
+    margin:0 1%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    width:20%;
+    height:460px;
+    background:#fff;
+    cursor:pointer;
+    position:relative;
+    vertical-align: top;
+    box-shadow: 0px 0px 5px #444;
+    -webkit-box-shadow: 0px 0px 5px #444;
+    -moz-box-shadow: 0px 0px 5px #444;
+    -ms-box-shadow: 0px 0px 5px #444;
+}
+.zy_featured_articles li .thumb img{
+    width:100%;
+}
+.zy_featured_articles li .title{
+    font-family: "Microsoft YaHei";
+    width:100%;
+    font-size:24px;
+    overflow:hidden;
+    font-weight: bold;
+    color:#333;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding:20px;
+    box-sizing: border-box;
+}
+.zy_featured_articles li .excerpt{
+    text-align: left;
+    color:#666;
+    height: 6em;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin: 10px 20px;
+    padding-top: 20px;
+    border-top:1px solid #ccc;
+}

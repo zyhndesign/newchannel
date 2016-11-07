@@ -8,16 +8,15 @@
 var ZY=ZY||{};
 ZY.dataManager = {
     topPostId:0, //记录下封面故事的文章id，用来判断不显示相同的背景视频
-    lastPeopleDate:"",
-    lastArtifactDate:"",
-    lastCommunityDate:"",
-    lastLandscapeDate:"",
     currentPostId:0, //点击文章聚合后显示的文章的id
     landscapeLoaded:false, //记录下是否加载，主要是用作滚动时加载的标志
     artifactLoaded:false,
     communityLoaded:false,
     peopleLoaded:false,
-    resizeTimer:null,
+    swiper1:null,
+    swiper2:null,
+    swiper3:null,
+    swiper4:null,
 
     /**
      * 获取音乐
@@ -93,26 +92,19 @@ ZY.dataManager = {
     /**
      * 获取分类文章
      * @param {Object} args 参数数组
-     * @param {Object} args.targetContain 包括上一页和下一页按钮的容器元素jquery对象
-     * @param {String} args.lastdate   已经请求了的最后一篇文章的时间
+     * @param {Number} args.limit 每次加载的个数
+     * @param {String} args.lastDate 上次加载的最后时间
      * @param {Number} args.categoryId 分类id
-     * @param {Number} args.width 每个li的宽度
-     * @param {Boolean} args.isFirst   是否第一次请求
+     * @param {Function} args.callback 回调函数
      */
     getCategoryPosts:function(args){
-        var limit=ZY.controllerManager.setLoadLimit({
-            targetContain:args.targetContain,
-            width:args.width,
-            categoryId:args.categoryId,
-            isFirst:args.isFirst
-        });
 
         //请求数据ajax
         $.ajax({
             url:ZY.config.ajaxurl,//ajaxurl为页面刷出来的全局变量
             type:"post",
             data:{
-                limit:limit,
+                limit:args.limit,
                 lastDate:args.lastDate,
                 categoryId:args.categoryId,
                 action:"zy_get_posts"
@@ -123,17 +115,7 @@ ZY.dataManager = {
                 if(response.success){
 
                     //如果返回有数据
-                    var posts=response.data;
-
-                    //返回数据后的处理函数
-                    ZY.controllerManager.doResponse({
-                        targetContain:args["targetContain"],
-                        posts:posts,
-                        isFirst:args["isFirst"],
-                        categoryId:args["categoryId"],
-                        limit:limit
-                    });
-
+                    args.callback(response.data);
                 }else{
                     //提示网络异常的错误
                     ZY.uiManager.showPopOut(ZY.config.errorCode.postsError,false)

@@ -1,0 +1,24 @@
+/*--logo--*/
+.zy_logo{
+    width: 405px;
+    height: 275px;
+    background: url(../../images/apps/sprite.png) no-repeat -596px -349px;
+    font-size: 0px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -137.5px 0px 0px -202.5px;
+}
+.zy_dropdown{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    width: 50px;
+    height: 50px;
+    top:600px;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 9;
+    font-size: 0px;
+    background: url(../../images/apps/sprite.png) no-repeat -1198px -839px;
+}

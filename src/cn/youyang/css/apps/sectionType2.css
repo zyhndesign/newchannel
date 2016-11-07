@@ -1,0 +1,73 @@
+.zy_section_type2 {
+    position: relative;
+    z-index: 3;
+
+}
+
+.zy_section_type2 .zy_bg_left {
+    width: 260px;
+    height: 1280px;
+    background: url(../../images/apps/sprite.png) no-repeat -2px -2px;
+    position: absolute;
+    left: 0px;
+    bottom: -600px;
+}
+.zy_section_type2 .zy_bg_top {
+    min-width: 1280px;
+    width: 100%;
+    height: 500px;
+    background: url(../../images/apps/humanity_top.png) no-repeat center center;
+    position: absolute;
+    top: -180px;
+    left: 0px;
+}
+
+.zy_section_type2 .zy_bg_right {
+    min-width: 1280px;
+    width: 100%;
+    height: 420px;
+    background: url(../../images/apps/humanity_right.png) no-repeat center right;
+    position: absolute;
+    left: 0px;
+    bottom: -380px;
+}
+
+/*--z-index:1--*/
+.zy_section_type2 .zy_heading {
+    font-size: 0;
+    text-indent: -9999px;
+    background: url(../../images/apps/sprite.png) no-repeat -965px -204px;
+    width: 555px;
+    height: 115px;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    margin-left: -277.5px;
+    z-index: 1;
+}
+
+.zy_section_type2 .zy_subheading {
+    background: url(../../images/apps/sprite.png) no-repeat -968px -635px;
+    width: 300px;
+    height: 150px;
+    font-size: 0px;
+    margin: 30px auto;
+    position: relative;
+}
+
+.zy_section_type2 .zy_contain{
+    width: 100%;
+    height: 800px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(../../images/default_bg/bg_humanity.jpg) no-repeat;
+    background-size: 100% 100%;
+    /* margin-top: 360px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 8;
+    padding: 5px 5px 10px 5px;
+}
