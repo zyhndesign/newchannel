@@ -27,8 +27,6 @@ $(document).ready(function(){
         ZY.uiManager.showArticle(ZY.dataManager.currentPostId);
     });
 
-    //显示单篇文章时的横向滚动
-    //ZY.controllerManager.bindHScroll($("#zy_article_content")[0]);
 
     //收回单篇文章展示
     $("#zy_article_content_close").click(function(){
@@ -69,6 +67,9 @@ $(document).ready(function(){
 
     //有可能刷新就已经滚动到了一定位置，需要触发一下，加载相应的数据
     $(window).trigger("scroll");
+
+    //显示单篇文章时的横向滚动
+    ZY.controllerManager.bindHScroll($("#zy_article_content")[0]);
 
     //window 设置滚动速度
     //ZY.controllerManager.setWheelScrollSpeed();

@@ -1,0 +1,50 @@
+.zy_section_type1{
+    position:relative;
+    z-index:4;
+}
+/*--z-index:1--*/
+.zy_section_type1 .zy_heading{
+    font-size:0;
+    background-image: -webkit-image-set(url(../../images/apps/slogan_landscape.png) 1x,
+    url(../../images/apps/slogan_landscape@2x.png) 2x);
+    background-repeat: no-repeat;
+    width:108px;
+    height:186px;
+    position:absolute;
+    top:270px;
+    left:50%;
+    margin-left:-54px;
+    z-index:1;
+}
+
+.zy_section_type1 .zy_subheading{
+    background-image: -webkit-image-set(url(../../images/apps/title_landscape.png) 1x,
+    url(../../images/apps/title_landscape@2x.png) 2x);
+    background-repeat: no-repeat;
+    width: 558px;
+    height: 198px;
+    font-size: 0px;
+    margin: 30px auto;
+}
+.zy_section_type1 .zy_contain{
+    width: 100%;
+    height:800px;
+    box-sizing:border-box;
+    position: relative;
+    z-index:8;
+    background: #fff;
+}
+.zy_section_type1 .zy_contain:before{
+    content:"";
+    width: 100%;
+    height: 200px;
+    background-image: -webkit-image-set(url(../../images/apps/landscape_top.png) 1x,
+    url(../../images/apps/landscape_top.png) 2x);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:-200px;
+}
+.zy_section_type1 .zy_contain .zy_list_container{
+    height: 300px;
+}

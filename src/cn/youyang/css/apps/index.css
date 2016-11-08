@@ -8,8 +8,11 @@ body {
 }
 
 /*所有开始不显示的类*/
-.zy_hidden, .zy_disable {
+.zy_hidden,.zy_disable{
     display: none;
+}
+.zy_noscroll{
+    overflow:hidden !important;
 }
 
 .hasVideo:before {
@@ -79,6 +82,13 @@ a {
     position: relative;
     margin: auto;
     height: 500px;
+    width:960px;
     overflow: hidden;
+    padding:0 0 60px 0px;
+}
+
+/*************swiper********************/
+.swiper-pagination-bullet{
+    background: #fff;
 }
 

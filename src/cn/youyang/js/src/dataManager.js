@@ -121,12 +121,9 @@ ZY.dataManager = {
                     ZY.uiManager.showPopOut(ZY.config.errorCode.postsError,false)
                 }
 
-                ZY.uiManager.hideLoadingSpinner($(args.targetContain));
-
             },
             error:function(){
                 //提示网络异常的错误
-                ZY.uiManager.hideLoadingSpinner(args.targetContain);
                 ZY.uiManager.showPopOut(ZY.config.errorCode.connectionError,false)
             }
         });

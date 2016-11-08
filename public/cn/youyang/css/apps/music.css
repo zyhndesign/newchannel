@@ -1,0 +1,125 @@
+/*--音乐播放器,z-index：100--*/
+.zy_music_section{
+    position:fixed;
+    top:20px;
+    right: 20px;
+    height: 50px;
+    width: 50px;/*初始值为右边显示按钮的宽度*/
+    z-index: 100;
+}
+.zy_player{
+    margin-right: 50px;
+    height: 100%;
+    background: #fff;
+    position: relative;
+    /*-webkit-transition: 2s ease;
+    -moz-transition: 2s ease;
+    transition: 2s ease;*/
+}
+.zy_music_title{
+    font-family: "微软雅黑";
+    text-align:center;
+    font-size: 14px;
+    margin: 0px;
+    color:#888;
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
+    width: 230px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding:0 10px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.zy_music_controller{
+    width: 210px;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    right: 4px;
+    text-align: center;
+    line-height: 50px;
+}
+.zy_music_controller a{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    font-size: 0px;
+    cursor: pointer;
+    vertical-align: top;
+    float: left;
+}
+a.zy_music_prev{
+    width: 80px;
+    background: url(../../images/apps/sprite.png) no-repeat -306px -1986px;
+}
+.zy_music_play{
+    background: url(../../images/apps/sprite.png) no-repeat -1124px -787px;
+}
+.zy_music_pause{
+    background: url(../../images/apps/sprite.png) no-repeat -1020px -787px;
+}
+a.zy_music_next{
+    width: 80px;
+    background: url(../../images/apps/sprite.png) no-repeat -886px -703px;
+}
+.zy_music_prev:hover{
+    background: url(../../images/apps/sprite.png) no-repeat -388px -1986px;
+}
+.zy_music_play:hover{
+    background: url(../../images/apps/sprite.png) no-repeat -1176px -787px;
+}
+.zy_music_pause:hover{
+    background: url(../../images/apps/sprite.png) no-repeat -1072px -787px;
+}
+.zy_music_next:hover{
+    background: url(../../images/apps/sprite.png) no-repeat -886px -755px;
+}
+.zy_separate_left{
+    display: block;
+    height: 14px;
+    position: absolute;
+    margin-top: 18px;
+    top:0px;
+    left: 235px;
+    font-size: 0px;
+    width: 1px;
+    background: #ccc;
+}
+.zy_separate_right{
+    display: block;
+    height: 14px;
+    position: absolute;
+    margin-top: 18px;
+    top:0px;
+    right: 0px;
+    font-size: 0px;
+    width: 1px;
+    background: #ccc;
+}
+.zy_music_show{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    font-size: 0px;
+    bottom:0px;
+    right: 0px;
+    background: url(../../images/apps/sprite.png) no-repeat -938px -839px;
+    cursor:pointer;
+}
+.zy_music_show.zy_music_show_active{
+    background: url(../../images/apps/music_entrance.gif) no-repeat;
+}
+.zy_music_timeline{
+    width: 0%;
+    background:#fff;
+    height:4px;
+    position: absolute;
+    bottom: 0px;
+    font-size: 0px;
+}

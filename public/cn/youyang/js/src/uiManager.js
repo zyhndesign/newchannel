@@ -132,6 +132,7 @@ ZY.uiManager=(function(){
             $(target).css("opacity",1);
         },
 
+
         /**
          * 显示数据加载时候的等待动画,采用动态添加元素,使用juicer
          * @param {Object} target 动画的容器元素jquery对象
@@ -155,47 +156,6 @@ ZY.uiManager=(function(){
         },
 
         /**
-         * 显示风景分类文章,使用juicer
-         * @param {Array} posts 文章数组
-         */
-        showLandscapePosts:function(posts){
-            var tpl= $("#zy_landscape_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_landscape_list").append($(html));
-        },
-
-        /**
-         * 显示人文分类文章
-         * @param {Array} posts 文章数组
-         */
-        showPeoplePosts:function(posts){
-            var tpl= $("#zy_people_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_people_list").append($(html));
-        },
-
-        /**
-         * 显示社区分类文章
-         * @param {Array} posts 文章数组
-         */
-        showCommunityPosts:function(posts){
-            var tpl= $("#zy_community_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_community_list").append($(html));
-        },
-
-        /**
-         * 显示物语分类文章,第一个是单独的大图
-         * @param {Array} posts 文章数组
-         * @param {Boolean} isFirst 是否是第一次加载
-         */
-        showArtifactPosts:function(posts,isFirst){
-            var tpl= $("#zy_artifact_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts,isFirst:isFirst});
-            $("#zy_artifact_list").append($(html));
-        },
-
-        /**
          * 显示文章详情，弹出层显示
          * @param {Number} post_id 文章id
          */
@@ -205,6 +165,7 @@ ZY.uiManager=(function(){
             //首先要清除原有的内容
             $("#zy_article_content").find("article").remove();
             me.showBlackout(ZY.config.defaultWrapZindex);
+            $("body").addClass("zy_noscroll");
             $("#zy_article_container").animate({left:"0%"},300,function(){
                 me.showLoadingSpinner($("#zy_article_content"));
                 ZY.dataManager.getPostDetail(post_id);
@@ -219,6 +180,7 @@ ZY.uiManager=(function(){
             //此处调用是因为可能数据还没加载完就被收回
             var me=this;
             me.hideLoadingSpinner($("#zy_article_content"));
+            $("body").removeClass("zy_noscroll");
             $("#zy_article_container").animate({left:"100%"},300,function(){
                 me.hideBlackout();
             });

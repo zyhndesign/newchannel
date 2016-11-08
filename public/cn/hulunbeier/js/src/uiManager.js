@@ -165,7 +165,6 @@ ZY.uiManager=(function(){
          */
         showVideoDetail:function(url){
             var me=this,loadContainer=$("#zy_show_load_container");
-
             loadContainer.html("");
             me.showBlackout(9998);
             $("#zy_show_section").removeClass("zy_hidden");
