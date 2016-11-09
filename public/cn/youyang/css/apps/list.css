@@ -93,18 +93,12 @@
 * list type 2
 */
 .zy_list_type2 .zy_item {
-    display: inline-block;
-    width: 240px;
+    width: 100%;
     height: 100%;
     white-space: normal;
-    border-right: #666 1px solid;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0 20px;
-    position: relative;
-    cursor: pointer;
+    box-sizing:border-box;
+    position:relative;
+    cursor:pointer;
 }
 
 .zy_list_type2 .zy_article_thumb{
@@ -112,7 +106,10 @@
     height: 200px;
     overflow: hidden;
     position: absolute;
-    top: 0;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
 }
 
 .zy_list_type2  .zy_article_thumb img{
@@ -120,13 +117,14 @@
 }
 
 .zy_list_type2 .zy_article_abstract{
-    width: 200px;
-    height: 240px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
-    color: #666;
+    width:200px;
+    text-align:center;
+    position:absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
+    color:#666;
 }
 
 .zy_list_type2 .zy_article_abstract h2{
@@ -251,18 +249,12 @@
 * list type 4 此文件中同list type 2
 */
 .zy_list_type4 .zy_item {
-    display: inline-block;
-    width: 240px;
+    width: 100%;
     height: 100%;
     white-space: normal;
-    border-right: #666 1px solid;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0 20px;
-    position: relative;
-    cursor: pointer;
+    box-sizing:border-box;
+    position:relative;
+    cursor:pointer;
 }
 
 .zy_list_type4 .zy_article_thumb{
@@ -270,21 +262,26 @@
     height: 200px;
     overflow: hidden;
     position: absolute;
-    top: 0;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
 }
+
 
 .zy_list_type4  .zy_article_thumb img{
     width: 100%;
 }
 
 .zy_list_type4 .zy_article_abstract{
-    width: 200px;
-    height: 240px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
-    color: #666;
+    width:200px;
+    text-align:center;
+    position:absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
+    color:#666;
 }
 
 .zy_list_type4 .zy_article_abstract h2{

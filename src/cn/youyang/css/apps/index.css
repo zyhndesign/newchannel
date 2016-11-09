@@ -3,8 +3,6 @@
 body {
     font-family: "宋体", "Microsoft YaHei", "Heiti SC";
     margin: 0;
-    min-width: 730px;
-    /* overflow-x:hidden;*/
 }
 
 /*所有开始不显示的类*/
@@ -23,6 +21,7 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
+    z-index: 10;
 }
 
 .zy_touch_hscroll {
@@ -64,6 +63,8 @@ a {
 .zy_theme_bg_content {
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 100%;
     min-height: 720px;
     opacity: 0;

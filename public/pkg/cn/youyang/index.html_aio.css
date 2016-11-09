@@ -290,18 +290,14 @@ a.zy_music_next{
     overflow:hidden;
 }
 .zy_featured_articles li{
-    display:inline;
-    list-style:none;
-}
-.zy_featured_articles .abstract{
     display:inline-block;
+    list-style:none;
+    width:20%;
     margin:0 1%;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     box-sizing:border-box;
-    width:20%;
-    height:460px;
     background:#fff;
     cursor:pointer;
     position:relative;
@@ -310,6 +306,8 @@ a.zy_music_next{
     -webkit-box-shadow: 0px 0px 5px #444;
     -moz-box-shadow: 0px 0px 5px #444;
     -ms-box-shadow: 0px 0px 5px #444;
+}
+.zy_featured_articles .abstract{
 }
 .zy_featured_articles li .thumb img{
     width:100%;
@@ -911,18 +909,12 @@ a.zy_music_next{
 * list type 2
 */
 .zy_list_type2 .zy_item {
-    display: inline-block;
-    width: 240px;
+    width: 100%;
     height: 100%;
     white-space: normal;
-    border-right: #666 1px solid;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0 20px;
-    position: relative;
-    cursor: pointer;
+    box-sizing:border-box;
+    position:relative;
+    cursor:pointer;
 }
 
 .zy_list_type2 .zy_article_thumb{
@@ -930,7 +922,10 @@ a.zy_music_next{
     height: 200px;
     overflow: hidden;
     position: absolute;
-    top: 0;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
 }
 
 .zy_list_type2  .zy_article_thumb img{
@@ -938,13 +933,14 @@ a.zy_music_next{
 }
 
 .zy_list_type2 .zy_article_abstract{
-    width: 200px;
-    height: 240px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
-    color: #666;
+    width:200px;
+    text-align:center;
+    position:absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
+    color:#666;
 }
 
 .zy_list_type2 .zy_article_abstract h2{
@@ -1069,18 +1065,12 @@ a.zy_music_next{
 * list type 4 此文件中同list type 2
 */
 .zy_list_type4 .zy_item {
-    display: inline-block;
-    width: 240px;
+    width: 100%;
     height: 100%;
     white-space: normal;
-    border-right: #666 1px solid;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0 20px;
-    position: relative;
-    cursor: pointer;
+    box-sizing:border-box;
+    position:relative;
+    cursor:pointer;
 }
 
 .zy_list_type4 .zy_article_thumb{
@@ -1088,21 +1078,26 @@ a.zy_music_next{
     height: 200px;
     overflow: hidden;
     position: absolute;
-    top: 0;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
 }
+
 
 .zy_list_type4  .zy_article_thumb img{
     width: 100%;
 }
 
 .zy_list_type4 .zy_article_abstract{
-    width: 200px;
-    height: 240px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
-    color: #666;
+    width:200px;
+    text-align:center;
+    position:absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow:hidden;
+    color:#666;
 }
 
 .zy_list_type4 .zy_article_abstract h2{
@@ -1168,19 +1163,20 @@ a.zy_music_next{
 }
 
 /* 设置滚动条的样式 */
-.zy_article_content::-webkit-scrollbar {
+/*.zy_article_content::-webkit-scrollbar {
     height: 8px;
-}
+}*/
 
 /* 滚动槽 */
-.zy_article_content::-webkit-scrollbar-track {
+/*.zy_article_content::-webkit-scrollbar-track {
     background: #1a1a1a;
-}
+}*/
 
 /* 滚动条滑块 */
+/*
 .zy_article_content::-webkit-scrollbar-thumb {
     background: #ca2e3a;
-}
+}*/
 
 .zy_article_content_close {
     cursor: pointer;
@@ -1194,39 +1190,7 @@ a.zy_music_next{
     background: url(../../../cn/youyang/images/apps/sprite.png) no-repeat -1042px -891px;
 }
 
-.zy_show_load_container {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    overflow-y: auto;
-}
 
-/* 设置滚动条的样式 */
-.zy_show_load_container::-webkit-scrollbar {
-    width: 8px;
-}
-
-/* 滚动槽 */
-.zy_show_load_container::-webkit-scrollbar-track {
-    background: #1a1a1a;
-}
-
-/* 滚动条滑块 */
-.zy_show_load_container::-webkit-scrollbar-thumb {
-    background: #ca2e3a;
-}
-
-.zy_show_load_container img {
-    margin: auto;
-    max-width: 100%;
-}
-
-.zy_show_load_container video {
-    max-width: 100%;
-    margin: auto;
-}
 
 /*图文混排展示模版*/
 .article-main-post {
@@ -1503,6 +1467,39 @@ a.zy_music_next{
 .zy_show_close:hover {
     background: url(../../../cn/youyang/images/apps/sprite.png) no-repeat -886px -911px;
 }
+.zy_show_load_container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+/* 设置滚动条的样式 */
+/*.zy_show_load_container::-webkit-scrollbar {
+    width: 8px;
+}*/
+
+/* 滚动槽 */
+/*.zy_show_load_container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}*/
+
+/* 滚动条滑块 */
+/*.zy_show_load_container::-webkit-scrollbar-thumb {
+    background: #ca2e3a;
+}*/
+
+.zy_show_load_container img {
+    margin: auto;
+    max-width: 100%;
+}
+
+.zy_show_load_container video {
+    max-width: 100%;
+    margin: auto;
+}
 
 /*popout_win*/
 .zy_popout_win {
@@ -1549,8 +1546,6 @@ a.zy_music_next{
 body {
     font-family: "宋体", "Microsoft YaHei", "Heiti SC";
     margin: 0;
-    min-width: 730px;
-    /* overflow-x:hidden;*/
 }
 
 /*所有开始不显示的类*/
@@ -1569,6 +1564,7 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
+    z-index: 10;
 }
 
 .zy_touch_hscroll {
@@ -1610,6 +1606,8 @@ a {
 .zy_theme_bg_content {
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 100%;
     min-height: 720px;
     opacity: 0;
@@ -1676,3 +1674,133 @@ a {
         display: none;
     }
 }
+
+@media screen and (max-width: 970px){
+    .zy_list_container{
+        width:80%
+    }
+}
+/*wechat*/
+@media screen and (max-width: 640px){
+    .zy_music_section{
+        display: none;
+    }
+    .zy_nav{
+        width: 400px!important;
+    }
+    .zy_nav .zy_show_menu{
+        display: none;
+    }
+    .zy_nav ul{
+        display: block;
+        margin-left:0px;
+    }
+    .zy_featured{
+        height: auto;
+    }
+    .zy_featured .zy_featured_left,.zy_featured .zy_featured_right{
+        display: none;
+    }
+    .zy_featured_articles{
+        width:90%;
+        display: block;
+        margin: auto;
+    }
+    .zy_featured_articles li{
+        width: 100%;
+        display:block;
+        margin: 20px 0px 20px 0px;
+    }
+    .zy_featured_articles li .thumb{
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    .zy_featured_articles li .thumb img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .zy_list_container{
+        width: 90%;
+    }
+    .zy_project_info{
+        width:90%;
+        display: block;
+        margin: 30px auto 0px auto;
+        padding: 0px;
+    }
+    .zy_project_sponsors{
+        width:90%;
+        display: block;
+        margin: auto;
+        padding: 0px;
+    }
+    .zy_article_content{
+        overflow-x: hidden;
+        overflow-y: auto;
+        width:100%;
+        padding:30px 20px;
+    }
+    /*    幻灯片模式*/
+    .article-main-slide{
+        height: auto;
+    }
+    .article-title-slide{
+        width: auto;
+    }
+    .article-author-slide, .article-category-slide{
+        width:auto;
+    }
+    .article-main-slide p{
+        font-size: 18px;
+    }
+    .article-abstract-slide{
+        width: auto;
+    }
+    .allslides-slide{
+        position:static;
+        width: auto;
+        height: auto;
+        white-space: normal;
+    }
+    .slide-slide{
+        width:100%;
+        font-size: 0;
+        margin-bottom: 20px;
+    }
+    .slide-slide a{
+        width: 100%;
+    }
+    .slide-slide img{
+        width: 100%;
+        height: auto;
+    }
+    .imgcaption-slide{
+        position: static;
+    }
+
+    /*    图文模式*/
+    .article-main-post{
+        position: static;
+    }
+    .article-poster-post{
+        display: none;
+    }
+    .article-head-post{
+        position: static;
+        padding:0;
+        width: auto;
+    }
+    .article-content-post{
+        position: static;
+        column-gap:normal;
+        column-width:auto;
+        padding: 30px 0;
+    }
+    .article-content-post p span{
+        font-size: 18px !important;
+    }
+}
+
