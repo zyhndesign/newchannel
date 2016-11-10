@@ -61,82 +61,12 @@ $(document).ready(function(){
     //获取封面故事和推荐文章
     ZY.dataManager.getTopPosts();
 
-    //风景显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_section_one_contain"));
-
-    //人文部分显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_section_two_contain"));
-
-    //物语部分显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_section_three_contain"));
-
-
-    //社区部分显示左右按钮
-    ZY.controllerManager.addHoverEvent($("#zy_section_four_contain"));
-
-    //风景向右点击
-    $("#zy_section_one_next").click(function(){
-        ZY.controllerManager.nextPage($("#zy_section_one_contain"),ZY.config.articleWidths.sectionOneWidth,
-            ZY.config.categoryIds.sectionOneId,ZY.dataManager.lastSectionOneDate);
-
-    });
-
-    //风景向左点击
-    $("#zy_section_one_prev").click(function(){
-        ZY.controllerManager.prevPage($("#zy_section_one_contain"),
-            ZY.config.articleWidths.sectionOneWidth,ZY.config.categoryIds.sectionOneId);
-
-    });
-
-    //人文向右点击
-    $("#zy_section_two_next").click(function(){
-        ZY.controllerManager.nextPage($("#zy_section_two_contain"),ZY.config.articleWidths.sectionTwoWidth,
-            ZY.config.categoryIds.sectionTwoId,ZY.dataManager.lastSectionTwoDate);
-
-    });
-
-    //人文向左点击
-    $("#zy_section_two_prev").click(function(){
-        ZY.controllerManager.prevPage($("#zy_section_two_contain"),
-            ZY.config.articleWidths.sectionTwoWidth,ZY.config.categoryIds.sectionTwoId);
-
-    });
-
-    //物语向右点击
-    $("#zy_section_three_next").click(function(){
-        ZY.controllerManager.nextPage($("#zy_section_three_contain"),ZY.config.articleWidths.sectionThreeWidth,
-            ZY.config.categoryIds.sectionThreeId,ZY.dataManager.lastSectionThreeDate);
-
-    });
-
-    //物语向左点击
-    $("#zy_section_three_prev").click(function(){
-        ZY.controllerManager.prevPage($("#zy_section_three_contain"),
-            ZY.config.articleWidths.sectionThreeWidth,ZY.config.categoryIds.sectionThreeId);
-
-    });
-
-    //社区向右点击
-    $("#zy_section_four_next").click(function(){
-     ZY.controllerManager.nextPage($("#zy_section_four_contain"),ZY.config.articleWidths.sectionFourWidth,
-     ZY.config.categoryIds.sectionFourId,ZY.dataManager.lastSectionFourDate);
-
-    });
-
-    //社区向左点击
-    $("#zy_section_four_prev").click(function(){
-     ZY.controllerManager.prevPage($("#zy_section_four_contain"),
-     ZY.config.articleWidths.sectionFourWidth,ZY.config.categoryIds.sectionFourId);
-    });
 
     //显示单篇文章
     $(document).on("click","li[data-zy-post-type^=zy],div[data-zy-post-type^=zy],h2[data-zy-post-type^=zy]",function(){
         ZY.dataManager.currentPostId=$(this).data("zy-post-id");
         ZY.uiManager.showArticle(ZY.dataManager.currentPostId);
     });
-
-    //显示单篇文章时的横向滚动
-    ZY.controllerManager.bindHScroll($("#zy_article_content")[0]);
 
     //收回单篇文章展示
     $("#zy_article_container_close").click(function(){
@@ -170,12 +100,6 @@ $(document).ready(function(){
         ZY.uiManager.hidePopOut();
     });
 
-
-    //window 放大缩小事件
-    $(window).resize(function(){
-        ZY.controllerManager.windowResizeHandler();
-    });
-
     //window滚动事件
     $(window).scroll(function(){
         ZY.controllerManager.scrollingHandler();
@@ -184,15 +108,11 @@ $(document).ready(function(){
     //有可能刷新就已经滚动到了一定位置，需要触发一下，加载相应的数据
     $(window).trigger("scroll");
 
+
+    //显示单篇文章时的横向滚动
+    ZY.controllerManager.bindHScroll($("#zy_article_content")[0]);
+
     //window  scroll speed
     //ZY.controllerManager.setWheelScrollSpeed();
 
-    /*=====iOS触屏滚动支持=================*/
-    if(ZY.config.deviceCode.iOS){
-        $(".zy_article_content").addClass("zy_touch_hscroll");
-        $("#zy_section_one_list_container").addClass("zy_touch_hscroll");
-        $("#zy_section_two_list_container").addClass("zy_touch_hscroll");
-        $("#zy_section_three_list_container").addClass("zy_touch_hscroll");
-        $("#zy_section_four_list_container").addClass("zy_touch_hscroll");
-    }
 });

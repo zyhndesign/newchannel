@@ -1,0 +1,94 @@
+/*--音乐播放器,z-index：100--*/
+.zy_music_section {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    height: 50px;
+    width: 50px; /*初始值为右边显示按钮的宽度*/
+    z-index: 100;
+
+}
+
+.zy_player {
+    margin-right: 50px;
+    height: 100%;
+    background: url(../../images/apps/music_bg.png) no-repeat;
+    position: relative;
+    /*-webkit-transition: 2s ease;
+    -moz-transition: 2s ease;
+    transition: 2s ease;*/
+}
+
+.zy_music_title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px 0px 0px 10%;
+    color: #000;
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
+
+}
+
+.zy_music_controller {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.zy_music_controller a {
+    display: inline-block;
+    height: 33px;
+    width: 33px;
+    font-size: 0px;
+    cursor: pointer;
+    margin: 0px 5%;
+    vertical-align: middle;
+}
+
+.zy_music_controller .zy_music_prev {
+    background: url(../../images/apps/music_prev.png) no-repeat;
+}
+
+.zy_music_controller .zy_music_play {
+    width: 37px;
+    background: url(../../images/apps/music_play.png) no-repeat;
+}
+
+.zy_music_controller .zy_music_pause {
+    width: 37px;
+    background: url(../../images/apps/music_pause.png) no-repeat;
+}
+
+.zy_music_controller .zy_music_next {
+    background: url(../../images/apps/music_next.png) no-repeat;
+}
+.zy_separate {
+    display: block;
+    height: 30px;
+    position: absolute;
+    margin-top: 10px;
+    top: 0px;
+    right: 0px;
+    font-size: 0px;
+    width: 1px;
+    background: #fff;
+}
+.zy_music_show {
+    position: absolute!important;
+    right:0px;
+    bottom: 0px;
+}
+.zy_music_timeline {
+    width: 0%;
+    background: #fff;
+    height: 4px;
+    position: absolute;
+    bottom: 0px;
+    font-size: 0px;
+}

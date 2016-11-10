@@ -1,0 +1,38 @@
+<section id="zy_section_two" class="zy_section_two zy_section">
+    <div id="zy_section_two_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg2.jpg">
+    </div>
+    <h2 class="zy_section_heading">人文</h2>
+    <section id="zy_section_two_contain" class="zy_section_contain">
+
+        <div id="zy_section_two_list_container" class="zy_post_list_container  swiper2 swiper-container">
+            <script id="zy_section_two_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_article_two  swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p class="zy_article_excerpt">
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_section_two_list" class="zy_post_list swiper-wrapper">
+
+            </ul>
+
+            <div class="swiper-pagination swiper-pagination2"></div>
+        </div>
+
+        <span class="zy_dropdown" data-target="#zy_section_three">向下</span>
+    </section>
+</section>

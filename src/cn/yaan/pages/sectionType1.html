@@ -1,0 +1,38 @@
+<section id="zy_section_one" class="zy_section_one zy_section">
+    <div id="zy_section_one_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg">
+    </div>
+    <h2 class="zy_section_heading">风景</h2>
+    <section id="zy_section_one_contain" class="zy_section_contain">
+        <div id="zy_section_one_list_container" class="zy_post_list_container swiper1 swiper-container">
+            <script id="zy_section_one_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li  class="zy_article_one swiper-slide">
+
+                    <div class="zy_article_info {@if post.hasVideo}hasVideo{@/if}" data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+                        <img src="${post.thumb}"/>
+                        <h2>${post.post_title}</h2>
+                    </div>
+
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_section_one_list" class="zy_post_list swiper-wrapper">
+
+            </ul>
+
+            <div class="swiper-pagination swiper-pagination1"></div>
+
+
+        </div>
+
+        <div class="zy_section_one_bottom_bg_left">左下背景图</div>
+        <div class="zy_section_one_bottom_bg_right">右下背景图</div>
+
+
+        <span class="zy_dropdown" data-target="#zy_section_two">向下</span>
+
+    </section>
+</section>

@@ -1,0 +1,15 @@
+/*顶部*/
+.zy_top_post{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    z-index:5;
+}
+.zy_top_post_poster{
+    width: 100%;
+    font-size:0;
+    height:720px;
+    position:relative;
+    background:#ccc;
+    overflow: hidden;
+}
