@@ -1,0 +1,60 @@
+<article id="zy_article_container" class="zy_article_container">
+    <span id="zy_article_content_close" class="zy_article_content_close"></span>
+    <section id="zy_article_content" class="zy_article_content">
+        <script id="zy_show_detail_tpl" type="text/template">
+            {@if post_type=="zypost"}
+            <article class="article-main-post">
+                <div class="article-head-post">
+                    <h1 class="article-title-post">${post_title}</h1>
+                    <h2 class="article-author-post">${post_author} </h2>
+                    <h2 class="article-category-post">${post_category}</h2>
+                    <h2 class="article-time-post">${post_date}</h2>
+                </div>
+                <div class="article-poster-post"><img src="${post_thumb}" ></div>
+
+
+
+                <div class="article-content-post">
+                    <p>$${post_content}</p>
+                </div>
+            </article>
+            {@else}
+            <article class="article-main-slide">
+                <h1 class="article-title-slide">${post_title}</h1>
+                <h2 class="article-author-slide">${post_author}</h2>
+                <h2 class="article-category-slide">${post_category} | ${post_date}</h2>
+
+
+
+                <div class="article-abstract-slide">
+                    <p>${post_excerpt}</p>
+                </div>
+
+
+
+                <div class="allslides-slide">
+                    {@each post_slides as slide}
+                    <div class="slide-slide">
+                        {@if slide.title}
+
+                        {@if slide.memo}
+                        <div class="imgcaption-slide"><span>${slide.title}</span>：${slide.memo}</div>
+                        {@else}
+                        <div class="imgcaption-slide">${slide.title}</div>
+                        {@/if}
+
+                        {@else if slide.memo}
+                        <div class="imgcaption-slide">${slide.memo}</div>
+                        {@/if}
+
+                        $${slide.content}
+                    </div>
+                    {@/each}
+
+                </div>
+            </article>
+            {@/if}
+
+        </script>
+    </section>
+</article>

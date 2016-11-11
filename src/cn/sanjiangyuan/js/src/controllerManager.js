@@ -8,7 +8,6 @@
 var ZY=ZY||{};
 ZY.controllerManager=(function(){
 
-    var rect="";//clip的rect值
     var oldScrollTop=0;
     var featuredMovement=-350;
     var landscapeMovement=0;
@@ -41,26 +40,6 @@ ZY.controllerManager=(function(){
     var artifactBottomEl=$("#zy_artifact_bottom");
     var communityBottomEl=$("#zy_community_bottom");
 
-    /**
-     * 设置页面的最大个数
-     * @param categoryId
-     * @param limit
-     * @returns {*}
-     */
-    function setMaxLimit(categoryId,limit){
-        if(categoryId==ZY.config.categoryIds.landscapeId||categoryId==ZY.config.categoryIds.artifactId){
-            if(limit>3){
-                limit=3;
-            }
-        }else{
-            if(limit>4){
-                limit=4;
-            }
-        }
-
-        return limit;
-    }
-
     return {
 
         /**
@@ -73,329 +52,6 @@ ZY.controllerManager=(function(){
                 ZY.uiManager.hideMusicPlayer();
             }
         },
-
-        /**
-         * 分解日期
-         * @param {String} date 需要分解的日期字符串
-         * @return {*} 返回数组代表解析成功或者是false代表解析错误
-         */
-        splitPostDate:function(date){
-            if(typeof date=="string"){
-                var dateArray=date.split("-");
-                var newArray=[];
-                newArray[0]=dateArray[2]+"/"+dateArray[1];
-                newArray[1]=dateArray[0];
-                return newArray;
-            }
-            return [];
-        },
-
-        /**
-         * 重新组装文章数组,主要更改日期
-         * @param {Array} datas 文章数组
-         * @return {*}  返回重新组装后的文章数组
-         */
-        transformDatas:function(datas){
-            var me=this;
-            var array=[];
-            $.each(datas,function(index,d){
-                array=me.splitPostDate(d["post_date"]);
-                d["post_month"]=array[0];
-                d["post_year"]=array[1];
-            });
-
-            return datas;
-        },
-
-        /**
-         * 计算每次需要请求的个数，根据页面能放置的个数
-         * @param {Object} args 参数数组
-         * @param {Object} args.targetContain 包括上一页和下一页按钮的容器元素jquery对象
-         * @param {Number} args.width  没一个li的宽度
-         * @param {Number} args.categoryId 分类id
-         * @param {Boolean} args.isFirst   是否第一次请求
-         * @return {Number}  limit 需要请求的个数
-         */
-        setLoadLimit:function(args){
-
-            //能够容纳的个数
-            var limit=parseInt($("body").width()/args.width);
-
-            limit=setMaxLimit(args.categoryId,limit);
-
-            //每次请求，都需要设置外围的宽度
-            args.targetContain.find(".zy_list_container").width(limit*args.width);
-
-            //首先隐藏下一页按钮，获取到数据后再显示
-            args.targetContain.find(".zy_contain_next").addClass("zy_disable");
-            ZY.uiManager.showLoadingSpinner($(args.targetContain));
-
-            //设置请求个数
-            if(args.isFirst){
-
-                //第一次请求要请求3页的数据
-                limit=limit*3;
-            }else{
-
-                //如果不是第一次请求,最少加载两页数据，有可能用户突然拉大屏幕，导致下一页数据不足
-                limit=limit*2;
-            }
-
-            return limit;
-        },
-
-        /**
-         * 请求完成后的处理事件
-         * @param {Object} args 参数数组
-         * @param {Object} args.targetContain 包括上一页和下一页按钮的容器元素jquery对象
-         * @param {Array} args.posts   返回的文章对象数组
-         * @param {Number} args.categoryId 分类id
-         * @param {Boolean} args.isFirst   是否第一次请求
-         * @param {Number} args.limit   请求的个数
-         */
-        doResponse:function(args){
-            var length=args.posts.length;
-            var nextBtn=args.targetContain.find(".zy_contain_next");
-
-            //设置背景
-            /*if(length!=0){
-                this.setBackGround(args.isFirst,args["posts"][0],args.categoryId);
-            }*/
-
-
-            //记录下最后一个的发布时间,插入数据
-            if(length<=args.limit){
-
-                //在数据不为0的情况下，记录下最有一个的时间
-                if(length!=0){
-                   this.handlerPosts(args.categoryId,args.posts,length,args.isFirst);
-                }
-
-                //加载完成后默认显示下一页按钮
-                nextBtn.removeClass("zy_disable");
-
-                //但如果是第一次加载，并且数量小于一页的数量，要设置按钮不可见
-                if(args.isFirst&&(length<=args.limit/3)){
-                    nextBtn.addClass("zy_disable");
-                }
-
-                if(length<args.limit){
-
-                    //如果返回的个数小于请求的个数，则要设置不能再加载的标志
-                    nextBtn.addClass("zy_no_more");
-                }
-
-            }
-        },
-
-        /**
-         * 根据分类设置背景，只有第一次请求才做此操作
-         * @param {Boolean} isFirst 是否第一次请求
-         * @param {Object} firstPost 第一篇文章对象
-         * @param {Number} categoryId  分类id
-         */
-        setBackGround:function(isFirst,firstPost,categoryId){
-            if(isFirst&&firstPost["post_id"]!=ZY.dataManager.topPostId){
-                if(categoryId==ZY.config.categoryIds.peopleId){
-                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_people_theme"));
-                    peopleBG=$("#zy_people_bg .zy_theme_bg_content");
-                }else if(categoryId==ZY.config.categoryIds.landscapeId){
-                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_landscape_theme"));
-                    landScapeBG=$("#zy_landscape_bg .zy_theme_bg_content");
-                }else if(categoryId==ZY.config.categoryIds.communityId){
-                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_community_theme"));
-                    communityBG=$("#zy_community_bg .zy_theme_bg_content");
-                }else if(categoryId==ZY.config.categoryIds.artifactId){
-                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_artifact_theme"));
-                    artifactBG=$("#zy_artifact_bg .zy_theme_bg_content");
-                }
-            }
-        },
-
-        /**
-         * 按照分类处理显示，并且记录下最有一片文章的时间
-         * @param {Number} categoryId 分类id
-         * @param {Array} posts 文章对象数组
-         * @param {Number} length 返回的数组的长度
-         * @param {Boolean} isFirst 是否第一次请求
-         */
-        handlerPosts:function(categoryId,posts,length,isFirst){
-            if(categoryId==ZY.config.categoryIds.peopleId){
-                ZY.dataManager.lastPeopleDate=posts[length-1]["post_full_date"];
-                ZY.uiManager.showPeoplePosts(posts);
-            }else if(categoryId==ZY.config.categoryIds.landscapeId){
-                ZY.dataManager.lastLandscapeDate=posts[length-1]["post_full_date"];
-                ZY.uiManager.showLandscapePosts(posts);
-            }else if(categoryId==ZY.config.categoryIds.communityId){
-                ZY.dataManager.lastCommunityDate=posts[length-1]["post_full_date"];
-                ZY.uiManager.showCommunityPosts(posts);
-            }else if(categoryId==ZY.config.categoryIds.artifactId){
-                ZY.dataManager.lastArtifactDate=posts[length-1]["post_full_date"];
-                ZY.uiManager.showArtifactPosts(posts);
-            }
-        },
-
-        /**
-         * 对风景数据再加工，符合每个li显示两篇文章
-         * @param {Array} posts 文章对象数组
-         * @param {Number} length 返回的数组的长度
-         */
-        handlerLandscapePosts:function(posts,length){
-            var array=[];
-            for(var i=0;i<length;i++){
-                 var post={};
-                 post.top=posts[i];
-
-                 var next=++i;
-                 post.bottom=posts[next];
-                 array.push(post);
-            }
-
-            return array;
-        },
-
-        /**
-         * 对物语数据再加工，符合每个li显示两篇文章，并且第一个只有一个
-         * @param {Array} posts 文章对象数组
-         * @param {Number} length 返回的数组的长度
-         * @param {Boolean} isFirst 是否第一次请求
-         */
-        handlerArtifactPosts:function(posts,length,isFirst){
-            var array=[];
-            for(var i=0;i<length;i++){
-                var post={};
-                if(i==0&&isFirst){
-                    post=posts[i];
-                }else{
-                    post.top=posts[i];
-
-                    var next=++i;
-                    post.bottom=posts[next];
-                }
-                array.push(post);
-            }
-
-            return array;
-
-        },
-
-        /**
-         * 每个分类大section的hover事件，主要控制上一页，下一页按钮的显示
-         * @param {Object} targetContain 容器元素的jquery对象
-         */
-        addHoverEvent:function(targetContain){
-            var nextBtn=targetContain.find(".zy_contain_next");
-            var prevBtn=targetContain.find(".zy_contain_prev");
-
-            targetContain.hover(function(){
-                prevBtn.addClass("active")
-                nextBtn.addClass("active")
-            },function(){
-                prevBtn.removeClass("active")
-                nextBtn.removeClass("active")
-            });
-        },
-
-        /**
-         * 下一页按钮事件,其中可能去加载数据（ajax）
-         * @param {Object} targetContain 容器元素jquery对象
-         * @param {Number} width 每个li的宽度
-         * @param {Number} categoryId 分类id
-         * @param {String} lastDate 已经请求了的最后一篇的时间
-         */
-        nextPage:function(targetContain,width,categoryId,lastDate){
-            var limit=parseInt($("body").width()/width);
-            limit=setMaxLimit(categoryId,limit);
-            var nextBtn=targetContain.find("a.zy_contain_next");
-            var prevBtn=targetContain.find("a.zy_contain_prev");
-            var container=targetContain.find(".zy_list_container");
-            var list=targetContain.find(".zy_list_container ul");
-
-
-            container.width(limit*width);//设置list的外围容器宽度
-
-            //分为数据加载完成或未完成
-            if(nextBtn.hasClass("zy_no_more")){
-                list.animate({"left":parseInt(list.css("left"))-limit*width},500,function(){
-
-                    //显示前面一个按钮
-                    prevBtn.removeClass("zy_disable");
-
-
-                    if(parseInt(list.css("left"))<=-(list.find("li").length-limit)*width){
-
-                        //如果left的值已经到了总数的前一页，说明当前显示的就是最后一页那么就让这个按钮disable。
-                        nextBtn.addClass("zy_disable");
-                    }
-
-                });
-            }else{
-
-                //加载数据，加载后再执行动画
-                ZY.dataManager.getCategoryPosts({
-                    targetContain:targetContain,
-                    width:width,
-                    categoryId:categoryId,
-                    lastDate:lastDate,
-                    isFirst:false
-                });
-                list.animate({"left":parseInt(list.css("left"))-limit*width},500,function(){
-
-                    //去掉前面按钮的禁用标志
-                    prevBtn.removeClass("zy_disable");
-                });
-            }
-        },
-
-        /**
-         * 上一页按钮事件
-         * @param {Object} targetContain 容器元素jquery对象
-         * @param {Number} width 每个li的宽度
-         * @param {Number} categoryId 分类id
-         */
-        prevPage:function(targetContain,width,categoryId){
-            var limit=parseInt($("body").width()/width);
-            limit=setMaxLimit(categoryId,limit);
-            var nextBtn=targetContain.find("a.zy_contain_next");
-            var prevBtn=targetContain.find("a.zy_contain_prev");
-            var container=targetContain.find(".zy_list_container");
-            var list=targetContain.find(".zy_list_container ul");
-
-
-            container.width(limit*width); //设置list的外围容器宽度
-
-            //如果在往前一页left大于0或者是等于0，都需要禁用前一页按钮
-            if(parseInt(list.css("left"))+limit*width>=0){
-                list.animate({"left":0},500,function(){
-
-                    /*
-                     还要判断是否是最后一页，有可能是窗口变小导致原来的一页变成两页，然后点击了下一页，此后变大窗口
-                     这个时候如果数据只有恰好放大后的一页，那么这页是第一页也是最后一页（缩小情况下是两页），需要判断是否为最后一页来判断是否移除类
-                     */
-                    if(parseInt(list.css("left"))>-(list.find("li").length-limit)*width){
-
-                        //去掉后面按钮的无加载标志
-                        nextBtn.removeClass("zy_disable");
-                    }
-                    prevBtn.addClass("zy_disable");
-                });
-            }else{
-
-                //执行动画
-                list.animate({"left":parseInt(list.css("left"))+limit*width},500,function(){
-
-                    //去掉后面按钮的无加载标志
-                    nextBtn.removeClass("zy_disable");
-
-                    /*//如果移动完后，恰好left为0，那么前一页按钮要禁用,其实已经包含在前面的条件中
-                    if(parseInt(list.css("left"))==0){
-                        prevBtn.addClass("zy_disable");
-                    }*/
-                });
-
-            }
-        },
-
         /**
          * 横向滚轮事件
          * @param {Object} target 需要添加此事件的元素jquery对象
@@ -495,86 +151,180 @@ ZY.controllerManager=(function(){
             if(sy>landScapeY-winH && sy<=landScapeY+720){
                 if(!ZY.config.deviceCode.iOS){
                     landScapeBG.addClass("zy_bg_fixed");
-
-                    //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-landScapeY)+100)+"px 0px)";
-                    landScapeBG.css("clip",rect);
                 }
 
-                if(!ZY.dataManager.landscapeLoaded){
+                if(!ZY.dataManager.landscapeLoaded&&!ZY.dataManager.swiper1){
+                    //list模块初始化
+                    ZY.dataManager.swiper1 = new Swiper('.swiper1', {
+                        pagination: '.swiper-pagination1',
+                        paginationClickable: true,
+                        /*nextButton: '.swiper-button-next1',
+                         prevButton: '.swiper-button-prev1',*/
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 2,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?3:6;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.landscapeId,
+                                    callback:function(list){
 
-                    //获取第1个分类(风景）文章
-                    ZY.dataManager.getCategoryPosts({
-                        width:ZY.config.articleWidths.landscapeWidth,
-                        categoryId:ZY.config.categoryIds.landscapeId,
-                        isFirst:true,
-                        lastDate:ZY.dataManager.lastLandscapeDate,
-                        targetContain:$("#zy_landscape_contain")
+                                        var tpl= $("#zy_landscape_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.landscapeLoaded=true;
+                                    }
+                                });
+                            }
+                        }
                     });
-                    ZY.dataManager.landscapeLoaded=true;
                 }
 
             }else{
                 if(!ZY.config.deviceCode.iOS){
                     landScapeBG.removeClass("zy_bg_fixed");
-                    landScapeBG.css("clip","");
                 }
             }
 
             if(sy>peopleY-winH && sy<=peopleY+720){
                 if(!ZY.config.deviceCode.iOS){
                     peopleBG.addClass("zy_bg_fixed");
-
-                    //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-peopleY)+100)+"px 0px)";
-                    peopleBG.css("clip",rect);
                 }
 
-                if(!ZY.dataManager.peopleLoaded){
+                if(!ZY.dataManager.peopleLoaded&&!ZY.dataManager.swiper2){
 
                     //获取第2个分类（人文）文章
-                    ZY.dataManager.getCategoryPosts({
-                        width:ZY.config.articleWidths.peopleWidth,
-                        categoryId:ZY.config.categoryIds.peopleId,
-                        isFirst:true,
-                        lastDate:ZY.dataManager.lastPeopleDate,
-                        targetContain:$("#zy_people_contain")
+                    ZY.dataManager.swiper2 = new Swiper('.swiper2', {
+                        pagination: '.swiper-pagination2',
+                        paginationClickable: true,
+                        /*nextButton: '.swiper-button-next2',
+                         prevButton: '.swiper-button-prev2',*/
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 3,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?4:8;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.peopleId,
+                                    callback:function(list){
+
+                                        var tpl= $("#zy_people_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.peopleLoaded=true;
+                                    }
+                                });
+                            }
+                        }
                     });
-                    ZY.dataManager.peopleLoaded=true;
                 }
             }else{
                 if(!ZY.config.deviceCode.iOS){
                     peopleBG.removeClass("zy_bg_fixed");
-                    peopleBG.css("clip","");
                 }
             }
 
             if(sy>artifactY-winH && sy<=artifactY+720){
                 if(!ZY.config.deviceCode.iOS){
                     artifactBG.addClass("zy_bg_fixed");
-
-                    //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-artifactY)+100)+"px 0px)";
-                    artifactBG.css("clip",rect);
                 }
 
-                if(!ZY.dataManager.artifactLoaded){
+                if(!ZY.dataManager.artifactLoaded&&!ZY.dataManager.swiper3){
 
                     //获取第3个分类(物语）文章
-                    ZY.dataManager.getCategoryPosts({
-                        width:ZY.config.articleWidths.artifactWidth,
-                        categoryId:ZY.config.categoryIds.artifactId,
-                        isFirst:true,
-                        lastDate:ZY.dataManager.lastArtifactDate,
-                        targetContain:$("#zy_artifact_contain")
-                    });
+                    ZY.dataManager.swiper3 = new Swiper('.swiper3', {
+                        pagination: '.swiper-pagination3',
+                        paginationClickable: true,
+                        /*nextButton: '.swiper-button-next3',
+                         prevButton: '.swiper-button-prev3',*/
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 2,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?3:6;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.artifactId,
+                                    callback:function(list){
 
-                    ZY.dataManager.artifactLoaded=true;
+                                        var tpl= $("#zy_artifact_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.artifactLoaded=true;
+                                    }
+                                });
+                            }
+                        }
+                    });
                 }
             }else{
                 if(!ZY.config.deviceCode.iOS){
                     artifactBG.removeClass("zy_bg_fixed");
-                    artifactBG.css("clip","");
                 }
             }
 
@@ -582,27 +332,61 @@ ZY.controllerManager=(function(){
                 if(!ZY.config.deviceCode.iOS){
                     communityBG.addClass("zy_bg_fixed");
 
-                    //滚动的时候使用clip
-                    rect="rect(0px "+winW+"px "+(720-(sy-communityY)+100)+"px 0px)";
-                    communityBG.css("clip",rect);
                 }
 
-                if(!ZY.dataManager.communityLoaded){
+                if(!ZY.dataManager.communityLoaded&&!ZY.dataManager.swiper4){
 
                     //获取第4个分类(社区）文章
-                    ZY.dataManager.getCategoryPosts({
-                        width:ZY.config.articleWidths.communityWidth,
-                        categoryId:ZY.config.categoryIds.communityId,
-                        isFirst:true,
-                        lastDate:ZY.dataManager.lastCommunityDate,
-                        targetContain:$("#zy_community_contain")
+                    ZY.dataManager.swiper4 = new Swiper('.swiper4', {
+                        pagination: '.swiper-pagination4',
+                        /*nextButton: '.swiper-button-next4',
+                         prevButton: '.swiper-button-prev4',*/
+                        paginationClickable: true,
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 3,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?4:8;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.communityId,
+                                    callback:function(list){
+
+                                        var tpl= $("#zy_community_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.communityLoaded=true;
+                                    }
+                                });
+                            }
+                        }
                     });
-                    ZY.dataManager.communityLoaded=true;
+
                 }
             }else{
                 if(!ZY.config.deviceCode.iOS){
                     communityBG.removeClass("zy_bg_fixed");
-                    communityBG.css("clip","");
                 }
             }
 
@@ -684,61 +468,6 @@ ZY.controllerManager=(function(){
 
             //重新赋值
             oldScrollTop=sy;
-        },
-
-        /**
-         * 函数说明：针对窗口放大缩小，每个分类展示的响应事件
-         * 主要是设置ul外围容器container的宽度和显示影藏下一页按钮
-         * 由于当窗口缩小时显示的个数少了，原来显示的最后一页当前可能已经不是最后一页，此时需要判断移除zy_disable类
-         * 由于当窗口放大时显示的个数多了，原来显示的不是最后一页当前可能已经是最后一页，此时需要判断添加zy_disable类
-         * @param {Object} targetContain     最外围的容器section
-         * @param {Number} categoryId           分类id
-         * @param {Number} width    每个li的宽度
-         * @param {Boolean} loaded  是否已经加载过数据
-         */
-        doResizeOfCategory:function(targetContain,categoryId,width,loaded){
-            var limit=parseInt($("body").width()/width);
-            limit=setMaxLimit(categoryId,limit);
-            var nextBtn=targetContain.find("a.zy_contain_next");
-            var list=targetContain.find("ul");
-            var targetContainer=targetContain.find(".zy_list_container");
-
-            //设置容器的宽度
-            targetContainer.width(limit*width);
-
-            //判断下一页按钮是否能够显示,针对缩小主要是移除zy_disable类，针对放大主要是加上zy_disable类
-            if(parseInt(list.css("left"))>-(list.find("li").length-limit)*width&&loaded){
-
-                //如果left的值没有到总数的前一页，那么就还没有到最后一页，需要取出zy_disable类。
-                nextBtn.removeClass("zy_disable");
-            }else{
-
-                //需要数据加载后才做次操作
-                if(loaded){
-                  nextBtn.addClass("zy_disable");
-                }
-            }
-        },
-
-        /**
-         * window的resize事件响应
-         */
-        windowResizeHandler:function(){
-            var me=this;
-            if(ZY.dataManager.resizeTimer){
-                clearTimeout(ZY.dataManager.resizeTimer);
-            }
-
-            ZY.dataManager.resizeTimer=setTimeout(function(){
-                me.doResizeOfCategory($("#zy_people_contain"),ZY.config.categoryIds.peopleId,
-                    ZY.config.articleWidths.peopleWidth,ZY.dataManager.peopleLoaded);
-                me.doResizeOfCategory($("#zy_landscape_contain"),ZY.config.categoryIds.landscapeId,
-                    ZY.config.articleWidths.landscapeWidth,ZY.dataManager.landscapeLoaded);
-                me.doResizeOfCategory($("#zy_community_contain"),ZY.config.categoryIds.communityId,
-                    ZY.config.articleWidths.communityWidth,ZY.dataManager.communityLoaded);
-                me.doResizeOfCategory($("#zy_artifact_contain"),ZY.config.categoryIds.artifactId,
-                    ZY.config.articleWidths.artifactWidth,ZY.dataManager.artifactLoaded);
-            },200);
         }
     }
 })();

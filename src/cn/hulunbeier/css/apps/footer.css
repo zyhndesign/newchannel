@@ -1,0 +1,101 @@
+
+
+/*------------------------------------footer部分--------------------------*/
+.zy_footer{
+    width: 100%;
+    background-color: #ebebeb;
+    position: relative;
+    box-sizing:border-box;
+}
+.zy_footer::before {
+    content: "";
+    width: 160px;
+    height: 80px;
+    background-image: url(../../images/apps/featured_top.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+}
+.zy_project{
+    height: auto;
+    padding:100px 0px 50px 0px;
+    background-size: 100% 100%;
+    text-align: center;
+}
+.zy_project_info{
+    width:40%;
+    position:relative;
+    padding:0px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+.zy_project_title{
+    height:70px;
+    width: 300px;
+    font-size:0;
+    text-indent:-9999px;
+    background:url(../../images/apps/title_background.svg) no-repeat;
+    background-size: contain;
+    margin:auto;
+}
+.zy_project_info p{
+    color: #a2a1a1;
+    font-size: 14px;
+    line-height: 2em;
+}
+.zy_project_sponsors{
+    width: 35%;
+    height: 300px;
+    display: inline-block;
+    position: relative;
+    padding-top: 50px;
+    background: url(../../images/apps/logo_sponsor.svg) no-repeat center;
+    background-size: contain;
+    opacity: .8;
+}
+.zy_project_sponsors ul{
+    margin: auto;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    font-size: 0px;
+}
+.zy_project_sponsors ul li{
+    display: block;
+}
+.zy_project_sponsors .zy_logo_mkmj,.zy_project_sponsors .zy_logo_hnusd{
+    width:180px;
+    height:90px;
+    opacity: .5;
+    font-size:0;
+    text-indent:-9999px;
+    margin:auto;
+    display:block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.zy_project_sponsors .zy_logo_mkmj{
+    background-image: url(../../images/apps/logo_meikemeijia_black.svg);
+
+}
+.zy_project_sponsors .zy_logo_hnusd{
+    background-image: url(../../images/apps/logo_hnusd_black.svg);
+    margin-top: 30px;
+    width:240px;
+}
+.zy_copyright{
+    background-size: 100% auto;
+    padding:50px 0;
+    text-align:center;
+    color:#666;
+    font-size:0.7em;
+}
