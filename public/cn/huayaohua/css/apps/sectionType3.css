@@ -1,0 +1,85 @@
+/*------------------------------------------------------------------------物语z-index:2--*/
+.zy_artifact{
+    position:relative;
+    z-index:2;
+}
+.zy_artifact .zy_section_bg{
+    height: 840px;
+}
+.zy_artifact .zy_theme_bg_content{
+    min-height: 840px;
+}
+.zy_artifact_top_bg:before{
+    content:"";
+    background: url(../../images/apps/background_pattern1white.png) no-repeat;
+    background-size: contain;
+    width:131px;
+    height: 235px;
+    position: absolute;
+    top:-1px;
+    right:-131px;
+    z-index: 11;
+}
+.zy_artifact_top_bg{
+
+    height: 104px;
+    position: absolute;
+    right: 131px;
+    width: 100%;
+    z-index: 8;
+}
+/*--z-index:1--*/
+.zy_artifact_heading{
+    font-size:0;
+    text-indent:-9999px;
+    background:url(../../images/apps/sec_artifacts.png) no-repeat;
+    background-size:contain;
+    width:426px;
+    height:336px;
+    position:absolute;
+    top:255px;
+    left:50%;
+    margin-left:-213px;
+    z-index:1;
+}
+.zy_artifact>.zy_subheading{
+    top:800px;
+    background:url(../../images/apps/wenzi_3.png) no-repeat;
+    background-size: contain;
+}
+/*--z-index:11--*/
+.zy_artifact_bottom_bg:after{
+    content:"";
+    background: url(../../images/apps/background_pattern2black.png) no-repeat;
+    background-size: contain;
+    width:80px;
+    height:100px;
+    position: absolute;
+    bottom:-1px;
+    left:-77px;
+    z-index: 11;
+}
+.zy_artifact_bottom_bg{
+    background: #000;
+    height: 100px;
+    position: absolute;
+    left: 80px;
+    top:740px;
+    width: 100%;
+    z-index:8;
+}
+.zy_artifact_contain{
+    width: 100%;
+    height: 480px;
+    padding:20px ;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    background: #000;
+    /* margin-top: 360px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index:8;
+}

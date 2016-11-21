@@ -1,0 +1,55 @@
+.zy_logo_li{
+    width: 220px;
+    display: inline-block;
+    list-style: none;
+    vertical-align: top;
+}
+.zy_logo{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    left:0px;
+    margin: 0px;
+    z-index: 8;
+}
+.zy_logo:before,.zy_logo:after{
+    content: "";
+    background: #fff;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 39px;
+}
+/*由于logo的a是剧中的220px，那么补线的话可以设置width为100%，
+多余的隐藏，位置定于中间，并且向左margin出logo的a的一半宽度
+那么补的线就不会和a重合了*/
+.zy_logo:before{
+    left:50%;
+    margin-left: 110px;
+}
+.zy_logo:after{
+    right:50%;
+    margin-right: 110px;
+}
+.zy_logo a{
+    display: block;
+    height: 254px;
+    background: url(../../images/apps/logo.png) no-repeat center center;
+    font-size:0px;
+    width: 220px;
+    margin: auto;
+}
+.zy_nav.zy_nav_active .zy_logo{
+    position: static;
+}
+.zy_nav.zy_nav_active .zy_logo a{
+    background: url(../../images/apps/logo_active.png) no-repeat center center;
+    height: 80px;
+    width: 128px;
+    margin: auto;
+}
+.zy_nav.zy_nav_active .zy_logo:before,.zy_nav.zy_nav_active .zy_logo:after{
+    content:"";
+    width: 0px;
+    height: 0px;
+}

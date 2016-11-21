@@ -8,7 +8,6 @@
     <meta name="description" content="" />
     <meta name="keywords" content="社会创新, 新通道, 文化产品创新, 文化产品设计，呼伦贝尔" />
     <title>呼伦贝尔</title>
-    <!--<link rel="stylesheet" type="text/css" href="css/apps/index.min.css"/>-->
 
 
 
@@ -22,96 +21,96 @@
 <nav id="zy_nav" class="zy_nav">
     <span id="zy_show_menu" class="zy_show_menu">显示菜单</span>
     <ul id="zy_menu">
-            <li><a href="#zy_landscape" class="top_menu_landscape">风景</a></li>
-            <li class="separator"><a href="#zy_people" class="top_menu_humanity">人文</a></li>
-            <li><a href="#zy_artifact" class="top_menu_artifact">物语</a></li>
-            <li><a href="#zy_community" class="top_menu_community">社区</a></li>
+        <li><a href="#zy_landscape" class="top_menu_landscape">风景</a></li>
+        <li class="separator"><a href="#zy_people" class="top_menu_humanity">人文</a></li>
+        <li><a href="#zy_artifact" class="top_menu_artifact">物语</a></li>
+        <li><a href="#zy_community" class="top_menu_community">社区</a></li>
     </ul>
 </nav>
 
 <div id="zy_main_wrapper" class="zy_main_wrapper">
 
 <!--置顶文章部分-->
-<section id="zy_top_post" class="zy_top_post">
+    <section id="zy_top_post" class="zy_top_post">
     <div id="zy_top_post_poster" class="zy_top_post_poster">
         <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg"/>
-<!--
-        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg"
-        srcset="images/default_bg/bg1@2x.jpg 2x" />
--->
+        <!--
+                <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg"
+                srcset="images/default_bg/bg1@2x.jpg 2x" />
+        -->
     </div>
     <h2 class="zy_title_logo">呼伦贝尔</h2>
 </section>
 
 <!--------------------------------------推荐------------------------------------------>
-<section id="zy_featured" class="zy_featured">
+    <section id="zy_featured" class="zy_featured">
     <header class="zy_featured_heading">推荐</header>
     <script id="zy_featured_articles_tpl" type="text/template">
 
         {@each top_posts as post,index}
-            {@if index<3}
-                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
-                    <div class="abstract">
-                        {@if post.hasVideo}
-                            <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
-                        {@else}
-                            <div class="thumb"><img src="${post.thumb}" /></div>
-                        {@/if}
-                        <div class="info">
-                            <h3 class="title">${post.post_title}</h3>
-                            <p class="excerpt">${post.post_excerpt}</p>
-                        </div>
-                        
-                    </div>
-                </li>
-            {@/if}
+        {@if index<3}
+        <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+            <div class="abstract">
+                {@if post.hasVideo}
+                <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
+                {@else}
+                <div class="thumb"><img src="${post.thumb}" /></div>
+                {@/if}
+                <div class="info">
+                    <h3 class="title">${post.post_title}</h3>
+                    <p class="excerpt">${post.post_excerpt}</p>
+                </div>
+
+            </div>
+        </li>
+        {@/if}
         {@/each}
 
     </script>
-	<ul id="zy_featured_articles" class="zy_featured_articles">
+    <ul id="zy_featured_articles" class="zy_featured_articles">
 
     </ul>
 
 </section>
 
 <!--------------------------------------风景------------------------------------------>
-<section id="zy_landscape" class="zy_landscape">
-	<div id="zy_landscape_bg" class="zy_section_bg">
+    <section id="zy_landscape" class="zy_landscape">
+    <div id="zy_landscape_bg" class="zy_section_bg">
         <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg2.jpg"/>
     </div>
     <h2 class="zy_landscape_heading">风景</h2>
     <section id="zy_landscape_contain" class="zy_landscape_contain">
         <h3 class="zy_subheading">美不胜收的风景写真</h3>
         <div id="zy_landscape_list_container" class="zy_list_container swiper1 swiper-container">
-        <script id="zy_landscape_articles_tpl" type="text/template">
+            <script id="zy_landscape_articles_tpl" type="text/template">
 
-            {@each posts as post}
-            <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_landscape_article swiper-slide">
-                {@if post.hasVideo}
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_landscape_article swiper-slide">
+                    {@if post.hasVideo}
                     <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
-                {@else}
+                    {@else}
                     <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
-                {@/if}
+                    {@/if}
 
-                <div class="zy_article_abstract">
-                    <h2>${post.post_title}</h2>
-                    <p class="zy_article_date">${post.post_date}</p>
-                    <p class="zy_article_excerpt">
-                        ${post.post_excerpt}
-                    </p>
-                </div>
-            </li>
-            {@/each}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p class="zy_article_excerpt">
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
 
-        </script>
-        <ul id="zy_landscape_list" class="zy_landscape_list swiper-wrapper">
+            </script>
+            <ul id="zy_landscape_list" class="zy_landscape_list swiper-wrapper">
 
-        </ul>
-<!--
-        <div class="swiper-button-prev swiper-button-prev1"></div>
-        <div class="swiper-button-next swiper-button-next1"></div>
--->
-        <div class="swiper-pagination swiper-pagination1"></div>
+            </ul>
+            <!--
+                    <div class="swiper-button-prev swiper-button-prev1"></div>
+                    <div class="swiper-button-next swiper-button-next1"></div>
+            -->
+            <div class="swiper-pagination swiper-pagination1"></div>
         </div>
 
     </section>
@@ -119,12 +118,12 @@
 </section>
 
 <!--------------------------------------人文------------------------------------------>
-<section id="zy_people" class="zy_people">
+    <section id="zy_people" class="zy_people">
 
     <div id="zy_people_bg" class="zy_section_bg">
         <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg3.jpg"/>
-	</div>
-	<h2 class="zy_people_heading">人文</h2>
+    </div>
+    <h2 class="zy_people_heading">人文</h2>
 
     <section id="zy_people_contain" class="zy_people_contain">
         <h3 class="zy_subheading">生生不息的人物故事</h3>
@@ -132,41 +131,41 @@
             <script id="zy_people_articles_tpl" type="text/template">
 
                 {@each posts as post}
-                    <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_people_article swiper-slide">
-                        {@if post.hasVideo}
-                            <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
-                        {@else}
-                            <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
-                        {@/if}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_people_article swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
 
-                        <div class="zy_article_abstract">
-                            <h2>${post.post_title}</h2>
-                            <p class="zy_article_date">${post.post_date}</p>
-                            <p class="zy_article_excerpt">${post.post_excerpt}</p>
-                        </div>
-                    </li>
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p class="zy_article_excerpt">${post.post_excerpt}</p>
+                    </div>
+                </li>
                 {@/each}
 
             </script>
             <ul id="zy_people_list" class="zy_people_list swiper-wrapper">
 
             </ul>
-<!--
-            <div class="swiper-button-prev swiper-button-prev2"></div>
-            <div class="swiper-button-next swiper-button-next2"></div>
--->
+            <!--
+                        <div class="swiper-button-prev swiper-button-prev2"></div>
+                        <div class="swiper-button-next swiper-button-next2"></div>
+            -->
             <div class="swiper-pagination swiper-pagination2"></div>
-        </div>    
+        </div>
     </section>
 </section>
 
 <!--------------------------------------物语------------------------------------------>
-<section id="zy_artifact" class="zy_artifact">
+    <section id="zy_artifact" class="zy_artifact">
 
     <div id="zy_artifact_bg" class="zy_section_bg">
         <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg4.jpg"/>
-	</div>
-	<h2 class="zy_artifact_heading">物语</h2>
+    </div>
+    <h2 class="zy_artifact_heading">物语</h2>
 
     <section id="zy_artifact_contain" class="zy_artifact_contain">
         <h3 class="zy_subheading">从传统工艺到现代设计</h3>
@@ -174,42 +173,43 @@
             <script id="zy_artifact_articles_tpl" type="text/template">
 
                 {@each posts as post}
-                    <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_artifact_article swiper-slide">
-                        {@if post.hasVideo}
-                            <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
-                        {@else}
-                            <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
-                        {@/if}
-                        <div class="zy_article_abstract">
-                            <h2>${post.post_title}</h2>
-                            <p class="zy_article_date">${post.post_date}</p>
-                            <p class="zy_article_excerpt">
-                                ${post.post_excerpt}
-                            </p>
-                        </div>
-                    </li>
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_artifact_article swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p class="zy_article_excerpt">
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
                 {@/each}
 
             </script>
             <ul id="zy_artifact_list" class="zy_artifact_list swiper-wrapper">
 
             </ul>
-<!--
-            <div class="swiper-button-prev swiper-button-prev3"></div>
-            <div class="swiper-button-next swiper-button-next3"></div>
--->
+            <!--
+                        <div class="swiper-button-prev swiper-button-prev3"></div>
+                        <div class="swiper-button-next swiper-button-next3"></div>
+            -->
             <div class="swiper-pagination swiper-pagination3"></div>
         </div>
     </section>
 </section>
 
+
 <!--------------------------------------社区------------------------------------------>
-<section id="zy_community" class="zy_community">
+    <section id="zy_community" class="zy_community">
 
     <div id="zy_community_bg" class="zy_section_bg">
         <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg5.jpg"/>
-	</div>
-	<h2 class="zy_community_heading">社区</h2>
+    </div>
+    <h2 class="zy_community_heading">社区</h2>
 
     <section id="zy_community_contain" class="zy_community_contain">
         <h3 class="zy_subheading">社区互动与参与式创新</h3>
@@ -219,9 +219,9 @@
                 {@each posts as post}
                 <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_community_article swiper-slide">
                     {@if post.hasVideo}
-                        <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
                     {@else}
-                        <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
                     {@/if}
                     <div class="zy_article_abstract">
                         <h2>${post.post_title}</h2>
@@ -237,20 +237,20 @@
             <ul id="zy_community_list" class="zy_community_list swiper-wrapper">
 
             </ul>
-<!--
-            <div class="swiper-button-prev swiper-button-prev4"></div>
-            <div class="swiper-button-next swiper-button-next4"></div>
--->
+            <!--
+                        <div class="swiper-button-prev swiper-button-prev4"></div>
+                        <div class="swiper-button-next swiper-button-next4"></div>
+            -->
             <div class="swiper-pagination swiper-pagination4"></div>
         </div>
-        
-        
+
+
 
     </section>
 </section>
 
 <!--------------------------------底部--------------------------------------->
-<footer class="zy_footer">
+    <footer class="zy_footer">
     <div class="zy_project">
         <div class="zy_project_info">
             <h2 class="zy_project_title">项目背景</h2>
@@ -259,12 +259,12 @@
             </p>
         </div>
         <div class="zy_project_sponsors">
-<!--
-            <ul>
-                <li><a class="zy_logo_mkmj" href="http://www.markorhome.com/" target="_blank">美克美家</a></li>
-                <li><a class="zy_logo_hnusd" href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
-            </ul>
--->
+            <!--
+                        <ul>
+                            <li><a class="zy_logo_mkmj" href="http://www.markorhome.com/" target="_blank">美克美家</a></li>
+                            <li><a class="zy_logo_hnusd" href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
+                        </ul>
+            -->
         </div>
 
     </div>
@@ -272,7 +272,7 @@
     <div class="zy_copyright">
         <p>© 湖南省工业设计协会 版权所有</p>
         <p>中意工业设计（湖南）有限责任公司 设计开发</p>
-    </div>   
+    </div>
 </footer>
 </div>
 
@@ -286,17 +286,19 @@
     </div>
 
 </section>
+
 <!--弹出窗口-->
 <section id="zy_popout_win" class="zy_popout_win zy_hidden">
     <h3 class="zy_popout_title"></h3>
     <span id="zy_popout_close" class="zy_popout_btn">好</span>
 </section>
+
 <!--单篇文章展示模版，采用load加载页面-->
 <article id="zy_article_container" class="zy_article_container">
     <span id="zy_article_content_close" class="zy_article_content_close"></span>
-    
+
     <section id="zy_article_content" class="zy_article_content">
-       
+
         <script id="zy_show_detail_tpl" type="text/template">
             {@if post_type=="zypost"}
             <article class="article-main-post">
@@ -315,48 +317,48 @@
                 </div>
             </article>
             {@else}
-                <article class="article-main-slide swiper-slide">
-                    <h1 class="article-title-slide">${post_title}</h1>
-                    <h2 class="article-author-slide">${post_author}</h2>
-                    <h2 class="article-category-slide">${post_category} | ${post_date}</h2>
+            <article class="article-main-slide swiper-slide">
+                <h1 class="article-title-slide">${post_title}</h1>
+                <h2 class="article-author-slide">${post_author}</h2>
+                <h2 class="article-category-slide">${post_category} | ${post_date}</h2>
 
 
 
-                    <div class="article-abstract-slide">
-                        <p>${post_excerpt}</p>
-                    </div>
+                <div class="article-abstract-slide">
+                    <p>${post_excerpt}</p>
+                </div>
 
 
 
-                    <div class="allslides-slide">
-                        {@each post_slides as slide}
-                            <div class="slide-slide">
-                                $${slide.content}
-                                
-                                {@if slide.title}
+                <div class="allslides-slide">
+                    {@each post_slides as slide}
+                    <div class="slide-slide">
+                        $${slide.content}
 
-                                    {@if slide.memo}
-                                        <div class="imgcaption-slide"><span>${slide.title}</span>：${slide.memo}</div>
-                                    {@else}
-                                        <div class="imgcaption-slide">${slide.title}</div>
-                                    {@/if}
+                        {@if slide.title}
 
-                                {@else if slide.memo}
-                                    <div class="imgcaption-slide">${slide.memo}</div>
-                                {@/if}
+                        {@if slide.memo}
+                        <div class="imgcaption-slide"><span>${slide.title}</span>：${slide.memo}</div>
+                        {@else}
+                        <div class="imgcaption-slide">${slide.title}</div>
+                        {@/if}
 
-                                
-                            </div>
-                        {@/each}
+                        {@else if slide.memo}
+                        <div class="imgcaption-slide">${slide.memo}</div>
+                        {@/if}
+
 
                     </div>
-                </article>
+                    {@/each}
+
+                </div>
+            </article>
             {@/if}
 
         </script>
-        
+
     </section>
-        
+
 </article>
 
 <!--数据加载时的等待动画-->
@@ -365,6 +367,7 @@
         <div class="zy_loading_spinner_layer"></div>
     </div>
 </script>
+
 <!--下载音乐的target-->
 <iframe name="zy_download_music" style="display: none"></iframe>
 

@@ -1,0 +1,55 @@
+<section id="zy_landscape" class="zy_landscape">
+    <div class="zy_landscape_top_bg"></div>
+    <div id="zy_landscape_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg">
+    </div>
+    <h2 class="zy_landscape_heading">风景</h2>
+    <h3 class="zy_subheading">美不胜收的风景写真</h3>
+    <div class="zy_landscape_bottom_bg"></div>
+    <section id="zy_landscape_contain" class="zy_landscape_contain">
+        <a id="zy_landscape_prev" class="zy_contain_prev zy_disable"></a>
+        <div id="zy_landscape_list_container" class="zy_list_container">
+            <script id="zy_landscape_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li  class="zy_landscape_article">
+                    {@if post.top.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@/if}
+
+                    {@if post.bottom}
+
+                    {@if post.bottom.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2>${post.bottom.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2>${post.bottom.post_title}</h2>
+                    </div>
+                    {@/if}
+
+                    {@/if}
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_landscape_list" class="zy_landscape_list">
+
+            </ul>
+        </div>
+        <a id="zy_landscape_next" class="zy_contain_next"></a>
+
+    </section>
+
+</section>

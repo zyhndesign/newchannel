@@ -1,0 +1,23 @@
+<section id="zy_top_post" class="zy_top_post">
+    <div id="zy_top_post_poster" class="zy_top_post_poster">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/fengmian_bg.jpg"/>
+    </div>
+    <div id="zy_top_post_heading" class="zy_top_post_heading">
+        <script id="zy_top_post_tpl" type="text/template">
+
+            {@each top_posts as post,index}
+            {@if index==0}
+            <h2 data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" id="zy_top_post_title" class="zy_top_post_title">${post.post_title}</h2>
+            <h3 class="zy_top_post_date">${post.post_date}</h3>
+            {@/if}
+            {@/each}
+
+        </script>
+
+        <!-- <h2 data-zy-post-id="2" data-zy-post-type="post" id="zy_top_post_title_tmp" class="zy_top_post_title">平坦河上的风景</h2>
+         <h3 class="zy_top_post_date">2013-08-08</h3>-->
+    </div>
+    <div class="zy_btn_down">
+
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="zy_featured">
+    <header class="zy_featured_heading">推荐</header>
+    <ul id="zy_featured_articles" class="zy_featured_articles">
+        <script id="zy_featured_articles_tpl" type="text/template">
+
+            {@each top_posts as post,index}
+            {@if index>=1}
+            <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+                <div class="abstract">
+                    {@if post.hasVideo}
+                    <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
+                    {@else}
+                    <div class="thumb"><img src="${post.thumb}" /></div>
+                    {@/if}
+                    <h3 class="title">${post.post_title}</h3>
+                    <p class="date">${post.post_date}</p>
+                </div>
+            </li>
+            {@/if}
+            {@/each}
+
+        </script>
+    </ul>
+
+    <p class="zy_scrolling_down_btn">向下滚动</p>
+</section>

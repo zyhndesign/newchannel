@@ -57,22 +57,6 @@ ZY.uiManager=(function(){
                 TweenLite.to(window, 1, {scrollTo:{y:top+1, x:0}});
             }
         },
-        /*scrollToTarget:function(target){
-            var top=target.offset().top;
-
-            if(top!= undefined){
-                TweenLite.killTweensOf(window);
-
-                //需要减去nav的高度，以为到下面后nav就是fixed不占高度,加5是为了在滚动那里设置nav的状态
-                if(target.is("#zy_section_three")){
-                    TweenLite.to(window, 1, {scrollTo:{y:top+35, x:0}});
-                }else if(target.is("#zy_section_four")){
-                    TweenLite.to(window, 1, {scrollTo:{y:top+35, x:0}});
-                }else{
-                    TweenLite.to(window, 1, {scrollTo:{y:top+1, x:0}});
-                }
-            }
-        },*/
 
         /**
          * 显示顶部4篇文章，使用juicer
@@ -150,47 +134,6 @@ ZY.uiManager=(function(){
         },
 
         /**
-         * 显示风景分类文章,使用juicer
-         * @param {Array} posts 文章数组
-         */
-        showSectionOnePosts:function(posts){
-            var tpl= $("#zy_section_one_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_section_one_list").append($(html));
-        },
-
-        /**
-         * 显示人文分类文章
-         * @param {Array} posts 文章数组
-         */
-        showSectionTwoPosts:function(posts){
-            var tpl= $("#zy_section_two_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_section_two_list").append($(html));
-        },
-
-        /**
-         * 显示社区分类文章
-         * @param {Array} posts 文章数组
-         */
-        showSectionFourPosts:function(posts){
-            var tpl= $("#zy_section_four_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts});
-            $("#zy_section_four_list").append($(html));
-        },
-
-        /**
-         * 显示物语分类文章,第一个是单独的大图
-         * @param {Array} posts 文章数组
-         * @param {Boolean} isFirst 是否是第一次加载
-         */
-        showSectionThreePosts:function(posts,isFirst){
-            var tpl= $("#zy_section_three_articles_tpl").html();
-            var html = juicer(tpl,{posts:posts,isFirst:isFirst});
-            $("#zy_section_three_list").append($(html));
-        },
-
-        /**
          * 显示文章详情，弹出层显示
          * @param {Number} post_id 文章id
          */
@@ -200,6 +143,7 @@ ZY.uiManager=(function(){
             //首先要清除原有的内容
             $("#zy_article_content").find("article").remove();
             me.showBlackout(ZY.config.defaultWrapZindex);
+            $("body").addClass("zy_no_scroll");
             $("#zy_article_container").animate({left:"0%"},300,function(){
                 me.showLoadingSpinner($("#zy_article_content"));
                 ZY.dataManager.getPostDetail(post_id);
@@ -214,6 +158,7 @@ ZY.uiManager=(function(){
             //此处调用是因为可能数据还没加载完就被收回
             var me=this;
             me.hideLoadingSpinner($("#zy_article_content"));
+            $("body").removeClass("zy_no_scroll");
             $("#zy_article_container").animate({left:"100%"},300,function(){
                 me.hideBlackout();
             });

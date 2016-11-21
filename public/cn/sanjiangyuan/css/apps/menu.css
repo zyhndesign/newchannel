@@ -1,0 +1,58 @@
+/*--菜单栏--*/
+.zy_nav{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top:20px;
+    left: 20px;
+    z-index: 100;
+}
+.zy_show_menu{
+    color: white;
+    display: inline-block;
+    font-size: 0px;
+    background: url(../../images/apps/sprite.png) no-repeat -886px -859px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0px;
+}
+.zy_show_menu:hover,.zy_show_menu_active{
+    background: url(../../images/apps/sprite.png) no-repeat -990px -839px;
+    cursor: pointer;
+}
+.zy_nav ul{
+    text-align: center;
+    padding:0px;
+    height: 100%;
+    margin:0px 0px 0px 50px;
+    background: #fff;
+}
+.zy_nav ul li{
+    display: inline-block;
+    width: 25%;
+    list-style: none;
+    height: 100%;
+    float: left;
+}
+.zy_nav ul li a{
+    font-family: "黑体";
+    display: inline-block;
+    width: 99px;
+    height: 100%;
+    line-height: 50px;
+    font-size: 16px;
+    color:#888;
+}
+.zy_nav .zy_menu_separate{
+    display: inline-block;
+    width: 1px;
+    background: #ccc;
+    height: 14px;
+    font-size: 0px;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+.zy_nav ul li a:hover,.zy_nav ul li a.active{
+    color:#000;
+}

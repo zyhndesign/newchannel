@@ -1,0 +1,97 @@
+
+    <section id="zy_artifact" class="zy_artifact">
+    <div class="zy_artifact_top_bg"></div>
+    <div id="zy_artifact_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg3.jpg">
+    </div>
+    <h2 class="zy_artifact_heading">物语</h2>
+    <h3 class="zy_subheading">从传统工艺到现代设计</h3>
+    <div class="zy_artifact_bottom_bg"></div>
+    <section id="zy_artifact_contain" class="zy_artifact_contain">
+        <a id="zy_artifact_prev" class="zy_contain_prev zy_disable">上一页</a>
+        <div id="zy_artifact_list_container" class="zy_list_container">
+            <script id="zy_artifact_articles_tpl" type="text/template">
+
+                {@if isFirst}
+                {@each posts as post,index}
+                {@if index==0}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_artifact_article">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_excerpt">${post.post_excerpt}</p>
+                    </div>
+                </li>
+                {@else}
+                <li  class="zy_artifact_article">
+                    {@if post.top.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@/if}
+                    {@if post.bottom}
+                    {@if post.bottom.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2>${post.bottom.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2>${post.bottom.post_title}</h2>
+                    </div>
+                    {@/if}
+                    {@/if}
+                </li>
+                {@/if}
+                {@/each}
+                {@else}
+                {@each posts as post}
+                <li  class="zy_artifact_article">
+                    {@if post.top.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.top.post_id}" data-zy-post-type="${post.top.post_mime_type}">
+                        <img src="${post.top.thumb}"/>
+                        <h2>${post.top.post_title}</h2>
+                    </div>
+                    {@/if}
+                    {@if post.bottom}
+                    {@if post.bottom.hasVideo}
+                    <div class="zy_article_info hasVideo" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2>${post.bottom.post_title}</h2>
+                    </div>
+                    {@else}
+                    <div class="zy_article_info" data-zy-post-id="${post.bottom.post_id}" data-zy-post-type="${post.bottom.post_mime_type}">
+                        <img src="${post.bottom.thumb}"/>
+                        <h2>${post.bottom.post_title}</h2>
+                    </div>
+                    {@/if}
+                    {@/if}
+                </li>
+                {@/each}
+                {@/if}
+
+
+            </script>
+            <ul id="zy_artifact_list" class="zy_artifact_list">
+
+            </ul>
+        </div>
+        <a id="zy_artifact_next" class="zy_contain_next">下一页</a>
+    </section>
+</section>

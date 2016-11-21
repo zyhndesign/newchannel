@@ -1,0 +1,37 @@
+.zy_logo_li{
+    width: 220px;
+    display: inline-block;
+    list-style: none;
+    vertical-align: top;
+}
+.zy_logo{
+    width: 100%;
+    left:0px;
+    margin: 0px;
+    z-index: 8;
+}
+.zy_logo a{
+    display: block;
+    height: 80px;
+    background: url(../../images/apps/huayaohua.png) no-repeat center center;
+    background-size: contain;
+    font-size:0px;
+    width: 128px;
+    margin: auto;
+}
+
+.zy_nav.zy_nav_active .zy_logo{
+    position: static;
+}
+.zy_nav.zy_nav_active .zy_logo a{
+    background: url(../../images/apps/huayaohua.png) no-repeat center center;
+    height: 80px;
+    width: 128px;
+    margin: auto;
+    background-size: contain;
+}
+.zy_nav.zy_nav_active .zy_logo:before,.zy_nav.zy_nav_active .zy_logo:after{
+    content:"";
+    width: 0px;
+    height: 0px;
+}

@@ -16,24 +16,26 @@
 <body>
 
 <!--顶部，logo，播放器-->
+
 <header class="zy_header">
-	<h1 class="zy_logo" id="zy_logo"><a href="#zy_top_post">疆 Home Style</a></h1>
-  <nav id="zy_top_nav" class="zy_top_nav">
+    <h1 class="zy_logo" id="zy_logo"><a href="#zy_top_post">疆 Home Style</a></h1>
+    <nav id="zy_top_nav" class="zy_top_nav">
         <ul>
             <li><a href="#zy_landscape">风景</a></li>
             <li><a href="#zy_people">人文</a></li>
             <li><a href="#zy_artifact">物语</a></li>
             <li><a href="#zy_community">社区</a></li>
-   		</ul>
-  </nav>
-  <section class="zy_music_play">
+        </ul>
+    </nav>
+
+    <section class="zy_music_play">
         <div class="zy_player">
             <p class="zy_music_author" id="zy_music_author">加载中...</p>
-          <div class="zy_music_process">
-            <div id="zy_music_process_value" class="zy_music_process_value"></div>
+            <div class="zy_music_process">
+                <div id="zy_music_process_value" class="zy_music_process_value"></div>
             </div>
-            <p class="zy_music_title" id="zy_music_title">加载中...</p>            
-            
+            <p class="zy_music_title" id="zy_music_title">加载中...</p>
+
             <a id="zy_music_control" class="zy_player_btn zy_music_play"></a>
             <a id="zy_music_next" class="zy_player_btn zy_music_next"></a>
         </div>
@@ -43,11 +45,11 @@
         <ul id="zy_music_list" style="display:none">
             <script id="zy_music_tpl" type="text/template">
                 {@each musics as music,index}
-                    {@if index==0}
-                        <li class="active_music" data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
-                    {@else}
-                        <li data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
-                    {@/if}
+                {@if index==0}
+                <li class="active_music" data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+                {@else}
+                <li data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+                {@/if}
                 {@/each}
             </script>
         </ul>
@@ -55,147 +57,92 @@
 
 </header>
 
+
+
 <!--浮动菜单-->
 <nav id="zy_nav" class="zy_nav">
-        <ul>
-            <li><a href="#zy_landscape">风景</a></li>
-            <li><a href="#zy_people">人文</a></li>
-            <li><a href="#zy_artifact">物语</a></li>
-            <li><a href="#zy_community">社区</a></li>
-   		</ul>
-    </nav>
-<div id="zy_main_wrapper" class="zy_main_wrapper">
+    <ul>
+        <li><a href="#zy_landscape">风景</a></li>
+        <li><a href="#zy_people">人文</a></li>
+        <li><a href="#zy_artifact">物语</a></li>
+        <li><a href="#zy_community">社区</a></li>
+    </ul>
+</nav>
 
-<!--背景层，所有背景存放在这里
-<section class="zy_theme_background">
-	<div id="zy_landscape_theme" class="zy_theme_bg zy_hidden">
-    <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/02.jpg">
-    </div>
-    <div id="zy_people_theme" class="zy_theme_bg zy_hidden">
-    <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/03.jpg" />
-    </div>
-    <div id="zy_artifact_theme" class="zy_theme_bg zy_hidden">
-    <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/04.jpg" />
-    </div>
-    <div id="zy_community_theme" class="zy_theme_bg zy_hidden">
-    <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/05.jpg" />
-    </div>
-</section>
--->
+<div id="zy_main_wrapper" class="zy_main_wrapper">
 
 
 <!--置顶文章部分-->
 <section id="zy_top_post" class="zy_top_post">
     <div id="zy_top_post_poster" class="zy_top_post_poster">
-    	<img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/01.jpg"/>
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/01.jpg"/>
     </div>
     <div id="zy_top_post_heading" class="zy_top_post_heading">
-    <script id="zy_top_post_tpl" type="text/template">
+        <script id="zy_top_post_tpl" type="text/template">
 
             {@each top_posts as post,index}
-                {@if index==0}
-                    <h2 data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" id="zy_top_post_title" class="zy_top_post_title">${post.post_title}</h2>
-                    <h3 class="zy_top_post_date">${post.post_date}</h3>
-                {@/if}
+            {@if index==0}
+            <h2 data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" id="zy_top_post_title" class="zy_top_post_title">${post.post_title}</h2>
+            <h3 class="zy_top_post_date">${post.post_date}</h3>
+            {@/if}
             {@/each}
 
         </script>
     </div>
 </section>
+
+
 <!-- ********************************推荐******************************** -->
-<section class="zy_featured">
+    <section class="zy_featured">
     <header class="zy_featured_heading">推荐</header>
-	<ul id="zy_featured_articles" class="zy_featured_articles">
-    	<script id="zy_featured_articles_tpl" type="text/template">
+    <ul id="zy_featured_articles" class="zy_featured_articles">
+        <script id="zy_featured_articles_tpl" type="text/template">
 
             {@each top_posts as post,index}
-                {@if index>=1}
-					<li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
-                    <div class="abstract">
-                        {@if post.hasVideo}
-                            <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
-                        {@else}
-                            <div class="thumb"><img src="${post.thumb}" /></div>
-                        {@/if}
-                        <h3 class="title">${post.post_title}</h3>
-                        <p class="date">${post.post_date}</p>
-                    </div>
-					</li>
-                {@/if}
+            {@if index>=1}
+            <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+                <div class="abstract">
+                    {@if post.hasVideo}
+                    <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
+                    {@else}
+                    <div class="thumb"><img src="${post.thumb}" /></div>
+                    {@/if}
+                    <h3 class="title">${post.post_title}</h3>
+                    <p class="date">${post.post_date}</p>
+                </div>
+            </li>
+            {@/if}
             {@/each}
 
         </script>
     </ul>
 
-	<p class="zy_scrolling_down_btn">向下滚动</p>
+    <p class="zy_scrolling_down_btn">向下滚动</p>
 </section>
 <!-- ********************************风景******************************** -->
-<section id="zy_landscape" class="zy_landscape">
+
+    <section id="zy_landscape" class="zy_landscape">
     <div id="zy_landscape_theme" class="zy_theme_bg">
-    	<img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/02.jpg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/02.jpg">
     </div>
-<h2 class="zy_landscape_heading">风景</h2>
-<h3 class="zy_subheading">美不胜收的影像写真</h3>
-<section id="zy_landscape_contain" class="zy_landscape_contain">
-    <a id="zy_landscape_prev" class="zy_contain_prev"></a>
-	<div id="zy_landscape_list_container" class="zy_list_container">
-    <script id="zy_landscape_articles_tpl" type="text/template">
-
-        {@each posts as post}
-        <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_landscape_article">
-            {@if post.hasVideo}
-                <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
-            {@else}
-                <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
-            {@/if}
-            <div class="zy_article_abstract">
-                <h2>${post.post_title}</h2>
-                <p class="zy_article_date">${post.post_date}</p>
-                <p class="zy_article_excerpt">
-                    ${post.post_excerpt}
-                </p>
-            </div>
-        </li>
-        {@/each}
-
-    </script>
-    <ul id="zy_landscape_list" class="zy_landscape_list">
-
-    </ul>
-    </div>
-    <a id="zy_landscape_next" class="zy_contain_next"></a>
-
-</section>
-
-<h4 class="zy_dmxj">
-    大美新疆!
-</h4>
-</section>
-<!-- ********************************人文******************************** -->
-<section id="zy_people" class="zy_people">
-    <div id="zy_people_theme" class="zy_theme_bg">
-    <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/03.jpg" />
-    </div>
-	<h2 class="zy_people_heading">人文</h2>
-	<h3 class="zy_subheading">生生不息的人物故事</h3>
-    <section id="zy_people_contain" class="zy_people_contain">
-
-        <a id="zy_people_prev" class="zy_contain_prev">上一页</a>
-        	<div id="zy_people_list_container" class="zy_list_container">
-            <ul id="zy_people_list" class="zy_people_list">
-			<script id="zy_people_articles_tpl" type="text/template">
+    <h2 class="zy_landscape_heading">风景</h2>
+    <h3 class="zy_subheading">美不胜收的影像写真</h3>
+    <section id="zy_landscape_contain" class="zy_landscape_contain">
+        <a id="zy_landscape_prev" class="zy_contain_prev"></a>
+        <div id="zy_landscape_list_container" class="zy_list_container">
+            <script id="zy_landscape_articles_tpl" type="text/template">
 
                 {@each posts as post}
-                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_people_article">
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_landscape_article">
                     {@if post.hasVideo}
-                        <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
                     {@else}
-                        <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
                     {@/if}
                     <div class="zy_article_abstract">
                         <h2>${post.post_title}</h2>
                         <p class="zy_article_date">${post.post_date}</p>
-                        <p>
+                        <p class="zy_article_excerpt">
                             ${post.post_excerpt}
                         </p>
                     </div>
@@ -203,70 +150,38 @@
                 {@/each}
 
             </script>
+            <ul id="zy_landscape_list" class="zy_landscape_list">
+
             </ul>
-        </div>    
-        <a id="zy_people_next" class="zy_contain_next">下一页</a>
+        </div>
+        <a id="zy_landscape_next" class="zy_contain_next"></a>
+
     </section>
-    <h4 class="zy_cameral">驼背上的传奇</h4>
+
+    <h4 class="zy_dmxj">
+        大美新疆!
+    </h4>
 </section>
-<!-- ********************************物语******************************** -->
-<section id="zy_artifact" class="zy_artifact">
-    <div id="zy_artifact_theme" class="zy_theme_bg">
-    <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/04.jpg" />
+<!-- ********************************人文******************************** -->
+    <section id="zy_people" class="zy_people">
+    <div id="zy_people_theme" class="zy_theme_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/03.jpg" />
     </div>
-	<h2 class="zy_artifact_heading">物语</h2>
-	<h3 class="zy_subheading">从传统工艺到现代设计</h3>
-    <section id="zy_artifact_contain" class="zy_artifact_contain">
-        <a id="zy_artifact_prev" class="zy_contain_prev">上一页</a>
-        <div id="zy_artifact_list_container" class="zy_list_container">
-            <ul id="zy_artifact_list" class="zy_artifact_list">
-        <script id="zy_artifact_articles_tpl" type="text/template">
+    <h2 class="zy_people_heading">人文</h2>
+    <h3 class="zy_subheading">生生不息的人物故事</h3>
+    <section id="zy_people_contain" class="zy_people_contain">
+
+        <a id="zy_people_prev" class="zy_contain_prev">上一页</a>
+        <div id="zy_people_list_container" class="zy_list_container">
+            <ul id="zy_people_list" class="zy_people_list">
+                <script id="zy_people_articles_tpl" type="text/template">
 
                     {@each posts as post}
-                    <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_artifact_article">
+                    <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_people_article">
                         {@if post.hasVideo}
-                            <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                        <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
                         {@else}
-                            <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
-                        {@/if}
-                        <div class="zy_article_abstract">
-                            <h2>${post.post_title}</h2>
-                            <p class="zy_article_date">${post.post_date}</p>
-                            <p class="zy_article_excerpt">
-                                ${post.post_excerpt}
-                            </p>
-                        </div>
-                    </li>
-                    {@/each}
-
-                </script>
-            </ul>
-            </div>
-        <a id="zy_artifact_next" class="zy_contain_next">下一页</a>
-    </section>
-    <h4 class="zy_exhibition">参观我们的实体展厅：湖南省长沙市岳麓大道233号，湖南科技大厦1层，+86 731 88988607</h4>
-</section>
-<!-- ********************************社区******************************** -->
-<section id="zy_community" class="zy_community">	
-    <div id="zy_community_theme" class="zy_theme_bg">
-    <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/05.jpg" />
-    </div>
-	<h2 class="zy_community_heading">社区</h2>
-	<h3 class="zy_subheading">社区互动与参与式创新</h3>
-    <section id="zy_community_contain" class="zy_community_contain">
-
-        <a id="zy_community_prev" class="zy_contain_prev">上一页</a>
-        <div id="zy_community_list_container" class="zy_list_container">
-
-        <ul id="zy_community_list" class="zy_community_list">
-			<script id="zy_community_articles_tpl" type="text/template">
-
-                    {@each posts as post}
-                    <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_community_article">
-                        {@if post.hasVideo}
-                            <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
-                        {@else}
-                            <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                        <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
                         {@/if}
                         <div class="zy_article_abstract">
                             <h2>${post.post_title}</h2>
@@ -280,35 +195,111 @@
 
                 </script>
             </ul>
-            </div>
+        </div>
+        <a id="zy_people_next" class="zy_contain_next">下一页</a>
+    </section>
+    <h4 class="zy_cameral">驼背上的传奇</h4>
+</section>
+<!-- ********************************物语******************************** -->
+    <section id="zy_artifact" class="zy_artifact">
+    <div id="zy_artifact_theme" class="zy_theme_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/04.jpg" />
+    </div>
+    <h2 class="zy_artifact_heading">物语</h2>
+    <h3 class="zy_subheading">从传统工艺到现代设计</h3>
+    <section id="zy_artifact_contain" class="zy_artifact_contain">
+        <a id="zy_artifact_prev" class="zy_contain_prev">上一页</a>
+        <div id="zy_artifact_list_container" class="zy_list_container">
+            <ul id="zy_artifact_list" class="zy_artifact_list">
+                <script id="zy_artifact_articles_tpl" type="text/template">
+
+                    {@each posts as post}
+                    <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_artifact_article">
+                        {@if post.hasVideo}
+                        <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                        {@else}
+                        <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                        {@/if}
+                        <div class="zy_article_abstract">
+                            <h2>${post.post_title}</h2>
+                            <p class="zy_article_date">${post.post_date}</p>
+                            <p class="zy_article_excerpt">
+                                ${post.post_excerpt}
+                            </p>
+                        </div>
+                    </li>
+                    {@/each}
+
+                </script>
+            </ul>
+        </div>
+        <a id="zy_artifact_next" class="zy_contain_next">下一页</a>
+    </section>
+    <h4 class="zy_exhibition">参观我们的实体展厅：湖南省长沙市岳麓大道233号，湖南科技大厦1层，+86 731 88988607</h4>
+</section>
+<!-- ********************************社区******************************** -->
+    <section id="zy_community" class="zy_community">
+    <div id="zy_community_theme" class="zy_theme_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/05.jpg" />
+    </div>
+    <h2 class="zy_community_heading">社区</h2>
+    <h3 class="zy_subheading">社区互动与参与式创新</h3>
+    <section id="zy_community_contain" class="zy_community_contain">
+
+        <a id="zy_community_prev" class="zy_contain_prev">上一页</a>
+        <div id="zy_community_list_container" class="zy_list_container">
+
+            <ul id="zy_community_list" class="zy_community_list">
+                <script id="zy_community_articles_tpl" type="text/template">
+
+                    {@each posts as post}
+                    <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_community_article">
+                        {@if post.hasVideo}
+                        <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                        {@else}
+                        <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                        {@/if}
+                        <div class="zy_article_abstract">
+                            <h2>${post.post_title}</h2>
+                            <p class="zy_article_date">${post.post_date}</p>
+                            <p>
+                                ${post.post_excerpt}
+                            </p>
+                        </div>
+                    </li>
+                    {@/each}
+
+                </script>
+            </ul>
+        </div>
         <a id="zy_community_next" class="zy_contain_next">下一页</a>
 
     </section>
     <h4 class="zy_temple">清真寺内的祷音</h4>
 </section>
 <!--底部-->
-<footer class="zy_footer">
-	<div class="zy_project_info">
-    <h2 class="zy_project_title">项目背景</h2>
-    <p>2012年7月，新通道项目组联合新疆师范大学美术学院，在新疆科技厅的支持下，启动了“新疆地域文化研究与旅游商品研发关键技术及应用示范”的项目建设，43名志愿者行程5500公里，以喀什噶尔古城、伊犁新源恰勒阔迭村、吐鲁番吐峪沟为主要研究对象，通过非物质文化遗产影像记录、工业设计、环境设计、儿童美术教育等综合的（DS-CN）方法，完成了疆home+style项目总宣传片、儿童片、生土建筑片、手工艺片4条影片制作；采访非遗传承人6人，非遗传承项目11项，采集了哈萨克族传统音乐、喀什民歌6条、木卡姆选段等本地原生态音乐；工业设计组完成了陶艺雕塑、维族建筑积木、穹顶花伞等17款具有典型“疆”文化特色的文化旅游创意商品设计及制作打样，视觉设计组完成14款wallpaper设计，儿童美术组在新源县那拉提乌拉斯台牧业希望小学组织当地60名哈萨克族与回族小朋友进行美术培训，完成绘画、手工作品450余件，并在当地小学在举办“欢乐秀”活动。 2013年1月20日，项目组在北京召开了成果发布会，新浪网、搜狐网、潇湘晨报等35家媒体对此进行了报道。
-    </p>
-    <ul class="zy_project_sponsors">
-    <li><a class="zy_logo_mkmj" href="http://www.markorhome.com/" target="_blank">美克美家</a></li>
-    <li><a class="zy_logo_hnusd" href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
-    </ul>
+    <footer class="zy_footer">
+    <div class="zy_project_info">
+        <h2 class="zy_project_title">项目背景</h2>
+        <p>2012年7月，新通道项目组联合新疆师范大学美术学院，在新疆科技厅的支持下，启动了“新疆地域文化研究与旅游商品研发关键技术及应用示范”的项目建设，43名志愿者行程5500公里，以喀什噶尔古城、伊犁新源恰勒阔迭村、吐鲁番吐峪沟为主要研究对象，通过非物质文化遗产影像记录、工业设计、环境设计、儿童美术教育等综合的（DS-CN）方法，完成了疆home+style项目总宣传片、儿童片、生土建筑片、手工艺片4条影片制作；采访非遗传承人6人，非遗传承项目11项，采集了哈萨克族传统音乐、喀什民歌6条、木卡姆选段等本地原生态音乐；工业设计组完成了陶艺雕塑、维族建筑积木、穹顶花伞等17款具有典型“疆”文化特色的文化旅游创意商品设计及制作打样，视觉设计组完成14款wallpaper设计，儿童美术组在新源县那拉提乌拉斯台牧业希望小学组织当地60名哈萨克族与回族小朋友进行美术培训，完成绘画、手工作品450余件，并在当地小学在举办“欢乐秀”活动。 2013年1月20日，项目组在北京召开了成果发布会，新浪网、搜狐网、潇湘晨报等35家媒体对此进行了报道。
+        </p>
+        <ul class="zy_project_sponsors">
+            <li><a class="zy_logo_mkmj" href="http://www.markorhome.com/" target="_blank">美克美家</a></li>
+            <li><a class="zy_logo_hnusd" href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
+        </ul>
     </div>
     <div class="zy_app_download zy_hidden">
-    <h2>疆 HomeStyle</h2>
-    <h3>APP下载</h3>
-    <ul class="zy_app_download_list">
-    	<li><a href="app/JiangHomeStylePhone.apk" title="适合安卓手机的APP" class="zy_android_phone_app">适合安卓手机的APP</a></li>
-        <li><a href="app/JiangHomeStyle.apk" title="适合安卓平板的APP" class="zy_android_pad_app">适合安卓平板的APP</a></li>
-    </ul>
+        <h2>疆 HomeStyle</h2>
+        <h3>APP下载</h3>
+        <ul class="zy_app_download_list">
+            <li><a href="app/JiangHomeStylePhone.apk" title="适合安卓手机的APP" class="zy_android_phone_app">适合安卓手机的APP</a></li>
+            <li><a href="app/JiangHomeStyle.apk" title="适合安卓平板的APP" class="zy_android_pad_app">适合安卓平板的APP</a></li>
+        </ul>
     </div>
     <div class="zy_copyright">
-    <p>© 湖南省工业设计协会 版权所有</p>
-	<p>中意工业设计（湖南）有限公司 设计开发</p>
-    </div>   
+        <p>© 湖南省工业设计协会 版权所有</p>
+        <p>中意工业设计（湖南）有限公司 设计开发</p>
+    </div>
 </footer>
 
 </div>
@@ -324,8 +315,8 @@
 </section>
 <!--弹出窗口-->
 <section id="zy_popout_win" class="zy_popout_win zy_hidden">
-<h3 class="zy_popout_title"></h3>
-<span class="zy_popout_btn">好</span>
+    <h3 class="zy_popout_title"></h3>
+    <span class="zy_popout_btn">好</span>
 </section>
 <!--单片文章展示模版，采用load加载页面-->
 <article id="zy_article_container" class="zy_article_container">
@@ -349,40 +340,40 @@
                 </div>
             </article>
             {@else}
-                <article class="article-main-slide">
-                    <h1 class="article-title-slide">${post_title}</h1>
-                    <h2 class="article-author-slide">${post_author}</h2>
-                    <h2 class="article-category-slide">${post_category} | ${post_date}</h2>
+            <article class="article-main-slide">
+                <h1 class="article-title-slide">${post_title}</h1>
+                <h2 class="article-author-slide">${post_author}</h2>
+                <h2 class="article-category-slide">${post_category} | ${post_date}</h2>
 
 
 
-                    <div class="article-abstract-slide">
-                        <p>${post_excerpt}</p>
+                <div class="article-abstract-slide">
+                    <p>${post_excerpt}</p>
+                </div>
+
+
+
+                <div class="allslides-slide">
+                    {@each post_slides as slide}
+                    <div class="slide-slide">
+                        {@if slide.title}
+
+                        {@if slide.memo}
+                        <div class="imgcaption-slide"><span>${slide.title}</span>：${slide.memo}</div>
+                        {@else}
+                        <div class="imgcaption-slide">${slide.title}</div>
+                        {@/if}
+
+                        {@else if slide.memo}
+                        <div class="imgcaption-slide">${slide.memo}</div>
+                        {@/if}
+
+                        $${slide.content}
                     </div>
+                    {@/each}
 
-
-
-                    <div class="allslides-slide">
-                        {@each post_slides as slide}
-                            <div class="slide-slide">
-                                {@if slide.title}
-
-                                    {@if slide.memo}
-                                        <div class="imgcaption-slide"><span>${slide.title}</span>：${slide.memo}</div>
-                                    {@else}
-                                        <div class="imgcaption-slide">${slide.title}</div>
-                                    {@/if}
-
-                                {@else if slide.memo}
-                                    <div class="imgcaption-slide">${slide.memo}</div>
-                                {@/if}
-
-                                $${slide.content}
-                            </div>
-                        {@/each}
-
-                    </div>
-                </article>
+                </div>
+            </article>
             {@/if}
 
         </script>

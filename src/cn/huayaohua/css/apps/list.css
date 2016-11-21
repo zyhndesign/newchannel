@@ -1,0 +1,227 @@
+.zy_landscape_list{
+    margin:0;
+    height:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    font-size:0;
+    position: absolute;
+    left: 0;
+    padding:0px;
+}
+.zy_landscape_article{
+    display: inline-block;
+    width: 320px;
+    height: 100%;
+    white-space: normal;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:0 10px;
+    position:relative;
+    cursor:pointer;
+    vertical-align:top;
+}
+.zy_landscape_article>.zy_article_info{
+    position: relative;
+}
+.zy_landscape_article>.zy_article_info img{
+    width:100%;
+
+}
+.zy_landscape_article>.zy_article_info h2{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    font-size: 18px;
+    color:#fff;
+    background: url(../../images/apps/articletitle_fengjing_bg.png) repeat-x;
+    margin: 0px;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    text-indent: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zy_landscape_article>.zy_article_info:nth-child(2n){
+    padding-top:20px;
+}
+
+.zy_people_list,.zy_community_list{
+    padding: 0;
+    margin:0;
+    height:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:20px 0;
+    font-size:0;
+    vertical-align:top;
+    position: absolute;
+    left: 0px;
+}
+.zy_people_article,.zy_community_article{
+    display: inline-block;
+    width: 240px;
+    height: 100%;
+    white-space: normal;
+    border-right:#ccc 1px solid;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:0 20px;
+    position:relative;
+    cursor:pointer;
+}
+.zy_people_article>.zy_article_thumb,.zy_community_article>.zy_article_thumb{
+    width:200px;
+    height:200px;
+    overflow:hidden;
+    position:absolute;
+    top:0;
+}
+.zy_people_article>.zy_article_thumb img,.zy_community_article>.zy_article_thumb img{
+    width:100%;
+}
+.zy_people_article>.zy_article_abstract,.zy_community_article>.zy_article_abstract{
+    width:200px;
+    height:240px;
+    text-align:center;
+    position:absolute;
+    bottom:0;
+    overflow:hidden;
+    color:#666;
+}
+.zy_people_article>.zy_article_abstract h2,.zy_community_article>.zy_article_abstract h2{
+    font-size:24px;
+    color:#ca2e3a;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zy_people_article>.zy_article_abstract p,.zy_community_article>.zy_article_abstract p{
+    font-size:16px;
+    line-height:2em;
+    margin:5px 0;
+}
+.zy_people_article>.zy_article_abstract p.zy_article_date,.zy_community_article>.zy_article_abstract p.zy_article_date{
+    font-size:12px;
+    border-top:#ccc 1px solid;
+    padding-top:8px;
+}
+.zy_people_article:nth-child(2n)>.zy_article_thumb,.zy_community_article:nth-child(2n)>.zy_article_thumb{
+    bottom:0;
+    top:auto;
+}
+.zy_people_article:nth-child(2n)>.zy_article_abstract,.zy_community_article:nth-child(2n)>.zy_article_abstract{
+    top:0;
+    height:240px;
+}
+
+.zy_artifact_list{
+    margin:0;
+    height:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:20px 0;
+    font-size:0;
+    position: absolute;
+    left: 0;
+}
+.zy_artifact_article{
+    display: inline-block;
+    width: 200px;
+    height: 400px;
+    white-space: normal;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    margin-right: 5px;
+    padding:0px 5px 0px 0px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    vertical-align: top;
+}
+.zy_artifact_list>.zy_artifact_article:first-child{
+    width: 400px;
+    padding:0px;
+    margin-right: 10px;
+}
+/*.zy_artifact_list>.zy_artifact_article:nth-child(2){
+    margin-left: 5px;
+}*/
+.zy_artifact_list>.zy_artifact_article:first-child>.zy_article_thumb{
+    height: 400px;
+}
+.zy_artifact_list>.zy_artifact_article:first-child>.zy_article_thumb>img{
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width:100%;
+}
+.zy_artifact_list .zy_article_abstract{
+    position: absolute;
+    bottom:20px;
+    left:20px;
+    width: 300px;
+    height: 190px;
+    background: url(../../images/apps/sprite.png) no-repeat -2px -761px;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+.zy_artifact_list .zy_article_abstract h2{
+    font-size: 18px;
+    color:#fff;
+    height: 50px;
+    text-align: center;
+    margin: 0px;
+    line-height: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zy_artifact_list .zy_article_abstract p{
+    font-size: 14px;
+    color:#fff;
+    overflow: hidden;
+}
+.zy_artifact_list .zy_article_abstract .zy_article_excerpt{
+    line-height: 1.5em;
+    height: 7.5em;
+}
+.zy_artifact_article>.zy_article_info{
+    position: relative;
+    width: 195px;
+}
+.zy_artifact_article>.zy_article_info img{
+    width:100%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.zy_artifact_article>.zy_article_info h2{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    font-size: 18px;
+    color:#fff;
+    background: url(../../images/apps/articletitle_wuyu_bg_small.png) repeat-x;
+    margin: 0px;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    text-indent: 15px;
+    overflow: hidden;
+}
+.zy_artifact_article>.zy_article_info:nth-child(2n){
+    padding-top:10px;
+}

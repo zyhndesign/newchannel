@@ -1,0 +1,41 @@
+<section id="zy_landscape" class="zy_landscape">
+    <div id="zy_landscape_theme" class="zy_theme_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/02.jpg">
+    </div>
+    <h2 class="zy_landscape_heading">风景</h2>
+    <h3 class="zy_subheading">美不胜收的影像写真</h3>
+    <section id="zy_landscape_contain" class="zy_landscape_contain">
+        <a id="zy_landscape_prev" class="zy_contain_prev"></a>
+        <div id="zy_landscape_list_container" class="zy_list_container">
+            <script id="zy_landscape_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_landscape_article">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p class="zy_article_excerpt">
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_landscape_list" class="zy_landscape_list">
+
+            </ul>
+        </div>
+        <a id="zy_landscape_next" class="zy_contain_next"></a>
+
+    </section>
+
+    <h4 class="zy_dmxj">
+        大美新疆!
+    </h4>
+</section>
