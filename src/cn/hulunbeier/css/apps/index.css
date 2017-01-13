@@ -54,6 +54,19 @@ a{
     overflow: hidden;
 }
 
+.zy_down{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left:50%;
+    bottom:140px;
+    background: url(../../images/apps/down.svg);
+    transform: translate(-50%,0);
+    font-size: 0px;
+}
+
 /*--顶部栏--*/
 .zy_header{
     height: 60px;
@@ -94,7 +107,29 @@ a{
     position: relative;
     margin: auto;
     width:960px;
-    padding: 0 0 60px;
+    padding: 34px 0 60px;
+}
+.zy_nav_btn{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 50px;
+    height: 50px;
+    transform: translate(-530px,-50%);
+    cursor: pointer;
+}
+.zy_nav_btn_prev{
+    background: url(../../images/apps/nav_btn_prev.svg) no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+.zy_nav_btn_next{
+    left:inherit;
+    right:50%;
+    transform: translate(530px,-50%);
+    background: url(../../images/apps/nav_btn_next.svg) no-repeat;
+    background-position: left;
+    background-size: contain;
 }
 
 

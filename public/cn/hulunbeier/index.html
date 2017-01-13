@@ -18,7 +18,7 @@
 
 
 <!--菜单栏-->
-<nav id="zy_nav" class="zy_nav">
+<nav id="zy_nav" class="zy_nav active">
     <span id="zy_show_menu" class="zy_show_menu">显示菜单</span>
     <ul id="zy_menu">
         <li><a href="#zy_landscape" class="top_menu_landscape">风景</a></li>
@@ -40,10 +40,13 @@
         -->
     </div>
     <h2 class="zy_title_logo">呼伦贝尔</h2>
+    <span class="zy_down" data-target="#zy_featured">向下</span>
 </section>
 
 <!--------------------------------------推荐------------------------------------------>
     <section id="zy_featured" class="zy_featured">
+    <div class="zy_featured_left">左侧背景</div>
+    <div class="zy_featured_right">右侧背景</div>
     <header class="zy_featured_heading">推荐</header>
     <script id="zy_featured_articles_tpl" type="text/template">
 
@@ -80,6 +83,10 @@
     </div>
     <h2 class="zy_landscape_heading">风景</h2>
     <section id="zy_landscape_contain" class="zy_landscape_contain">
+        <div class="zy_bg_left_top"></div>
+        <div class="zy_bg_left_bottom"></div>
+        <div class="zy_bg_right_top"></div>
+        <div class="zy_bg_right_bottom"></div>
         <h3 class="zy_subheading">美不胜收的风景写真</h3>
         <div id="zy_landscape_list_container" class="zy_list_container swiper1 swiper-container">
             <script id="zy_landscape_articles_tpl" type="text/template">
@@ -106,12 +113,13 @@
             <ul id="zy_landscape_list" class="zy_landscape_list swiper-wrapper">
 
             </ul>
-            <!--
-                    <div class="swiper-button-prev swiper-button-prev1"></div>
-                    <div class="swiper-button-next swiper-button-next1"></div>
-            -->
+            <!--<div class="swiper-button-prev swiper-button-prev1"></div>
+            <div class="swiper-button-next swiper-button-next1"></div>-->
             <div class="swiper-pagination swiper-pagination1"></div>
         </div>
+
+        <div class="zy_nav_btn zy_nav_btn_prev" data-swiper="swiper1" data-nav="Prev"></div>
+        <div class="zy_nav_btn zy_nav_btn_next" data-swiper="swiper1" data-nav="Next"></div>
 
     </section>
 
@@ -126,6 +134,10 @@
     <h2 class="zy_people_heading">人文</h2>
 
     <section id="zy_people_contain" class="zy_people_contain">
+        <div class="zy_bg_left_top"></div>
+        <div class="zy_bg_left_bottom"></div>
+        <div class="zy_bg_right_top"></div>
+        <div class="zy_bg_right_bottom"></div>
         <h3 class="zy_subheading">生生不息的人物故事</h3>
         <div id="zy_people_list_container" class="zy_list_container swiper2 swiper-container zy_people_list_container">
             <script id="zy_people_articles_tpl" type="text/template">
@@ -156,6 +168,9 @@
             -->
             <div class="swiper-pagination swiper-pagination2"></div>
         </div>
+
+        <div class="zy_nav_btn zy_nav_btn_prev" data-swiper="swiper2" data-nav="Prev"></div>
+        <div class="zy_nav_btn zy_nav_btn_next" data-swiper="swiper2" data-nav="Next"></div>
     </section>
 </section>
 
@@ -168,6 +183,10 @@
     <h2 class="zy_artifact_heading">物语</h2>
 
     <section id="zy_artifact_contain" class="zy_artifact_contain">
+        <div class="zy_bg_left_top"></div>
+        <div class="zy_bg_left_bottom"></div>
+        <div class="zy_bg_right_top"></div>
+        <div class="zy_bg_right_bottom"></div>
         <h3 class="zy_subheading">从传统工艺到现代设计</h3>
         <div id="zy_artifact_list_container" class="zy_list_container swiper3 swiper-container">
             <script id="zy_artifact_articles_tpl" type="text/template">
@@ -199,6 +218,9 @@
             -->
             <div class="swiper-pagination swiper-pagination3"></div>
         </div>
+
+        <div class="zy_nav_btn zy_nav_btn_prev" data-swiper="swiper3" data-nav="Prev"></div>
+        <div class="zy_nav_btn zy_nav_btn_next" data-swiper="swiper3" data-nav="Next"></div>
     </section>
 </section>
 
@@ -206,12 +228,16 @@
 <!--------------------------------------社区------------------------------------------>
     <section id="zy_community" class="zy_community">
 
+
     <div id="zy_community_bg" class="zy_section_bg">
         <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg5.jpg"/>
     </div>
     <h2 class="zy_community_heading">社区</h2>
 
     <section id="zy_community_contain" class="zy_community_contain">
+
+        <div class="zy_community_left">左侧背景</div>
+        <div class="zy_community_right">右侧背景</div>
         <h3 class="zy_subheading">社区互动与参与式创新</h3>
         <div id="zy_community_list_container" class="zy_list_container zy_community_list_container swiper4 swiper-container">
             <script id="zy_community_articles_tpl" type="text/template">
@@ -244,7 +270,8 @@
             <div class="swiper-pagination swiper-pagination4"></div>
         </div>
 
-
+        <div class="zy_nav_btn zy_nav_btn_prev" data-swiper="swiper4" data-nav="Prev"></div>
+        <div class="zy_nav_btn zy_nav_btn_next" data-swiper="swiper4" data-nav="Next"></div>
 
     </section>
 </section>
@@ -254,7 +281,7 @@
     <div class="zy_project">
         <div class="zy_project_info">
             <h2 class="zy_project_title">项目背景</h2>
-            <p>
+            <p style="text-align: left">
                 “新通道·呼伦贝尔”是由湖南大学、美克美家、湖南省对外科技交流中心、伦敦大学、内蒙古科技大学等单位联合组织开展的设计与社会创新活动。从2016年7月20日至8月10日，项目组的20多名师生、设计师、志愿者将深入呼伦贝尔鄂温克自治旗等地区，以社区研究的方法了解当地的宗教、文化、物产以及人文资源，特别是对呼伦贝尔大草原的非物质遗产手工艺进行重点记录和影像创作，在此基础上针对游牧民族的生活形态、社区结构及文化与产业发展需求，以跨学科的团队，与当地政府、企业、手工艺传人开展参与式联合工作营，共同探索构建可持续的文创公益与社会创新网络的方法。
             </p>
         </div>

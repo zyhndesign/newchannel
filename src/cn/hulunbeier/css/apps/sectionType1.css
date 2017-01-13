@@ -30,7 +30,46 @@
     transform: translate(-50%,0);
     z-index:1;
 }
-
+.zy_landscape .zy_bg_left_top{
+    background: url(../../images/apps/landscape_bg.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left:50%;
+    top:100px;
+    width: 150px;
+    height: 150px;
+    transform: translate(-630px,0px);
+}
+.zy_landscape .zy_bg_left_bottom{
+    background: url(../../images/apps/landscape_bg.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left:50%;
+    bottom:70px;
+    width: 150px;
+    height: 150px;
+    transform: translate(-630px,0px);
+}
+.zy_landscape .zy_bg_right_top{
+    background: url(../../images/apps/landscape_bg.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right:50%;
+    top:100px;
+    width: 150px;
+    height: 150px;
+    transform: translate(630px,0px);
+}
+.zy_landscape .zy_bg_right_bottom{
+    background: url(../../images/apps/landscape_bg.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right:50%;
+    bottom:70px;
+    width: 150px;
+    height: 150px;
+    transform: translate(630px,0px);
+}
 .zy_landscape .zy_subheading{
     background-image: url(../../images/apps/title_landscape.svg);
     background-repeat: no-repeat;
@@ -47,8 +86,9 @@
     box-sizing:border-box;
     position: relative;
     z-index:8;
-    background: url(../../images/apps/landscape_bg.svg) #fff center no-repeat;
-    background-size: contain;
+    background: #fff;
+    /*background: url(../../images/apps/landscape_bg.svg) #fff center no-repeat;
+    background-size: contain;*/
     padding:1px 0px;
 }
 .zy_landscape_contain:before{

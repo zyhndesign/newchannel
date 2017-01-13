@@ -115,8 +115,8 @@ ZY.controllerManager=(function(){
                     ZY.dataManager.swiper1 = new Swiper('.swiper1', {
                         pagination: '.swiper-pagination1',
                         paginationClickable: true,
-                        /*nextButton: '.swiper-button-next1',
-                         prevButton: '.swiper-button-prev1',*/
+                        /*nextButton: '.swiper-button-next',
+                        prevButton: '.swiper-button-prev',*/
                         simulateTouch:true,
                         direction: 'horizontal',
                         slidesPerView: 3,

@@ -9,7 +9,7 @@
 $(document).ready(function(){
     //显示菜单
     $("#zy_show_menu").click(function(){
-        $("#zy_nav").toggleClass("active");
+        //$("#zy_nav").toggleClass("active");
     });
     
     //菜单点击事件
@@ -21,9 +21,16 @@ $(document).ready(function(){
         return false;
     });
 
+    $(".zy_nav_btn").click(function(){
+        ZY.uiManager.navHandler($(this).data("swiper"),$(this).data("nav"));
+    });
+
+    $(".zy_down").click(function(){
+        ZY.uiManager.scrollToTarget($($(this).data("target")));
+    });
+
     //获取封面故事和推荐文章
     ZY.dataManager.getTopPosts();
-    
 
     //显示单篇文章
     $(document).on("click","li[data-zy-post-type^=zy],div[data-zy-post-type^=zy],h2[data-zy-post-type^=zy]",function(){
