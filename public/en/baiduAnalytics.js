@@ -1,1 +1,7 @@
-var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="//hm.baidu.com/hm.js?104142717efb1586a2e27ed54a6632c9";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?974c618dca448e0453e72a753c427227";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
