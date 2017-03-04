@@ -8,11 +8,33 @@
 var ZY=ZY||{};
 ZY.uiManager=(function(){
     return {
+         /**
+         * 显示音乐播放器
+         */
+        showMusicPlayer:function(){
+            $("#zy_music_section").animate({
+                width:"100%"
+            },100,function(){
+                $("#zy_music_player").removeClass("zy_hidden");
+            });
+        },
+
+        /**
+         * 隐藏音乐播放器
+         */
+        hideMusicPlayer:function(){
+            $("#zy_music_section").stop(true,true).width(60);
+            $("#zy_music_player").addClass("zy_hidden");
+        },
+
+        /**
+         * swiper
+         */
         navHandler:function(swiper,nav){
             var funcName="slide"+nav;
-
             ZY.dataManager[swiper][funcName]();
         },
+
         /**
          * 滚动动画，主要用于菜单点击
          * @param {Object} target 需要滚动到的元素jquery对象
@@ -170,6 +192,7 @@ ZY.uiManager=(function(){
          */
         showVideoDetail:function(url){
             var me=this,loadContainer=$("#zy_show_load_container");
+            $("#zy_music_audio")[0].pause(); //暂停音乐
             loadContainer.html("");
             me.showBlackout(9998);
             $("#zy_show_section").removeClass("zy_hidden");
@@ -196,9 +219,15 @@ ZY.uiManager=(function(){
          * 隐藏显示的视频或者大图
          */
         hideDetail:function(){
+            var audio=$("#zy_music_audio")[0];
             this.showBlackout(ZY.config.defaultWrapZindex);
             $("#zy_show_section").addClass("zy_hidden");
             $("#zy_show_load_container").html("");
+
+            //恢复音乐
+            if(ZY.music.musicPlaying){
+                audio.play();
+            }
         },
 
         /**

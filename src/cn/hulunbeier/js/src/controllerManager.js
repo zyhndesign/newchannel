@@ -23,6 +23,16 @@ ZY.controllerManager=(function(){
 
     return {
         /**
+         * 判断是否显示播放器,主要是判断鼠标所在对象是否在某一个对象内
+         * @param {String} parent 容器对象元素id或者class
+         * @param {Object} target 鼠标所在对象元素jquery对象
+         */
+        judgeShowOrNot:function(parent,target){
+            if(target.parents(parent).length==0){
+                ZY.uiManager.hideMusicPlayer();
+            }
+        },
+        /**
          * 横向滚轮事件
          * @param {Object} target 需要添加此事件的元素jquery对象
          */

@@ -116,7 +116,7 @@
 .article-content-post{
     background:#fff;
     color: #666666;
-    font-size:16px;
+    font-size:14px;
     position:absolute;
     top:0;
     left:540px;
@@ -179,7 +179,7 @@
     position:relative;
 }
 .article-main-slide p{
-    font-size:18px;
+    font-size:14px;
     line-height: 2em;
 }
 .article-title-slide{

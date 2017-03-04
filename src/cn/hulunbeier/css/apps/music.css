@@ -1,0 +1,99 @@
+/*--音乐播放器,z-index：100--*/
+.zy_music_section{
+    position:fixed;
+    bottom:0px;
+    right: 0px;
+    width: 100%;/*初始值为右边显示按钮的宽度*/
+    z-index: 100;
+}
+.zy_player{
+    height: 100%;
+    position: relative;
+    /*-webkit-transition: 2s ease;
+    -moz-transition: 2s ease;
+    transition: 2s ease;*/
+}
+.zy_music_title{
+    text-align:center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px 0px 0px 10%;
+    color:#fff;
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
+
+}
+.zy_music_controller{
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 50px;
+    width: 100px;
+    height: 100px;
+}
+.zy_music_controller a{
+    display: inline-block;
+    font-size: 0px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.zy_music_prev{
+    width: 20px;
+}
+.zy_music_play{
+    width: 100px;
+    height: 100px;
+    background: url(../../images/apps/music_logo.svg) no-repeat center;
+    background-size: 120%;
+
+    -webkit-animation: music-logo-spin 15s infinite linear;
+    animation: music-logo-spin 15s infinite linear;
+}
+.zy_music_play.zy_music_paused{
+    -webkit-animation-play-state:paused; 
+    animation-play-state:paused;
+}
+.zy_music_next{
+    width: 20px;
+}
+.zy_music_show{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom:0px;
+    right: 0px;
+    cursor:pointer;
+}
+.zy_music_show.zy_music_show_play{
+
+}
+.zy_music_timeline{
+    width: 0%;
+    background:#ffcc00;
+    height:4px;
+    position: absolute;
+    bottom: 0px;
+    font-size: 0px;
+}
+
+/*music logo animation*/
+@-webkit-keyframes music-logo-spin{
+     0%{
+          -webkit-transform:rotateZ(0deg);
+     }
+     100%{
+          -webkit-transform:rotateZ(360deg);
+     }
+}
+@keyframes music-logo-spin{
+     0%{
+          transform:rotateZ(0deg);
+     }
+     100%{
+          transform:rotateZ(360deg);
+     }
+}

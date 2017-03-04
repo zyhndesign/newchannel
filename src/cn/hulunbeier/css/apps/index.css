@@ -19,13 +19,14 @@ a{
 }
 /*所有开始不显示的类*/
 .zy_hidden,.zy_disable{
-    display: none;
+    display: none !important;
 }
 .hasVideo:before{
     content:"";
     background: url(../../images/apps/hasvideo.png) no-repeat;
-    width: 80px;
-    height: 80px;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
     position: absolute;
     left: 0px;
     top:0px;
@@ -61,7 +62,7 @@ a{
     height: 50px;
     position: absolute;
     left:50%;
-    bottom:140px;
+    bottom:200px;
     background: url(../../images/apps/down.svg);
     transform: translate(-50%,0);
     font-size: 0px;
@@ -104,18 +105,21 @@ a{
 	}
 /*水平滑动窗口布局容器*/
 .zy_list_container{
-    position: relative;
+    position: absolute;
     margin: auto;
     width:960px;
-    padding: 34px 0 60px;
+    left:50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+    padding-bottom: 10%;
 }
 .zy_nav_btn{
     position: absolute;
     top:50%;
     left:50%;
-    width: 50px;
-    height: 50px;
-    transform: translate(-530px,-50%);
+    width: 80px;
+    height: 80px;
+    transform: translate(-570px,-50%);
     cursor: pointer;
 }
 .zy_nav_btn_prev{
@@ -126,13 +130,8 @@ a{
 .zy_nav_btn_next{
     left:inherit;
     right:50%;
-    transform: translate(530px,-50%);
+    transform: translate(570px,-50%);
     background: url(../../images/apps/nav_btn_next.svg) no-repeat;
     background-position: left;
     background-size: contain;
 }
-
-
-
-
-

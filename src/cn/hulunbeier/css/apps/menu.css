@@ -2,16 +2,15 @@
 * 菜单栏
 */
 .zy_nav{
-    height: 60px;
-    width: 0;
+    height: 150px;
+    width: 100%;
     position: fixed;
-    top:20px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom:0;
     z-index: 100;
     background:#333;
     transition: all 0.3s ease-out;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background:url(../../images/apps/nav_bg.svg) no-repeat bottom;
+    background-size: cover;
     cursor: pointer;
     box-sizing: border-box;
 }
@@ -29,8 +28,7 @@
 }
 
 .zy_nav.active{
-    width:400px;
-    height: 60px;
+    
 
 }
 .zy_nav.active .zy_show_menu{
@@ -39,26 +37,49 @@
 
 .zy_nav ul{
     text-align: center;
-    height: 100%;
+    width: 480px;
+    height: 50px;
     font-size: 0px;
     display: flex;
-    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 10px;
 }
+/*.zy_nav ul::before{
+    content: "";
+    width:240px;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(../../images/apps/nav_deco.svg) no-repeat bottom;
+    background-size: contain;
+    
+}*/
 .zy_nav ul li{
     flex: 1;
     padding:0px;
     height: 100%;
-    padding: 10px 0;
+    padding: 0;
     box-sizing: border-box;
 }
+.zy_nav ul li:first-child{
+    margin-right: 10px;
+}
+.zy_nav ul li:last-child{
+    margin-left: 10px;
+}
 .zy_nav ul li.separator{
-    margin-right: 100px;
+    margin-right: 120px;
 }
 .zy_nav ul li a{
     font-family: "黑体";
     display: block;
     height: 100%;
-    width:80%;
+    width:100%;
     margin: auto;
     font-size: 0;
     line-height: 60px;
@@ -66,6 +87,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size:80%;
+    border-radius: 4px;
 }
 .zy_nav ul li a:hover{
     opacity: .8;

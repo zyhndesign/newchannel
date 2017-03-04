@@ -10,7 +10,6 @@
     <title>呼伦贝尔</title>
 
 
-
     <link rel="stylesheet" href="../../pkg/cn/hulunbeier/index.html_aio.css" />
 </head>
 <body>
@@ -19,7 +18,7 @@
 
 <!--菜单栏-->
 <nav id="zy_nav" class="zy_nav active">
-    <span id="zy_show_menu" class="zy_show_menu">显示菜单</span>
+    <!--<span id="zy_show_menu" class="zy_show_menu">显示菜单</span>-->
     <ul id="zy_menu">
         <li><a href="#zy_landscape" class="top_menu_landscape">风景</a></li>
         <li class="separator"><a href="#zy_people" class="top_menu_humanity">人文</a></li>
@@ -27,6 +26,35 @@
         <li><a href="#zy_community" class="top_menu_community">社区</a></li>
     </ul>
 </nav>
+
+<!--播放器-->
+<section class="zy_music_section" id="zy_music_section">
+    <div id="zy_music_player" class="zy_player">
+        <p id="zy_music_title" class="zy_music_title zy_hidden">塔拉天籁之音</p>
+        <div class="zy_music_controller">
+            <a id="zy_music_prev"  class="zy_music_prev zy_hidden">上一首</a>
+            <a id="zy_music_control" class="zy_music_play zy_music_paused">播放、暂停</a>
+            <a id="zy_music_next" class="zy_music_next zy_hidden">下一首</a>
+        </div>
+        <div id="zy_music_timeline" class="zy_music_timeline">时间线</div>
+    </div>
+    <a id="zy_music_show" class="zy_music_show zy_hidden"></a>
+    <!--播放器-->
+    <audio class="zy_hidden" id="zy_music_audio" src=""></audio>
+    <!--播放列表-->
+    <ul id="zy_music_list" class="zy_hidden">
+        <script id="zy_music_tpl" type="text/template">
+            {@each musics as music,index}
+            {@if index==0}
+            <li class="active_music" data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+            {@else}
+            <li data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+            {@/if}
+            {@/each}
+        </script>
+    </ul>
+</section>
+
 
 <div id="zy_main_wrapper" class="zy_main_wrapper">
 
@@ -397,7 +425,6 @@
 
 <!--下载音乐的target-->
 <iframe name="zy_download_music" style="display: none"></iframe>
-
 <script type="text/javascript" src="js/libs/modernizr.js"></script>
 <script type="text/javascript">
     //加载资源
@@ -422,6 +449,7 @@
                 "js/libs/greensock/TweenMax.min.js",
                 "js/libs/greensock/ScrollToPlugin.min.js",
                 "js/src/config.js",
+                "js/src/music.js",
                 "js/src/controllerManager.js",
                 "js/src/dataManager.js",
                 "js/src/uiManager.js",

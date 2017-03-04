@@ -10,6 +10,9 @@
     }
 }
 @media screen and (max-width: 1100px) {
+    .zy_featured_articles li:nth-child(3n){
+        display: none;
+    }
     .zy_project_sponsors li{
         padding:5px 0px 5px 0px;
     }
@@ -22,9 +25,7 @@
         height: 140px;
         background: url(../../images/apps/sprite.png) no-repeat -723px -204px;
     }
-    .zy_nav ul{
-        width:100%;
-    }
+    
 }
 
 @media screen and (max-width: 970px){
@@ -34,25 +35,24 @@
 }
 /*wechat*/
 @media screen and (max-width: 640px){
-    .zy_nav.active{
-        width: 320px;
+    .zy_nav ul{
+        width:90%;
+    }
+    .zy_nav ul li.separator{
+        margin-right: 120px;
+    }
+    .zy_nav ul::before{
+        width:120px;
     }
     .zy_featured_articles{
-        width:70%;
+        width:90%;
         display: block;
     }
-    .zy_featured_articles .zy_featured_left,.zy_featured_articles .zy_featured_right{
-        display: none;
-    }
     .zy_featured_articles li{
-        width: 45%;
-        margin: 10% 5% 0 0;
+        padding: 0;
     }
-    .zy_featured_articles li:last-child{
-        margin: 10% 0 0 5%;
-    }
-    .zy_featured_articles li:first-child{
-        width: 100%;
+    .zy_featured_articles li:nth-child(2n){
+        display: none;
     }
     .zy_featured_articles li .excerpt{
         white-space: nowrap;

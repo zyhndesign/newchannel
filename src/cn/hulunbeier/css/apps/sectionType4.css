@@ -52,6 +52,7 @@
 
 .zy_community_contain>.zy_list_container{
     height: 400px;
+    padding-bottom: 50px;
 }
 /*--z-index:1--*/
 .zy_community_heading{

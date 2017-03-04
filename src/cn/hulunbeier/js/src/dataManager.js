@@ -17,7 +17,34 @@ ZY.dataManager = {
     swiper3:null,
     swiper4:null,
 
-
+    /**
+     * 获取音乐
+     */
+    getMusic:function(){
+        $.ajax({
+            url:ZY.config.ajaxurl,
+            type:"post",
+            data:{
+                action:"zy_get_music",
+                programId:ZY.config.categoryIds.tdId
+            },
+            success:function(response){
+                if(response.success){
+                    if(response.data.length!=0){
+                        var musics=response.data;
+                        ZY.music.setMusicList(musics);
+                    }else{
+                        $("#zy_music_title").text(ZY.config.errorCode.hasNoMusic);
+                    }
+                }else{
+                    ZY.uiManager.showPopOut(ZY.config.errorCode.musicError,false);
+                }
+            },
+            error: function(){
+                ZY.uiManager.showPopOut(ZY.config.errorCode.connectionError,false);
+            }
+        });
+    },
     /**
      * 获取顶部4篇文章
      */

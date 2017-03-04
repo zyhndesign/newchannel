@@ -7,6 +7,40 @@
  */
 
 $(document).ready(function(){
+    //音乐获取
+    ZY.dataManager.getMusic();
+
+    //音乐时间轴
+    ZY.music.musicTimeLine();
+
+    //音乐播放结束
+    ZY.music.musicEndHandler();
+
+    //音乐：上一首
+    $("#zy_music_prev").click(function(){
+        ZY.music.musicPrev();
+    });
+
+    //音乐：下一首
+    $("#zy_music_next").click(function(){
+        ZY.music.musicNext();
+    });
+
+    //音乐：暂停/播放
+    $("#zy_music_control").click(function(){
+        ZY.music.musicControlHandler();
+    });
+
+    //显示音乐播放器
+    /*
+    $("#zy_music_show").mouseenter(function(){
+        ZY.uiManager.showMusicPlayer();
+    });
+    $("#zy_music_section").mouseleave(function(){
+        ZY.uiManager.hideMusicPlayer();
+    });
+    */
+
     //显示菜单
     $("#zy_show_menu").click(function(){
         //$("#zy_nav").toggleClass("active");
