@@ -17,6 +17,10 @@ img{border:none;}
 a{
     text-decoration: none;
 }
+:link:focus, :visited:focus {
+     outline: none; 
+}
+
 /*所有开始不显示的类*/
 .zy_hidden,.zy_disable{
     display: none !important;
