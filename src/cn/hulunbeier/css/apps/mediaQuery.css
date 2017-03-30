@@ -84,7 +84,16 @@
         overflow-x: hidden;
         overflow-y: auto;
         width:100%;
-        padding:30px 20px;
+        padding:10px 20px 30px 60px;
+        top:0;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .zy_article_content_close{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
     }
     .zy_landscape_heading,.zy_people_heading,.zy_artifact_heading,.zy_community_heading{
         width:320px;
@@ -93,7 +102,6 @@
     .zy_landscape_article>.zy_article_abstract{
         padding: 20px;
     }
-
     .zy_artifact_article>.zy_article_abstract{
         padding: 20px;
     }
@@ -156,6 +164,10 @@
         column-gap:normal;
         column-width:auto;
         padding: 30px 0;
+    }
+    .article-content-post p{
+        margin: 0 0 2em 0;
+        font-size: 1.2em;
     }
     .article-content-post p span{
         font-size: 18px !important;
