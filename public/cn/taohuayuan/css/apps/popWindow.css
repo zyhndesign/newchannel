@@ -1,1 +1,33 @@
-.zy_popout_win{width:640px;height:200px;box-sizing:border-box;background:#e7465a;padding:20px;position:fixed;top:50%;left:50%;margin:-100px 0 0 -320px;z-index:10001;text-align:center;overflow:hidden}.zy_popout_win>.zy_popout_title{color:#fff}.zy_popout_win>.zy_popout_btn{background:#fff;padding:8px;width:120px;display:block;position:absolute;bottom:30px;left:50%;margin-left:-60px;color:#e7465a;font-weight:700;cursor:pointer}.zy_popout_win>.zy_popout_btn:hover{background:#1a1a1a}
+.zy_popout_win{
+    width:640px;
+    height:200px;
+    box-sizing:border-box;
+    background:#e7465a;
+    padding:20px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin:-100px 0 0 -320px;
+    z-index:10001;
+    text-align:center;
+    overflow:hidden;
+}
+.zy_popout_win>.zy_popout_title{
+    color:#fff;
+}
+.zy_popout_win>.zy_popout_btn{
+    background:#fff;
+    padding:8px;
+    width:120px;
+    display:block;
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    margin-left:-60px;
+    color:#e7465a;
+    font-weight:bold;
+    cursor:pointer;
+}
+.zy_popout_win>.zy_popout_btn:hover{
+    background:#1a1a1a;
+}

@@ -1,1 +1,55 @@
-.zy_top_post{position:relative;width:100%;overflow:hidden;z-index:5}.zy_top_post.zy_nav_active{margin-bottom:80px}.zy_top_post_poster{width:100%;font-size:0;height:600px;position:relative;background:#ccc;overflow:hidden}.zy_top_post_heading{height:330px;position:absolute;width:100%;top:40%;margin-top:-115px;text-align:center}.zy_top_post_title{color:#fff;font-size:3em;cursor:pointer;height:135px;line-height:135px;max-width:70%;margin:auto;padding-top:100px;position:relative}.zy_top_post_title::before{content:"";background:url(../../images/apps/fengmiangushi.png) no-repeat center center;background-size:contain;position:absolute;width:200px;height:100px;top:0;left:50%;transform:translateX(-70px)}.zy_top_post_date{color:#fff;font-size:1.5em;margin-top:10px}
+/*--封面故事--*/
+.zy_top_post{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    z-index: 5;
+}
+.zy_top_post.zy_nav_active{
+    margin-bottom: 80px;
+}
+.zy_top_post_poster{
+    width: 100%;
+    font-size:0;
+    height:600px;
+    position:relative;
+    background:#ccc;
+    overflow: hidden;
+}
+/*--z-index:2*/
+.zy_top_post_heading{
+    height:330px;
+    position:absolute;
+    width:100%;
+    top:40%;
+    margin-top:-115px;
+    text-align:center;
+}
+.zy_top_post_title{
+    color:#fff;
+    font-size:3em;
+    cursor:pointer;
+    height: 135px;
+    line-height: 135px;
+    max-width: 70%;
+    margin:auto;
+    padding-top: 100px;
+    position: relative;
+
+}
+.zy_top_post_title::before{
+    content: "";
+    background: url(../../images/apps/fengmiangushi.png)  no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top:0;
+    left: 50%;
+    transform: translateX(-70px);
+}
+.zy_top_post_date{
+    color:#fff;
+    font-size:1.5em;
+    margin-top: 10px;
+}

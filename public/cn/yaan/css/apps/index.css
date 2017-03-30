@@ -1,1 +1,179 @@
-@charset "utf-8";@font-face{font-family:FZQKBYSJW--GB1-0;src:url(../../fonts/FZQKBYSJW--GB1-0.otf);src:url('../../fonts/FZQKBYSJW--GB1-0.woff');src:url('../../fonts/FZQKBYSJW--GB1-0.ttf')}@font-face{font-family:'Gobold Light Italic';src:url('../../fonts/Gobold Light Italic.otf');src:url('../../fonts/Gobold Light Italic.woff');src:url('../../fonts/Gobold Light Italic.ttf')}body{font-family:"Microsoft YaHei","宋体","Heiti SC";margin:0}.zy_hidden,.zy_disable{display:none}.zy_no_scroll{overflow:hidden}.hasVideo:before{content:"";background:url(../../images/apps/hasvideo.png) no-repeat;width:80px;height:80px;position:absolute;right:0;top:0}.zy_touch_hscroll{overflow:auto!important;overflow-x:scroll!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch}ul{margin:0;padding:0;list-style:none}img{border:0}a{text-decoration:none}.zy_bg_fixed{position:fixed!important;top:90px;left:0}.zy_dropdown{width:68px;height:47px;background:url(../../images/apps/btn_arrow_down.png) no-repeat;background-size:100% 100%;font-size:0;position:absolute;left:50%;bottom:50px;margin-left:-34px;transition:all .3s ease-out;opacity:.7}.zy_dropdown:hover{opacity:1;cursor:pointer}.zy_main_wrapper{overflow:hidden}.zy_nav{position:fixed!important;top:60px!important;left:20px!important;z-index:100!important}.zy_logo{left:50%!important;top:150px!important;margin-left:-22%!important}.zy_theme_bg_content{position:absolute;top:0;left:50%;transform:translateX(-50%);min-width:100%;min-height:800px;opacity:0;-webkit-transition:opacity 1s;-moz-transition:opacity 1s;-ms-transition:opacity 1s;transition:opacity 1s}.zy_theme_bg_default{opacity:1}.zy_section{position:relative}.zy_section .zy_section_heading{font-size:0;background:url(../../images/apps/section_title_one.png) no-repeat;background-size:100% 100%;width:80%;height:700px;position:absolute;top:315px;left:10%;z-index:10}.zy_section .zy_section_bg{height:800px;overflow:hidden;font-size:0;width:100%;position:relative;z-index:1}.zy_section .zy_section_contain{width:100%;height:680px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;white-space:nowrap;overflow:hidden;position:relative;z-index:8}.zy_section .zy_section_contain .zy_post_list_container{position:relative;margin:auto;width:960px;overflow:hidden;padding:0 0 60px}.zy_section .zy_section_contain .zy_post_list_container .zy_post_list{padding:0}
+@charset "utf-8";
+@font-face {
+    font-family: 'FZQKBYSJW--GB1-0';
+    src:url('../../fonts/FZQKBYSJW--GB1-0.otf');
+    src:url('../../fonts/FZQKBYSJW--GB1-0.woff');
+    src:url('../../fonts/FZQKBYSJW--GB1-0.ttf');
+}
+@font-face {
+    font-family: 'Gobold Light Italic';
+    src:url('../../fonts/Gobold Light Italic.otf');
+    src:url('../../fonts/Gobold Light Italic.woff');
+    src:url('../../fonts/Gobold Light Italic.ttf');
+}
+body {
+    font-family: "Microsoft YaHei", "宋体", "Heiti SC";
+    margin: 0;
+}
+
+/*所有开始不显示的类*/
+.zy_hidden, .zy_disable {
+    display: none;
+}
+.zy_no_scroll{
+    overflow: hidden;
+}
+
+.hasVideo:before {
+    content: "";
+    background: url(../../images/apps/hasvideo.png) no-repeat;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.zy_touch_hscroll {
+    overflow: auto !important;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*背景固定*/
+.zy_bg_fixed {
+    position: fixed !important;
+    top: 90px;
+    left: 0;
+}
+.zy_dropdown{
+    width:68px;
+    height: 47px;
+    background: url(../../images/apps/btn_arrow_down.png) no-repeat;
+    background-size:100% 100%;
+    font-size: 0px;
+    position: absolute;
+    left:50%;
+    bottom:50px;
+    margin-left: -34px;
+    transition:all .3s ease-out;
+    opacity: .7
+}
+.zy_dropdown:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.zy_main_wrapper {
+    overflow: hidden;
+}
+
+/*--菜单栏--*/
+.zy_nav{
+    position: fixed!important;
+    top:60px!important;
+    left: 20px!important;
+    z-index: 100!important;
+}
+
+/*logo*/
+.zy_logo{
+    left: 50%!important;
+    top:150px!important;
+    margin-left: -22%!important;
+}
+
+
+
+/**
+*各模块统一的部分
+*/
+/*
+*背景
+*/
+.zy_theme_bg_content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 800px;
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.zy_theme_bg_default {
+    opacity: 1;
+}
+
+/*
+*每个栏目的框架
+*/
+.zy_section {
+    position: relative;
+}
+
+.zy_section .zy_section_heading {
+    font-size:0;
+    background:url(../../images/apps/section_title_one.png) no-repeat;
+    background-size: 100% 100%;
+    width:80%;
+    height:700px;
+    position:absolute;
+    top:315px;
+    left:10%;
+    z-index:10;
+}
+
+.zy_section .zy_section_bg {
+    height: 800px;
+    overflow: hidden;
+    font-size: 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.zy_section .zy_section_contain {
+    width: 100%;
+    height: 680px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 8;
+}
+
+.zy_section .zy_section_contain .zy_post_list_container {
+    position: relative;
+    margin: auto;
+    width: 960px;
+    overflow: hidden;
+    padding:0 0 60px 0px;
+}
+
+.zy_section .zy_section_contain .zy_post_list_container .zy_post_list {
+    padding: 0px;
+}
+

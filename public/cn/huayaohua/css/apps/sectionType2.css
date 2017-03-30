@@ -1,1 +1,82 @@
-.zy_people{position:relative;z-index:3}.zy_people_top_bg:before{content:"";background:url(../../images/apps/background_pattern1white.png) no-repeat;background-size:contain;width:124px;height:205px;position:absolute;top:-1px;right:-124px;z-index:11}.zy_people_top_bg{background:#fff;height:5px;position:absolute;right:124px;width:100%;z-index:8}.zy_people_heading{font-size:0;text-indent:-9999px;background:url(../../images/apps/sec_humanity.png) no-repeat;background-size:contain;width:426px;height:336px;position:absolute;top:160px;left:50%;margin-left:-213px;z-index:1}.zy_people>.zy_subheading{top:740px;background:url(../../images/apps/wenzi_2.png) no-repeat;background-size:contain}.zy_people_bottom_bg:after{content:"";background:url(../../images/apps/background_pattern2white.png) no-repeat;background-size:contain;width:80px;height:100px;position:absolute;bottom:0;left:-80px;z-index:11}.zy_people_bottom_bg{background:#fff;height:120px;position:absolute;top:680px;left:80px;width:100%;z-index:8}.zy_people_contain,.zy_community_contain{width:100%;height:530px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;background:#fff;white-space:nowrap;overflow:hidden;position:relative;z-index:8;padding:5px 5px 10px}
+/*----------------------------------------------------------------------------人文z-index:3--*/
+.zy_people{
+    position:relative;
+    z-index:3;
+}
+.zy_people_top_bg:before{
+    content: "";
+    background: url(../../images/apps/background_pattern1white.png) no-repeat;
+    background-size: contain;
+    width:124px;
+    height: 205px;
+    position: absolute;
+    top:-1px;
+    right:-124px;
+    z-index: 11;
+}
+.zy_people_top_bg{
+    background: #fff;
+    height: 5px;
+    position: absolute;
+    right: 124px;
+    width: 100%;
+    z-index: 8;
+}
+/*--z-index:1--*/
+.zy_people_heading{
+    font-size:0;
+    text-indent:-9999px;
+    background:url(../../images/apps/sec_humanity.png) no-repeat;
+    background-size: contain;
+    width:426px;
+    height:336px;
+    position:absolute;
+    top:160px;
+    left:50%;
+    margin-left:-213px;
+    z-index:1;
+}
+.zy_people>.zy_subheading{
+    top:740px;
+    background:url(../../images/apps/wenzi_2.png) no-repeat;
+    background-size: contain;
+}
+/*--z-index:11--*/
+.zy_people_bottom_bg:after{
+    content: "";
+    background: url(../../images/apps/background_pattern2white.png) no-repeat;
+    background-size: contain;
+    width:80px;
+    height:100px;
+    position: absolute;
+    bottom:0px;
+    left:-80px;
+    z-index: 11;
+}
+.zy_people_bottom_bg{
+    background: #fff;
+    height: 120px;
+    position: absolute;
+    top:680px;
+    left: 80px;
+    width: 100%;
+    z-index:8;
+}
+
+/*---------人文和社区共用部分--------*/
+.zy_people_contain,.zy_community_contain{
+    width: 100%;
+    height: 530px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    background: #fff;
+    /* margin-top: 360px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index:8;
+    padding: 5px 5px 10px 5px;
+}
+

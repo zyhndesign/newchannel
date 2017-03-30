@@ -1,1 +1,261 @@
-.zy_article_container{position:fixed;left:100%;top:0;z-index:9997;width:100%;height:100%;margin:auto}.zy_article_content{background:#fff;width:100%;position:absolute;top:50px;bottom:0;overflow-x:auto;overflow-y:hidden;padding:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.zy_article_content::-webkit-scrollbar{}.zy_article_content::-webkit-scrollbar-track{}.zy_article_content::-webkit-scrollbar-thumb{}.zy_article_content_close{cursor:pointer;width:50px;height:50px;display:block;background:url(../../images/apps/sprite.png) no-repeat -990px -891px}.zy_article_content_close:hover{background:url(../../images/apps/sprite.png) no-repeat -1042px -891px}.article-main-post{-webkit-box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:100%;position:relative;top:0;bottom:0;width:100%}.article-head-post{position:absolute;bottom:0;left:250px;z-index:3;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;padding:20px;background:#fff;width:300px}.article-head-post h1{padding:0;margin:0;font-family:"Microsoft YaHei"}.article-title-post{font-size:36px;color:#666;width:auto;padding-left:25px;padding-right:25px;padding-top:15px}.article-author-post,.article-category-post,.article-time-post{color:#666;font-size:16px;font-weight:400;display:inline-block}.article-author-post{padding-right:10px}.article-category-post{padding:0 10px;border-left:#666 1px solid}.article-time-post{padding:0 10px;border-left:#666 1px solid}.article-poster-post{height:100%;font-size:0}.article-poster-post img{height:100%}.article-content-post{background:#fff;color:#666;font-size:16px;position:absolute;top:0;left:540px;right:0;width:100%;bottom:150px;height:100%;padding:0 0 20px 40px;-webkit-column-gap:40px;-webkit-column-width:260px;-moz-column-gap:40px;-moz-column-width:260px;column-gap:40px;column-width:260px;line-height:2em;letter-spacing:2px;z-index:10}.article-content-post::first-letter{display:inline-block;font-size:32px;color:#e7465a}.article-content-post img{width:100%}.article-content-post p{margin:0 10px}.article-content-post figcaption{color:#e7465a;font-size:12px;font-style:italic;line-height:1.4em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;text-align:center}.videoslide{text-indent:0;display:inline-block;position:relative;max-width:100%}.videoslide:before{content:"";background:url(../../images/apps/sprite.png) no-repeat -886px -621px;width:80px;height:80px;position:absolute;top:50%;left:50%;margin:-40px 0 0 -40px}.article-main-slide{background:#fff;height:540px;position:relative}.article-main-slide p{font-size:14px}.article-title-slide{color:#666;width:300px;font-size:36px;margin-top:0;font-family:"微软雅黑"}.article-author-slide,.article-category-slide{color:#666;width:300px;line-height:10px;font-size:16px;font-weight:400}.article-author-slide{border-bottom:#666 1px solid;padding-bottom:10px;margin-bottom:10px}.article-abstract-slide{margin-top:2em;font-size:18px;color:#666;width:300px;line-height:1.5em}.article-abstract-slide::first-letter{display:inline-block;font-size:32px;color:#e7465a}.allslides-slide{display:block;position:absolute;left:360px;top:0;height:540px;width:auto;white-space:nowrap}.slide-slide{display:inline-block;height:100%;position:relative}.slide-slide img{height:100%;width:auto}.slide-slide a{display:inline-block;height:100%}.imgcaption-slide{background-color:#000;width:100%;opacity:.7;position:absolute;bottom:0;left:0;color:#fff;font-size:16px;line-height:24px;padding:10px;white-space:normal;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.imgcaption-slide span{font-size:21px}
+.zy_article_container{
+    position: fixed;
+    left:100%;
+    top:0;
+    z-index: 9997;
+    width: 100%;
+    height:100%;
+    margin: auto;
+}
+.zy_article_content{
+    background: #fff;
+    width: 100%;
+    position:absolute;
+    top:50px;
+    bottom:0;
+    overflow-x: auto;
+    overflow-y:hidden;
+    padding:30px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+/* 设置滚动条的样式 */
+.zy_article_content::-webkit-scrollbar {
+    /*height: 8px;*/
+}
+/* 滚动槽 */
+.zy_article_content::-webkit-scrollbar-track {
+    /*background:#1a1a1a;*/
+}
+/* 滚动条滑块 */
+.zy_article_content::-webkit-scrollbar-thumb {
+    /*background: #e7465a;*/
+}
+.zy_article_content_close{
+    cursor:pointer;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background: url(../../images/apps/sprite.png) no-repeat -990px -891px;
+}
+.zy_article_content_close:hover{
+    background: url(../../images/apps/sprite.png) no-repeat -1042px -891px;
+}
+
+
+/*图文混排展示模版*/
+.article-main-post{
+    -webkit-box-sizing:	border-box;
+    -ms-box-sizing:	border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:	border-box;
+    height:100%;
+    position:relative;
+    top:0;
+    bottom:0;
+    width:100%;
+}
+.article-head-post{
+    position:absolute;
+    bottom:0;
+    left:250px;
+    z-index:3;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:20px;
+    background:#fff;
+    width:300px;
+}
+.article-head-post h1{
+    padding:0;
+    margin:0;
+    font-family: "Microsoft YaHei";
+}
+.article-title-post{
+    font-size:36px;
+    color:#666;
+    width:auto;
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:15px;
+}
+.article-author-post, .article-category-post,.article-time-post{
+    color:#666;
+    font-size:16px;
+    font-weight:normal;
+    display:inline-block;
+}
+.article-author-post{
+    padding-right:10px;
+}
+.article-category-post{
+    padding:0 10px;
+    border-left:#666 1px solid;
+}
+.article-time-post{
+    padding:0 10px;
+    border-left:#666 1px solid;
+}
+.article-poster-post{
+    /*position:absolute;
+     left:0;
+     top:0;
+     bottom:0;*/
+    height:100%;
+    font-size:0;
+}
+.article-poster-post img{
+    height:100%;
+}
+
+.article-content-post{
+    background:#fff;
+    color: #666666;
+    font-size:16px;
+    position:absolute;
+    top:0;
+    left:540px;
+    right:0px;
+    width:100%;
+    bottom:150px;
+    height: 100%;
+    padding:0 0 20px 40px;
+    -webkit-column-gap:40px;
+    -webkit-column-width:260px;
+    -moz-column-gap:40px;
+    -moz-column-width:260px;
+    column-gap:40px;
+    column-width:260px;
+    line-height:2em;
+    letter-spacing:2px;
+    z-index:10;
+
+}
+.article-content-post::first-letter{
+    display:inline-block;
+    font-size:32px;
+    color:#e7465a;
+}
+.article-content-post img{
+    width:100%;
+}
+.article-content-post p{
+    margin:0 10px;
+}
+.article-content-post figcaption{
+    color:#e7465a;
+    font-size:12px;
+    font-style:italic;
+    line-height:1.4em;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    text-align: center;
+}
+.videoslide{
+    text-indent:0;
+    display:inline-block;
+    position:relative;
+    max-width:100%;
+}
+.videoslide:before
+{
+    content:"";
+    background:url(../../images/apps/sprite.png) no-repeat  -886px -621px;
+    width:80px;
+    height:80px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-40px 0 0 -40px;
+}
+
+/*幻灯片模版展示*/
+.article-main-slide{
+    background:#fff;
+    height:540px;
+    position:relative;
+}
+.article-main-slide p{
+    font-size:14px;
+
+}
+.article-title-slide{
+    color:#666;
+    width:300px;
+    font-size:36px;
+    margin-top:0;
+    font-family:"微软雅黑";
+}
+
+.article-author-slide, .article-category-slide{
+    color:#666;
+    width:300px;
+    line-height:10px;
+    font-size:16px;
+    font-weight:normal;
+}
+.article-author-slide{
+    border-bottom:#666 1px solid;
+    padding-bottom:10px;
+    margin-bottom:10px;
+}
+.article-abstract-slide{
+    margin-top:2em;
+    font-size:18px;
+    color:#666;
+    width:300px;
+    line-height:1.5em;
+}
+.article-abstract-slide::first-letter{
+    display:inline-block;
+    font-size:32px;
+    color:#e7465a;
+}
+.allslides-slide{
+    display:block;
+    position:absolute;
+    left:360px;
+    top:0;
+    height:540px;
+    width:auto;
+    white-space: nowrap;
+}
+.slide-slide{
+    display: inline-block;
+    height:100%;
+    position:relative;
+}
+.slide-slide img{
+    height:100%;
+    width:auto;
+}
+.slide-slide a{
+    display:inline-block;
+    height:100%;
+}
+.imgcaption-slide{
+    background-color:#000;
+    width:100%;
+    opacity: 0.7;
+    position:absolute;
+    bottom:0;
+    left:0;
+    color:#fff;
+    font-size:16px;
+    line-height: 24px;
+    padding:10px;
+    white-space: normal;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.imgcaption-slide span{
+    font-size: 21px;
+}

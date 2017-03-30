@@ -1,1 +1,158 @@
-.zy_footer{width:100%;background:url(../../images/apps/footer_bg.jpg) no-repeat;background-size:100% 100%;position:relative;padding:60px 0 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.zy_project .zy_project_info{width:40%;position:relative;top:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;display:inline-block;vertical-align:top}.zy_project .zy_project_title{padding-top:20px;width:189px;font-size:36px;color:#fff;text-align:center;background:url(../../images/apps/project_title_bg.png) no-repeat;margin:auto}.zy_project .zy_project_info p{color:#e6e6e6;font-size:14px;line-height:2em}.zy_project .zy_project_sponsors{margin:0 5% 0 0;padding-left:10%;width:35%;display:inline-block}.zy_project .zy_bottom_logo{}.zy_project .zy_bottom_logo a{}.zy_project .zy_bottom_logo a img{width:100%;height:auto;margin-top:-10%}.zy_project .zy_other_logos{text-align:center;border-top:1px solid #444;padding:10px 0;font-size:0;margin:0 auto 80px}.zy_project .zy_other_logos li{display:inline-block;width:190px}.zy_project .zy_other_logos li:first-child{border-right:2px solid #444;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}.zy_project .zy_other_logos li a{width:180px;height:64px;font-size:0;text-indent:-9999px;margin:auto;display:block}.zy_project .zy_other_logos .zy_logo_1{background:url(../../images/apps/V_logo.png) no-repeat}.zy_project .zy_other_logos .zy_logo_2{background:url(../../images/apps/HNU_logo.png) no-repeat}.zy_copyright{background:#111;padding:50px 0;text-align:center;color:#ccc;font-size:.7em}.zy_app_download{background:#333;text-align:center;padding:150px 0 50px}.zy_app_download>h2{font-size:2em;font-weight:700;position:relative;margin:0;color:#b3b3b3;font-weight:400}.zy_app_download>h3{font-size:3em;font-weight:700;margin:0 auto;padding-bottom:20px;color:#b3b3b3;border-bottom:#b3b3b3 1px solid;width:600px}.zy_app_download_list{margin:0;padding:0}.zy_app_download_list li{list-style:none;display:inline-block}.zy_app_download_list li a{font-size:0;width:72px;height:72px;display:inline-block;text-indent:-9999px}.zy_app_download_list li a:hover{opacity:.5}
+/**
+*footer部分
+*/
+.zy_footer {
+    width: 100%;
+    background:url(../../images/apps/footer_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    padding: 60px 0px 0px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.zy_project .zy_project_info {
+    width: 40%;
+    position: relative;
+    top: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.zy_project .zy_project_title {
+    padding-top: 20px;
+    width: 189px;
+    font-size:36px;
+    color: #fff;
+    text-align: center;
+    background: url(../../images/apps/project_title_bg.png) no-repeat;
+    margin: auto;
+}
+
+.zy_project .zy_project_info p {
+    color: #e6e6e6;
+    font-size: 14px;
+    line-height: 2em;
+}
+
+.zy_project .zy_project_sponsors {
+    margin: 0px 5% 0px 0px;
+    padding-left: 10%;
+    width: 35%;
+    display: inline-block;
+
+}
+
+.zy_project .zy_bottom_logo {
+
+}
+
+.zy_project .zy_bottom_logo a {
+
+}
+.zy_project .zy_bottom_logo a img{
+    width: 100%;
+    height: auto;
+    margin-top: -10%;
+}
+
+.zy_project .zy_other_logos {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding: 10px 0px 10px 0px;
+    font-size: 0px;
+    margin:0px auto 80px auto;
+}
+
+.zy_project .zy_other_logos li {
+    display: inline-block;
+    width: 190px;
+}
+
+.zy_project .zy_other_logos li:first-child {
+    border-right: 2px solid #444;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.zy_project .zy_other_logos li a {
+    width: 180px;
+    height: 64px;
+    font-size: 0;
+    text-indent: -9999px;
+    margin: auto;
+    display: block;
+}
+
+
+.zy_project .zy_other_logos .zy_logo_1 {
+    background: url(../../images/apps/V_logo.png) no-repeat;
+}
+
+.zy_project .zy_other_logos .zy_logo_2 {
+    background: url(../../images/apps/HNU_logo.png) no-repeat;
+}
+
+.zy_copyright {
+    background: #111;
+    padding: 50px 0;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.7em;
+}
+
+.zy_app_download {
+    background: #333;
+    text-align: center;
+    padding: 150px 0 50px 0;
+}
+
+.zy_app_download>h2 {
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+    margin: 0;
+    color: #b3b3b3;
+    font-weight: normal;
+}
+
+.zy_app_download>h3 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    color: #b3b3b3;
+    border-bottom: #b3b3b3 1px solid;
+    width: 600px;
+}
+
+.zy_app_download_list {
+    margin: 0;
+    padding: 0;
+}
+
+.zy_app_download_list li {
+    list-style: none;
+    display: inline-block;
+}
+
+.zy_app_download_list li a {
+    font-size: 0;
+    width: 72px;
+    height: 72px;
+    display: inline-block;
+    text-indent: -9999px;
+}
+
+.zy_app_download_list li a:hover {
+    opacity: 0.5;
+}

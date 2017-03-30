@@ -1,1 +1,582 @@
-var ZY=ZY||{};ZY.controllerManager=function(){var e=0,t=-100,a=-200,o=-180,i=-600,n=-380,s=150,c=-60,l=-200,d=$("#zy_landscape_bg .zy_theme_bg_content"),r=$("#zy_people_bg .zy_theme_bg_content"),p=$("#zy_artifact_bg .zy_theme_bg_content"),_=$("#zy_community_bg .zy_theme_bg_content"),g=$(".zy_featured").offset().top,f=$("#zy_landscape").offset().top,u=$("#zy_people").offset().top,y=$("#zy_artifact").offset().top,w=$("#zy_community").offset().top,m=$(".zy_footer").offset().top,h=$("#zy_featured_left"),b=$("#zy_featured_right"),z=$("#zy_landscape_left"),v=$("#zy_landscape_right"),Y=$("#zy_people_left"),Z=$("#zy_people_top"),D=$("#zy_people_right"),M=$("#zy_artifact_left"),C=$("#zy_artifact_bottom"),S=$("#zy_community_bottom");return{judgeShowOrNot:function(e,t){0==t.parents(e).length&&ZY.uiManager.hideMusicPlayer()},splitPostDate:function(e){if("string"==typeof e){var t=e.split("-"),a=[];return a[0]=t[2]+"/"+t[1],a[1]=t[0],a}return[]},transformDatas:function(e){var t=this,a=[];return $.each(e,function(e,o){a=t.splitPostDate(o.post_date),o.post_month=a[0],o.post_year=a[1]}),e},setBackGround:function(e,t,a){e&&t.post_id!=ZY.dataManager.topPostId&&(a==ZY.config.categoryIds.sectionTwoId?(ZY.uiManager.updateSectionBg(t,$("#zy_section_two_theme")),r=$("#zy_section_two_bg .zy_theme_bg_content")):a==ZY.config.categoryIds.sectionOneId?(ZY.uiManager.updateSectionBg(t,$("#zy_section_one_theme")),d=$("#zy_section_one_bg .zy_theme_bg_content")):a==ZY.config.categoryIds.sectionFourId?(ZY.uiManager.updateSectionBg(t,$("#zy_section_four_theme")),_=$("#zy_section_four_bg .zy_theme_bg_content")):a==ZY.config.categoryIds.sectionThreeId&&(ZY.uiManager.updateSectionBg(t,$("#zy_section_three_theme")),p=$("#zy_section_three_bg .zy_theme_bg_content")))},bindHScroll:function(e){var t=void 0!==document.onmousewheel?"mousewheel":"DOMMouseScroll",a=function(t){var a=0;t=window.event||t,a=t.wheelDelta<0||t.detail>0?e.scrollLeft+500:e.scrollLeft-500,TweenLite.to(e,.5,{scrollTo:{x:a}}),t.preventDefault?(t.preventDefault(),t.stopPropagation()):(t.returnValue=!1,t.cancelBubble=!1)};e.addEventListener(t,a)},setWheelScrollSpeed:function(){var e=void 0!==document.onmousewheel?"mousewheel":"DOMMouseScroll",t=function(e){var t=$(window).scrollTop();e=window.event||e,$(window).scrollTop(e.wheelDelta<0||e.detail>0?t+100:t-100),e.preventDefault?e.preventDefault():e.returnValue=!1};window.addEventListener(e,t)},scrollingHandler:function(){var I=window.pageYOffset,P=$(window).height();$("#zy_nav ul li a").removeClass("active"),f>=I||(u>=I?$("#zy_nav ul li:nth-child(1) a").addClass("active"):y>=I?$("#zy_nav ul li:nth-child(2) a").addClass("active"):w>=I?$("#zy_nav ul li:nth-child(3) a").addClass("active"):m>=I&&$("#zy_nav ul li:nth-child(4) a").addClass("active")),I>f-P&&f+720>=I?(ZY.config.deviceCode.iOS||d.addClass("zy_bg_fixed"),ZY.dataManager.landscapeLoaded||ZY.dataManager.swiper1||(ZY.dataManager.swiper1=new Swiper(".swiper1",{pagination:".swiper-pagination1",paginationClickable:!0,simulateTouch:!0,direction:"horizontal",slidesPerView:3,spaceBetween:20,breakpoints:{960:{slidesPerView:2,spaceBetween:20},640:{slidesPerView:1,spaceBetween:10}},onReachEnd:function(e){if(-1!=e.lastDate){var t=e.lastDate?3:6;ZY.dataManager.getCategoryPosts({limit:t,lastDate:e.lastDate?e.lastDate:"",categoryId:ZY.config.categoryIds.landscapeId,callback:function(a){var o=$("#zy_landscape_articles_tpl").html(),i=juicer(o,{posts:a});e.appendSlide(i),e.update(),e.lastDate=a.length<t?-1:a[a.length-1].post_full_date,ZY.dataManager.landscapeLoaded=!0}})}}}))):ZY.config.deviceCode.iOS||d.removeClass("zy_bg_fixed"),I>u-P&&u+720>=I?(ZY.config.deviceCode.iOS||r.addClass("zy_bg_fixed"),ZY.dataManager.peopleLoaded||ZY.dataManager.swiper2||(ZY.dataManager.swiper2=new Swiper(".swiper2",{pagination:".swiper-pagination2",paginationClickable:!0,simulateTouch:!0,direction:"horizontal",slidesPerView:4,spaceBetween:20,breakpoints:{960:{slidesPerView:3,spaceBetween:20},640:{slidesPerView:1,spaceBetween:10}},onReachEnd:function(e){if(-1!=e.lastDate){var t=e.lastDate?4:8;ZY.dataManager.getCategoryPosts({limit:t,lastDate:e.lastDate?e.lastDate:"",categoryId:ZY.config.categoryIds.peopleId,callback:function(a){var o=$("#zy_people_articles_tpl").html(),i=juicer(o,{posts:a});e.appendSlide(i),e.update(),e.lastDate=a.length<t?-1:a[a.length-1].post_full_date,ZY.dataManager.peopleLoaded=!0}})}}}))):ZY.config.deviceCode.iOS||r.removeClass("zy_bg_fixed"),I>y-P&&y+720>=I?(ZY.config.deviceCode.iOS||p.addClass("zy_bg_fixed"),ZY.dataManager.artifactLoaded||ZY.dataManager.swiper3||(ZY.dataManager.swiper3=new Swiper(".swiper3",{pagination:".swiper-pagination3",paginationClickable:!0,simulateTouch:!0,direction:"horizontal",slidesPerView:3,spaceBetween:20,breakpoints:{960:{slidesPerView:2,spaceBetween:20},640:{slidesPerView:1,spaceBetween:10}},onReachEnd:function(e){if(-1!=e.lastDate){var t=e.lastDate?3:6;ZY.dataManager.getCategoryPosts({limit:t,lastDate:e.lastDate?e.lastDate:"",categoryId:ZY.config.categoryIds.artifactId,callback:function(a){var o=$("#zy_artifact_articles_tpl").html(),i=juicer(o,{posts:a});e.appendSlide(i),e.update(),e.lastDate=a.length<t?-1:a[a.length-1].post_full_date,ZY.dataManager.artifactLoaded=!0}})}}}))):ZY.config.deviceCode.iOS||p.removeClass("zy_bg_fixed"),I>w-P&&w+720>=I?(ZY.config.deviceCode.iOS||_.addClass("zy_bg_fixed"),ZY.dataManager.communityLoaded||ZY.dataManager.swiper4||(ZY.dataManager.swiper4=new Swiper(".swiper4",{pagination:".swiper-pagination4",paginationClickable:!0,simulateTouch:!0,direction:"horizontal",slidesPerView:4,spaceBetween:20,breakpoints:{960:{slidesPerView:3,spaceBetween:20},640:{slidesPerView:1,spaceBetween:10}},onReachEnd:function(e){if(-1!=e.lastDate){var t=e.lastDate?4:8;ZY.dataManager.getCategoryPosts({limit:t,lastDate:e.lastDate?e.lastDate:"",categoryId:ZY.config.categoryIds.communityId,callback:function(a){var o=$("#zy_community_articles_tpl").html(),i=juicer(o,{posts:a});e.appendSlide(i),e.update(),e.lastDate=a.length<t?-1:a[a.length-1].post_full_date,ZY.dataManager.communityLoaded=!0}})}}}))):ZY.config.deviceCode.iOS||_.removeClass("zy_bg_fixed"),ZY.config.deviceCode.iOS||(I>e?(I>=g-300&&0>=t+9&&(h.css("bottom",t+9),b.css("bottom",t+9),t+=9),I>f+500&&0>=a+18&&(z.css("bottom",a+18),v.css("bottom",a+18),a+=18),I>u&&(o-10>=-280&&(Z.css("top",o-10),o-=10),-400>=i+15&&(Y.css("bottom",i+15),i+=15),I>u+800&&-280>=n+15&&(D.css("bottom",n+15),n+=15)),I>y+300&&(s-10>=50&&(M.css("top",s-10),s-=10),I>y+800&&40>=c+10&&(C.css("bottom",c+10),c+=10)),I>w+800&&0>=l+15&&(S.css("bottom",l+15),l+=15)):(f>I&&t-9>=-100&&(h.css("bottom",t-9),b.css("bottom",t-9),t-=9),u>I&&a-18>=-200&&(z.css("bottom",a-18),v.css("bottom",a-18),a-=18),u+1600>I&&(u+1200>I&&-180>=o+10&&(Z.css("top",o+10),o+=10),u+1800>I&&(i-15>=-600&&(Y.css("bottom",i-15),i-=15),n-15>=-380&&(D.css("bottom",n-15),n-=15))),y+1600>I&&(y+1400>I&&150>=s+10&&(M.css("top",s+10),s+=10),c-10>=-60&&(C.css("bottom",c-10),c-=10)),m>I&&l-15>=-200&&(S.css("bottom",l-15),l-=15))),e=I}}}();
+/**
+ * Created with JetBrains WebStorm.
+ * User: ty
+ * Date: 13-8-22
+ * Time: 下午4:21
+ * 逻辑处理曾，包括事件逻辑和应用逻辑
+ */
+var ZY=ZY||{};
+ZY.controllerManager=(function(){
+
+    var oldScrollTop=0;
+    var featuredBottom=-100;
+    var landscapeBottom=-200;
+    var peopleTop=-180;
+    var peopleLeftBottom=-600;
+    var peopleRightBottom=-380;
+    var artifactLeftTop=150;
+    var artifactBottomBottom=-60;
+    var communityBottomBottom=-200;
+    var sectionOneBG=$("#zy_landscape_bg .zy_theme_bg_content");
+    var sectionTwoBG=$("#zy_people_bg .zy_theme_bg_content");
+    var sectionThreeBG=$("#zy_artifact_bg .zy_theme_bg_content");
+    var sectionFourBG=$("#zy_community_bg .zy_theme_bg_content");
+
+
+    var featuredY=$(".zy_featured").offset().top;
+    var landScapeY=$("#zy_landscape").offset().top;
+    var peopleY=$("#zy_people").offset().top;
+    var artifactY=$("#zy_artifact").offset().top;
+    var communityY=$("#zy_community").offset().top;
+    var footerY=$(".zy_footer").offset().top;
+
+
+    var featuredLeftEl=$("#zy_featured_left");
+    var featuredRightEl=$("#zy_featured_right");
+    var landscapeLeftEl=$("#zy_landscape_left");
+    var landscapeRightEl=$("#zy_landscape_right");
+    var peopleLeftEl=$("#zy_people_left");
+    var peopleTopEl=$("#zy_people_top");
+    var peopleRightEl=$("#zy_people_right");
+    var artifactLeftEl=$("#zy_artifact_left");
+    var artifactBottomEl=$("#zy_artifact_bottom");
+    var communityBottomEl=$("#zy_community_bottom");
+
+
+    return {
+
+        /**
+         * 判断是否显示播放器,主要是判断鼠标所在对象是否在某一个对象内
+         * @param {String} parent 容器对象元素id或者class
+         * @param {Object} target 鼠标所在对象元素jquery对象
+         */
+        judgeShowOrNot:function(parent,target){
+            if(target.parents(parent).length==0){
+                ZY.uiManager.hideMusicPlayer();
+            }
+        },
+
+        /**
+         * 分解日期
+         * @param {String} date 需要分解的日期字符串
+         * @return {*} 返回数组代表解析成功或者是false代表解析错误
+         */
+        splitPostDate:function(date){
+            if(typeof date=="string"){
+                var dateArray=date.split("-");
+                var newArray=[];
+                newArray[0]=dateArray[2]+"/"+dateArray[1];
+                newArray[1]=dateArray[0];
+                return newArray;
+            }
+            return [];
+        },
+
+        /**
+         * 重新组装文章数组,主要更改日期
+         * @param {Array} datas 文章数组
+         * @return {*}  返回重新组装后的文章数组
+         */
+        transformDatas:function(datas){
+            var me=this;
+            var array=[];
+            $.each(datas,function(index,d){
+                array=me.splitPostDate(d["post_date"]);
+                d["post_month"]=array[0];
+                d["post_year"]=array[1];
+            });
+
+            return datas;
+        },
+        /**
+         * 根据分类设置背景，只有第一次请求才做此操作
+         * @param {Boolean} isFirst 是否第一次请求
+         * @param {Object} firstPost 第一篇文章对象
+         * @param {Number} categoryId  分类id
+         */
+        setBackGround:function(isFirst,firstPost,categoryId){
+            if(isFirst&&firstPost["post_id"]!=ZY.dataManager.topPostId){
+                if(categoryId==ZY.config.categoryIds.sectionTwoId){
+                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_section_two_theme"));
+                    sectionTwoBG=$("#zy_section_two_bg .zy_theme_bg_content");
+                }else if(categoryId==ZY.config.categoryIds.sectionOneId){
+                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_section_one_theme"));
+                    sectionOneBG=$("#zy_section_one_bg .zy_theme_bg_content");
+                }else if(categoryId==ZY.config.categoryIds.sectionFourId){
+                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_section_four_theme"));
+                    sectionFourBG=$("#zy_section_four_bg .zy_theme_bg_content");
+                }else if(categoryId==ZY.config.categoryIds.sectionThreeId){
+                    ZY.uiManager.updateSectionBg(firstPost,$("#zy_section_three_theme"));
+                    sectionThreeBG=$("#zy_section_three_bg .zy_theme_bg_content");
+                }
+            }
+        },
+
+        /**
+         * 横向滚轮事件
+         * @param {Object} target 需要添加此事件的元素jquery对象
+         */
+        bindHScroll:function(target){
+            var mousewheelEvt= document.onmousewheel !== undefined ? "mousewheel" : "DOMMouseScroll";
+            var mousewheelHandler=function (evt) {
+                var left=0;
+                evt = window.event || evt;
+                if(evt.wheelDelta <0 || evt.detail>0){
+                    left=target.scrollLeft+500;
+                }else{
+                    left=target.scrollLeft-500;
+                }
+                TweenLite.to(target, 0.5, {scrollTo:{x:left}});
+
+                //兼容ie
+                if(evt.preventDefault){
+                    evt.preventDefault();
+                    evt.stopPropagation(); //由于window也绑定有此事件，阻止冒泡到window
+                }else{
+                    evt.returnValue=false;
+                    evt.cancelBubble = false;
+                }
+                //evt.preventDefault();
+
+            };
+            target.addEventListener(mousewheelEvt, mousewheelHandler);
+        },
+
+        /**
+         * 设置window滚动速度,因为火狐滚动响应过快
+         */
+        setWheelScrollSpeed:function(){
+            var mousewheelEvt= document.onmousewheel !== undefined ? "mousewheel" : "DOMMouseScroll";
+            var mousewheelHandler=function (evt) {
+                var top=$(window).scrollTop();
+                evt = window.event || evt;
+                if(evt.wheelDelta <0 || evt.detail>0){
+                    $(window).scrollTop(top+100);
+                }else{
+                    $(window).scrollTop(top-100);
+                }
+                //TweenLite.killTweensOf(window);
+                //TweenLite.to(window, 0.5, {scrollTo:{y:top}});
+
+                //兼容ie
+                if(evt.preventDefault){
+                    evt.preventDefault();
+                }else{
+                    evt.returnValue=false;
+                }
+                //evt.preventDefault();
+            };
+            window.addEventListener(mousewheelEvt, mousewheelHandler);
+        },
+
+        /**
+         * 页面上下滚动事件,主要是设置背景显示，菜单的高亮,请求数据
+         */
+        scrollingHandler:function(){
+
+
+            var sy=window.pageYOffset;
+
+            //窗口可能放大缩小，每次都需要获取
+            var winH=$(window).height();
+
+            //设置顶部菜单状态, 首先重置所有菜单,计算时要减去nav的80高
+            $("#zy_nav ul li a").removeClass("active");
+            if(sy<=landScapeY){
+
+            }else if(sy<=peopleY){
+                $("#zy_nav ul li:nth-child(1) a").addClass("active");
+            }else if(sy<=artifactY){
+                $("#zy_nav ul li:nth-child(2) a").addClass("active");
+            }else if(sy<=communityY){
+                $("#zy_nav ul li:nth-child(3) a").addClass("active");
+            }else if(sy<=footerY){
+                $("#zy_nav ul li:nth-child(4) a").addClass("active");
+            }
+
+            //设置背景状态
+            if(sy>landScapeY-winH && sy<=landScapeY+720){
+                if(!ZY.config.deviceCode.iOS){
+                    sectionOneBG.addClass("zy_bg_fixed");
+                }
+
+                if(!ZY.dataManager.landscapeLoaded&&!ZY.dataManager.swiper1){
+                    //list模块初始化
+                    ZY.dataManager.swiper1 = new Swiper('.swiper1', {
+                        pagination: '.swiper-pagination1',
+                        paginationClickable: true,
+                        /*nextButton: '.swiper-button-next1',
+                         prevButton: '.swiper-button-prev1',*/
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 2,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?3:6;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.landscapeId,
+                                    callback:function(list){
+
+                                        var tpl= $("#zy_landscape_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.landscapeLoaded=true;
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+
+            }else{
+                if(!ZY.config.deviceCode.iOS){
+                    sectionOneBG.removeClass("zy_bg_fixed");
+                }
+            }
+
+            if(sy>peopleY-winH && sy<=peopleY+720){
+                if(!ZY.config.deviceCode.iOS){
+                    sectionTwoBG.addClass("zy_bg_fixed");
+                }
+
+                if(!ZY.dataManager.peopleLoaded&&!ZY.dataManager.swiper2){
+
+                    //获取第2个分类（人文）文章
+                    ZY.dataManager.swiper2 = new Swiper('.swiper2', {
+                        pagination: '.swiper-pagination2',
+                        paginationClickable: true,
+                        /*nextButton: '.swiper-button-next2',
+                         prevButton: '.swiper-button-prev2',*/
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 3,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?4:8;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.peopleId,
+                                    callback:function(list){
+
+                                        var tpl= $("#zy_people_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.peopleLoaded=true;
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            }else{
+                if(!ZY.config.deviceCode.iOS){
+                    sectionTwoBG.removeClass("zy_bg_fixed");
+                }
+            }
+
+            if(sy>artifactY-winH && sy<=artifactY+720){
+                if(!ZY.config.deviceCode.iOS){
+                    sectionThreeBG.addClass("zy_bg_fixed");
+
+                }
+
+                if(!ZY.dataManager.artifactLoaded&&!ZY.dataManager.swiper3){
+
+                    //获取第3个分类(物语）文章
+                    ZY.dataManager.swiper3 = new Swiper('.swiper3', {
+                        pagination: '.swiper-pagination3',
+                        paginationClickable: true,
+                        /*nextButton: '.swiper-button-next3',
+                         prevButton: '.swiper-button-prev3',*/
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 2,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?3:6;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.artifactId,
+                                    callback:function(list){
+
+                                        var tpl= $("#zy_artifact_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.artifactLoaded=true;
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            }else{
+                if(!ZY.config.deviceCode.iOS){
+                    sectionThreeBG.removeClass("zy_bg_fixed");
+                }
+            }
+
+            if(sy>communityY-winH && sy<=communityY+720){
+                if(!ZY.config.deviceCode.iOS){
+                    sectionFourBG.addClass("zy_bg_fixed");
+                }
+
+                if(!ZY.dataManager.communityLoaded&&!ZY.dataManager.swiper4){
+
+                    //获取第4个分类(社区）文章
+                    ZY.dataManager.swiper4 = new Swiper('.swiper4', {
+                        pagination: '.swiper-pagination4',
+                        /*nextButton: '.swiper-button-next4',
+                         prevButton: '.swiper-button-prev4',*/
+                        paginationClickable: true,
+                        simulateTouch:true,
+                        direction: 'horizontal',
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                        breakpoints: {
+                            960: {
+                                slidesPerView: 3,
+                                spaceBetween: 20
+                            },
+                            640:{
+                                slidesPerView: 1,
+                                spaceBetween: 10
+                            }
+                        },
+                        onReachEnd:function(swiper){
+                            if(swiper.lastDate!=-1){
+                                var limit=swiper.lastDate?4:8;
+                                ZY.dataManager.getCategoryPosts({
+                                    limit:limit,
+                                    lastDate:swiper.lastDate?swiper.lastDate:"",
+                                    categoryId:ZY.config.categoryIds.communityId,
+                                    callback:function(list){
+
+                                        var tpl= $("#zy_community_articles_tpl").html();
+                                        var html = juicer(tpl,{posts:list});
+                                        swiper.appendSlide(html);
+                                        swiper.update();
+
+                                        if(list.length<limit){
+                                            swiper.lastDate=-1;
+                                        }else{
+                                            swiper.lastDate=list[list.length-1]["post_full_date"];
+                                        }
+
+                                        ZY.dataManager.communityLoaded=true;
+                                    }
+                                });
+                            }
+                        }
+                    });
+
+                }
+            }else{
+                if(!ZY.config.deviceCode.iOS){
+                    sectionFourBG.removeClass("zy_bg_fixed");
+                }
+            }
+
+
+            //控制每一层的动画,需要根据滚动方向来设置
+            if(!ZY.config.deviceCode.iOS){
+                if(sy>oldScrollTop){
+
+                    //向下滚动推荐层的人物变动
+                    if(sy>=featuredY-300){
+                        if(featuredBottom+9<=0){
+                            featuredLeftEl.css("bottom",featuredBottom+9);
+                            featuredRightEl.css("bottom",featuredBottom+9);
+                            featuredBottom+=9;
+                        }
+                    }
+
+                    //向下滚动社区动画
+                    if(sy>landScapeY+500){
+                        if(landscapeBottom+18<=0){
+                            landscapeLeftEl.css("bottom",landscapeBottom+18);
+                            landscapeRightEl.css("bottom",landscapeBottom+18);
+                            landscapeBottom+=18;
+                        }
+                    }
+
+                    //向下滚动人文动画
+                    if(sy>peopleY){
+                        if(peopleTop-10>=-280){
+                            peopleTopEl.css("top",peopleTop-10);
+                            peopleTop-=10;
+                        }
+
+                        if(peopleLeftBottom+15<=-400){
+                            peopleLeftEl.css("bottom",peopleLeftBottom+15);
+                            peopleLeftBottom+=15;
+                        }
+
+                        if(sy>peopleY+800){
+                            if(peopleRightBottom+15<=-280){
+                                peopleRightEl.css("bottom",peopleRightBottom+15);
+                                peopleRightBottom+=15;
+                            }
+                        }
+
+                    }
+
+                    //向下滚动物语变化
+                    if(sy>artifactY+300){
+
+                        if(artifactLeftTop-10>=50){
+                            artifactLeftEl.css("top",artifactLeftTop-10);
+                            artifactLeftTop-=10;
+                        }
+
+                        if(sy>artifactY+800){
+                            if(artifactBottomBottom+10<=40){
+                                artifactBottomEl.css("bottom",artifactBottomBottom+10);
+                                artifactBottomBottom+=10;
+                            }
+                        }
+                    }
+
+                    //向下滚动社区动画
+                    if(sy>communityY+800){
+                        if(communityBottomBottom+15<=0){
+                            communityBottomEl.css("bottom",communityBottomBottom+15);
+                            communityBottomBottom+=15;
+                        }
+                    }
+                }else{
+
+                    //向上滚动推荐层的人物变动
+                    if(sy<landScapeY){
+
+                        if(featuredBottom-9>=-100){
+                            featuredLeftEl.css("bottom",featuredBottom-9);
+                            featuredRightEl.css("bottom",featuredBottom-9);
+                            featuredBottom-=9;
+                        }
+                    }
+
+                    //向上滚动风景动画
+                    if(sy<peopleY){
+                        if(landscapeBottom-18>=-200){
+                            landscapeLeftEl.css("bottom",landscapeBottom-18);
+                            landscapeRightEl.css("bottom",landscapeBottom-18);
+                            landscapeBottom-=18;
+                        }
+                    }
+
+                    //向上人文动画
+                    if(sy<peopleY+1600){
+                        if(sy<peopleY+1200){
+                            if(peopleTop+10<=-180){
+                                peopleTopEl.css("top",peopleTop+10);
+                                peopleTop+=10;
+                            }
+                        }
+
+                        if(sy<peopleY+1800){
+                            if(peopleLeftBottom-15>=-600){
+                                peopleLeftEl.css("bottom",peopleLeftBottom-15);
+                                peopleLeftBottom-=15;
+                            }
+
+                            if(peopleRightBottom-15>=-380){
+                                peopleRightEl.css("bottom",peopleRightBottom-15);
+                                peopleRightBottom-=15;
+                            }
+                        }
+
+
+                    }
+
+                    //向上物语动画
+                    if(sy<artifactY+1600){
+                        if(sy<artifactY+1400){
+                            if(artifactLeftTop+10<=150){
+                                artifactLeftEl.css("top",artifactLeftTop+10);
+                                artifactLeftTop+=10;
+                            }
+                        }
+
+                        if(artifactBottomBottom-10>=-60){
+                            artifactBottomEl.css("bottom",artifactBottomBottom-10);
+                            artifactBottomBottom-=10;
+                        }
+
+                    }
+
+                    //向上滚动社区动画
+                    if(sy<footerY){
+                        if(communityBottomBottom-15>=-200){
+                            communityBottomEl.css("bottom",communityBottomBottom-15);
+                            communityBottomBottom-=15;
+                        }
+                    }
+                }
+            }
+
+            //重新赋值
+            oldScrollTop=sy;
+        }
+    }
+})();

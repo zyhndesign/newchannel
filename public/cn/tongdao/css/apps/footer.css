@@ -1,1 +1,168 @@
-.zy_footer{width:100%;background-color:#fff;position:relative;padding:80px 0 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.zy_project_top_bg{height:111px;margin-right:182px;background:#212121;position:relative}.zy_project_top_bg:before{content:"";width:998px;height:80px;background:url(../../images/apps/sprite.png) no-repeat -2px -340px;position:absolute;bottom:110px}.zy_project_top_bg:after{content:"";width:183px;height:166px;background:url(../../images/apps/project_bg_right.png) no-repeat;background-size:cover;position:absolute;right:-182px;bottom:0}.zy_project{background:#212121;margin-top:-1px}.zy_project_info{width:40%;position:relative;top:-70px;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;display:inline-block;vertical-align:top}.zy_project_title{height:68px;width:205px;font-size:0;text-indent:-9999px;background:url(../../images/apps/sprite.png) no-repeat -1002px -340px;margin:auto}.zy_project_info p{color:#e6e6e6;font-size:14px;line-height:2em}.zy_project_sponsors{margin:0 5% 0 0;padding-left:10%;width:35%;display:inline-block;position:relative;top:-70px}.zy_bottom_logo{width:285px;margin:10px auto 20px}.zy_bottom_logo a{width:285px;height:268px;background:url(../../images/apps/sprite.png) no-repeat -1723px -204px;display:block;margin:auto;font-size:0}.zy_project_sponsors ul{margin:auto;text-align:center;border-top:1px solid #444;padding:10px 0;font-size:0}.zy_project_sponsors ul li{display:inline-block;width:190px}.zy_project_sponsors ul li:first-child{border-right:2px solid #444;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}.zy_project_sponsors .zy_logo_mkmj,.zy_project_sponsors .zy_logo_hnusd{width:180px;height:64px;font-size:0;text-indent:-9999px;margin:auto;display:block}.zy_project_sponsors .zy_logo_mkmj{background:url(../../images/apps/meikemeijie_logo.png) no-repeat}.zy_project_sponsors .zy_logo_hnusd{background:url(../../images/apps/HNU_logo.png) no-repeat}.zy_copyright{background:#333;padding:50px 0;text-align:center;color:#ccc;font-size:.7em}.zy_app_download{background:#333;text-align:center;padding:150px 0 50px}.zy_app_download>h2{font-size:2em;font-weight:700;position:relative;margin:0;color:#b3b3b3;font-weight:400}.zy_app_download>h3{font-size:3em;font-weight:700;margin:0 auto;padding-bottom:20px;color:#b3b3b3;border-bottom:#b3b3b3 1px solid;width:600px}.zy_app_download_list{margin:0;padding:0}.zy_app_download_list li{list-style:none;display:inline-block}.zy_app_download_list li a{font-size:0;width:72px;height:72px;display:inline-block;text-indent:-9999px}.zy_app_download_list li a:hover{opacity:.5}.zy_app_download_list .zy_android_phone_app{background:url(../../images/apps/logo_android_phone.png) no-repeat}.zy_app_download_list .zy_android_pad_app{background:url(../../images/apps/logo_android_pad.png) no-repeat}
+/*------------------------------------footer部分--------------------------*/
+.zy_footer{
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    padding:80px 0 0 0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.zy_project_top_bg{
+    height:111px;
+    margin-right: 182px;
+    background: #212121;
+    position: relative;
+}
+.zy_project_top_bg:before{
+    content: "";
+    width: 998px;
+    height: 80px;
+    background: url(../../images/apps/sprite.png) no-repeat -2px -340px;
+    position: absolute;
+    bottom:110px;
+}
+.zy_project_top_bg:after{
+    content: "";
+    width: 183px;
+    height: 166px;
+    background: url(../../images/apps/project_bg_right.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    right:-182px;
+    bottom:0px;
+}
+.zy_project{
+    background: #212121;
+    margin-top:-1px;
+}
+.zy_project_info{
+    width:40%;
+    position:relative;
+    top:-70px;
+    padding:0px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+.zy_project_title{
+    height:68px;
+    width: 205px;
+    font-size:0;
+    text-indent:-9999px;
+    background:url(../../images/apps/sprite.png) no-repeat -1002px -340px;
+    margin:auto;
+}
+.zy_project_info p{
+    color: #e6e6e6;
+    font-size: 14px;
+    line-height: 2em;
+}
+.zy_project_sponsors{
+    margin:0px 5% 0px 0px;
+    padding-left:10%;
+    width: 35%;
+    display: inline-block;
+    position: relative;
+    top:-70px;
+}
+.zy_bottom_logo{
+    width: 285px;
+    margin: 10px auto 20px auto;
+}
+.zy_bottom_logo a{
+    width:285px;
+    height: 268px;
+    background: url(../../images/apps/sprite.png) no-repeat -1723px -204px;
+    display: block;
+    margin:auto;
+    font-size: 0px;
+}
+.zy_project_sponsors ul{
+    margin: auto;
+    text-align: center;
+    border-top: 1px solid #444;
+    padding: 10px 0px 10px 0px;
+    font-size: 0px;
+}
+.zy_project_sponsors ul li{
+    display: inline-block;
+    width: 190px;
+}
+.zy_project_sponsors ul li:first-child{
+    border-right:2px solid #444;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.zy_project_sponsors .zy_logo_mkmj,.zy_project_sponsors .zy_logo_hnusd{
+    width:180px;
+    height:64px;
+    font-size:0;
+    text-indent:-9999px;
+    margin:auto;
+    display:block;
+}
+.zy_project_sponsors .zy_logo_mkmj{
+    background:url(../../images/apps/meikemeijie_logo.png) no-repeat;
+}
+.zy_project_sponsors .zy_logo_hnusd{
+    background:url(../../images/apps/HNU_logo.png) no-repeat;
+}
+.zy_copyright{
+    background:#333;
+    padding:50px 0;
+    text-align:center;
+    color:#ccc;
+    font-size:0.7em;
+}
+.zy_app_download{
+    background:#333;
+    text-align:center;
+    padding:150px 0 50px 0;
+}
+.zy_app_download>h2{
+    font-size:2em;
+    font-weight:bold;
+    position:relative;
+    margin:0;
+    color:#b3b3b3;
+    font-weight:normal;
+}
+.zy_app_download>h3{
+    font-size:3em;
+    font-weight:bold;
+    margin:0 auto;
+    padding-bottom:20px;
+    color:#b3b3b3;
+    border-bottom:#b3b3b3 1px solid;
+    width:600px;
+}
+.zy_app_download_list{
+    margin:0;
+    padding:0;
+}
+.zy_app_download_list li{
+    list-style:none;
+    display:inline-block;
+}
+.zy_app_download_list li a{
+    font-size:0;
+    width:72px;
+    height:72px;
+    display:inline-block;
+    text-indent:-9999px;
+}
+.zy_app_download_list li a:hover{
+    opacity:0.5;
+}
+.zy_app_download_list .zy_android_phone_app{
+    background:url(../../images/apps/logo_android_phone.png) no-repeat;
+}
+.zy_app_download_list .zy_android_pad_app{
+    background:url(../../images/apps/logo_android_pad.png) no-repeat;
+}

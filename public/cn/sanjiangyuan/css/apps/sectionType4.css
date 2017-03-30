@@ -1,1 +1,50 @@
-.zy_community{position:relative;z-index:1;margin-bottom:290px}.zy_community::after{content:"";width:100%;height:290px;background:url(../../images/apps/community_bottom.jpg) no-repeat;background-size:cover;position:absolute;bottom:-290px;left:0}.zy_community_contain{background:url(../../images/default_bg/bg_community.jpg) no-repeat;background-size:100% 100%}.zy_community_heading{font-size:0;background:url(../../images/apps/title_community.png) no-repeat;background-size:contain;width:400px;height:200px;position:absolute;top:200px;left:50%;transform:translateX(-50%);z-index:1}.zy_community_bottom{width:100%;height:400px;background:url(../../images/apps/community_bottom_flag.png) no-repeat;background-size:contain;position:absolute;left:0;bottom:-200px}.zy_community .zy_subheading{font-size:0}.zy_community_list{height:450px;top:120px}
+/*-----------------------------------------------------------------------------社区z-index:1--*/
+.zy_community{
+    position:relative;
+    z-index:1;
+    margin-bottom: 290px;
+}
+.zy_community::after{
+    content: "";
+    width:100%;
+    height: 290px;
+    background: url(../../images/apps/community_bottom.jpg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: -290px;
+    left: 0;
+}
+.zy_community_contain{
+    background: url(../../images/default_bg/bg_community.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+/*--z-index:1--*/
+.zy_community_heading{
+    font-size:0;
+    background: url(../../images/apps/title_community.png) no-repeat;
+    background-size:contain;
+    width: 400px;
+    height: 200px;
+    position:absolute;
+    top:200px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index:1;
+}
+.zy_community_bottom{
+    width:100%;
+    height: 400px;
+    background: url(../../images/apps/community_bottom_flag.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left:0px;
+    bottom: -200px;
+}
+.zy_community .zy_subheading{
+    font-size: 0;
+}
+
+.zy_community_list{
+    height:450px;
+    top:120px;
+}

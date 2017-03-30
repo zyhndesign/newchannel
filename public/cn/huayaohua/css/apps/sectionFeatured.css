@@ -1,1 +1,94 @@
-.zy_featured{width:100%;height:680px;background:#9fafa5;padding-top:30px;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;z-index:5}.zy_featured_heading{width:205px;background:url(../../images/apps/sec_featured.png) no-repeat;background-size:contain;height:68px;margin:0 auto;color:#f30;font-size:0;text-indent:-9999px;position:relative;top:30px}.zy_featured_articles{margin:70px 0;padding:10px 0;text-align:center;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.zy_featured_articles li{display:inline;list-style:none}.zy_featured_articles .abstract{display:inline-block;margin:0 1%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;padding:15px;width:20%;height:460px;background:#fff;border-bottom:solid #c7c69e 8px;cursor:pointer;position:relative;vertical-align:top}.zy_featured_articles li .thumb img{width:100%}.zy_featured_articles li .title{width:100%;font-size:18px;overflow:hidden;font-weight:700;color:#ca2e3a;text-align:left;white-space:nowrap;text-overflow:ellipsis}.zy_featured_articles li .excerpt{text-align:left;color:#666;height:9em;overflow:hidden;font-size:14px;line-height:1.5em}.zy_featured_articles li .date{background:url(../../images/apps/sprite.png) no-repeat -1926px -2px;width:90px;height:53px;position:absolute;top:15px;left:-20px;color:#fff;line-height:1.3em;letter-spacing:.1em;box-sizing:border-box;padding-top:4px}.zy_featured_articles li .year{display:block}
+/*--推荐文章z-index:5--*/
+.zy_featured{
+    width: 100%;
+    height: 680px;
+    background: #9fafa5;
+    padding-top: 30px;
+    position:relative;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    z-index:5;
+}
+
+.zy_featured_heading{
+    width: 205px;
+    background:url(../../images/apps/sec_featured.png) no-repeat;
+    background-size: contain;
+    height:68px;
+    margin: 0 auto;
+    color: #ff3300;
+    font-size: 0;
+    text-indent:-9999px;
+    position: relative;
+    top:30px;
+}
+.zy_featured_articles{
+    margin:70px 0;
+    padding:10px 0;
+    text-align:center;
+    width:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+.zy_featured_articles li{
+    display:inline;
+    list-style:none;
+}
+.zy_featured_articles .abstract{
+    display:inline-block;
+    margin:0 1%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:15px;
+    width:20%;
+    height:460px;
+    background:#fff;
+    border-bottom: solid #c7c69e 8px;
+    cursor:pointer;
+    position:relative;
+    vertical-align: top;
+}
+.zy_featured_articles li .thumb img{
+    width:100%;
+}
+.zy_featured_articles li .title{
+    width:100%;
+    font-size:18px;
+    overflow:hidden;
+    font-weight: bold;
+    color:#ca2e3a;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zy_featured_articles li .excerpt{
+    text-align: left;
+    color:#666;
+    height: 9em;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.zy_featured_articles li .date{
+    background: url(../../images/apps/sprite.png) no-repeat -1926px -2px;
+    width: 90px;
+    height: 53px;
+    position: absolute;
+    top:15px;
+    left:-20px;
+    color:#fff;
+    line-height: 1.3em;
+    letter-spacing: .1em;
+    box-sizing: border-box;
+    padding-top:4px;
+}
+.zy_featured_articles li .year{
+    display:block;
+}

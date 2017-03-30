@@ -1,1 +1,95 @@
-@charset "utf-8";body{font-family:"宋体","Microsoft YaHei","Heiti SC";margin:0}.zy_hidden,.zy_disable{display:none}.zy_noscroll{overflow:hidden!important}.hasVideo:before{content:"";background:url(../../images/apps/sprite.png) no-repeat -886px -621px;width:80px;height:80px;position:absolute;left:0;top:0;z-index:10}.zy_touch_hscroll{overflow:auto!important;overflow-x:scroll!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch}img{border:0}a{text-decoration:none}.zy_bg_fixed{position:fixed!important;top:90px;left:0}.zy_main_wrapper{overflow:hidden}.zy_section_bg{height:720px;overflow:hidden;font-size:0;width:100%;position:relative;z-index:1}.zy_theme_bg_content{position:absolute;top:0;left:50%;transform:translateX(-50%);min-width:100%;min-height:720px;opacity:0;-webkit-transition:opacity 1s;-moz-transition:opacity 1s;-ms-transition:opacity 1s;transition:opacity 1s}.zy_theme_bg_default{opacity:1}.zy_list_container{position:relative;margin:auto;height:500px;width:960px;overflow:hidden;padding:0 0 60px}.swiper-pagination-bullet{background:#fff}
+@charset "utf-8";
+
+body {
+    font-family: "宋体", "Microsoft YaHei", "Heiti SC";
+    margin: 0;
+}
+
+/*所有开始不显示的类*/
+.zy_hidden,.zy_disable{
+    display: none;
+}
+.zy_noscroll{
+    overflow:hidden !important;
+}
+
+.hasVideo:before {
+    content: "";
+    background: url(../../images/apps/sprite.png) no-repeat -886px -621px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+}
+
+.zy_touch_hscroll {
+    overflow: auto !important;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.zy_bg_fixed {
+    position: fixed !important;
+    top: 90px;
+    left: 0;
+}
+
+.zy_main_wrapper {
+    overflow: hidden;
+}
+
+/*-----------------------------------------------------印象、物语、小结统一的副标题z-index:12--*/
+/*主题背景*/
+.zy_section_bg {
+    height: 720px;
+    overflow: hidden;
+    font-size: 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.zy_theme_bg_content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 720px;
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.zy_theme_bg_default {
+    opacity: 1;
+}
+
+/*水平滑动窗口布局容器*/
+.zy_list_container {
+    position: relative;
+    margin: auto;
+    height: 500px;
+    width:960px;
+    overflow: hidden;
+    padding:0 0 60px 0px;
+}
+
+/*************swiper********************/
+.swiper-pagination-bullet{
+    background: #fff;
+}
+

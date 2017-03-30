@@ -1,1 +1,134 @@
-.zy_landscape{position:relative;z-index:4}.zy_landscape_top_bg{background:#e0dbb3;height:80px;right:175px;top:-1px;position:absolute;width:100%;z-index:8}.zy_landscape_top_bg:after{content:"";background:url(../../images/apps/mask_landscape_top.png) no-repeat;background-size:cover;width:176px;height:211px;position:absolute;top:-1px;right:-175px;z-index:11}.zy_landscape_heading{font-size:0;background:url(../../images/apps/sprite.png) no-repeat -1286px -341px;width:426px;height:336px;position:absolute;top:215px;left:50%;margin-left:-213px;z-index:1}.zy_landscape>.zy_subheading{top:685px}.zy_landscape_bottom_bg:before{content:"";background:url(../../images/apps/sprite.png) no-repeat -1245px -760px;width:150px;height:215px;position:absolute;bottom:0;left:-150px;z-index:11}.zy_landscape_bottom_bg{background:#191919;height:80px;top:720px;left:150px;position:absolute;width:100%;z-index:8}.zy_landscape_contain{width:100%;height:680px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;background:#191919;white-space:nowrap;overflow:hidden;position:relative;z-index:8;margin-top:-1px}.zy_landscape_contain>.zy_list_container{border:0}.zy_landscape_contain>.zy_contain_prev,.zy_landscape_contain>.zy_contain_next{margin-top:-50px}.zy_landscape_list{margin:0;height:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;font-size:0;position:absolute;left:0;padding:0}.zy_landscape_article{display:inline-block;width:320px;height:100%;white-space:normal;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;padding:0 10px;position:relative;cursor:pointer;vertical-align:top}.zy_landscape_article>.zy_article_info{position:relative}.zy_landscape_article>.zy_article_info img{width:100%}.zy_landscape_article>.zy_article_info h2{position:absolute;bottom:0;left:0;font-size:18px;color:#fff;background:url(../../images/apps/articletitle_fengjing_bg.png) repeat-x;margin:0;height:50px;width:100%;line-height:50px;text-indent:15px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.zy_landscape_article>.zy_article_info:nth-child(2n){padding-top:20px}
+/*-------------------------------------------------------------------------风景z-index:4--*/
+.zy_landscape{
+    position:relative;
+    z-index:4;
+}
+.zy_landscape_top_bg{
+    background: #e0dbb3;
+    height: 80px;
+    right: 175px;
+    top:-1px;
+    position: absolute;
+    width: 100%;
+    z-index: 8;
+}
+/*--z-index:11--*/
+.zy_landscape_top_bg:after{
+    content: "";
+    background: url(../../images/apps/mask_landscape_top.png) no-repeat;
+    background-size: cover;
+    width:176px;
+    height: 211px;
+    position: absolute;
+    top:-1px;
+    right:-175px;
+    z-index: 11;
+}
+
+/*--z-index:1--*/
+.zy_landscape_heading{
+    font-size:0;
+    background:url(../../images/apps/sprite.png) no-repeat -1286px -341px;
+    width:426px;
+    height:336px;
+    position:absolute;
+    top:215px;
+    left:50%;
+    margin-left:-213px;
+    z-index:1;
+}
+.zy_landscape>.zy_subheading{
+    top:685px;
+}
+/*--z-index:11--*/
+.zy_landscape_bottom_bg:before{
+    content:"";
+    background: url(../../images/apps/sprite.png) no-repeat -1245px -760px;
+    width:150px;
+    height: 215px;
+    position: absolute;
+    bottom:0px;
+    left:-150px;
+    z-index: 11;
+}
+.zy_landscape_bottom_bg{
+    background: #191919;
+    height: 80px;
+    top: 720px;
+    left:150px ;
+    position: absolute;
+    width: 100%;
+    z-index:8;
+}
+.zy_landscape_contain{
+    width: 100%;
+    height:680px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    background: #191919;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index:8;
+    margin-top:-1px;
+}
+.zy_landscape_contain>.zy_list_container{
+    border:none;
+}
+.zy_landscape_contain>.zy_contain_prev,.zy_landscape_contain>.zy_contain_next{
+    margin-top: -50px;
+}
+.zy_landscape_list{
+    margin:0;
+    height:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    font-size:0;
+    position: absolute;
+    left: 0;
+    padding:0px;
+}
+.zy_landscape_article{
+    display: inline-block;
+    width: 320px;
+    height: 100%;
+    white-space: normal;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:0 10px;
+    position:relative;
+    cursor:pointer;
+    vertical-align:top;
+}
+.zy_landscape_article>.zy_article_info{
+    position: relative;
+}
+.zy_landscape_article>.zy_article_info img{
+    width:100%;
+
+}
+.zy_landscape_article>.zy_article_info h2{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    font-size: 18px;
+    color:#fff;
+    background: url(../../images/apps/articletitle_fengjing_bg.png) repeat-x;
+    margin: 0px;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    text-indent: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zy_landscape_article>.zy_article_info:nth-child(2n){
+    padding-top:20px;
+}

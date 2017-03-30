@@ -1,1 +1,54 @@
-.zy_section_one{z-index:4}.zy_section_one .zy_section_heading{}.zy_section_one .zy_subheading{top:685px}.zy_section_one .zy_section_contain{background:#fff url(../../images/apps/rain.png) no-repeat;padding-top:300px;height:800px}.zy_section_one .zy_section_one_bottom_bg_left{font-size:0;background:url(../../images/apps/section_one_bottom_bg_left.png) no-repeat;z-index:10;position:absolute;left:0;width:539px;height:212px;bottom:0;z-index:-1}.zy_section_one .zy_section_one_bottom_bg_right{font-size:0;background:url(../../images/apps/section_one_bottom_bg_right.png) no-repeat;position:absolute;right:0;bottom:0;width:523px;height:357px;z-index:-1}.zy_section_one .zy_section_contain .zy_page_item{margin-top:-50px}.zy_section_one .zy_section_contain .zy_post_list_container{border:0}.zy_section_one .zy_section_contain .zy_post_list_container .zy_section_one_list{}
+/**
+*第一个栏目z-index:4
+*/
+.zy_section_one {
+    z-index: 4;
+}
+
+/*--z-index:1--*/
+.zy_section_one .zy_section_heading {
+
+}
+
+.zy_section_one .zy_subheading {
+    top:685px;
+
+}
+
+.zy_section_one .zy_section_contain {
+    background: #fff url(../../images/apps/rain.png) no-repeat;
+    padding-top: 300px;
+    height: 800px;
+}
+.zy_section_one .zy_section_one_bottom_bg_left{
+    font-size: 0px;
+    background: url(../../images/apps/section_one_bottom_bg_left.png) no-repeat;
+    z-index: 10;
+    position: absolute;
+    left:0px;
+    width: 539px;
+    height: 212px;
+    bottom:0px;
+    z-index: -1;
+}
+.zy_section_one .zy_section_one_bottom_bg_right{
+    font-size: 0px;
+    background: url(../../images/apps/section_one_bottom_bg_right.png) no-repeat;
+    position: absolute;
+    right:0px;
+    bottom:0px;
+    width: 523px;
+    height: 357px;
+    z-index: -1;
+}
+.zy_section_one .zy_section_contain .zy_page_item {
+    margin-top: -50px;
+}
+
+.zy_section_one .zy_section_contain .zy_post_list_container {
+    border: none;
+}
+
+.zy_section_one .zy_section_contain .zy_post_list_container .zy_section_one_list {
+
+}

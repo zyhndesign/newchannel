@@ -1,1 +1,71 @@
-body{background:#000;padding:40px}a{text-decoration:none}.main-head{font-size:0;text-indent:-9999px;width:324px;height:65px;background:url(images/newchannel_logotext.png) no-repeat;margin:30px 0 10px}.sub-head{font-size:16px;color:#ccc;font-family:"微软雅黑";letter-spacing:.5em;font-weight:400}.langMenu{position:absolute;font-size:14px;color:#fff;right:20px;top:20px}.contents{}.contents>ul{margin:0;padding:0}.contents>ul>li{list-style:none;height:300px;margin-bottom:10px}.contents>ul>li>a{display:block;font-size:0;height:100%;background:no-repeat right;background-size:cover}.contents>ul>li>a>img{height:100%}.contents>ul>li>a.yaanlink{background-image:url(images/bg_yaan.jpg)}.contents>ul>li>a.tongdaolink{background-image:url(images/bg_tongdao.jpg)}.contents>ul>li>a.xinjianglink{background-image:url(images/bg_xinjiang.jpg)}.contents>ul>li>a.youyanglink{background-image:url(images/bg_youyang.jpg)}.contents>ul>li>a.sanjiangyuanlink{background-image:url(images/bg_youyang.jpg)}
+body{
+	background:#000;
+	padding:40px;
+	}
+a{
+    text-decoration: none;
+}
+.main-head{
+	font-size:0;
+	text-indent:-9999px;
+	width:324px;
+	height:65px;
+	background:url(images/newchannel_logotext.png) no-repeat;
+	margin:30px 0 10px 0;
+	}
+.sub-head{
+	font-size:16px;
+	color:#ccc;
+	font-family:"微软雅黑";
+	letter-spacing:0.5em;
+	font-weight:normal;
+	}
+.langMenu{
+    position: absolute;
+    font-size: 14px;
+    color: #fff;
+    right:20px;
+    top:20px;
+}
+.contents{
+	}
+.contents>ul{
+	margin:0;
+	padding:0;
+	}
+.contents>ul>li{
+	list-style:none;
+	height:300px;
+	margin-bottom:10px;
+	}
+.contents>ul>li>a{
+	display:block;
+	font-size:0;
+	height:100%;
+    background:no-repeat right;
+    background-size: cover;
+	}
+.contents>ul>li>a>img{
+	height:100%;
+	}
+/*.contents>ul>li>a.expolink{
+    background:url(images/bg_expo.jpg) no-repeat right;
+}
+.contents>ul>li>a.milanlink{
+    background:url(images/bg_milano.jpg) no-repeat right;
+}*/
+.contents>ul>li>a.yaanlink{
+    background-image:url(images/bg_yaan.jpg);
+}
+.contents>ul>li>a.tongdaolink{
+	background-image:url(images/bg_tongdao.jpg);
+	}
+.contents>ul>li>a.xinjianglink{
+	background-image:url(images/bg_xinjiang.jpg);
+	}
+.contents>ul>li>a.youyanglink{
+	background-image:url(images/bg_youyang.jpg);
+	}
+.contents>ul>li>a.sanjiangyuanlink{
+    background-image:url(images/bg_youyang.jpg);
+}
