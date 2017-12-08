@@ -1,0 +1,141 @@
+/*--推荐文章z-index:5--*/
+.zy_featured{
+    width: 100%;
+    height: 800px;
+    background:#112433;
+    padding-top: 30px;
+    position:relative;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    z-index:5;
+}
+.zy_featured_heading{
+    background:url(../../images/apps/title_featured.png) no-repeat;
+    background-size:contain;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    color: #ff3300;
+    font-size: 0;
+    text-indent:-9999px;
+    position: relative;
+    top:30px;
+}
+
+.zy_featured_left{
+    width: 700px;
+    height: 200px;
+    background: url(../../images/apps/featured_calligraphy.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -350px;
+    top:200px;
+    opacity: .2;
+}
+.zy_featured_right{
+    width: 700px;
+    height: 200px;
+    background: url(../../images/apps/featured_calligraphy.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -350px;
+    top:500px;
+    opacity: .2;
+}
+.zy_featured::after{
+    content: "";
+    width:100%;
+    height:100px;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: url(../../images/apps/featured_bottom.png) no-repeat center;
+    background-size: cover;
+}
+.zy_featured_articles{
+    margin:50px 0;
+    padding:10px 0;
+    text-align:center;
+    width:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+.zy_featured_articles li{
+    list-style:none;
+    font-size: 0;
+    display:inline-block;
+    margin:0 1%;
+    box-sizing:border-box;
+    width:20%;
+    height:400px;
+    background:#fff;
+    cursor:pointer;
+    position:relative;
+    vertical-align: top;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.zy_featured_articles li .thumb{
+    perspective: 1000px;
+    overflow: hidden;
+}
+.zy_featured_articles li .thumb img{
+    width:100%;
+    transition: all 0.3s ease-out;
+    transform: translateZ(100px);
+}
+.zy_featured_articles li:hover .thumb img{
+    transform: translateZ(0);
+}
+.zy_featured_articles li .info{
+    padding: 20px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: #fff;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+.zy_featured_articles li:hover .info{
+    background: #e38230;
+    height:60%;
+}
+.zy_featured_articles li .title{
+    font-family: "Microsoft YaHei";
+    width:100%;
+    font-size:20px;
+    overflow:hidden;
+    font-weight: bold;
+    color:#333;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zy_featured_articles li:hover .title{
+    color: #fff;
+}
+.zy_featured_articles li .excerpt{
+    text-align: left;
+    color:#666;
+    height: 4.5em;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin: 0;
+    padding-top: 10px;
+    border-top:1px solid #ccc;
+    text-align: center;
+}
+.zy_featured_articles li:hover .excerpt{
+    color:#fff;
+    border-top:1px solid #fff;
+}

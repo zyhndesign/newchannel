@@ -1,0 +1,43 @@
+<section id="zy_artifact" class="zy_artifact">
+
+    <div id="zy_artifact_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg3.jpg">
+    </div>
+    <h2 class="zy_artifact_heading">物语</h2>
+    <span class="zy_dropdown" data-target="#zy_artifact">向下</span>
+    <!--<h3 class="zy_subheading">从传统工艺到现代设计</h3>-->
+
+    <section id="zy_artifact_contain" class="zy_artifact_contain">
+        <div id="zy_artifact_left" class="zy_artifact_left"></div>
+        <h3 class="zy_subheading">从传统工艺到现代设计</h3>
+        <div id="zy_artifact_bottom" class="zy_artifact_bottom"></div>
+        <div id="zy_artifact_list_container" class="zy_list_container  swiper3 swiper-container">
+            <script id="zy_artifact_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}"
+                    class="zy_artifact_article swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p>
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_artifact_list" class="zy_artifact_list swiper-wrapper">
+
+            </ul>
+
+            <div class="swiper-pagination swiper-pagination3"></div>
+        </div>
+    </section>
+</section>

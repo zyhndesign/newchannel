@@ -1,0 +1,28 @@
+<section class="zy_music_section zy_hidden" id="zy_music_section">
+    <div id="zy_music_player" class="zy_player zy_hidden">
+        <p id="zy_music_title" class="zy_music_title">特色音乐</p>
+        <span class="zy_separate_left">分割线</span>
+        <div class="zy_music_controller">
+            <a id="zy_music_prev"  class="zy_music_prev">上一首</a>
+            <a id="zy_music_control" class="zy_music_play">播放、暂停</a>
+            <a id="zy_music_next" class="zy_music_next">下一首</a>
+        </div>
+        <span class="zy_separate_right">分割线</span>
+        <div id="zy_music_timeline" class="zy_music_timeline">时间线</div>
+    </div>
+    <a id="zy_music_show" class="zy_music_show">显示音乐</a>
+    <!--播放器-->
+    <audio class="zy_hidden" id="zy_music_audio" src=""></audio>
+    <!--播放列表-->
+    <ul id="zy_music_list" style="display:none">
+        <script id="zy_music_tpl" type="text/template">
+            {@each musics as music,index}
+            {@if index==0}
+            <li class="active_music" data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+            {@else}
+            <li data-music-title="${music.music_title}" data-music-author="${music.music_author}">${music.music_path}</li>
+            {@/if}
+            {@/each}
+        </script>
+    </ul>
+</section>
