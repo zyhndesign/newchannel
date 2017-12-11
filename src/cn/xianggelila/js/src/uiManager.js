@@ -9,25 +9,6 @@ var ZY=ZY||{};
 ZY.uiManager=(function(){
     return {
 
-        /**
-         * 显示音乐播放器
-         */
-        showMusicPlayer:function(){
-            $("#zy_music_section").animate({
-                width:"500px"
-            },100,function(){
-                $("#zy_music_player").removeClass("zy_hidden");
-            });
-        },
-
-        /**
-         * 隐藏音乐播放器
-         */
-        hideMusicPlayer:function(){
-            $("#zy_music_section").stop(true,true).width(50);
-            $("#zy_music_player").addClass("zy_hidden");
-        },
-
         showMenu:function(){
             $("#zy_nav").animate({
                 width:"450px"
@@ -107,7 +88,7 @@ ZY.uiManager=(function(){
          */
         updateSectionBg:function(data,target){
             if(data["background"]!==null){
-            	
+
                 //第一次才换背景
                 if(data["background"]["type"]!="mp4"){
 
@@ -115,7 +96,7 @@ ZY.uiManager=(function(){
                     target.append($("<img class='zy_theme_bg_content' src='"+data["background"]["filepath"]+
                         "' onload='ZY.uiManager.fadingIn(this)' />"));
                 }else if(!ZY.config.deviceCode.iOS){
-                	
+
                     //视频作为背景，由于使用了img的clip，这里最好不做处理
                     target.append($("<video class='zy_theme_bg_content' autoplay loop muted "+
                         "oncanplay='ZY.uiManager.fadingIn(this)'><source src='"+data["background"]["filepath"]+

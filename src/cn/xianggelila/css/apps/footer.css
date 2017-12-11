@@ -26,16 +26,7 @@
     display: inline-block;
     vertical-align: top;
 }
-.zy_project_title{
-    font-size:0;
-    text-indent:-9999px;
-    background:url(../../images/apps/title_background.png) no-repeat;
-    background-size:contain;
-    width: 300px;
-    height: 200px;
-    margin:auto;
-    display: none;
-}
+
 .zy_project_info p{
     color: #e6e6e6;
     font-size: 14px;
@@ -96,7 +87,7 @@
     width:50%;
 }
 .zy_project_sponsors .zy_logo_mkmj a{
-    background:url(../../images/apps/meikemeijie_logo.png) no-repeat center;
+    background:url(../../images/apps/meike_logo.png) no-repeat center;
     background-size: contain;
 }
 .zy_project_sponsors .zy_logo_hnusd{
@@ -160,4 +151,10 @@
 }
 .zy_app_download_list .zy_android_pad_app{
     background:url(../../images/apps/sprite.png) no-repeat -1270px -709px;
+}
+.zy_project_title{
+  font-size: 20px;
+  margin: 0 auto;
+  color: white;
+  position: relative;
 }
