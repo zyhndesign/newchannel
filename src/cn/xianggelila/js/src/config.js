@@ -11,11 +11,11 @@ ZY.config={
     ajaxurl:"http://www.comdesignlab.com/travel/wp-admin/admin-ajax.php",
     siteurl:"http://www.comdesignlab.com/travel",
     categoryIds:{
-        programId:52,  //每个分类的id
-        peopleId:54,
-        landscapeId:53,
-        communityId:56,
-        artifactId:55
+        programId:72,  //每个分类的id
+        peopleId:73,
+        landscapeId:74,
+        communityId:76,
+        artifactId:73
     },
     articleWidths:{
         peopleWidth:240, //每个分类的li的宽度
@@ -36,4 +36,3 @@ ZY.config={
     defaultWrapZindex:9996 //遮挡层的默认z-index
 };
 Object.freeze(ZY.config);
-
