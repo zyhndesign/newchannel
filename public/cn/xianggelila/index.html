@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="fragment" content="!">
+    <meta name="description" content="“香格里拉”设计与社会创新工作营是在美克美家的支持下，由湖南大学跨学科联合设计与社会创新活动。在社区研究的方法上了解当地的宗教、文化、物产以及人文资源，针对灾后的社区结构及社会资本变化，选择文化与设计创新可以介入的社会需求。对囊谦黑陶、安冲藏刀等非物质文化遗产进行主题影像记录与创作，对当地水源头的水质情况进行监测并初步建立了水质监测系统，探访了沿途代表宗教建筑并对藏族民居和聚落进行研究。传播和保护了当地的非物质文化遗产，探索了基于可持续和开放的文创公益及社会创新网络。" />
+    <meta name="keywords" content="社会创新, 新通道, 文化产品创新, 文化产品设计，香格里拉" />
+    <title>香格里拉</title>
+
+    <link rel="stylesheet" href="../../pkg/cn/xianggelila/index.html_aio.css" />
+</head>
+<body>
+
+<!--菜单栏-->
+<nav id="zy_nav" class="zy_nav">
+    <span id="zy_show_menu" class="zy_show_menu">&nbsp;&nbsp;</span>
+    <ul id="zy_menu" class="zy_hidden">
+        <li><a href="#zy_landscape">风景</a><span class="zy_menu_separate">分割线</span></li>
+        <li><a href="#zy_people">人文</a><span class="zy_menu_separate">分割线</span></li>
+        <li><a href="#zy_artifact">物语</a><span class="zy_menu_separate">分割线</span></li>
+        <li><a href="#zy_community">社区</a><span class="zy_menu_separate">分割线</span></li>
+    </ul>
+</nav>
+
+
+<div id="zy_main_wrapper" class="zy_main_wrapper">
+
+<!--置顶文章部分-->
+    <section id="zy_top_post" class="zy_top_post">
+    <div id="zy_top_post_poster" class="zy_top_post_poster">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg1.jpg"/>
+    </div>
+
+
+    <h2 class="zy_logo">香格里拉</h2>
+    <span class="zy_dropdown" data-target="#zy_featured">向下</span>
+</section>
+
+<!--------------------------------------推荐------------------------------------------>
+    <section id="zy_featured" class="zy_featured">
+    <header class="zy_featured_heading">推荐</header>
+    <script id="zy_featured_articles_tpl" type="text/template">
+
+        {@each top_posts as post,index}
+        {@if index<3}
+        <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}">
+
+            {@if post.hasVideo}
+            <div class="thumb hasVideo"><img src="${post.thumb}" /></div>
+            {@else}
+            <div class="thumb"><img src="${post.thumb}" /></div>
+            {@/if}
+            <div class="info">
+                <h3 class="title">${post.post_title}</h3>
+                <p class="excerpt">${post.post_excerpt}</p>
+            </div>
+        </li>
+        {@/if}
+        {@/each}
+
+    </script>
+    <ul id="zy_featured_articles" class="zy_featured_articles">
+
+    </ul>
+
+</section>
+
+
+<!--------------------------------------风景------------------------------------------>
+    <section id="zy_landscape" class="zy_landscape">
+    <div id="zy_landscape_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg2.jpg">
+    </div>
+    <h2 class="zy_landscape_heading">风景</h2>
+    <span class="zy_dropdown" data-target="#zy_landscape">向下</span>
+    <!--<h3 class="zy_subheading">美不胜收的风景写真</h3>-->
+    <section id="zy_landscape_contain" class="zy_landscape_contain">
+        <div class="landscape_heading"></div>
+        <div id="zy_landscape_list_container" class="zy_list_container  swiper1 swiper-container">
+            <script id="zy_landscape_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}"
+                    class="zy_landscape_article swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p>
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_landscape_list" class="zy_landscape_list swiper-wrapper">
+
+            </ul>
+
+            <div class="swiper-pagination swiper-pagination1"></div>
+        </div>
+
+    </section>
+
+</section>
+
+
+<!--------------------------------------人文------------------------------------------>
+    <section id="zy_people" class="zy_people">
+
+    <div id="zy_people_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg3.jpg">
+    </div>
+    <h2 class="zy_humanity_heading">人文</h2>
+    <span class="zy_dropdown" data-target="#zy_people">向下</span>
+    <!--<h3 class="zy_subheading">生生不息的人物故事</h3>-->
+
+    <section id="zy_people_contain" class="zy_people_contain">
+        <div class="humanity_heading"></div>
+        <div id="zy_people_right" class="zy_people_right"></div>
+        <div id="zy_people_list_container" class="zy_list_container  swiper2 swiper-container">
+            <script id="zy_people_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}" class="zy_people_article swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p>${post.post_excerpt}</p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_people_list" class="zy_people_list swiper-wrapper">
+
+            </ul>
+            <div class="swiper-pagination swiper-pagination2"></div>
+        </div>
+    </section>
+</section>
+
+
+<!--------------------------------------物语------------------------------------------>
+    <section id="zy_artifact" class="zy_artifact">
+
+    <div id="zy_artifact_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg4.jpg">
+    </div>
+    <h2 class="zy_artifact_heading">物语</h2>
+    <span class="zy_dropdown" data-target="#zy_artifact">向下</span>
+    <!--<h3 class="zy_subheading">从传统工艺到现代设计</h3>-->
+
+    <section id="zy_artifact_contain" class="zy_artifact_contain">
+        <div class="artifact_heading"></div>
+        <div id="zy_artifact_list_container" class="zy_list_container  swiper3 swiper-container">
+            <script id="zy_artifact_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}"
+                    class="zy_artifact_article swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p>
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_artifact_list" class="zy_artifact_list swiper-wrapper">
+
+            </ul>
+
+            <div class="swiper-pagination swiper-pagination3"></div>
+        </div>
+    </section>
+</section>
+
+
+<!--------------------------------------社区------------------------------------------>
+    <section id="zy_community" class="zy_community">
+
+    <div id="zy_community_bg" class="zy_section_bg">
+        <img class="zy_theme_bg_content zy_theme_bg_default" src="images/default_bg/bg5.jpg">
+    </div>
+    <h2 class="zy_community_heading">社区</h2>
+    <span class="zy_dropdown" data-target="#zy_community">向下</span>
+    <!--<h3 class="zy_subheading">社区互动与参与式创新</h3>-->
+
+    <section id="zy_community_contain" class="zy_community_contain">
+        <div class="community_heading"></div>
+        <div id="zy_community_list_container" class="zy_list_container  swiper4 swiper-container">
+            <script id="zy_community_articles_tpl" type="text/template">
+
+                {@each posts as post}
+                <li data-zy-post-id="${post.post_id}" data-zy-post-type="${post.post_mime_type}"
+                    class="zy_community_article swiper-slide">
+                    {@if post.hasVideo}
+                    <div class="zy_article_thumb hasVideo"><img src="${post.thumb}"/></div>
+                    {@else}
+                    <div class="zy_article_thumb"><img src="${post.thumb}"/></div>
+                    {@/if}
+                    <div class="zy_article_abstract">
+                        <h2>${post.post_title}</h2>
+                        <p class="zy_article_date">${post.post_date}</p>
+                        <p>
+                            ${post.post_excerpt}
+                        </p>
+                    </div>
+                </li>
+                {@/each}
+
+            </script>
+            <ul id="zy_community_list" class="zy_community_list swiper-wrapper">
+
+            </ul>
+
+            <div class="swiper-pagination swiper-pagination4"></div>
+        </div>
+
+    </section>
+</section>
+
+
+<!--------------------------------底部--------------------------------------->
+    <footer class="zy_footer">
+    <div class="zy_project">
+        <div class="zy_project_sponsors">
+            <h1 class="zy_bottom_logo"><a>新通道</a></h1>
+            <ul>
+                <li class="zy_logo_mkmj"><a href="http://www.markorhome.com/" target="_blank">美克美家</a></li>
+                <li class="zy_logo_hnusd"><a href="http://design.hnu.cn" target="_blank">湖南大学设计艺术学院</a></li>
+            </ul>
+        </div>
+        <div class="zy_project_info">
+            <h2 class="zy_project_title">项目背景</h2>
+            <p>
+              “香格里拉”设计与社会创新工作营是由湖南大学、美克美家、湖南省对外科技交流中心、云南艺术学院、中央圣马丁艺术与设计学院等单位联合组织开展的设计与社会创新活动。从2017年8月20日至8月31日，项目组的20多名师生、设计师、志愿者将深入云南省香格里拉等地区，以社区研究的方法了解当地的宗教、文化、物产以及人文资源，特别是对香格里拉及其周边的非物质遗产手工艺进行重点记录和影像创作，在此基础上针对云南少数民族的生活形态、社区结构及文化与产业发展需求，以跨学科的团队，与当地政府、企业、手工艺传人开展参与式联合工作营，共同探索构建可持续的文创公益与社会创新网络的方法。
+            </p>
+        </div>
+    </div>
+
+    <div class="zy_copyright">
+        <p>© 湖南省工业设计协会 版权所有</p>
+        <p>中意工业设计（湖南）有限公司 设计开发</p>
+    </div>
+</footer>
+
+</div>
+
+<!--弹出层-->
+<section id="zy_wrap" class="zy_wrap zy_hidden"></section>
+<section id="zy_show_section" class="zy_show_section zy_hidden">
+    <span id="zy_show_close" class="zy_show_close"></span>
+    <!--load加载的媒体播放页面放置处-->
+    <div id="zy_show_load_container" class="zy_show_load_container">
+
+    </div>
+
+</section>
+
+<!--弹出窗口-->
+<section id="zy_popout_win" class="zy_popout_win zy_hidden">
+    <h3 class="zy_popout_title"></h3>
+    <span id="zy_popout_close" class="zy_popout_btn">好</span>
+</section>
+
+<!--单片文章展示模版，采用load加载页面-->
+<article id="zy_article_container" class="zy_article_container">
+    <span id="zy_article_content_close" class="zy_article_content_close"></span>
+    <section id="zy_article_content" class="zy_article_content">
+        <script id="zy_show_detail_tpl" type="text/template">
+            {@if post_type=="zypost"}
+            <article class="article-main-post">
+                <div class="article-head-post">
+                    <h1 class="article-title-post">${post_title}</h1>
+                    <h2 class="article-author-post">${post_author} </h2>
+                    <h2 class="article-category-post">${post_category}</h2>
+                    <h2 class="article-time-post">${post_date}</h2>
+                </div>
+                <div class="article-poster-post"><img src="${post_thumb}" ></div>
+
+
+
+                <div class="article-content-post">
+                    <p>$${post_content}</p>
+                </div>
+            </article>
+            {@else}
+            <article class="article-main-slide">
+                <h1 class="article-title-slide">${post_title}</h1>
+                <h2 class="article-author-slide">${post_author}</h2>
+                <h2 class="article-category-slide">${post_category} | ${post_date}</h2>
+
+
+
+                <div class="article-abstract-slide">
+                    <p>${post_excerpt}</p>
+                </div>
+
+
+
+                <div class="allslides-slide">
+                    {@each post_slides as slide}
+                    <div class="slide-slide">
+                        {@if slide.title}
+
+                        {@if slide.memo}
+                        <div class="imgcaption-slide"><span>${slide.title}</span>：${slide.memo}</div>
+                        {@else}
+                        <div class="imgcaption-slide">${slide.title}</div>
+                        {@/if}
+
+                        {@else if slide.memo}
+                        <div class="imgcaption-slide">${slide.memo}</div>
+                        {@/if}
+
+                        $${slide.content}
+                    </div>
+                    {@/each}
+
+                </div>
+            </article>
+            {@/if}
+
+        </script>
+    </section>
+</article>
+
+<!--数据加载时的等待动画-->
+<script type="text/template" id="zy_spinner_tpl">
+    <div class='zy_loading_spinner'>
+        <div class="zy_loading_spinner_layer"></div>
+    </div>
+</script>
+
+<script type="text/javascript" src="js/libs/modernizr.js"></script>
+<script type="text/javascript">
+    //加载资源
+    Modernizr.load([
+        {
+            test:Modernizr.rgba &&
+                    Modernizr.borderradius &&
+                    Modernizr.boxshadow &&
+                    Modernizr.textshadow &&
+                    Modernizr.opacity &&
+                    Modernizr.cssanimations &&
+                    Modernizr.csscolumns &&
+                    Modernizr.csstransitions &&
+                    Modernizr.generatedcontent &&
+                    Modernizr.video &&
+                    Modernizr.audio,
+            nope:["js/libs/jquery-1.10.2.min.js","js/src/uiManager.js"],
+            yep:[
+                "js/libs/jquery-1.10.2.min.js",
+                "js/libs/swiper.jquery.min.js",
+                "js/libs/juicer-min.js",
+                "js/libs/greensock/TweenMax.min.js",
+                "js/libs/greensock/ScrollToPlugin.min.js",
+                "js/src/config.js",
+                "js/src/dataManager.js",
+                "js/src/controllerManager.js",
+                "js/src/uiManager.js",
+                "js/src/index.js"
+                //"js/builds/index.min.js"
+            ],
+            callback:function(key,testResult){
+                if(testResult!==true&&key=="js/src/uiManager.js"){
+                    ZY.uiManager.showPopOut("很抱歉，本站使用的一些HTML5特性，您的浏览器可能不支持，为了获得最佳浏览体验，"+
+                            "建议您将浏览器升级到最新版本，或选用其他兼容HTML5的浏览器，我们推荐Chrome浏览器和火狐浏览器。",true);
+                }
+            }
+        }
+    ]);
+</script>
+</body>
+</html>

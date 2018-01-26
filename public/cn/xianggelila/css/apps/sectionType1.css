@@ -6,34 +6,25 @@
 /*--z-index:1--*/
 .zy_landscape_heading{
     font-size:0;
-    background: url(../../images/apps/title_landscape.png) no-repeat;
+    background: url(../../images/apps/slogan_landscape.png) no-repeat;
     background-size:contain;
-    width: 400px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
     position:absolute;
     top:200px;
     left:50%;
     transform: translateX(-50%);
     z-index:1;
 }
-.zy_landscape_left{
-    width: 200%;
-    height: 200px;
-    background: url(../../images/apps/landscape_right.png) repeat-x;
-    position: absolute;
-    left:0px;
-    top: 50px;
-    transform: translateX(-25%);
+.landscape_heading{
+  width: 212px;
+  height: 85px;
+  background: url(../../images/apps/title_landscape.png) no-repeat;
+  position: relative;
+  top:100px;
+  margin: 0 auto;
 }
-.zy_landscape_right{
-    width: 200%;
-    height: 200px;
-    background: url(../../images/apps/landscape_right.png) repeat-x;
-    position: absolute;
-    right:0px;
-    bottom: 50px;
-    transform: translateX(25%);
-}
+
 .zy_landscape .zy_subheading{
     font-size: 0;
 }

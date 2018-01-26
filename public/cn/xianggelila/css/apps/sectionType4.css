@@ -1,0 +1,40 @@
+/*-----------------------------------------------------------------------------社区z-index:1--*/
+.zy_community{
+    position:relative;
+    z-index:1;
+}
+
+.zy_community_contain{
+    background: url(../../images/default_bg/bg_community.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+/*--z-index:1--*/
+.zy_community_heading{
+    font-size:0;
+    background: url(../../images/apps/slogan_community.png) no-repeat;
+    background-size:contain;
+    width: 400px;
+    height: 200px;
+    position:absolute;
+    top:200px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index:1;
+}
+
+.community_heading{
+  width: 212px;
+  height: 85px;
+  background: url(../../images/apps/title_community.png) no-repeat;
+  position: relative;
+  top:100px;
+  margin: 0 auto;
+}
+.zy_community .zy_subheading{
+    font-size: 0;
+}
+
+.zy_community_list{
+    height:450px;
+    top:120px;
+}

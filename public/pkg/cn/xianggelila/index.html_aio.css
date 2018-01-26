@@ -31,7 +31,7 @@ body{
 }
 .hasVideo:before{
     content:"";
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -886px -621px;
+    background: url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat -886px -621px;
     width: 80px;
     height: 80px;
     position: absolute;
@@ -63,11 +63,11 @@ a{
 .zy_logo{
     width: 400px;
     height: 200px;
-    background: url(../../../cn/sanjiangyuan/images/apps/logo.png) no-repeat;
+    background: url(../../../cn/xianggelila/images/apps/logo.png) no-repeat;
     background-size: contain;
     font-size: 0px;
     position: absolute;
-    top:70%;
+    top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -82,7 +82,7 @@ a{
     margin-left: -25px;
     z-index: 9;
     font-size: 0px;
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -1198px -839px;
+    background: url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat -1198px -839px;
 }
 
 
@@ -129,8 +129,6 @@ a{
     background: #fff;
 }
 
-
-
 /*--菜单栏--*/
 .zy_nav{
     height: 50px;
@@ -143,15 +141,15 @@ a{
 .zy_show_menu{
     color: white;
     display: inline-block;
-    font-size: 0px;
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -886px -859px;
+    background: url(../../../cn/xianggelila/images/apps/menu_default.png) no-repeat;
     width: 50px;
     height: 50px;
     position: absolute;
     left: 0px;
+    font-size: 50px;
 }
 .zy_show_menu:hover,.zy_show_menu_active{
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -990px -839px;
+    background: url(../../../cn/xianggelila/images/apps/menu_active.png) no-repeat;
     cursor: pointer;
 }
 .zy_nav ul{
@@ -189,6 +187,7 @@ a{
 .zy_nav ul li a:hover,.zy_nav ul li a.active{
     color:#000;
 }
+
 /*********************************************************************/
 .zy_landscape_list,.zy_people_list,.zy_artifact_list,.zy_community_list{
     margin:0;
@@ -510,7 +509,7 @@ a{
 .zy_featured{
     width: 100%;
     height: 800px;
-    background:#112433;
+    background: #e0dbb3 url(../../../cn/xianggelila/images/default_bg/bg_featured.jpg) no-repeat;
     padding-top: 30px;
     position:relative;
     -webkit-box-sizing:border-box;
@@ -518,12 +517,13 @@ a{
     -ms-box-sizing:border-box;
     box-sizing:border-box;
     z-index:5;
+    background-size:100%100%;
 }
 .zy_featured_heading{
-    background:url(../../../cn/sanjiangyuan/images/apps/title_featured.png) no-repeat;
+    background:url(../../../cn/xianggelila/images/apps/title_featured.png) no-repeat;
     background-size:contain;
-    width: 300px;
-    height: 200px;
+    width: 170px;
+    height: 90px;
     margin: 0 auto;
     color: #ff3300;
     font-size: 0;
@@ -532,36 +532,6 @@ a{
     top:30px;
 }
 
-.zy_featured_left{
-    width: 700px;
-    height: 200px;
-    background: url(../../../cn/sanjiangyuan/images/apps/featured_calligraphy.svg) no-repeat;
-    background-size: contain;
-    position: absolute;
-    left: -350px;
-    top:200px;
-    opacity: .2;
-}
-.zy_featured_right{
-    width: 700px;
-    height: 200px;
-    background: url(../../../cn/sanjiangyuan/images/apps/featured_calligraphy.svg) no-repeat;
-    background-size: contain;
-    position: absolute;
-    right: -350px;
-    top:500px;
-    opacity: .2;
-}
-.zy_featured::after{
-    content: "";
-    width:100%;
-    height:100px;
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    background: url(../../../cn/sanjiangyuan/images/apps/featured_bottom.png) no-repeat center;
-    background-size: cover;
-}
 .zy_featured_articles{
     margin:50px 0;
     padding:10px 0;
@@ -656,34 +626,25 @@ a{
 /*--z-index:1--*/
 .zy_landscape_heading{
     font-size:0;
-    background: url(../../../cn/sanjiangyuan/images/apps/title_landscape.png) no-repeat;
+    background: url(../../../cn/xianggelila/images/apps/slogan_landscape.png) no-repeat;
     background-size:contain;
-    width: 400px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
     position:absolute;
     top:200px;
     left:50%;
     transform: translateX(-50%);
     z-index:1;
 }
-.zy_landscape_left{
-    width: 200%;
-    height: 200px;
-    background: url(../../../cn/sanjiangyuan/images/apps/landscape_right.png) repeat-x;
-    position: absolute;
-    left:0px;
-    top: 50px;
-    transform: translateX(-25%);
+.landscape_heading{
+  width: 212px;
+  height: 85px;
+  background: url(../../../cn/xianggelila/images/apps/title_landscape.png) no-repeat;
+  position: relative;
+  top:100px;
+  margin: 0 auto;
 }
-.zy_landscape_right{
-    width: 200%;
-    height: 200px;
-    background: url(../../../cn/sanjiangyuan/images/apps/landscape_right.png) repeat-x;
-    position: absolute;
-    right:0px;
-    bottom: 50px;
-    transform: translateX(25%);
-}
+
 .zy_landscape .zy_subheading{
     font-size: 0;
 }
@@ -691,7 +652,7 @@ a{
     width: 100%;
     height:800px;
     box-sizing:border-box;
-    background-image: url(../../../cn/sanjiangyuan/images/default_bg/bg_artifact.jpg);
+    background-image: url(../../../cn/xianggelila/images/default_bg/bg_artifact.jpg);
     background-size: 100% 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -706,66 +667,40 @@ a{
     font-size: 0;
 
 }
-.zy_people::after{
-    content: "";
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    background: url(../../../cn/sanjiangyuan/images/apps/humanity_bottom.png) no-repeat center;
-    background-size: cover;
-}
-/*
-.zy_people_top{
-    min-width:1280px;
-    width:100%;
-    height: 500px;
-    background: url(../../images/apps/humanity_top.png) no-repeat center center;
-    position: absolute;
-    top: -180px;
-    left:0px;
-}
-*/
-.zy_people_left{
-    width: 200%;
-    height: 200px;
-    background: url(../../../cn/sanjiangyuan/images/apps/humanity_left.png) repeat-x;
-    position: absolute;
-    left:0px;
-    top: 60px;
-    transform: translateX(-25%);
-    opacity: .3;
-}
-.zy_people_right{
-    width: 200%;
-    height: 200px;
-    background: url(../../../cn/sanjiangyuan/images/apps/humanity_left.png) repeat-x;
-    position: absolute;
-    right:0px;
-    bottom: 60px;
-    transform: translateX(25%);
-    opacity: .3;
-}
-/*--z-index:1--*/
-.zy_people_heading{
+.zy_humanity_heading{
     font-size:0;
-    background: url(../../../cn/sanjiangyuan/images/apps/title_humanity.png) no-repeat;
+    background: url(../../../cn/xianggelila/images/apps/slogan_humanity.png) no-repeat;
     background-size:contain;
-    width: 400px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
     position:absolute;
     top:200px;
     left:50%;
     transform: translateX(-50%);
     z-index:1;
 }
+.humanity_heading{
+  width: 212px;
+  height: 85px;
+  background: url(../../../cn/xianggelila/images/apps/title_humanity.png) no-repeat;
+  position: relative;
+  top:100px;
+  margin: 0 auto;
+}
+
 .zy_people .zy_subheading{
     font-size: 0;
 }
 .zy_people_list{
     height: 450px;
     top:180px;
+}
+
+.zy_people_contain{
+  width: 100%;
+  height: 800px;
+  background: #FFFFFF url(../../../cn/xianggelila/images/default_bg/bg_humanity.jpg) no-repeat;
+  background-size:100%100%;
 }
 
 
@@ -777,7 +712,7 @@ a{
 /*--z-index:1--*/
 .zy_artifact_heading{
     font-size:0;
-    background: url(../../../cn/sanjiangyuan/images/apps/title_artifact.png) no-repeat;
+    background: url(../../../cn/xianggelila/images/apps/slogan_artifact.png) no-repeat;
     background-size:contain;
     width: 400px;
     height: 200px;
@@ -787,17 +722,16 @@ a{
     transform: translateX(-50%);
     z-index:1;
 }
-.zy_artifact_bottom{
-    width: 1200px;
-    height: 300px;
-    background: url(../../../cn/sanjiangyuan/images/apps/artifact_bottom.png) no-repeat;
-    background-size: contain;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    bottom: -100px;
-    opacity: .2;
+
+.artifact_heading{
+  width: 212px;
+  height: 85px;
+  background: url(../../../cn/xianggelila/images/apps/title_humanity.png) no-repeat;
+  position: relative;
+  top:100px;
+  margin: 0 auto;
 }
+
 .zy_artifact .zy_subheading{
     font-size: 0;
 }
@@ -805,7 +739,7 @@ a{
     width: 100%;
     height: 800px;
     box-sizing:border-box;
-    background: url(../../../cn/sanjiangyuan/images/default_bg/bg_artifact.jpg) no-repeat;
+    background: url(../../../cn/xianggelila/images/default_bg/bg_artifact.jpg) no-repeat;
     background-size: 100% 100%;
     /* margin-top: 360px;*/
     white-space: nowrap;
@@ -822,26 +756,16 @@ a{
 .zy_community{
     position:relative;
     z-index:1;
-    margin-bottom: 290px;
 }
-.zy_community::after{
-    content: "";
-    width:100%;
-    height: 290px;
-    background: url(../../../cn/sanjiangyuan/images/apps/community_bottom.jpg) no-repeat;
-    background-size: cover;
-    position: absolute;
-    bottom: -290px;
-    left: 0;
-}
+
 .zy_community_contain{
-    background: url(../../../cn/sanjiangyuan/images/default_bg/bg_community.jpg) no-repeat;
+    background: url(../../../cn/xianggelila/images/default_bg/bg_community.jpg) no-repeat;
     background-size: 100% 100%;
 }
 /*--z-index:1--*/
 .zy_community_heading{
     font-size:0;
-    background: url(../../../cn/sanjiangyuan/images/apps/title_community.png) no-repeat;
+    background: url(../../../cn/xianggelila/images/apps/slogan_community.png) no-repeat;
     background-size:contain;
     width: 400px;
     height: 200px;
@@ -851,14 +775,14 @@ a{
     transform: translateX(-50%);
     z-index:1;
 }
-.zy_community_bottom{
-    width:100%;
-    height: 400px;
-    background: url(../../../cn/sanjiangyuan/images/apps/community_bottom_flag.png) no-repeat;
-    background-size: contain;
-    position: absolute;
-    left:0px;
-    bottom: -200px;
+
+.community_heading{
+  width: 212px;
+  height: 85px;
+  background: url(../../../cn/xianggelila/images/apps/title_community.png) no-repeat;
+  position: relative;
+  top:100px;
+  margin: 0 auto;
 }
 .zy_community .zy_subheading{
     font-size: 0;
@@ -868,6 +792,7 @@ a{
     height:450px;
     top:120px;
 }
+
 /*------------------------------------footer部分--------------------------*/
 .zy_footer{
     width: 100%;
@@ -896,16 +821,7 @@ a{
     display: inline-block;
     vertical-align: top;
 }
-.zy_project_title{
-    font-size:0;
-    text-indent:-9999px;
-    background:url(../../../cn/sanjiangyuan/images/apps/title_background.png) no-repeat;
-    background-size:contain;
-    width: 300px;
-    height: 200px;
-    margin:auto;
-    display: none;
-}
+
 .zy_project_info p{
     color: #e6e6e6;
     font-size: 14px;
@@ -927,7 +843,7 @@ a{
 .zy_bottom_logo a{
     width:100%;
     height: 150px;
-    background: url(../../../cn/sanjiangyuan/images/apps/logo.png) no-repeat center;
+    background: url(../../../cn/xianggelila/images/apps/logo.png) no-repeat center;
     background-size: contain;
     display: block;
     margin:auto;
@@ -966,14 +882,14 @@ a{
     width:50%;
 }
 .zy_project_sponsors .zy_logo_mkmj a{
-    background:url(../../../cn/sanjiangyuan/images/apps/meikemeijie_logo.png) no-repeat center;
+    background:url(../../../cn/xianggelila/images/apps/meike_logo.png) no-repeat center;
     background-size: contain;
 }
 .zy_project_sponsors .zy_logo_hnusd{
     width:50%;
 }
 .zy_project_sponsors .zy_logo_hnusd a{
-    background:url(../../../cn/sanjiangyuan/images/apps/HNU_logo.png) no-repeat center;
+    background:url(../../../cn/xianggelila/images/apps/HNU_logo.png) no-repeat center;
     background-size: contain;
 }
 .zy_copyright{
@@ -1026,10 +942,16 @@ a{
     opacity:0.5;
 }
 .zy_app_download_list .zy_android_phone_app{
-    background:url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -1270px -635px;
+    background:url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat -1270px -635px;
 }
 .zy_app_download_list .zy_android_pad_app{
-    background:url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -1270px -709px;
+    background:url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat -1270px -709px;
+}
+.zy_project_title{
+  font-size: 20px;
+  margin: 0 auto;
+  color: white;
+  position: relative;
 }
 
 /*---------------------loadingSpinner-------------------*/
@@ -1067,7 +989,7 @@ a{
 .zy_loading_spinner_layer{
     width: 50px;
     height: 50px;
-    background: url(../../../cn/sanjiangyuan/images/apps/loading.png) no-repeat;
+    background: url(../../../cn/xianggelila/images/apps/loading.png) no-repeat;
     -webkit-animation: spin 4s infinite linear reverse;
     -moz-animation: spin 4s infinite linear reverse;
     animation: spin 4s infinite linear reverse;
@@ -1117,10 +1039,10 @@ a{
     width: 50px;
     height: 50px;
     display: block;
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -990px -891px;
+    background: url(../../../cn/xianggelila/images/apps/btn_close_normal.png) no-repeat;
 }
 .zy_article_content_close:hover{
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -1042px -891px;
+    background: url(../../../cn/xianggelila/images/apps/btn_close_active.png) no-repeat;
 }
 
 
@@ -1245,7 +1167,7 @@ a{
 .videoslide:before
 {
     content:"";
-    background:url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat  -886px -621px;
+    background:url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat  -886px -621px;
     width:80px;
     height:80px;
     position:absolute;
@@ -1367,10 +1289,10 @@ a{
     display: block;
     margin: auto;
     cursor:pointer;
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -938px -891px;
+    background: url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat -938px -891px;
 }
 .zy_show_close:hover{
-    background: url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -886px -911px;
+    background: url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat -886px -911px;
 }
 .zy_show_load_container{
      width:100%;
@@ -1405,7 +1327,7 @@ a{
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     box-sizing:border-box;
-    background:url(../../../cn/sanjiangyuan/images/apps/sprite.png) no-repeat -723px -2px;
+    background:url(../../../cn/xianggelila/images/apps/sprite.png) no-repeat -723px -2px;
     padding:20px;
     position:fixed;
     top:50%;
